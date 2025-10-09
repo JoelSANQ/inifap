@@ -1,18 +1,48 @@
+// lib/weather.dart (o el nombre que uses para esta pantalla)
+
 import 'dart:convert';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'data/Stations.dart'; // 👈 importa tu lista kStations y la clase Station
 
-/// URL de tu proxy
-const String kProxyUrl =
-    'http://localhost:8080/http://zacatecas.inifap.gob.mx/apiApp2.php?r=5&day=05&month=10&year=2025&id_est_given=18851';
+/// (Opcional) Punto de entrada autónomo para probar esta pantalla.
+/// Si ya tienes tu propio main(), puedes borrar esto.
+void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: WeatherProxyPage(), // el usuario elegirá la estación
+  ));
+}
 
-/// 🎨 Colores del fondo (dime tu color y lo pongo aquí)
+/// ====== CONFIG ======
+
+/// URL base del upstream
+const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
+
+/// Construye la URL del proxy usando **la fecha actual del dispositivo** y el id de estación
+String _buildProxyUrl({required int idEst}) {
+  final now = DateTime.now(); // fecha/hora local
+  final dd = now.day.toString().padLeft(2, '0');
+  final mm = now.month.toString().padLeft(2, '0');
+  final yyyy = now.year.toString();
+
+  final upstreamWithQuery =
+      '$_kUpstream?r=5&day=$dd&month=$mm&year=$yyyy&id_est_given=$idEst';
+
+  // Tu proxy en localhost que encadena la URL aguas arriba
+  return 'http://localhost:8080/$upstreamWithQuery';
+}
+
+/// 🎨 Colores del fondo (si quieres otros, dime y los cambio)
 const Color kBgStart = Color(0xFF8A2BE2); // morado actual
 const Color kBgEnd   = Color(0xFF7B68EE); // morado actual
 
 class WeatherProxyPage extends StatefulWidget {
-  const WeatherProxyPage({super.key});
+  /// Si pasas una estación inicial, la usa; si no, abre el selector al entrar.
+  final Station? station;
+  const WeatherProxyPage({super.key, this.station});
+
   @override
   State<WeatherProxyPage> createState() => _WeatherProxyPageState();
 }
@@ -21,6 +51,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   bool _loading = false;
   String? _error;
 
+  Station? _station;                // 👈 estación elegida por el usuario
   _Current? _current;               // datos de la hora más cercana
   List<_Hourly> _hourly = const []; // serie por hora (o 15 min)
 
@@ -33,7 +64,16 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   @override
   void initState() {
     super.initState();
-    _fetch();
+    _station = widget.station;
+
+    // Si no hay estación inicial, abrir selector; si sí, cargar datos
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (_station == null) {
+        await _pickStation();
+      } else {
+        _fetch();
+      }
+    });
   }
 
   @override
@@ -42,22 +82,90 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
     super.dispose();
   }
 
+  /// Abre un modal para elegir una estación de kStations
+  Future<void> _pickStation() async {
+    final selected = await showModalBottomSheet<Station>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (ctx) {
+        return DraggableScrollableSheet(
+          expand: false,
+          builder: (_, controller) => Column(
+            children: [
+              const SizedBox(height: 10),
+              Container(
+                width: 40, height: 5,
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.circular(3),
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Selecciona estación',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              ),
+              const SizedBox(height: 8),
+              Expanded(
+                child: ListView.separated(
+                  controller: controller,
+                  itemCount: kStations.length,
+                  separatorBuilder: (_, __) => const Divider(height: 1),
+                  itemBuilder: (_, i) {
+                    final st = kStations[i];
+                    final isSel = _station?.id == st.id;
+                    return ListTile(
+                      title: Text(st.name),
+                      trailing: isSel ? const Icon(Icons.check, color: Colors.deepPurple) : null,
+                      onTap: () => Navigator.of(ctx).pop(st),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+
+    if (selected != null) {
+      setState(() {
+        _station = selected;
+        _hourly = const [];
+        _current = null;
+        _error = null;
+      });
+      await _fetch();
+    }
+  }
+
   Future<void> _fetch() async {
+    final st = _station;
+    if (st == null) return; // aún no han elegido
+
     setState(() {
       _loading = true;
       _error = null;
     });
 
     try {
+      final url = _buildProxyUrl(idEst: st.id); // 👈 usa el id de la estación elegida
       final res = await http.get(
-        Uri.parse(kProxyUrl),
+        Uri.parse(url),
         headers: const {'Accept': 'application/json'},
       );
       if (res.statusCode != 200) {
         throw Exception('HTTP ${res.statusCode} ${res.reasonPhrase}');
       }
 
-      final (curr, hourly) = _parseZacatecasJson(res.body);
+      final (curr, hourly) = _parseZacatecasJson(
+        res.body,
+        fallbackStation: st.name, // 👈 por si el JSON no trae nombre de estación
+      );
 
       // Índice del punto más cercano a "curr.time" (anclado a la fecha del dataset)
       int idx = 0;
@@ -108,6 +216,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
       end: Alignment.bottomRight,
     );
 
+    final stationName = _current?.station ?? _station?.name;
+
     return Scaffold(
       backgroundColor: kBgStart,
       body: SafeArea(
@@ -124,13 +234,19 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // Top bar
+                // Top bar (hora | botón de estación | refresh)
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       TimeOfDay.now().format(context),
                       style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                    ),
+                    TextButton.icon(
+                      style: TextButton.styleFrom(foregroundColor: Colors.white),
+                      onPressed: _pickStation,
+                      icon: const Icon(Icons.place_outlined, size: 18),
+                      label: Text(stationName ?? 'Elegir estación', overflow: TextOverflow.ellipsis),
                     ),
                     IconButton(
                       onPressed: _fetch,
@@ -170,24 +286,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                 ),
                 const SizedBox(height: 4),
 
-                // 👇 Estación debajo de Max/Min
-                if (_current?.station != null)
-                  Center(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.location_pin, size: 16, color: Color.fromARGB(179, 0, 0, 0)),
-                        const SizedBox(width: 6),
-                        Flexible(
-                          child: Text(
-                            _current!.station!,
-                            style: const TextStyle(color: Colors.white70, fontSize: 18),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                // Estación debajo de Max/Min
+             
 
                 const SizedBox(height: 16),
 
@@ -353,7 +453,7 @@ class _Current {
   final double? tMinC;  // min del día (JSON o derivado)
   final String? condition;
   final String? dateText;
-  final String? station; // 👈 Estación
+  final String? station; // Estación
 
   _Current({this.time, this.tempC, this.tMaxC, this.tMinC, this.condition, this.dateText, this.station});
 }
@@ -375,13 +475,16 @@ class _Hourly {
   factory _Hourly.placeholder(int i) {
     final base = DateTime.now().copyWith(minute: 0).add(Duration(minutes: 15 * i));
     return _Hourly(time: base, tempC: null, precipMm: null);
-    }
+  }
 }
 
 /// Parser tolerante + selección usando ANCLA (fecha del dataset + hora local)
 ///
 /// Devuelve: (actual, listaHoraAHora)
-(_Current, List<_Hourly>) _parseZacatecasJson(String body) {
+(_Current, List<_Hourly>) _parseZacatecasJson(
+  String body, {
+  required String fallbackStation,
+}) {
   dynamic root;
   try {
     root = jsonDecode(body);
@@ -408,7 +511,7 @@ class _Hourly {
   }
 
   final fecha   = pick<String>(firstObj, ['fecha', 'date', 'day']);
-  final station = pick<String>(firstObj, ['Est', 'est', 'estacion', 'estación', 'station', 'site', 'nombre']);
+  final station = pick<String>(firstObj, ['Est', 'est', 'estacion', 'estación', 'station', 'site', 'nombre']) ?? fallbackStation;
 
   // Max/Min del objeto raíz (si existen)
   final tMaxRoot = _toDouble(pick(firstObj, ['tmax', 'tMax', 'max', 'tempmax', 'tMaxC']));

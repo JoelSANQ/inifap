@@ -107,7 +107,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
               const SizedBox(height: 8),
               const Text(
                 'Selecciona estación',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 8),
               Expanded(

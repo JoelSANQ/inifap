@@ -1,10 +1,12 @@
-// lib/weather.dart (o el nombre que uses para esta pantalla)
-
+// lib/weather.dart
 import 'dart:convert';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'data/Stations.dart'; // 👈 importa tu lista kStations y la clase Station
+import 'station_info.dart'; // 👈 NUEVO: la otra pantalla
+import 'station_history.dart';
+import 'daily_extras.dart'; // 👈 IMPORT CORRECTO
 
 /// (Opcional) Punto de entrada autónomo para probar esta pantalla.
 /// Si ya tienes tu propio main(), puedes borrar esto.
@@ -34,7 +36,7 @@ String _buildProxyUrl({required int idEst}) {
   return 'http://localhost:8080/$upstreamWithQuery';
 }
 
-/// 🎨 Colores del fondo (si quieres otros, dime y los cambio)
+/// 🎨 Colores del fondo (puedes cambiarlos si quieres)
 const Color kBgStart = Color(0xFF8A2BE2); // morado actual
 const Color kBgEnd   = Color(0xFF7B68EE); // morado actual
 
@@ -120,6 +122,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     final isSel = _station?.id == st.id;
                     return ListTile(
                       title: Text(st.name),
+                      subtitle: Text('ID: ${st.id}'),
                       trailing: isSel ? const Icon(Icons.check, color: Colors.deepPurple) : null,
                       onTap: () => Navigator.of(ctx).pop(st),
                     );
@@ -242,12 +245,27 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                       TimeOfDay.now().format(context),
                       style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                     ),
-                    TextButton.icon(
-                      style: TextButton.styleFrom(foregroundColor: Colors.white),
-                      onPressed: _pickStation,
-                      icon: const Icon(Icons.place_outlined, size: 18),
-                      label: Text(stationName ?? 'Elegir estación', overflow: TextOverflow.ellipsis),
+
+                    // 👇👇 Arreglo de overflow: Expanded + ellipsis y padding compacto
+                    Expanded(
+                      child: TextButton.icon(
+                        style: TextButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          minimumSize: const Size(0, 36),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          alignment: Alignment.centerLeft,
+                        ),
+                        onPressed: _pickStation,
+                        icon: const Icon(Icons.place_outlined, size: 18),
+                        label: Text(
+                          stationName ?? 'Elegir estación',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                     ),
+
                     IconButton(
                       onPressed: _fetch,
                       icon: const Icon(Icons.refresh, color: Colors.white),
@@ -286,8 +304,24 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                 ),
                 const SizedBox(height: 4),
 
-                // Estación debajo de Max/Min
-             
+                // Estación debajo de Max/Min (si hay)
+                if (stationName != null)
+                  Center(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.location_pin, size: 16, color: Colors.white70),
+                        const SizedBox(width: 6),
+                        Flexible(
+                          child: Text(
+                            stationName,
+                            style: const TextStyle(color: Colors.white70, fontSize: 13),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
 
                 const SizedBox(height: 16),
 
@@ -364,16 +398,50 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                             )),
                 ),
 
-                const Spacer(),
+// ⬇️ NUEVO: extras del día (viento y radiación)
+const SizedBox(height: 12),
+DailyExtrasStrip(
+  station: _station,
+  day: DateTime.now(), // toma la fecha del dispositivo
+),
+const SizedBox(height: 8),
 
-                // Bottom actions
+const Spacer(),
+
+                // Bottom actions  (👉 botones a otras pantallas)
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const [
-                    Icon(Icons.arrow_back, color: Colors.white),
-                    Icon(Icons.location_pin, color: Colors.white),
-                    Icon(Icons.access_time, color: Colors.white),
-                    Icon(Icons.menu, color: Colors.white),
+                  children: [
+                    const Icon(Icons.arrow_back, color: Colors.white),
+
+                    IconButton(
+                      icon: const Icon(Icons.access_time, color: Colors.white),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => StationHistoryPage(
+                              station: _station,                // pasa la estación seleccionada
+                              initialMonth: DateTime.now(),     // opcional
+                            ),
+                          ),
+                        );
+                      },
+                      tooltip: 'Histórico del mes',
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.air, color: Colors.white),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => StationInfoPage(
+                              station: _station,
+                              current: _current,
+                            ),
+                          ),
+                        );
+                      },
+                      tooltip: 'Más info',
+                    ),
                   ],
                 ),
               ],

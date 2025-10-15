@@ -1,11 +1,10 @@
-// lib/data/stations.dart
+
 class Station {
   final int id;
   final String name;
   const Station(this.id, this.name);
 }
 
-/// Lista (puedes ampliarla con todas las de tu arreglo PHP)
 const List<Station> kStations = [
   Station(18851, 'Calera, CEZAC'),
   Station(26684, 'Cañitas, Cañitas'),

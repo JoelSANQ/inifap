@@ -29,26 +29,26 @@ class _MiniStat extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.12),
+        color: const Color.fromARGB(255, 197, 44, 44),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Colors.white24),
       ),
       child: Row(
         children: [
-          Icon(icon, color: Colors.white, size: 22),
+          Icon(icon, color: const Color.fromARGB(255, 141, 70, 70), size: 22),
           const SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(label,
-                    style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                    style: const TextStyle(color: Color.fromARGB(179, 230, 18, 18), fontSize: 12)),
                 const SizedBox(height: 2),
                 Text(value,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                        color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600)),
+                        color: Color.fromRGBO(241, 116, 116, 1), fontSize: 16, fontWeight: FontWeight.w600)),
               ],
             ),
           ),
@@ -161,7 +161,7 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
       if (val == null) continue;
 
       if (bestT == null ||
-          (t.difference(now)).inMinutes.abs() < (bestT!.difference(now)).inMinutes.abs()) {
+          (t.difference(now)).inMinutes.abs() < (bestT.difference(now)).inMinutes.abs()) {
         bestT = t;
         bestVal = val;
       }
@@ -169,7 +169,7 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
 
     if (bestVal == null) return null;
     // formatea con 1 decimal
-    return '${bestVal!.toStringAsFixed(1)}$unit';
+    return '${bestVal.toStringAsFixed(1)}$unit';
   }
 
   @override

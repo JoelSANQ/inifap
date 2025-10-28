@@ -1,47 +1,44 @@
-// lib/weather.dart
+
 import 'dart:convert';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'data/Stations.dart'; // 👈 importa tu lista kStations y la clase Station
-import 'station_info.dart'; // 👈 NUEVO: la otra pantalla
+import 'data/Stations.dart';
+import 'station_info.dart';
 import 'station_history.dart';
-import 'daily_extras.dart'; // 👈 IMPORT CORRECTO
+import 'daily_extras.dart';
+import 'package:clima/widgets/favorite_stations.dart';
 
-/// (Opcional) Punto de entrada autónomo para probar esta pantalla.
-/// Si ya tienes tu propio main(), puedes borrar esto.
+
+
+
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: WeatherProxyPage(), // el usuario elegirá la estación
+    home: WeatherProxyPage(),
   ));
 }
 
 /// ====== CONFIG ======
-
-/// URL base del upstream
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
 
-/// Construye la URL del proxy usando **la fecha actual del dispositivo** y el id de estación
 String _buildProxyUrl({required int idEst}) {
-  final now = DateTime.now(); // fecha/hora local
+  final now = DateTime.now();
   final dd = now.day.toString().padLeft(2, '0');
   final mm = now.month.toString().padLeft(2, '0');
   final yyyy = now.year.toString();
-
   final upstreamWithQuery =
       '$_kUpstream?r=5&day=$dd&month=$mm&year=$yyyy&id_est_given=$idEst';
-
-  // Tu proxy en localhost que encadena la URL aguas arriba
   return 'http://localhost:8080/$upstreamWithQuery';
 }
 
-/// 🎨 Colores del fondo (puedes cambiarlos si quieres)
-const Color kBgStart = Color(0xFF8A2BE2); // morado actual
-const Color kBgEnd   = Color(0xFF7B68EE); // morado actual
+/// 🎨 Paleta
+const Color kGuinda = Color.fromARGB(255, 102, 6, 6); // barra superior
+const Color kWhite = Colors.white;
+const Color kBlack = Colors.black;
+const Color kBlack70 = Colors.black54;
 
 class WeatherProxyPage extends StatefulWidget {
-  /// Si pasas una estación inicial, la usa; si no, abre el selector al entrar.
   final Station? station;
   const WeatherProxyPage({super.key, this.station});
 
@@ -53,22 +50,19 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   bool _loading = false;
   String? _error;
 
-  Station? _station;                // 👈 estación elegida por el usuario
-  _Current? _current;               // datos de la hora más cercana
-  List<_Hourly> _hourly = const []; // serie por hora (o 15 min)
+  Station? _station;
+  _Current? _current;
+  List<_Hourly> _hourly = const [];
 
-  // ==== Scroll horizontal de horas ====
   final ScrollController _hourCtrl = ScrollController();
-  static const double _itemWidth = 64; // ancho de cada tarjeta
-  static const double _itemGap   = 18; // separación entre tarjetas
+  static const double _itemWidth = 64;
+  static const double _itemGap   = 18;
   int _currentIndex = 0;
 
   @override
   void initState() {
     super.initState();
     _station = widget.station;
-
-    // Si no hay estación inicial, abrir selector; si sí, cargar datos
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (_station == null) {
         await _pickStation();
@@ -84,7 +78,6 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
     super.dispose();
   }
 
-  /// Abre un modal para elegir una estación de kStations
   Future<void> _pickStation() async {
     final selected = await showModalBottomSheet<Station>(
       context: context,
@@ -122,8 +115,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     final isSel = _station?.id == st.id;
                     return ListTile(
                       title: Text(st.name),
-                      subtitle: Text('ID: ${st.id}'),
-                      trailing: isSel ? const Icon(Icons.check, color: Colors.deepPurple) : null,
+                      trailing: isSel ? const Icon(Icons.check, color: kGuinda) : null,
                       onTap: () => Navigator.of(ctx).pop(st),
                     );
                   },
@@ -148,7 +140,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
   Future<void> _fetch() async {
     final st = _station;
-    if (st == null) return; // aún no han elegido
+    if (st == null) return;
 
     setState(() {
       _loading = true;
@@ -156,7 +148,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
     });
 
     try {
-      final url = _buildProxyUrl(idEst: st.id); // 👈 usa el id de la estación elegida
+      final url = _buildProxyUrl(idEst: st.id);
       final res = await http.get(
         Uri.parse(url),
         headers: const {'Accept': 'application/json'},
@@ -167,10 +159,9 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
       final (curr, hourly) = _parseZacatecasJson(
         res.body,
-        fallbackStation: st.name, // 👈 por si el JSON no trae nombre de estación
+        fallbackStation: st.name,
       );
 
-      // Índice del punto más cercano a "curr.time" (anclado a la fecha del dataset)
       int idx = 0;
       if (hourly.isNotEmpty && curr.time != null) {
         int best = 0;
@@ -213,239 +204,259 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
   @override
   Widget build(BuildContext context) {
-    final grad = const LinearGradient(
-      colors: [kBgStart, kBgEnd],
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-    );
-
     final stationName = _current?.station ?? _station?.name;
 
     return Scaffold(
-      backgroundColor: kBgStart,
+      backgroundColor: kWhite, // 🔳 fondo general blanco
       body: SafeArea(
-        child: Center(
-          child: Container(
-            margin: const EdgeInsets.all(16),
-            padding: const EdgeInsets.fromLTRB(16, 20, 16, 16),
-            decoration: BoxDecoration(
-              gradient: grad,
-              borderRadius: BorderRadius.circular(24),
-              boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 18, offset: Offset(0, 10))],
-            ),
-            width: 380,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                // Top bar (hora | botón de estación | refresh)
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      TimeOfDay.now().format(context),
-                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                    ),
-
-                    // 👇👇 Arreglo de overflow: Expanded + ellipsis y padding compacto
-                    Expanded(
-                      child: TextButton.icon(
-                        style: TextButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                          minimumSize: const Size(0, 36),
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          alignment: Alignment.centerLeft,
-                        ),
-                        onPressed: _pickStation,
-                        icon: const Icon(Icons.place_outlined, size: 18),
-                        label: Text(
-                          stationName ?? 'Elegir estación',
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // ====== TOP BAR GUINDA ======
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              color: kGuinda,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    TimeOfDay.now().format(context),
+                    style: const TextStyle(color: kWhite, fontWeight: FontWeight.w600),
+                  ),
+                  Expanded(
+                    child: TextButton.icon(
+                      style: TextButton.styleFrom(
+                        foregroundColor: kWhite,
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        minimumSize: const Size(0, 36),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        alignment: Alignment.centerLeft,
+                      ),
+                      onPressed: _pickStation,
+                      icon: const Icon(Icons.place_outlined, size: 18, color: kWhite),
+                      label: Text(
+                        stationName ?? 'Elegir estación',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(color: kWhite),
                       ),
                     ),
+                  ),
+                  IconButton(
+                    onPressed: _fetch,
+                    icon: const Icon(Icons.refresh, color: kWhite),
+                    tooltip: 'Actualizar',
+                  ),
+                ],
+              ),
+            ),
 
-                    IconButton(
-                      onPressed: _fetch,
-                      icon: const Icon(Icons.refresh, color: Colors.white),
-                      tooltip: 'Actualizar',
+            // ====== CONTENIDO BLANCO ======
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const SizedBox(height: 8),
+
+                    // Ícono + temperatura
+                    const Icon(Icons.cloud, color: kBlack, size: 72),
+                    const SizedBox(height: 8),
+                    Center(
+                      child: Text(
+                        _loading ? '—' : (_current?.tempC?.toStringAsFixed(0) ?? '—') + '°',
+                        style: const TextStyle(
+                          color: kBlack, fontSize: 72, fontWeight: FontWeight.w700, height: 0.9),
+                      ),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 12),
+                    const SizedBox(height: 8),
+                    Center(
+                      child: Text(
+                        _loading ? 'Cargando…' : (_current?.condition ?? 'Nublado'),
+                        style: const TextStyle(color: kBlack, fontSize: 18),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
 
-                // Ícono + temperatura
-                const Icon(Icons.cloud, color: Colors.white, size: 72),
-                const SizedBox(height: 8),
-                Center(
-                  child: Text(
-                    _loading ? '—' : (_current?.tempC?.toStringAsFixed(0) ?? '—') + '°',
-                    style: const TextStyle(
-                      color: Colors.white, fontSize: 72, fontWeight: FontWeight.w700, height: 0.9),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Center(
-                  child: Text(
-                    _loading ? 'Cargando…' : (_current?.condition ?? 'Nublado'),
-                    style: const TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                ),
-                const SizedBox(height: 6),
+                    // Max/Min del día
+                    Center(
+                      child: Text(
+                        'Maxima: ${_current?.tMaxC?.toStringAsFixed(0) ?? '—'}°  '
+                        'Mininima: ${_current?.tMinC?.toStringAsFixed(0) ?? '—'}°',
+                        style: const TextStyle(color: kBlack70, fontSize: 14),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
 
-                // Max/Min del día
-                Center(
-                  child: Text(
-                    'Maxima: ${_current?.tMaxC?.toStringAsFixed(0) ?? '—'}°  '
-                    'Mininima: ${_current?.tMinC?.toStringAsFixed(0) ?? '—'}°',
-                    style: const TextStyle(color: Colors.white70, fontSize: 14),
-                  ),
-                ),
-                const SizedBox(height: 4),
+                    //SELECTOR DE FAVORITOS
 
-                // Estación debajo de Max/Min (si hay)
-                if (stationName != null)
-                  Center(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.location_pin, size: 16, color: Colors.white70),
-                        const SizedBox(width: 6),
-                        Flexible(
-                          child: Text(
-                            stationName,
-                            style: const TextStyle(color: Colors.white70, fontSize: 13),
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                      FavoriteStationsBar(
+                        onSelect: (st) {
+                          setState(() => _station = st);
+                          _fetch();
+                        },
+                      ),
+
+                    // Estación debajo de Max/Min
+                    if (stationName != null)
+                      Center(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(Icons.location_pin, size: 16, color: kBlack70),
+                            const SizedBox(width: 6),
+                            Flexible(
+                              child: Text(
+                                stationName,
+                                style: const TextStyle(color: kBlack70, fontSize: 13),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
 
-                const SizedBox(height: 16),
+                    const SizedBox(height: 16),
 
-                // Tarjeta central
-                Container(
-                  padding: const EdgeInsets.all(18),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.12),
-                    borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: Colors.white24),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
+                    // Tarjeta central
+                    Container(
+                      padding: const EdgeInsets.all(18),
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.04),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: Colors.black12),
+                      ),
+                      child: Column(
                         children: [
-                          const Text('Hoy', style: TextStyle(color: Colors.white, fontSize: 14)),
-                          const Spacer(),
-                          Text(
-                            _current?.dateText ?? _todayString(),
-                            style: const TextStyle(color: Colors.white, fontSize: 14),
+                          Row(
+                            children: [
+                              const Text('Hoy', style: TextStyle(color: kBlack, fontSize: 14)),
+                              const Spacer(),
+                              Text(
+                                _current?.dateText ?? _todayString(),
+                                style: const TextStyle(color: kBlack, fontSize: 14),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
+                            decoration: BoxDecoration(
+                              color: Colors.black.withOpacity(0.04),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: const Center(
+                              child: Text('Weather Visualization',
+                                  style: TextStyle(color: kBlack70, fontSize: 14)),
+                            ),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 12),
-                      Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.12),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: const Center(
-                          child: Text('Weather Visualization',
-                              style: TextStyle(color: Colors.white70, fontSize: 14)),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 16),
-
-                // ====== Franja de horas scrollable ======
-                SizedBox(
-                  height: 110,
-                  child: _error != null
-                      ? _ErrorStrip(error: _error!)
-                      : (_loading
-                          ? const Center(child: CircularProgressIndicator(color: Colors.white))
-                          : ScrollConfiguration(
-                              behavior: const MaterialScrollBehavior().copyWith(
-                                dragDevices: {
-                                  PointerDeviceKind.touch,
-                                  PointerDeviceKind.mouse,
-                                  PointerDeviceKind.trackpad,
-                                  PointerDeviceKind.stylus,
-                                },
-                              ),
-                              child: ListView.separated(
-                                controller: _hourCtrl,
-                                scrollDirection: Axis.horizontal,
-                                physics: const BouncingScrollPhysics(),
-                                primary: false,
-                                itemCount: _hourly.isNotEmpty ? _hourly.length : 8,
-                                separatorBuilder: (_, __) => const SizedBox(width: _itemGap),
-                                itemBuilder: (_, i) {
-                                  final h = _hourly.isEmpty ? _Hourly.placeholder(i) : _hourly[i];
-                                  final isCurrent = i == _currentIndex;
-                                  return SizedBox(
-                                    width: _itemWidth,
-                                    child: _HourTile(h: h, highlight: isCurrent),
-                                  );
-                                },
-                              ),
-                            )),
-                ),
-
-// ⬇️ NUEVO: extras del día (viento y radiación)
-const SizedBox(height: 12),
-DailyExtrasStrip(
-  station: _station,
-  day: DateTime.now(), // toma la fecha del dispositivo
-),
-const SizedBox(height: 8),
-
-const Spacer(),
-
-                // Bottom actions  (👉 botones a otras pantallas)
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const Icon(Icons.arrow_back, color: Colors.white),
-
-                    IconButton(
-                      icon: const Icon(Icons.access_time, color: Colors.white),
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => StationHistoryPage(
-                              station: _station,                // pasa la estación seleccionada
-                              initialMonth: DateTime.now(),     // opcional
-                            ),
-                          ),
-                        );
-                      },
-                      tooltip: 'Histórico del mes',
                     ),
-                    IconButton(
-                      icon: const Icon(Icons.air, color: Colors.white),
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => StationInfoPage(
-                              station: _station,
-                              current: _current,
-                            ),
-                          ),
-                        );
-                      },
-                      tooltip: 'Más info',
+                    const SizedBox(height: 16),
+
+                    // ====== Franja de horas scrollable ======
+                    SizedBox(
+                      height: 110,
+                      child: _error != null
+                          ? _ErrorStrip(error: _error!)
+                          : (_loading
+                              ? const Center(child: CircularProgressIndicator())
+                              : ScrollConfiguration(
+                                  behavior: const MaterialScrollBehavior().copyWith(
+                                    dragDevices: {
+                                      PointerDeviceKind.touch,
+                                      PointerDeviceKind.mouse,
+                                      PointerDeviceKind.trackpad,
+                                      PointerDeviceKind.stylus,
+                                    },
+                                  ),
+                                  child: ListView.separated(
+                                    controller: _hourCtrl,
+                                    scrollDirection: Axis.horizontal,
+                                    physics: const BouncingScrollPhysics(),
+                                    primary: false,
+                                    itemCount: _hourly.isNotEmpty ? _hourly.length : 8,
+                                    separatorBuilder: (_, __) => const SizedBox(width: _itemGap),
+                                    itemBuilder: (_, i) {
+                                      final h = _hourly.isEmpty ? _Hourly.placeholder(i) : _hourly[i];
+                                      final isCurrent = i == _currentIndex;
+                                      return SizedBox(
+                                        width: _itemWidth,
+                                        child: _HourTile(h: h, highlight: isCurrent),
+                                      );
+                                    },
+                                  ),
+                                )),
+                    ),
+
+                    const SizedBox(height: 12),
+                    DailyExtrasStrip(
+                      station: _station,
+                      day: DateTime.now(),
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
+          ],
+        ),
+      ),
+
+
+
+
+      /// ====== BOTONES INFERIORES FIJOS ======
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Container(
+          color: kWhite,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+            TextButton(
+                onPressed: () => Navigator.of(context).maybePop(),
+                child: const Text(
+                  'Acerca de nosotros',
+                  style: TextStyle(
+                    color: Colors.black, // mismo color que antes
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.access_time, color: kBlack),
+                tooltip: 'Histórico del mes',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => StationHistoryPage(
+                        station: _station,
+                        initialMonth: DateTime.now(),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.air, color: kBlack),
+                tooltip: 'Más info',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => StationInfoPage(
+                        station: _station,
+                        current: _current,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
@@ -454,7 +465,6 @@ const Spacer(),
 }
 
 /// ====== UI widgets ======
-
 class _HourTile extends StatelessWidget {
   final _Hourly h;
   final bool highlight;
@@ -467,16 +477,16 @@ class _HourTile extends StatelessWidget {
       children: [
         Text(
           h.tempC != null ? '${h.tempC!.toStringAsFixed(0)}°' : '—°',
-          style: const TextStyle(color: Colors.white, fontSize: 14),
+          style: const TextStyle(color: kBlack, fontSize: 14),
         ),
         const SizedBox(height: 4),
         Icon(
           h.precipMm != null && (h.precipMm! > 0) ? Icons.thunderstorm : Icons.cloud_queue,
-          color: Colors.white,
+          color: kBlack,
           size: 24,
         ),
         const SizedBox(height: 4),
-        Text(h.timeLabel, style: const TextStyle(color: Colors.white70, fontSize: 11)),
+        Text(h.timeLabel, style: const TextStyle(color: kBlack70, fontSize: 11)),
       ],
     );
 
@@ -485,9 +495,9 @@ class _HourTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.15),
+        color: Colors.black.withOpacity(0.08),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white30),
+        border: Border.all(color: Colors.black26),
       ),
       child: base,
     );
@@ -502,27 +512,25 @@ class _ErrorStrip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.12),
+        color: Colors.black.withOpacity(0.06),
         borderRadius: BorderRadius.circular(12),
       ),
       child: SingleChildScrollView(
-        child: Text('Error: $error', style: const TextStyle(color: Colors.white)),
+        child: Text('Error: $error', style: const TextStyle(color: kBlack)),
       ),
     );
   }
 }
 
 /// ====== Modelo y parser ======
-
 class _Current {
-  final DateTime? time; // hora más cercana (anclada a la fecha del dataset)
+  final DateTime? time;
   final double? tempC;
-  final double? tMaxC;  // max del día (JSON o derivado)
-  final double? tMinC;  // min del día (JSON o derivado)
+  final double? tMaxC;
+  final double? tMinC;
   final String? condition;
   final String? dateText;
-  final String? station; // Estación
-
+  final String? station;
   _Current({this.time, this.tempC, this.tMaxC, this.tMinC, this.condition, this.dateText, this.station});
 }
 
@@ -530,7 +538,6 @@ class _Hourly {
   final DateTime? time;
   final double? tempC;
   final double? precipMm;
-
   _Hourly({this.time, this.tempC, this.precipMm});
 
   String get timeLabel {
@@ -546,9 +553,6 @@ class _Hourly {
   }
 }
 
-/// Parser tolerante + selección usando ANCLA (fecha del dataset + hora local)
-///
-/// Devuelve: (actual, listaHoraAHora)
 (_Current, List<_Hourly>) _parseZacatecasJson(
   String body, {
   required String fallbackStation,
@@ -568,7 +572,6 @@ class _Hourly {
   }
   if (firstObj == null) return (_Current(), <_Hourly>[]);
 
-  // Helper case-insensitive
   T? pick<T>(Map<String, dynamic> m, List<String> keys) {
     final lowered = <String, dynamic>{for (final e in m.entries) e.key.toLowerCase(): e.value};
     for (final k in keys) {
@@ -581,24 +584,20 @@ class _Hourly {
   final fecha   = pick<String>(firstObj, ['fecha', 'date', 'day']);
   final station = pick<String>(firstObj, ['Est', 'est', 'estacion', 'estación', 'station', 'site', 'nombre']) ?? fallbackStation;
 
-  // Max/Min del objeto raíz (si existen)
   final tMaxRoot = _toDouble(pick(firstObj, ['tmax', 'tMax', 'max', 'tempmax', 'tMaxC']));
   final tMinRoot = _toDouble(pick(firstObj, ['tmin', 'tMin', 'min', 'tempmin', 'tMinC']));
 
-  // Encuentra el array de horas (o cuartos de hora)
   List horas = [];
   for (final k in ['Datos', 'datos', 'data', 'values', 'horas', 'hourly']) {
     final v = firstObj[k] ?? firstObj[k.toLowerCase()];
     if (v is List) {
       horas = v;
-      break;
     }
   }
 
-  // --- ANCLA: misma fecha del dataset + hora/minuto actuales del dispositivo ---
   DateTime? day;
   if (fecha != null && RegExp(r'^\d{2}-\d{2}-\d{4}$').hasMatch(fecha)) {
-    final p = fecha.split('-'); // dd-mm-yyyy
+    final p = fecha.split('-');
     day = DateTime(int.parse(p[2]), int.parse(p[1]), int.parse(p[0]));
   }
   final now = DateTime.now();
@@ -624,7 +623,7 @@ class _Hourly {
     list.add(item);
 
     if (when != null) {
-      final diff = (when.difference(anchor)).inMinutes.abs(); // comparar contra ANCLA
+      final diff = (when.difference(anchor)).inMinutes.abs();
       if (closest == null ||
           diff < (closest!.time!.difference(anchor)).inMinutes.abs()) {
         closest = item;
@@ -632,7 +631,6 @@ class _Hourly {
     }
   }
 
-  // Derivar max/min desde la serie si no vinieron en el objeto raíz
   double? derivedMax;
   double? derivedMin;
   final temps = list.where((e) => e.tempC != null).map((e) => e.tempC!).toList();
@@ -656,22 +654,19 @@ class _Hourly {
 }
 
 /// ==== Utils ====
-
 DateTime? _parseFlexibleDate(String? fecha, String? hora) {
   try {
     if (hora == null) return null;
 
-    // "2025-06-06 15:00" / "2025-06-06T15:00:00"
     final iso = DateTime.tryParse(hora);
     if (iso != null) return iso;
 
-    // "15:00" | "15" | "00:15"
     if (hora.contains(':') || RegExp(r'^\d{1,2}$').hasMatch(hora)) {
       final hh = int.parse(hora.split(':').first);
       final mm = hora.contains(':') ? int.parse(hora.split(':')[1]) : 0;
 
       if (fecha != null && RegExp(r'^\d{2}-\d{2}-\d{4}$').hasMatch(fecha)) {
-        final p = fecha.split('-'); // dd-mm-yyyy
+        final p = fecha.split('-');
         final d = int.parse(p[0]), m = int.parse(p[1]), y = int.parse(p[2]);
         return DateTime(y, m, d, hh, mm);
       }

@@ -287,7 +287,7 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
                       label: Text(label),
                       selected: selected,
                       onSelected: (_) => setState(() => _selectedIndex = i),
-                      selectedColor: theme.colorScheme.primary.withOpacity(.15),
+                      selectedColor: theme.colorScheme.primary,
                       labelStyle: TextStyle(
                         color: selected ? theme.colorScheme.primary : theme.colorScheme.onSurface,
                         fontWeight: selected ? FontWeight.w600 : FontWeight.w400,

@@ -1,16 +1,15 @@
-
+// weather_proxy_page.dart
 import 'dart:convert';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'data/Stations.dart';
-import 'station_info.dart';
 import 'station_history.dart';
-import 'daily_extras.dart';
+import 'cards_under_daily_extras.dart';
 import 'package:clima/widgets/favorite_stations.dart';
-
-
-
+import 'package:clima/widgets/maps.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -47,6 +46,8 @@ class WeatherProxyPage extends StatefulWidget {
 }
 
 class _WeatherProxyPageState extends State<WeatherProxyPage> {
+  final http.Client _client = http.Client();
+
   bool _loading = false;
   String? _error;
 
@@ -54,27 +55,59 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   _Current? _current;
   List<_Hourly> _hourly = const [];
 
+  String? _cacheJson; // caché en memoria del día
   final ScrollController _hourCtrl = ScrollController();
   static const double _itemWidth = 64;
-  static const double _itemGap   = 18;
+  static const double _itemGap = 18;
   int _currentIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _station = widget.station;
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      if (_station == null) {
-        await _pickStation();
+    _boot(); // arranque inmediato con última estación + caché
+  }
+
+  Future<void> _boot() async {
+    final sp = await SharedPreferences.getInstance();
+
+    // 1) Estación por defecto o última usada
+    if (widget.station != null) {
+      _station = widget.station;
+    } else {
+      final lastId = sp.getInt('last_station_id');
+      if (lastId != null) {
+        _station = kStations.firstWhere(
+          (s) => s.id == lastId,
+          orElse: () => kStations.first,
+        );
       } else {
-        _fetch();
+        _station = kStations.first; // por defecto
       }
-    });
+    }
+
+    // 2) Mostrar caché de hoy (instantáneo) si existe
+    _cacheJson = sp.getString('cache_${_station!.id}_${_todayKey()}');
+    if (_cacheJson != null) {
+      final (c, h) =
+          _parseZacatecasJson(_cacheJson!, fallbackStation: _station!.name);
+      setState(() {
+        _current = c;
+        _hourly = h;
+        _currentIndex = _indexMasCercano(c.time, h);
+      });
+      // hacemos scroll al actual tras pintar
+      WidgetsBinding.instance
+          .addPostFrameCallback((_) => _scrollToCurrent());
+    }
+
+    // 3) Refrescar en background
+    await _fetch();
   }
 
   @override
   void dispose() {
     _hourCtrl.dispose();
+    _client.close();
     super.dispose();
   }
 
@@ -93,7 +126,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
             children: [
               const SizedBox(height: 10),
               Container(
-                width: 40, height: 5,
+                width: 40,
+                height: 5,
                 decoration: BoxDecoration(
                   color: Colors.black12,
                   borderRadius: BorderRadius.circular(3),
@@ -115,7 +149,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     final isSel = _station?.id == st.id;
                     return ListTile(
                       title: Text(st.name),
-                      trailing: isSel ? const Icon(Icons.check, color: kGuinda) : null,
+                      trailing:
+                          isSel ? const Icon(Icons.check, color: kGuinda) : null,
                       onTap: () => Navigator.of(ctx).pop(st),
                     );
                   },
@@ -149,34 +184,24 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
     try {
       final url = _buildProxyUrl(idEst: st.id);
-      final res = await http.get(
-        Uri.parse(url),
-        headers: const {'Accept': 'application/json'},
-      );
+      final res = await _client
+          .get(Uri.parse(url), headers: const {'Accept': 'application/json'})
+          .timeout(const Duration(seconds: 6)); // ⏱️ timeout
+
       if (res.statusCode != 200) {
         throw Exception('HTTP ${res.statusCode} ${res.reasonPhrase}');
       }
 
-      final (curr, hourly) = _parseZacatecasJson(
-        res.body,
-        fallbackStation: st.name,
-      );
+      // Guardar caché (memoria + disco)
+      _cacheJson = res.body;
+      final sp = await SharedPreferences.getInstance();
+      await sp.setString('cache_${st.id}_${_todayKey()}', res.body);
+      await sp.setInt('last_station_id', st.id);
 
-      int idx = 0;
-      if (hourly.isNotEmpty && curr.time != null) {
-        int best = 0;
-        int bestDiff = 1 << 30;
-        for (int i = 0; i < hourly.length; i++) {
-          final t = hourly[i].time;
-          if (t == null) continue;
-          final d = (t.difference(curr.time!)).inMinutes.abs();
-          if (d < bestDiff) {
-            bestDiff = d;
-            best = i;
-          }
-        }
-        idx = best;
-      }
+      final (curr, hourly) =
+          _parseZacatecasJson(res.body, fallbackStation: st.name);
+
+      final idx = _indexMasCercano(curr.time, hourly);
 
       setState(() {
         _current = curr;
@@ -186,10 +211,28 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
       WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToCurrent());
     } catch (e) {
-      setState(() => _error = e.toString());
+      // Si había caché, no molestes al usuario con error
+      if (_cacheJson == null) {
+        setState(() => _error = e.toString());
+      }
     } finally {
       setState(() => _loading = false);
     }
+  }
+
+  int _indexMasCercano(DateTime? now, List<_Hourly> hs) {
+    if (now == null || hs.isEmpty) return 0;
+    var best = 0, bestDiff = 1 << 30;
+    for (var i = 0; i < hs.length; i++) {
+      final t = hs[i].time;
+      if (t == null) continue;
+      final d = (t.difference(now)).inMinutes.abs();
+      if (d < bestDiff) {
+        bestDiff = d;
+        best = i;
+      }
+    }
+    return best;
   }
 
   void _scrollToCurrent() {
@@ -207,7 +250,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
     final stationName = _current?.station ?? _station?.name;
 
     return Scaffold(
-      backgroundColor: kWhite, // 🔳 fondo general blanco
+      backgroundColor: kWhite,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -221,7 +264,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                 children: [
                   Text(
                     TimeOfDay.now().format(context),
-                    style: const TextStyle(color: kWhite, fontWeight: FontWeight.w600),
+                    style: const TextStyle(
+                        color: kWhite, fontWeight: FontWeight.w600),
                   ),
                   Expanded(
                     child: TextButton.icon(
@@ -233,7 +277,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                         alignment: Alignment.centerLeft,
                       ),
                       onPressed: _pickStation,
-                      icon: const Icon(Icons.place_outlined, size: 18, color: kWhite),
+                      icon: const Icon(Icons.place_outlined,
+                          size: 18, color: kWhite),
                       label: Text(
                         stationName ?? 'Elegir estación',
                         maxLines: 1,
@@ -265,16 +310,24 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     const SizedBox(height: 8),
                     Center(
                       child: Text(
-                        _loading ? '—' : (_current?.tempC?.toStringAsFixed(0) ?? '—') + '°',
+                        _loading
+                            ? '—'
+                            : (_current?.tempC?.toStringAsFixed(0) ?? '—') + '°',
                         style: const TextStyle(
-                          color: kBlack, fontSize: 72, fontWeight: FontWeight.w700, height: 0.9),
+                            color: kBlack,
+                            fontSize: 72,
+                            fontWeight: FontWeight.w700,
+                            height: 0.9),
                       ),
                     ),
                     const SizedBox(height: 8),
                     Center(
                       child: Text(
-                        _loading ? 'Cargando…' : (_current?.condition ?? 'Nublado'),
-                        style: const TextStyle(color: kBlack, fontSize: 18),
+                        _loading
+                            ? 'Cargando…'
+                            : (_current?.condition ?? 'Nublado'),
+                        style:
+                            const TextStyle(color: kBlack, fontSize: 18),
                       ),
                     ),
                     const SizedBox(height: 6),
@@ -289,14 +342,13 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     ),
                     const SizedBox(height: 4),
 
-                    //SELECTOR DE FAVORITOS
-
-                      FavoriteStationsBar(
-                        onSelect: (st) {
-                          setState(() => _station = st);
-                          _fetch();
-                        },
-                      ),
+                    // SELECTOR DE FAVORITOS
+                    FavoriteStationsBar(
+                      onSelect: (st) async {
+                        setState(() => _station = st);
+                        await _fetch();
+                      },
+                    ),
 
                     // Estación debajo de Max/Min
                     if (stationName != null)
@@ -304,12 +356,14 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Icon(Icons.location_pin, size: 16, color: kBlack70),
+                            const Icon(Icons.location_pin,
+                                size: 16, color: kBlack70),
                             const SizedBox(width: 6),
                             Flexible(
                               child: Text(
                                 stationName,
-                                style: const TextStyle(color: kBlack70, fontSize: 13),
+                                style: const TextStyle(
+                                    color: kBlack70, fontSize: 13),
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
@@ -319,7 +373,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
                     const SizedBox(height: 16),
 
-                    // Tarjeta central
+                    // Tarjeta central con MAPA diferido
                     Container(
                       padding: const EdgeInsets.all(18),
                       decoration: BoxDecoration(
@@ -331,30 +385,50 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                         children: [
                           Row(
                             children: [
-                              const Text('Hoy', style: TextStyle(color: kBlack, fontSize: 14)),
+                              const Text('Hoy',
+                                  style: TextStyle(
+                                      color: kBlack, fontSize: 14)),
                               const Spacer(),
                               Text(
                                 _current?.dateText ?? _todayString(),
-                                style: const TextStyle(color: kBlack, fontSize: 14),
+                                style: const TextStyle(
+                                    color: kBlack, fontSize: 14),
                               ),
                             ],
                           ),
                           const SizedBox(height: 12),
-                          Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 18),
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.04),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: const Center(
-                              child: Text('Weather Visualization',
-                                  style: TextStyle(color: kBlack70, fontSize: 14)),
-                            ),
+
+                          // 🔁 AnimatedSwitcher: esqueleto -> mapa real
+                          AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 250),
+                            child: (_current != null)
+                                ? Container(
+                                    key: const ValueKey('mapReady'),
+                                    width: double.infinity,
+                                    height: 250,
+                                    clipBehavior: Clip.hardEdge,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black.withOpacity(0.04),
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    child: const OSMMap(),
+                                  )
+                                : Container(
+                                    key: const ValueKey('mapSkeleton'),
+                                    height: 250,
+                                    decoration: BoxDecoration(
+                                      color: Colors.black.withOpacity(0.04),
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child:
+                                        const CircularProgressIndicator(),
+                                  ),
                           ),
                         ],
                       ),
                     ),
+
                     const SizedBox(height: 16),
 
                     // ====== Franja de horas scrollable ======
@@ -362,10 +436,12 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                       height: 110,
                       child: _error != null
                           ? _ErrorStrip(error: _error!)
-                          : (_loading
-                              ? const Center(child: CircularProgressIndicator())
+                          : (_loading && _hourly.isEmpty
+                              ? const Center(
+                                  child: CircularProgressIndicator())
                               : ScrollConfiguration(
-                                  behavior: const MaterialScrollBehavior().copyWith(
+                                  behavior: const MaterialScrollBehavior()
+                                      .copyWith(
                                     dragDevices: {
                                       PointerDeviceKind.touch,
                                       PointerDeviceKind.mouse,
@@ -376,16 +452,24 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                                   child: ListView.separated(
                                     controller: _hourCtrl,
                                     scrollDirection: Axis.horizontal,
-                                    physics: const BouncingScrollPhysics(),
+                                    physics:
+                                        const BouncingScrollPhysics(),
                                     primary: false,
-                                    itemCount: _hourly.isNotEmpty ? _hourly.length : 8,
-                                    separatorBuilder: (_, __) => const SizedBox(width: _itemGap),
+                                    itemCount: _hourly.isNotEmpty
+                                        ? _hourly.length
+                                        : 8,
+                                    separatorBuilder: (_, __) =>
+                                        const SizedBox(width: _itemGap),
                                     itemBuilder: (_, i) {
-                                      final h = _hourly.isEmpty ? _Hourly.placeholder(i) : _hourly[i];
-                                      final isCurrent = i == _currentIndex;
+                                      final h = _hourly.isEmpty
+                                          ? _Hourly.placeholder(i)
+                                          : _hourly[i];
+                                      final isCurrent =
+                                          i == _currentIndex;
                                       return SizedBox(
                                         width: _itemWidth,
-                                        child: _HourTile(h: h, highlight: isCurrent),
+                                        child: _HourTile(
+                                            h: h, highlight: isCurrent),
                                       );
                                     },
                                   ),
@@ -393,6 +477,9 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     ),
 
                     const SizedBox(height: 12),
+
+                    // ⚠️ Mantengo tu API original. Si luego quieres evitar refetch aquí,
+                    // cambia a DailyExtrasStrip.fromData(current: _current, hourly: _hourly)
                     DailyExtrasStrip(
                       station: _station,
                       day: DateTime.now(),
@@ -405,9 +492,6 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
         ),
       ),
 
-
-
-
       /// ====== BOTONES INFERIORES FIJOS ======
       bottomNavigationBar: SafeArea(
         top: false,
@@ -417,12 +501,12 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-            TextButton(
+              TextButton(
                 onPressed: () => Navigator.of(context).maybePop(),
                 child: const Text(
                   'Acerca de nosotros',
                   style: TextStyle(
-                    color: Colors.black, // mismo color que antes
+                    color: Colors.black,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
@@ -442,25 +526,16 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                   );
                 },
               ),
-              IconButton(
-                icon: const Icon(Icons.air, color: kBlack),
-                tooltip: 'Más info',
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => StationInfoPage(
-                        station: _station,
-                        current: _current,
-                      ),
-                    ),
-                  );
-                },
-              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  String _todayKey() {
+    final n = DateTime.now();
+    return '${n.year}-${n.month}-${n.day}';
   }
 }
 
@@ -481,12 +556,15 @@ class _HourTile extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Icon(
-          h.precipMm != null && (h.precipMm! > 0) ? Icons.thunderstorm : Icons.cloud_queue,
+          h.precipMm != null && (h.precipMm! > 0)
+              ? Icons.thunderstorm
+              : Icons.cloud_queue,
           color: kBlack,
           size: 24,
         ),
         const SizedBox(height: 4),
-        Text(h.timeLabel, style: const TextStyle(color: kBlack70, fontSize: 11)),
+        Text(h.timeLabel,
+            style: const TextStyle(color: kBlack70, fontSize: 11)),
       ],
     );
 
@@ -531,7 +609,14 @@ class _Current {
   final String? condition;
   final String? dateText;
   final String? station;
-  _Current({this.time, this.tempC, this.tMaxC, this.tMinC, this.condition, this.dateText, this.station});
+  _Current(
+      {this.time,
+      this.tempC,
+      this.tMaxC,
+      this.tMinC,
+      this.condition,
+      this.dateText,
+      this.station});
 }
 
 class _Hourly {
@@ -548,7 +633,8 @@ class _Hourly {
   }
 
   factory _Hourly.placeholder(int i) {
-    final base = DateTime.now().copyWith(minute: 0).add(Duration(minutes: 15 * i));
+    final base =
+        DateTime.now().copyWith(minute: 0).add(Duration(minutes: 15 * i));
     return _Hourly(time: base, tempC: null, precipMm: null);
   }
 }
@@ -573,7 +659,9 @@ class _Hourly {
   if (firstObj == null) return (_Current(), <_Hourly>[]);
 
   T? pick<T>(Map<String, dynamic> m, List<String> keys) {
-    final lowered = <String, dynamic>{for (final e in m.entries) e.key.toLowerCase(): e.value};
+    final lowered = <String, dynamic>{
+      for (final e in m.entries) e.key.toLowerCase(): e.value
+    };
     for (final k in keys) {
       final v = lowered[k.toLowerCase()];
       if (v != null) return v as T?;
@@ -581,11 +669,22 @@ class _Hourly {
     return null;
   }
 
-  final fecha   = pick<String>(firstObj, ['fecha', 'date', 'day']);
-  final station = pick<String>(firstObj, ['Est', 'est', 'estacion', 'estación', 'station', 'site', 'nombre']) ?? fallbackStation;
+  final fecha = pick<String>(firstObj, ['fecha', 'date', 'day']);
+  final station = pick<String>(firstObj, [
+        'Est',
+        'est',
+        'estacion',
+        'estación',
+        'station',
+        'site',
+        'nombre'
+      ]) ??
+      fallbackStation;
 
-  final tMaxRoot = _toDouble(pick(firstObj, ['tmax', 'tMax', 'max', 'tempmax', 'tMaxC']));
-  final tMinRoot = _toDouble(pick(firstObj, ['tmin', 'tMin', 'min', 'tempmin', 'tMinC']));
+  final tMaxRoot =
+      _toDouble(pick(firstObj, ['tmax', 'tMax', 'max', 'tempmax', 'tMaxC']));
+  final tMinRoot =
+      _toDouble(pick(firstObj, ['tmin', 'tMin', 'min', 'tempmin', 'tMinC']));
 
   List horas = [];
   for (final k in ['Datos', 'datos', 'data', 'values', 'horas', 'hourly']) {
@@ -601,9 +700,8 @@ class _Hourly {
     day = DateTime(int.parse(p[2]), int.parse(p[1]), int.parse(p[0]));
   }
   final now = DateTime.now();
-  final anchor = day != null
-      ? DateTime(day.year, day.month, day.day, now.hour, now.minute)
-      : now;
+  final anchor =
+      day != null ? DateTime(day.year, day.month, day.day, now.hour, now.minute) : now;
 
   _Hourly? closest;
   final list = <_Hourly>[];
@@ -612,12 +710,22 @@ class _Hourly {
     if (h is! Map) continue;
     final mm = Map<String, dynamic>.from(h as Map);
 
-    final horaTxt = (mm['Hora'] ?? mm['hora'] ?? mm['time'] ?? mm['Time'] ?? mm['HORA'])?.toString();
+    final horaTxt = (mm['Hora'] ??
+            mm['hora'] ??
+            mm['time'] ??
+            mm['Time'] ??
+            mm['HORA'])
+        ?.toString();
     final when = _parseFlexibleDate(fecha, horaTxt);
 
-    final temp = _toDouble(mm['Temp'] ?? mm['temp'] ?? mm['T'] ?? mm['t']
-        ?? mm['temperatura'] ?? mm['temperature']);
-    final rain = _toDouble(mm['Prec'] ?? mm['prec'] ?? mm['lluvia'] ?? mm['rain']);
+    final temp = _toDouble(mm['Temp'] ??
+        mm['temp'] ??
+        mm['T'] ??
+        mm['t'] ??
+        mm['temperatura'] ??
+        mm['temperature']);
+    final rain =
+        _toDouble(mm['Prec'] ?? mm['prec'] ?? mm['lluvia'] ?? mm['rain']);
 
     final item = _Hourly(time: when, tempC: temp, precipMm: rain);
     list.add(item);
@@ -645,7 +753,8 @@ class _Hourly {
     tempC: closest?.tempC,
     tMaxC: tMaxRoot ?? derivedMax,
     tMinC: tMinRoot ?? derivedMin,
-    condition: (closest?.precipMm != null && (closest!.precipMm! > 0)) ? 'Precipitations' : 'Nublado',
+    condition:
+        (closest?.precipMm != null && (closest!.precipMm! > 0)) ? 'Precipitations' : 'Nublado',
     dateText: fecha,
     station: station,
   );
@@ -687,8 +796,19 @@ double? _toDouble(dynamic v) {
 String _todayString() {
   final now = DateTime.now();
   const months = [
-    '', 'January','February','March','April','May','June',
-    'July','August','September','October','November','December'
+    '',
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
   ];
   return '${months[now.month]}, ${now.day}';
 }

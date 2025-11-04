@@ -14,10 +14,23 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
   static const _prefsKey = 'favorite_station_ids';
   List<Station> _favorites = [];
 
+  // ✅ guardamos el callback para poder quitarlo en dispose
+  late final VoidCallback _favListener = () {
+    _loadFavs();
+  };
+
   @override
   void initState() {
     super.initState();
     _loadFavs();
+    // 👇 suscríbete a cambios globales de favoritos (con callback estable)
+    favoritesVersion.addListener(_favListener);
+  }
+
+  @override
+  void dispose() {
+    favoritesVersion.removeListener(_favListener);
+    super.dispose();
   }
 
   Future<void> _loadFavs() async {
@@ -27,7 +40,9 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
     final restored = [
       for (final id in ids) if (mapById[id] != null) mapById[id]!,
     ];
-    setState(() => _favorites = restored);
+    if (mounted) {
+      setState(() => _favorites = restored);
+    }
   }
 
   Future<void> _saveFavs() async {
@@ -36,6 +51,8 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
       _prefsKey,
       _favorites.map((s) => s.id.toString()).toList(),
     );
+    // 👇 notifica a quien escuche (incluida esta barra si otro cambió la lista)
+    favoritesVersion.value++;
   }
 
   void _addFavoriteFlow() async {
@@ -59,13 +76,16 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
               ),
             ),
             const SizedBox(height: 8),
-            const Text('Añadir estación a favoritos',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+            const Text(
+              'Añadir estación a favoritos',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
             const SizedBox(height: 8),
             Expanded(
               child: ListView.separated(
                 controller: controller,
                 itemCount: kStations.length,
+                // ✅ parámetro corregido
                 separatorBuilder: (_, __) => const Divider(height: 1),
                 itemBuilder: (_, i) {
                   final st = kStations[i];
@@ -85,61 +105,85 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
       ),
     );
 
-    if (selected != null &&
-        !_favorites.any((f) => f.id == selected.id)) {
+    if (selected != null && !_favorites.any((f) => f.id == selected.id)) {
       setState(() => _favorites.add(selected));
-      _saveFavs();
+      await _saveFavs();
     }
   }
 
-  void _removeFavorite(Station s) {
+  void _removeFavorite(Station s) async {
     setState(() => _favorites.removeWhere((f) => f.id == s.id));
-    _saveFavs();
+    await _saveFavs();
   }
 
   @override
   Widget build(BuildContext context) {
-
-    
- return Container(
-  height: 48,
-  padding: const EdgeInsets.symmetric(horizontal: 8),
-  // 👇 sin color de fondo, totalmente transparente
-  child: ListView(
-    scrollDirection: Axis.horizontal,
-    children: [
-      // Botón "Añadir"
-      Padding(
-        padding: const EdgeInsets.only(right: 12),
-        child: ActionChip(
-          label: const Text(
-            'Añadir',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-          ),
-          avatar: const Icon(Icons.add, color: Colors.white),
-          backgroundColor: const Color.fromARGB(255, 238, 204, 131),
-          onPressed: _addFavoriteFlow,
-        ),
-      ),
-
-      // Chips de estaciones favoritas
-      for (final st in _favorites)
-        Padding(
-          padding: const EdgeInsets.only(right: 8),
-          child: InputChip(
-            label: Text(
-              st.name,
-              style: const TextStyle(color: Colors.white),
+    return Container(
+      height: 48,
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      // 👇 sin color de fondo, totalmente transparente
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          // Botón "Añadir"
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: ActionChip(
+              label: const Text(
+                'Añadir',
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+              ),
+              avatar: const Icon(Icons.add, color: Colors.white),
+              backgroundColor: const Color.fromARGB(255, 238, 204, 131),
+              onPressed: _addFavoriteFlow,
             ),
-            backgroundColor: const Color(0xFF611232),// tono más claro o distinto
-            onPressed: () => widget.onSelect(st),
-            onDeleted: () => _removeFavorite(st),
-            deleteIconColor: Colors.white,
           ),
-        ),
-    ],
-  ),
-);
 
+          // Chips de estaciones favoritas
+          for (final st in _favorites)
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: InputChip(
+                label: Text(
+                  st.name,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                backgroundColor: const Color(0xFF611232),
+                onPressed: () => widget.onSelect(st),
+                onDeleted: () => _removeFavorite(st),
+                deleteIconColor: Colors.white,
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---- helpers públicos reutilizables (para que el mapa use la misma lógica) ----
+const String kFavPrefsKey = 'favorite_station_ids';
+
+/// Notificador global de “versión” de favoritos.
+/// Cada vez que cambie la lista, incrementa su valor.
+final ValueNotifier<int> favoritesVersion = ValueNotifier<int>(0);
+
+Future<void> addFavoriteStation(Station station) async {
+  final sp = await SharedPreferences.getInstance();
+  final ids = sp.getStringList(kFavPrefsKey) ?? [];
+  final idStr = station.id.toString();
+  if (!ids.contains(idStr)) {
+    ids.add(idStr);
+    await sp.setStringList(kFavPrefsKey, ids);
+    favoritesVersion.value++; // 🔔 avisa a todos los escuchas
+  }
+}
+
+Future<void> removeFavoriteStation(Station station) async {
+  final sp = await SharedPreferences.getInstance();
+  final ids = sp.getStringList(kFavPrefsKey) ?? [];
+  final idStr = station.id.toString();
+  if (ids.remove(idStr)) {
+    await sp.setStringList(kFavPrefsKey, ids);
+    favoritesVersion.value++; // 🔔 avisa a todos los escuchas
   }
 }

@@ -96,8 +96,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
         _currentIndex = _indexMasCercano(c.time, h);
       });
       // hacemos scroll al actual tras pintar
-      WidgetsBinding.instance
-          .addPostFrameCallback((_) => _scrollToCurrent());
+      WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToCurrent());
     }
 
     // 3) Refrescar en background
@@ -323,11 +322,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     const SizedBox(height: 8),
                     Center(
                       child: Text(
-                        _loading
-                            ? 'Cargando…'
-                            : (_current?.condition ?? 'Nublado'),
-                        style:
-                            const TextStyle(color: kBlack, fontSize: 18),
+                        _loading ? 'Cargando…' : (_current?.condition ?? 'Nublado'),
+                        style: const TextStyle(color: kBlack, fontSize: 18),
                       ),
                     ),
                     const SizedBox(height: 6),
@@ -373,59 +369,31 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
                     const SizedBox(height: 16),
 
-                    // Tarjeta central con MAPA diferido
+                    // ====== Tarjeta central con MAPA que ocupa TODO el área gris ======
                     Container(
-                      padding: const EdgeInsets.all(18),
+                      // ✅ sin padding para que el mapa sea edge-to-edge
+                      clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.04),
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(color: Colors.black12),
                       ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              const Text('Hoy',
-                                  style: TextStyle(
-                                      color: kBlack, fontSize: 14)),
-                              const Spacer(),
-                              Text(
-                                _current?.dateText ?? _todayString(),
-                                style: const TextStyle(
-                                    color: kBlack, fontSize: 14),
+                      child: AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 250),
+                        child: (_current != null)
+                            ? SizedBox(
+                                key: const ValueKey('mapReady'),
+                                width: double.infinity,
+                                height: 300,
+                                child: const OSMMap(),
+                              )
+                            : SizedBox(
+                                key: const ValueKey('mapSkeleton'),
+                                height: 300,
+                                child: const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
                               ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-
-                          // 🔁 AnimatedSwitcher: esqueleto -> mapa real
-                          AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 250),
-                            child: (_current != null)
-                                ? Container(
-                                    key: const ValueKey('mapReady'),
-                                    width: double.infinity,
-                                    height: 250,
-                                    clipBehavior: Clip.hardEdge,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black.withOpacity(0.04),
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                    child: const OSMMap(),
-                                  )
-                                : Container(
-                                    key: const ValueKey('mapSkeleton'),
-                                    height: 250,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black.withOpacity(0.04),
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child:
-                                        const CircularProgressIndicator(),
-                                  ),
-                          ),
-                        ],
                       ),
                     ),
 
@@ -437,8 +405,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                       child: _error != null
                           ? _ErrorStrip(error: _error!)
                           : (_loading && _hourly.isEmpty
-                              ? const Center(
-                                  child: CircularProgressIndicator())
+                              ? const Center(child: CircularProgressIndicator())
                               : ScrollConfiguration(
                                   behavior: const MaterialScrollBehavior()
                                       .copyWith(
@@ -452,20 +419,17 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                                   child: ListView.separated(
                                     controller: _hourCtrl,
                                     scrollDirection: Axis.horizontal,
-                                    physics:
-                                        const BouncingScrollPhysics(),
+                                    physics: const BouncingScrollPhysics(),
                                     primary: false,
-                                    itemCount: _hourly.isNotEmpty
-                                        ? _hourly.length
-                                        : 8,
+                                    itemCount:
+                                        _hourly.isNotEmpty ? _hourly.length : 8,
                                     separatorBuilder: (_, __) =>
                                         const SizedBox(width: _itemGap),
                                     itemBuilder: (_, i) {
                                       final h = _hourly.isEmpty
                                           ? _Hourly.placeholder(i)
                                           : _hourly[i];
-                                      final isCurrent =
-                                          i == _currentIndex;
+                                      final isCurrent = i == _currentIndex;
                                       return SizedBox(
                                         width: _itemWidth,
                                         child: _HourTile(
@@ -776,7 +740,9 @@ DateTime? _parseFlexibleDate(String? fecha, String? hora) {
 
       if (fecha != null && RegExp(r'^\d{2}-\d{2}-\d{4}$').hasMatch(fecha)) {
         final p = fecha.split('-');
-        final d = int.parse(p[0]), m = int.parse(p[1]), y = int.parse(p[2]);
+        final d = int.parse(p[0]);
+        final m = int.parse(p[1]);
+        final y = int.parse(p[2]);
         return DateTime(y, m, d, hh, mm);
       }
       final now = DateTime.now();

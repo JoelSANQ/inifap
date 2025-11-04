@@ -1,1 +1,7 @@
-2025/10/29-23:55:45.606 70c0 Reusing MANIFEST C:\Users\joel8\AppData\Local\Temp\flutter_tools.a5ccc2af\flutter_tools_chrome_device.e8a6a54\Default\Site Characteristics Database/MANIFEST-000001
+2025/10/30-13:29:03.766 1f28 Reusing MANIFEST C:\Users\joel8\AppData\Local\Temp\flutter_tools.d0135849\flutter_tools_chrome_device.cfe060b1\Default\Site Characteristics Database/MANIFEST-000001
+2025/10/30-13:29:03.768 1f28 Recovering log #3
+2025/10/30-13:29:03.770 1f28 Level-0 table #6: started
+2025/10/30-13:29:03.791 1f28 Level-0 table #6: 191 bytes OK
+2025/10/30-13:29:03.792 1f28 Recovering log #6
+2025/10/30-13:29:03.792 1f28 Reusing old log C:\Users\joel8\AppData\Local\Temp\flutter_tools.d0135849\flutter_tools_chrome_device.cfe060b1\Default\Site Characteristics Database/000006.log 
+2025/10/30-13:29:03.802 1f28 Delete type=0 #3

@@ -1,4 +1,5 @@
 // lib/daily_extras.dart
+// WIDGET DE DATOS EXTRA DIARIOS (Viento, Radiación, Humedad, Lluvia)
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;

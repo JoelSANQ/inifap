@@ -1,15 +1,17 @@
 // weather_proxy_page.dart
 import 'dart:convert';
+import 'package:clima/report.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'About_Me.dart';
 import 'data/Stations.dart';
 import 'station_history.dart';
 import 'cards_under_daily_extras.dart';
 import 'package:clima/widgets/favorite_stations.dart';
 import 'package:clima/widgets/maps.dart';
+import 'report.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -191,6 +193,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
         throw Exception('HTTP ${res.statusCode} ${res.reasonPhrase}');
       }
 
+      
+
       // Guardar caché (memoria + disco)
       _cacheJson = res.body;
       final sp = await SharedPreferences.getInstance();
@@ -305,7 +309,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     const SizedBox(height: 8),
 
                     // Ícono + temperatura
-                    const Icon(Icons.cloud, color: kBlack, size: 72),
+                    const Icon(Icons.thermostat, color: kBlack, size: 72),
                     const SizedBox(height: 8),
                     Center(
                       child: Text(
@@ -319,13 +323,9 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                             height: 0.9),
                       ),
                     ),
-                    const SizedBox(height: 8),
-                    Center(
-                      child: Text(
-                        _loading ? 'Cargando…' : (_current?.condition ?? 'Nublado'),
-                        style: const TextStyle(color: kBlack, fontSize: 18),
-                      ),
-                    ),
+            
+                    
+   
                     const SizedBox(height: 6),
 
                     // Max/Min del día
@@ -442,8 +442,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
                     const SizedBox(height: 12),
 
-                    // ⚠️ Mantengo tu API original. Si luego quieres evitar refetch aquí,
-                    // cambia a DailyExtrasStrip.fromData(current: _current, hourly: _hourly)
+                    // Si luego se quiere evitar refetch aquí,
+                    // cambiar a DailyExtrasStrip.fromData(current: _current, hourly: _hourly)
                     DailyExtrasStrip(
                       station: _station,
                       day: DateTime.now(),
@@ -457,45 +457,61 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
       ),
 
       /// ====== BOTONES INFERIORES FIJOS ======
-      bottomNavigationBar: SafeArea(
-        top: false,
-        child: Container(
-          color: kWhite,
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              TextButton(
-                onPressed: () => Navigator.of(context).maybePop(),
-                child: const Text(
-                  'Acerca de nosotros',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
+ bottomNavigationBar: SafeArea(
+  top: false,
+  child: Container(
+    color: kWhite,
+    padding: const EdgeInsets.symmetric(horizontal: 8),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        // 🔹 Primer icono: te lleva a una nueva página
+        IconButton(
+          icon: const Icon(Icons.info_outline, color: kBlack),
+          tooltip: 'Acerca de nosotros',
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => AboutUsPage(), //  página destino
+              ),
+            );
+          },
+        ),
+
+        //  (histórico)
+        IconButton(
+          icon: const Icon(Icons.access_time, color: kBlack),
+          tooltip: 'Histórico del mes',
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => StationHistoryPage(
+                  station: _station,
+                  initialMonth: DateTime.now(),
                 ),
               ),
-              IconButton(
-                icon: const Icon(Icons.access_time, color: kBlack),
-                tooltip: 'Histórico del mes',
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => StationHistoryPage(
-                        station: _station,
-                        initialMonth: DateTime.now(),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+            );
+          },
         ),
-      ),
+
+         IconButton(
+          icon: const Icon(Icons.note, color: kBlack),
+          tooltip: 'reporte',
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => WeatherDashboard(), //  página destino
+              ),
+            );
+          },
+        ),
+      ],
+    ),
+  ),
+),
     );
-  }
+      }
+
 
   String _todayKey() {
     final n = DateTime.now();
@@ -503,7 +519,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   }
 }
 
-/// ====== UI widgets ======
+/// ====== UI widgrets ======
 class _HourTile extends StatelessWidget {
   final _Hourly h;
   final bool highlight;
@@ -519,10 +535,8 @@ class _HourTile extends StatelessWidget {
           style: const TextStyle(color: kBlack, fontSize: 14),
         ),
         const SizedBox(height: 4),
-        Icon(
-          h.precipMm != null && (h.precipMm! > 0)
-              ? Icons.thunderstorm
-              : Icons.cloud_queue,
+     Icon(
+          Icons.thermostat,
           color: kBlack,
           size: 24,
         ),

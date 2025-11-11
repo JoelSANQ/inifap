@@ -1,5 +1,3 @@
-plugins {
-    id "com.android.application" version "8.2.2" apply false
-    id "com.android.library" version "8.2.2" apply false
-    id "org.jetbrains.kotlin.android" version "1.9.22" apply false
-}
+// Top-level Gradle file for the Android build.
+// Using Flutter's dev.flutter.flutter-gradle-plugin & plugin loader.
+// No Android plugins deben declararse aquí.

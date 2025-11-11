@@ -117,22 +117,6 @@ class AboutUsPage extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
-                // ===== MENSAJE DE ERROR SI NO EXISTE EL LOGO =====
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    'Unable to load asset: "assets/images/logo_tec_software.png".\n'
-                    'The asset does not exist or has empty data.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Color.fromARGB(255, 79, 14, 41),
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 20),
               ],
             ),
           ),

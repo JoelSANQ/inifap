@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.clima.app-mergeDebugResources-39:/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\ecd704aebb2c29a26d41223cb48c788e\\transformed\\appcompat-1.1.0\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

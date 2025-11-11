@@ -5,14 +5,37 @@ plugins {
 }
 
 android {
-    namespace "com.example.clima" // tu paquete
-    compileSdk 34
+    namespace "com.example.clima"
+    compileSdk 35
 
     defaultConfig {
-        applicationId "com.example.clima" // tu paquete
+        applicationId "com.example.clima"
         minSdk 21
         targetSdk 34
         versionCode 1
         versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            // 🔹 Mientras no tengas keystore propio, puedes usar el debug para probar
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    // 🔹 Java 17 (recomendado con AGP 8.2.2)
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // 🔹 Kotlin apuntando a JVM 17 (evita el error de "Unknown Kotlin JVM target: 21")
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }

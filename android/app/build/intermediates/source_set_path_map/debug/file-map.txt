@@ -1,0 +1,44 @@
+com.example.clima.app-slidingpanelayout-1.2.0-0 C:\Users\joel8\.gradle\caches\transforms-4\015c0f112208038558c720b901fa3a4f\transformed\slidingpanelayout-1.2.0\res
+com.example.clima.app-lifecycle-livedata-core-2.7.0-1 C:\Users\joel8\.gradle\caches\transforms-4\1852122d675cf2777fa1a0894ad091ed\transformed\lifecycle-livedata-core-2.7.0\res
+com.example.clima.app-jetified-profileinstaller-1.3.1-2 C:\Users\joel8\.gradle\caches\transforms-4\19c2155dd4150dac242daa2fc9170e77\transformed\jetified-profileinstaller-1.3.1\res
+com.example.clima.app-jetified-savedstate-1.2.1-3 C:\Users\joel8\.gradle\caches\transforms-4\1ee6edfdd8ed129f9f049e2e98243957\transformed\jetified-savedstate-1.2.1\res
+com.example.clima.app-fragment-1.7.1-4 C:\Users\joel8\.gradle\caches\transforms-4\245ca2f73ada23f6181b5609137fac3e\transformed\fragment-1.7.1\res
+com.example.clima.app-core-1.13.1-5 C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\res
+com.example.clima.app-lifecycle-livedata-2.7.0-6 C:\Users\joel8\.gradle\caches\transforms-4\297afe125d4f68946345cd767b14fc53\transformed\lifecycle-livedata-2.7.0\res
+com.example.clima.app-jetified-fragment-ktx-1.7.1-7 C:\Users\joel8\.gradle\caches\transforms-4\3094161fb489b3d295eba91c78ec399d\transformed\jetified-fragment-ktx-1.7.1\res
+com.example.clima.app-jetified-window-java-1.2.0-8 C:\Users\joel8\.gradle\caches\transforms-4\36fc8fefee0103001bc16ab9d0378e97\transformed\jetified-window-java-1.2.0\res
+com.example.clima.app-jetified-startup-runtime-1.1.1-9 C:\Users\joel8\.gradle\caches\transforms-4\380d3d0fc3057f5864b7e6cd40a0950e\transformed\jetified-startup-runtime-1.1.1\res
+com.example.clima.app-jetified-lifecycle-process-2.7.0-10 C:\Users\joel8\.gradle\caches\transforms-4\408fdd0d7da4a93e1c4240f8ec199432\transformed\jetified-lifecycle-process-2.7.0\res
+com.example.clima.app-jetified-core-ktx-1.13.1-11 C:\Users\joel8\.gradle\caches\transforms-4\40dd79d58af8fb83b084728f09f2ceda\transformed\jetified-core-ktx-1.13.1\res
+com.example.clima.app-recyclerview-1.0.0-12 C:\Users\joel8\.gradle\caches\transforms-4\4c6f87ab1416d1a983a61bdad2f73d53\transformed\recyclerview-1.0.0\res
+com.example.clima.app-jetified-core-1.0.0-13 C:\Users\joel8\.gradle\caches\transforms-4\569cae08b263adf8850c514a400eab1c\transformed\jetified-core-1.0.0\res
+com.example.clima.app-jetified-tracing-1.2.0-14 C:\Users\joel8\.gradle\caches\transforms-4\59ed5833f836ce9b144bf71f3e64d744\transformed\jetified-tracing-1.2.0\res
+com.example.clima.app-jetified-lifecycle-runtime-ktx-2.7.0-15 C:\Users\joel8\.gradle\caches\transforms-4\5a2dedc3db9dd29e93ad6a257833df0b\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.example.clima.app-jetified-lifecycle-viewmodel-ktx-2.7.0-16 C:\Users\joel8\.gradle\caches\transforms-4\5acf1916e4ba04ce3e7205cbe3d98913\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.example.clima.app-jetified-datastore-release-17 C:\Users\joel8\.gradle\caches\transforms-4\6768d22b33b220a238a25b77899522cd\transformed\jetified-datastore-release\res
+com.example.clima.app-jetified-activity-ktx-1.8.1-18 C:\Users\joel8\.gradle\caches\transforms-4\7422cc0798a359cc1d8cd81be14a9873\transformed\jetified-activity-ktx-1.8.1\res
+com.example.clima.app-jetified-lifecycle-livedata-core-ktx-2.7.0-19 C:\Users\joel8\.gradle\caches\transforms-4\7609ed67897fc622f2f4b8f58e8088ae\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.example.clima.app-lifecycle-runtime-2.7.0-20 C:\Users\joel8\.gradle\caches\transforms-4\7f740a439a7b51a363414c83fd97266c\transformed\lifecycle-runtime-2.7.0\res
+com.example.clima.app-jetified-activity-1.8.1-21 C:\Users\joel8\.gradle\caches\transforms-4\81ed39087ed16d189cf6d0eacc4a156b\transformed\jetified-activity-1.8.1\res
+com.example.clima.app-jetified-appcompat-resources-1.1.0-22 C:\Users\joel8\.gradle\caches\transforms-4\82d66979d443b4bd08afd07bfe1c27af\transformed\jetified-appcompat-resources-1.1.0\res
+com.example.clima.app-jetified-window-1.2.0-23 C:\Users\joel8\.gradle\caches\transforms-4\924b7020a742ca057e4d674edcd3ea08\transformed\jetified-window-1.2.0\res
+com.example.clima.app-lifecycle-viewmodel-2.7.0-24 C:\Users\joel8\.gradle\caches\transforms-4\a44b5936cdca8e5af408643afe9905a9\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.clima.app-jetified-annotation-experimental-1.4.0-25 C:\Users\joel8\.gradle\caches\transforms-4\b476252e92c10f1e02db4f93eec88ed6\transformed\jetified-annotation-experimental-1.4.0\res
+com.example.clima.app-jetified-savedstate-ktx-1.2.1-26 C:\Users\joel8\.gradle\caches\transforms-4\b5f18628f0e92640a7ac18870af0aa54\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.clima.app-jetified-datastore-preferences-release-27 C:\Users\joel8\.gradle\caches\transforms-4\b68bd8f88453ce8e1b4284cee8f06902\transformed\jetified-datastore-preferences-release\res
+com.example.clima.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-28 C:\Users\joel8\.gradle\caches\transforms-4\bf4cb08551b88773ee2b4f67b2d28736\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.clima.app-preference-1.2.1-29 C:\Users\joel8\.gradle\caches\transforms-4\bf8b0a774123e16a0d656b359d7f638a\transformed\preference-1.2.1\res
+com.example.clima.app-transition-1.4.1-30 C:\Users\joel8\.gradle\caches\transforms-4\cea46b09d5ffc97bb9e7c8ee50d9d62a\transformed\transition-1.4.1\res
+com.example.clima.app-coordinatorlayout-1.0.0-31 C:\Users\joel8\.gradle\caches\transforms-4\cfd7d921e107dc5ad68d514d6894b5dc\transformed\coordinatorlayout-1.0.0\res
+com.example.clima.app-jetified-datastore-core-release-32 C:\Users\joel8\.gradle\caches\transforms-4\d6225212c1ca71e796049d8cd9d6f1a8\transformed\jetified-datastore-core-release\res
+com.example.clima.app-appcompat-1.1.0-33 C:\Users\joel8\.gradle\caches\transforms-4\ecd704aebb2c29a26d41223cb48c788e\transformed\appcompat-1.1.0\res
+com.example.clima.app-core-runtime-2.2.0-34 C:\Users\joel8\.gradle\caches\transforms-4\ed33601e26fe209f01a88197449a57c1\transformed\core-runtime-2.2.0\res
+com.example.clima.app-packaged_res-35 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\packaged_res\debug
+com.example.clima.app-packaged_res-36 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.11\android\build\intermediates\packaged_res\debug
+com.example.clima.app-pngs-37 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\generated\res\pngs\debug
+com.example.clima.app-resValues-38 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\generated\res\resValues\debug
+com.example.clima.app-packageDebugResources-39 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.clima.app-packageDebugResources-40 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.clima.app-merged_res-41 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\merged_res\debug
+com.example.clima.app-debug-42 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\res
+com.example.clima.app-main-43 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\res

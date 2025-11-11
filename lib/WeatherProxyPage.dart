@@ -1,8 +1,9 @@
-// weather_proxy_page.dart
+// weather_proxy_page.dart 
 import 'dart:convert';
 import 'package:clima/report.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'About_Me.dart';
@@ -28,9 +29,17 @@ String _buildProxyUrl({required int idEst}) {
   final dd = now.day.toString().padLeft(2, '0');
   final mm = now.month.toString().padLeft(2, '0');
   final yyyy = now.year.toString();
+
   final upstreamWithQuery =
       '$_kUpstream?r=5&day=$dd&month=$mm&year=$yyyy&id_est_given=$idEst';
-  return 'http://localhost:8080/$upstreamWithQuery';
+
+  // 🔹 En Web usamos el proxy local (CORS)
+  if (kIsWeb) {
+    return 'http://localhost:8080/$upstreamWithQuery';
+  }
+
+  // 🔹 En Android/iOS/desktop vamos directo al endpoint real (sin CORS)
+  return upstreamWithQuery;
 }
 
 /// 🎨 Paleta
@@ -193,8 +202,6 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
         throw Exception('HTTP ${res.statusCode} ${res.reasonPhrase}');
       }
 
-      
-
       // Guardar caché (memoria + disco)
       _cacheJson = res.body;
       final sp = await SharedPreferences.getInstance();
@@ -323,9 +330,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                             height: 0.9),
                       ),
                     ),
-            
-                    
-   
+
                     const SizedBox(height: 6),
 
                     // Max/Min del día
@@ -371,7 +376,6 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
                     // ====== Tarjeta central con MAPA que ocupa TODO el área gris ======
                     Container(
-                      // ✅ sin padding para que el mapa sea edge-to-edge
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.04),
@@ -405,7 +409,9 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                       child: _error != null
                           ? _ErrorStrip(error: _error!)
                           : (_loading && _hourly.isEmpty
-                              ? const Center(child: CircularProgressIndicator())
+                              ? const Center(
+                                  child: CircularProgressIndicator(),
+                                )
                               : ScrollConfiguration(
                                   behavior: const MaterialScrollBehavior()
                                       .copyWith(
@@ -433,7 +439,9 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                                       return SizedBox(
                                         width: _itemWidth,
                                         child: _HourTile(
-                                            h: h, highlight: isCurrent),
+                                          h: h,
+                                          highlight: isCurrent,
+                                        ),
                                       );
                                     },
                                   ),
@@ -442,8 +450,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
                     const SizedBox(height: 12),
 
-                    // Si luego se quiere evitar refetch aquí,
-                    // cambiar a DailyExtrasStrip.fromData(current: _current, hourly: _hourly)
+                    // Daily extras
                     DailyExtrasStrip(
                       station: _station,
                       day: DateTime.now(),
@@ -457,61 +464,61 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
       ),
 
       /// ====== BOTONES INFERIORES FIJOS ======
- bottomNavigationBar: SafeArea(
-  top: false,
-  child: Container(
-    color: kWhite,
-    padding: const EdgeInsets.symmetric(horizontal: 8),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        // 🔹 Primer icono: te lleva a una nueva página
-        IconButton(
-          icon: const Icon(Icons.info_outline, color: kBlack),
-          tooltip: 'Acerca de nosotros',
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => AboutUsPage(), //  página destino
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Container(
+          color: kWhite,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              // 🔹 Acerca de nosotros
+              IconButton(
+                icon: const Icon(Icons.info_outline, color: kBlack),
+                tooltip: 'Acerca de nosotros',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => AboutUsPage(),
+                    ),
+                  );
+                },
               ),
-            );
-          },
-        ),
 
-        //  (histórico)
-        IconButton(
-          icon: const Icon(Icons.access_time, color: kBlack),
-          tooltip: 'Histórico del mes',
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => StationHistoryPage(
-                  station: _station,
-                  initialMonth: DateTime.now(),
-                ),
+              // 🔹 Histórico
+              IconButton(
+                icon: const Icon(Icons.access_time, color: kBlack),
+                tooltip: 'Histórico del mes',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => StationHistoryPage(
+                        station: _station,
+                        initialMonth: DateTime.now(),
+                      ),
+                    ),
+                  );
+                },
               ),
-            );
-          },
-        ),
 
-         IconButton(
-          icon: const Icon(Icons.note, color: kBlack),
-          tooltip: 'reporte',
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => WeatherDashboard(), //  página destino
+              // 🔹 Reporte
+              IconButton(
+                icon: const Icon(Icons.note, color: kBlack),
+                tooltip: 'reporte',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => WeatherDashboard(),
+                    ),
+                  );
+                },
               ),
-            );
-          },
+            ],
+          ),
         ),
-      ],
-    ),
-  ),
-),
+      ),
     );
-      }
-
+  }
 
   String _todayKey() {
     final n = DateTime.now();
@@ -535,14 +542,16 @@ class _HourTile extends StatelessWidget {
           style: const TextStyle(color: kBlack, fontSize: 14),
         ),
         const SizedBox(height: 4),
-     Icon(
+        Icon(
           Icons.thermostat,
           color: kBlack,
           size: 24,
         ),
         const SizedBox(height: 4),
-        Text(h.timeLabel,
-            style: const TextStyle(color: kBlack70, fontSize: 11)),
+        Text(
+          h.timeLabel,
+          style: const TextStyle(color: kBlack70, fontSize: 11),
+        ),
       ],
     );
 
@@ -572,7 +581,10 @@ class _ErrorStrip extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: SingleChildScrollView(
-        child: Text('Error: $error', style: const TextStyle(color: kBlack)),
+        child: Text(
+          'Error: $error',
+          style: const TextStyle(color: kBlack),
+        ),
       ),
     );
   }
@@ -587,14 +599,15 @@ class _Current {
   final String? condition;
   final String? dateText;
   final String? station;
-  _Current(
-      {this.time,
-      this.tempC,
-      this.tMaxC,
-      this.tMinC,
-      this.condition,
-      this.dateText,
-      this.station});
+  _Current({
+    this.time,
+    this.tempC,
+    this.tMaxC,
+    this.tMinC,
+    this.condition,
+    this.dateText,
+    this.station,
+  });
 }
 
 class _Hourly {
@@ -719,7 +732,8 @@ class _Hourly {
 
   double? derivedMax;
   double? derivedMin;
-  final temps = list.where((e) => e.tempC != null).map((e) => e.tempC!).toList();
+  final temps =
+      list.where((e) => e.tempC != null).map((e) => e.tempC!).toList();
   if (temps.isNotEmpty) {
     temps.sort();
     derivedMin = temps.first;
@@ -731,8 +745,9 @@ class _Hourly {
     tempC: closest?.tempC,
     tMaxC: tMaxRoot ?? derivedMax,
     tMinC: tMinRoot ?? derivedMin,
-    condition:
-        (closest?.precipMm != null && (closest!.precipMm! > 0)) ? 'Precipitations' : 'Nublado',
+    condition: (closest?.precipMm != null && (closest!.precipMm! > 0))
+        ? 'Precipitations'
+        : 'Nublado',
     dateText: fecha,
     station: station,
   );

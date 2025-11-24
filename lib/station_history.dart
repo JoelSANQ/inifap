@@ -274,6 +274,7 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBurgundy,
+        foregroundColor: kOnBurgundy,
         title: Text('$stName — Histórico'),
         actions: [ IconButton(onPressed: _fetch, icon: const Icon(Icons.refresh)) ],
       ),
@@ -323,7 +324,7 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
                       selected: isSel,
                       onSelected: (_) => setState(() => _selectedIndex = i),
                       selectedColor: kBurgundy,
-                      backgroundColor: Colors.white,
+                      backgroundColor: kWarmAccent,
                       labelStyle: TextStyle(
                         color: isSel ? kOnBurgundy : Colors.black87,
                         fontWeight: isSel ? FontWeight.w600 : FontWeight.w500,

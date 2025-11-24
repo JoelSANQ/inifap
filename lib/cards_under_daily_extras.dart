@@ -2,18 +2,26 @@
 // WIDGET DE DATOS EXTRA DIARIOS (Viento, Radiación, Humedad, Lluvia)
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart'; // ✅ kIsWeb
 import 'package:http/http.dart' as http;
 import 'data/Stations.dart';
 
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
+const String _kProxyBase = 'http://localhost:8080';
 
-/// Construye la URL del PROXY con r, fecha y estación
+/// Construye la URL con r, fecha y estación
+/// ✅ Web  -> usa PROXY (evita CORS)
+/// ✅ NoWeb -> usa UPSTREAM directo (Android/iOS/Desktop no tienen CORS)
 String _buildDailyUrl({required int r, required int idEst, required DateTime day}) {
   final dd = day.day.toString().padLeft(2, '0');
   final mm = day.month.toString().padLeft(2, '0');
   final yyyy = day.year.toString();
   final upstream = '$_kUpstream?r=$r&day=$dd&month=$mm&year=$yyyy&id_est_given=$idEst';
-  return 'http://localhost:8080/$upstream';
+
+  if (kIsWeb) {
+    return '$_kProxyBase/$upstream';
+  }
+  return upstream;
 }
 
 /// Barra de "Resumen registrado"

@@ -3,12 +3,13 @@
 
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart'; // ✅ kIsWeb
 import 'package:http/http.dart' as http;
 import 'data/Stations.dart';
-
+import 'bin/generate_offline.dart';
 /// ====== PALETA ======
-const kBurgundy = Color(0xFF611232);      // principal
-const kBurgundyDark = Color(0xFF4B0F26);  // cards oscuras
+const kBurgundy = Color.fromARGB(255, 102, 6, 6);      // principal
+const kBurgundyDark = Color.fromARGB(255, 97, 18, 50);  // cards oscuras
 const kOnBurgundy = Colors.white;         // texto sobre oscuro
 const kOnBurgundyMuted = Color(0xFFF3E8ED);
 const kStroke = Color(0xFFE5E5E5);
@@ -24,8 +25,16 @@ String _buildHistoryUrl({
   required int year,
 }) {
   final mm = month.toString().padLeft(2, '0');
-  final upstream = '$_kUpstream?r=10&month=$mm&year=$year&id_est_given=$idEst';
-  return '$_kProxyBase/$upstream';
+  final upstream =
+      '$_kUpstream?r=10&month=$mm&year=$year&id_est_given=$idEst';
+
+  // ✅ Web → usa proxy para evitar CORS
+  if (kIsWeb) {
+    return '$_kProxyBase/$upstream';
+  }
+
+  // ✅ Android / iOS / Desktop → va directo al upstream
+  return upstream;
 }
 
 /// ====== MODELO ======
@@ -198,6 +207,7 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
     setState(() { _loading = true; _error = null; });
 
     try {
+      // 1️⃣ ONLINE primero
       final url = _buildHistoryUrl(
         idEst: st.id,
         month: _cursor.month,
@@ -209,40 +219,91 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
       }
       final (list, estName) = _parseR10(res.body);
 
-      // === Selección: hoy si existe; si no, el ÚLTIMO día ===
-      int sel = -1;
-      if (list.isNotEmpty) {
-        final today = DateTime.now();
-        for (int i = 0; i < list.length; i++) {
-          final d = list[i].date;
-          if (d.year == today.year && d.month == today.month && d.day == today.day) {
-            sel = i; break;
-          }
-        }
-        if (sel == -1) sel = list.length - 1; // último
-      }
-
-      setState(() {
-        _days = list;
-        _stationNameApi = estName ?? st.name;
-        _selectedIndex = sel;
-      });
-
-      // desplazar los chips hacia el final para ver el último
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (_chipCtrl.hasClients) {
-          _chipCtrl.animateTo(
-            _chipCtrl.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOut,
-          );
-        }
-      });
+      _applyNewData(list, estName ?? st.name);
     } catch (e) {
-      setState(() => _error = e.toString());
+      // 2️⃣ OFFLINE fallback → offline_data.json → history.[idEst].[yyyy-mm]
+      try {
+        final root = await OfflineDataService.instance.loadOfflineRoot();
+        if (root == null) {
+          throw Exception('No hay archivo offline guardado.');
+        }
+
+        final history = root['history'] as Map<String, dynamic>?;
+        if (history == null) {
+          throw Exception('Sin sección history en offline_data.json');
+        }
+
+        final stKey = st.id.toString();
+        final stMap = history[stKey] as Map<String, dynamic>?;
+        if (stMap == null) {
+          throw Exception('Sin histórico offline para estación $stKey');
+        }
+
+        final mm = _cursor.month.toString().padLeft(2, '0');
+        final y = _cursor.year.toString();
+        final monKey = '$y-$mm';
+
+        final monthData = stMap[monKey];
+        if (monthData == null) {
+          throw Exception('Sin datos offline para $stKey en $monKey');
+        }
+
+        // monthData es la respuesta r=10 que guardaste (lista u objeto con Datos)
+        final body = jsonEncode(monthData);
+        final (list, estName) = _parseR10(body);
+
+        if (list.isEmpty) {
+          throw Exception('Lista offline vacía para $stKey en $monKey');
+        }
+
+        _applyNewData(list, estName ?? st.name);
+
+        // (opcional) si quisieras marcar que son datos offline podrías tocar _error o un Snackbar
+        // pero el layout actual muestra _Error solo si _error != null
+      } catch (e2) {
+        setState(() => _error = 'Error al cargar datos: $e\nOffline: $e2');
+      }
     } finally {
-      setState(() => _loading = false);
+      if (mounted) {
+        setState(() => _loading = false);
+      }
     }
+  }
+
+  void _applyNewData(List<HistoricalDay> list, String estName) {
+    // === Selección: hoy si existe; si no, el ÚLTIMO día ===
+    int sel = -1;
+    if (list.isNotEmpty) {
+      final today = DateTime.now();
+      for (int i = 0; i < list.length; i++) {
+        final d = list[i].date;
+        if (d.year == today.year &&
+            d.month == today.month &&
+            d.day == today.day) {
+          sel = i;
+          break;
+        }
+      }
+      if (sel == -1) sel = list.length - 1; // último
+    }
+
+    setState(() {
+      _days = list;
+      _stationNameApi = estName;
+      _selectedIndex = sel;
+      _error = null;
+    });
+
+    // desplazar los chips hacia el final para ver el último
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_chipCtrl.hasClients) {
+        _chipCtrl.animateTo(
+          _chipCtrl.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _prevMonth() {
@@ -255,7 +316,9 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
     _fetch();
   }
 
-  double _sum(Iterable<double?> xs) => xs.whereType<double>().fold(0.0, (a, b) => a + b);
+  double _sum(Iterable<double?> xs) =>
+      xs.whereType<double>().fold(0.0, (a, b) => a + b);
+
   double? _avg(Iterable<double?> xs) {
     final v = xs.whereType<double>().toList();
     if (v.isEmpty) return null;
@@ -276,7 +339,9 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
         backgroundColor: kBurgundy,
         foregroundColor: kOnBurgundy,
         title: Text('$stName — Histórico'),
-        actions: [ IconButton(onPressed: _fetch, icon: const Icon(Icons.refresh)) ],
+        actions: [
+          IconButton(onPressed: _fetch, icon: const Icon(Icons.refresh)),
+        ],
       ),
       body: RefreshIndicator(
         onRefresh: _fetch,
@@ -287,13 +352,21 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
             // Selector de mes
             Row(
               children: [
-                IconButton(onPressed: _prevMonth, icon: const Icon(Icons.chevron_left)),
+                IconButton(
+                    onPressed: _prevMonth,
+                    icon: const Icon(Icons.chevron_left)),
                 Text('${_monthName(_cursor.month)} ${_cursor.year}',
                     style: theme.textTheme.titleMedium),
-                IconButton(onPressed: _nextMonth, icon: const Icon(Icons.chevron_right)),
+                IconButton(
+                    onPressed: _nextMonth,
+                    icon: const Icon(Icons.chevron_right)),
                 const Spacer(),
-                if (_loading) const SizedBox(
-                  width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: kBurgundy)),
+                if (_loading)
+                  const SizedBox(
+                      width: 18,
+                      height: 18,
+                      child: CircularProgressIndicator(
+                          strokeWidth: 2, color: kBurgundy)),
               ],
             ),
             const SizedBox(height: 8),
@@ -327,11 +400,13 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
                       backgroundColor: kWarmAccent,
                       labelStyle: TextStyle(
                         color: isSel ? kOnBurgundy : Colors.black87,
-                        fontWeight: isSel ? FontWeight.w600 : FontWeight.w500,
+                        fontWeight:
+                            isSel ? FontWeight.w600 : FontWeight.w500,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
-                        side: BorderSide(color: isSel ? kBurgundy : kStroke),
+                        side: BorderSide(
+                            color: isSel ? kBurgundy : kStroke),
                       ),
                     );
                   },
@@ -394,8 +469,19 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
 
   String _monthName(int m) {
     const months = [
-      '', 'Enero','Febrero','Marzo','Abril','Mayo','Junio',
-      'Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'
+      '',
+      'Enero',
+      'Febrero',
+      'Marzo',
+      'Abril',
+      'Mayo',
+      'Junio',
+      'Julio',
+      'Agosto',
+      'Septiembre',
+      'Octubre',
+      'Noviembre',
+      'Diciembre'
     ];
     return months[m];
   }
@@ -418,7 +504,8 @@ class _DayMetricCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String fmt(double? x) => x == null ? '—' : '${x.toStringAsFixed(1)}$unit';
+    String fmt(double? x) =>
+        x == null ? '—' : '${x.toStringAsFixed(1)}$unit';
 
     return SizedBox(
       width: 220,
@@ -427,7 +514,12 @@ class _DayMetricCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: kBurgundyDark,
           borderRadius: BorderRadius.circular(16),
-          boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 8, offset: Offset(0, 3))],
+          boxShadow: const [
+            BoxShadow(
+                color: Colors.black12,
+                blurRadius: 8,
+                offset: Offset(0, 3))
+          ],
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -469,7 +561,8 @@ class _DayDetailCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String fmt(double? x, [String s = '']) => x == null ? '—' : '${x.toStringAsFixed(1)}$s';
+    String fmt(double? x, [String s = '']) =>
+        x == null ? '—' : '${x.toStringAsFixed(1)}$s';
     final dd = day.date.day.toString().padLeft(2, '0');
     final mm = day.date.month.toString().padLeft(2, '0');
 
@@ -478,16 +571,23 @@ class _DayDetailCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: kBurgundyDark,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 8, offset: Offset(0, 3))],
+        boxShadow: const [
+          BoxShadow(
+              color: Colors.black12, blurRadius: 8, offset: Offset(0, 3))
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Detalle del $dd-$mm-${day.date.year}',
-              style: const TextStyle(color: kOnBurgundy, fontSize: 18, fontWeight: FontWeight.w700)),
+              style: const TextStyle(
+                  color: kOnBurgundy,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700)),
           const SizedBox(height: 10),
           Wrap(
-            spacing: 18, runSpacing: 10,
+            spacing: 18,
+            runSpacing: 10,
             children: [
               _kv('T. máx', fmt(day.tMax, ' °C')),
               _kv('T. mín', fmt(day.tMin, ' °C')),
@@ -511,7 +611,10 @@ class _DayDetailCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(k, style: const TextStyle(color: kOnBurgundyMuted, fontWeight: FontWeight.w600)),
+          Text(k,
+              style: const TextStyle(
+                  color: kOnBurgundyMuted,
+                  fontWeight: FontWeight.w600)),
           const SizedBox(width: 8),
           Text(v, style: const TextStyle(color: kOnBurgundy)),
         ],
@@ -537,13 +640,13 @@ class _DayTable extends StatelessWidget {
       columnSpacing: 14, // compacto
       columns: const [
         DataColumn(label: Text('Fecha')),
-        DataColumn(label: Text('Tmax'),  numeric: true),
-        DataColumn(label: Text('Tmin'),  numeric: true),
-        DataColumn(label: Text('Tmed'),  numeric: true),
-        DataColumn(label: Text('Pre'),   numeric: true),
-        DataColumn(label: Text('Hum%'),  numeric: true),
+        DataColumn(label: Text('Tmax'), numeric: true),
+        DataColumn(label: Text('Tmin'), numeric: true),
+        DataColumn(label: Text('Tmed'), numeric: true),
+        DataColumn(label: Text('Pre'), numeric: true),
+        DataColumn(label: Text('Hum%'), numeric: true),
         DataColumn(label: Text('Vvmed'), numeric: true),
-        DataColumn(label: Text('ETo'),   numeric: true),
+        DataColumn(label: Text('ETo'), numeric: true),
       ],
       rows: days.map((d) {
         final dd = d.date.day.toString().padLeft(2, '0');
@@ -665,15 +768,24 @@ class _MonthChartPainter extends CustomPainter {
     final pRange = (maxP == 0 ? 1 : maxP);
 
     // grid
-    final axisPaint = Paint()..color = const Color(0xFFE0E0E0)..strokeWidth = 1;
-    canvas.drawRect(Rect.fromLTWH(origin.dx, origin.dy, chartW, chartH), Paint()
-      ..color = Colors.transparent
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1);
+    final axisPaint = Paint()
+      ..color = const Color(0xFFE0E0E0)
+      ..strokeWidth = 1;
+    canvas.drawRect(
+      Rect.fromLTWH(origin.dx, origin.dy, chartW, chartH),
+      Paint()
+        ..color = Colors.transparent
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1,
+    );
 
     for (int i = 0; i <= 4; i++) {
       final y = origin.dy + chartH * i / 4;
-      canvas.drawLine(Offset(origin.dx, y), Offset(origin.dx + chartW, y), axisPaint);
+      canvas.drawLine(
+        Offset(origin.dx, y),
+        Offset(origin.dx + chartW, y),
+        axisPaint,
+      );
     }
 
     // escala x
@@ -690,7 +802,11 @@ class _MonthChartPainter extends CustomPainter {
     for (int i = 0; i < days.length; i++) {
       final tx = origin.dx + stepX * i;
       final ty = origin.dy + chartH - ((ts[i] - minT) / tRange) * chartH;
-      if (i == 0) tempPath.moveTo(tx, ty); else tempPath.lineTo(tx, ty);
+      if (i == 0) {
+        tempPath.moveTo(tx, ty);
+      } else {
+        tempPath.lineTo(tx, ty);
+      }
     }
     canvas.drawPath(tempPath, linePaint);
 
@@ -702,7 +818,10 @@ class _MonthChartPainter extends CustomPainter {
       final bh = chartH * ((pRange == 0 ? 0 : ps[i] / pRange));
       final by = origin.dy + chartH - bh;
       canvas.drawRRect(
-        RRect.fromRectAndRadius(Rect.fromLTWH(bx, by, barW.toDouble(), bh), const Radius.circular(3)),
+        RRect.fromRectAndRadius(
+          Rect.fromLTWH(bx, by, barW.toDouble(), bh),
+          const Radius.circular(3),
+        ),
         barPaint,
       );
     }
@@ -710,27 +829,40 @@ class _MonthChartPainter extends CustomPainter {
     // selección
     if (selectedIndex >= 0 && selectedIndex < days.length) {
       final sx = origin.dx + stepX * selectedIndex;
-      final sy = origin.dy + chartH - ((ts[selectedIndex] - minT) / tRange) * chartH;
+      final sy =
+          origin.dy + chartH - ((ts[selectedIndex] - minT) / tRange) * chartH;
 
-      final highlight = Paint()..color = Colors.black26..strokeWidth = 1.2;
-      canvas.drawLine(Offset(sx, origin.dy), Offset(sx, origin.dy + chartH), highlight);
+      final highlight = Paint()
+        ..color = Colors.black26
+        ..strokeWidth = 1.2;
+      canvas.drawLine(
+        Offset(sx, origin.dy),
+        Offset(sx, origin.dy + chartH),
+        highlight,
+      );
 
       final dot = Paint()..color = lineColor;
       canvas.drawCircle(Offset(sx, sy), 4, dot);
 
       final tp = TextPainter(
-        text: TextSpan(text: days[selectedIndex].date.day.toString().padLeft(2, '0'), style: textStyle),
+        text: TextSpan(
+          text: days[selectedIndex].date.day.toString().padLeft(2, '0'),
+          style: textStyle,
+        ),
         textDirection: TextDirection.ltr,
       )..layout();
-      tp.paint(canvas, Offset(sx - tp.width / 2, origin.dy + chartH + 6));
+      tp.paint(
+        canvas,
+        Offset(sx - tp.width / 2, origin.dy + chartH + 6),
+      );
     }
   }
 
   @override
   bool shouldRepaint(covariant _MonthChartPainter old) {
     return old.days != days ||
-           old.selectedIndex != selectedIndex ||
-           old.lineColor != lineColor ||
-           old.barColor != barColor;
+        old.selectedIndex != selectedIndex ||
+        old.lineColor != lineColor ||
+        old.barColor != barColor;
   }
 }

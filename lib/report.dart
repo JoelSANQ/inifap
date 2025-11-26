@@ -1,14 +1,22 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart'; // ✅ para kIsWeb
 import 'package:http/http.dart' as http;
 
 // ================== CONFIGURACIÓN DEL PROXY ==================
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
 
+/// ✅ En Web: usa proxy (CORS)
+/// ✅ En Android/iOS/desktop: va directo al upstream
 String _buildProxyUrl({required int r}) {
   final upstream = '$_kUpstream?r=$r';
-  // Proxy local (ajusta host/puerto si usas otro)
-  return 'http://localhost:8080/$upstream';
+
+  if (kIsWeb) {
+    // Proxy local (ajusta host/puerto si usas otro)
+    return 'http://localhost:8080/$upstream';
+  }
+
+  return upstream;
 }
 
 class WeatherDashboard extends StatefulWidget {
@@ -119,6 +127,10 @@ class _WeatherDashboardState extends State<WeatherDashboard> {
   // ================== UI ==================
   @override
   Widget build(BuildContext context) {
+    // 👇 Ancho de pantalla y tamaño de fuente responsive para el subtítulo
+    final width = MediaQuery.of(context).size.width;
+    final double subtitleFontSize = width < 380 ? 11.0 : 13.0;
+
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: SafeArea(
@@ -183,9 +195,9 @@ class _WeatherDashboardState extends State<WeatherDashboard> {
                 Text(
                   _modeSubtitle(),
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.black45,
-                    fontSize: 14,
+                    fontSize: subtitleFontSize, // 👈 tamaño adaptativo
                     height: 1.3,
                   ),
                 ),

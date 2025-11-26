@@ -5,18 +5,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart'; // ✅ kIsWeb
 import 'package:http/http.dart' as http;
 import 'data/Stations.dart';
+import 'bin/generate_offline.dart';
+
 
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
 const String _kProxyBase = 'http://localhost:8080';
 
 /// Construye la URL con r, fecha y estación
 /// ✅ Web  -> usa PROXY (evita CORS)
-/// ✅ NoWeb -> usa UPSTREAM directo (Android/iOS/Desktop no tienen CORS)
-String _buildDailyUrl({required int r, required int idEst, required DateTime day}) {
+/// ✅ NoWeb -> usa UPSTREAM directo (Android/iOS/Desktop)
+String _buildDailyUrl({
+  required int r,
+  required int idEst,
+  required DateTime day,
+}) {
   final dd = day.day.toString().padLeft(2, '0');
   final mm = day.month.toString().padLeft(2, '0');
   final yyyy = day.year.toString();
-  final upstream = '$_kUpstream?r=$r&day=$dd&month=$mm&year=$yyyy&id_est_given=$idEst';
+  final upstream =
+      '$_kUpstream?r=$r&day=$dd&month=$mm&year=$yyyy&id_est_given=$idEst';
 
   if (kIsWeb) {
     return '$_kProxyBase/$upstream';
@@ -101,7 +108,11 @@ class _MiniStat extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(icon, color: const Color.fromARGB(255, 165, 127, 44), size: 22),
+              Icon(
+                icon,
+                color: const  Color(0xFFE6A700),
+                size: 22,
+              ),
               const SizedBox(width: 10),
               Expanded(
                 child: Column(
@@ -110,7 +121,7 @@ class _MiniStat extends StatelessWidget {
                     Text(
                       label,
                       style: const TextStyle(
-                        color: Color.fromARGB(255, 165, 127, 44),
+                        color:  Color(0xFFE6A700),
                         fontSize: 15,
                       ),
                     ),
@@ -191,6 +202,7 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
     });
 
     try {
+      // 1️⃣ ONLINE (usa proxy en web, upstream directo en Android/iOS)
       final windUrl = _buildDailyUrl(r: 9, idEst: st.id, day: widget.day);
       final radUrl = _buildDailyUrl(r: 8, idEst: st.id, day: widget.day);
       final rainUrl = _buildDailyUrl(r: 6, idEst: st.id, day: widget.day);
@@ -201,50 +213,122 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
       final resRain = await http.get(Uri.parse(rainUrl));
       final resHum = await http.get(Uri.parse(humUrl));
 
-      _wind = _pickClosest(resWind.body, key: 'VelViento', unit: ' km/h');
-      _rad = _pickClosest(resRad.body, key: 'Rad', unit: ' W/m²');
-      _humNow = _pickClosest(resHum.body, key: 'Humedad', unit: ' %');
-
-      final rain = _parseRain(resRain.body);
-      _rainTotal = rain.totalMm != null ? '${rain.totalMm!.toStringAsFixed(1)} mm' : '—';
-      _rainMaxInt = rain.maxIntervalMm != null ? '${rain.maxIntervalMm!.toStringAsFixed(1)} mm' : '—';
-      _rainNow = rain.closestValMm != null ? '${rain.closestValMm!.toStringAsFixed(1)} mm' : '—';
-      _rainTime = rain.closestTime != null
-          ? '${rain.closestTime!.hour.toString().padLeft(2, '0')}:${rain.closestTime!.minute.toString().padLeft(2, '0')}'
-          : '--:--';
-      _rainResumen = 'Total acumulada: ${_rainTotal ?? "—"} • Máx. intervalo: ${_rainMaxInt ?? "—"}';
-
-      final windStats = _dailyStats(resWind.body, key: 'VelViento');
-      if (windStats != null) {
-        _windResumen =
-            'Máximo: ${_num(windStats.max)} km/h a las ${windStats.tMax ?? "--:--"} • '
-            'Mínimo: ${_num(windStats.min)} km/h a las ${windStats.tMin ?? "--:--"} • '
-            'Promedio: ${_num(windStats.avg)} km/h';
-      }
-
-      final radStats = _dailyStats(resRad.body, key: 'Rad');
-      if (radStats != null) {
-        final total = _sumKey(resRad.body, key: 'Rad');
-        _radResumen = 'Total registrada: ${_num(total)} W/m² • Promedio: ${_num(radStats.avg)} W/m²';
-      }
-
-      final humStats = _dailyStats(resHum.body, key: 'Humedad');
-      if (humStats != null) {
-        _humResumen =
-            'Máximo: ${_num(humStats.max)}% a las ${humStats.tMax ?? "--:--"} • '
-            'Mínimo: ${_num(humStats.min)}% a las ${humStats.tMin ?? "--:--"} • '
-            'Promedio: ${_num(humStats.avg)}%';
-      }
+      _applyExtras(
+        rainBody: resRain.body,
+        humBody: resHum.body,
+        radBody: resRad.body,
+        windBody: resWind.body,
+      );
     } catch (e) {
-      _error = e.toString();
+      // 2️⃣ OFFLINE: usar archivo offline_data.json guardado por OfflineDataService
+      try {
+        final root = await OfflineDataService.instance.loadOfflineRoot();
+        if (root == null) {
+          throw Exception('No hay archivo offline guardado.');
+        }
+
+        final extras = root['daily_extras'] as Map<String, dynamic>?;
+        if (extras == null) {
+          throw Exception('Sin sección daily_extras en offline_data.json');
+        }
+
+        final stationMap =
+            extras[st.id.toString()] as Map<String, dynamic>?;
+        if (stationMap == null) {
+          throw Exception('Sin extras para la estación ${st.id}');
+        }
+
+        final dd = widget.day.day.toString().padLeft(2, '0');
+        final mm = widget.day.month.toString().padLeft(2, '0');
+        final yyyy = widget.day.year.toString();
+        final dayKey = '$yyyy-$mm-$dd';
+
+        final dayData = stationMap[dayKey] as Map<String, dynamic>?;
+        if (dayData == null) {
+          throw Exception('Sin extras para el día $dayKey');
+        }
+
+        final rainBody = jsonEncode(dayData['r6']);
+        final humBody = jsonEncode(dayData['r7']);
+        final radBody = jsonEncode(dayData['r8']);
+        final windBody = jsonEncode(dayData['r9']);
+
+        _applyExtras(
+          rainBody: rainBody,
+          humBody: humBody,
+          radBody: radBody,
+          windBody: windBody,
+        );
+
+        setState(() {
+          _error = 'Mostrando datos OFFLINE (sin conexión).';
+        });
+      } catch (e2) {
+        setState(() {
+          _error = 'Error extras: $e\nOffline: $e2';
+        });
+      }
     } finally {
-      if (mounted) setState(() => _loading = false);
+      if (mounted) {
+        setState(() => _loading = false);
+      }
+    }
+  }
+
+  /// Aplica el cálculo de viento/rad/humedad/lluvia a partir de los JSON (online u offline)
+  void _applyExtras({
+    required String rainBody,
+    required String humBody,
+    required String radBody,
+    required String windBody,
+  }) {
+    _wind = _pickClosest(windBody, key: 'VelViento', unit: ' km/h');
+    _rad = _pickClosest(radBody, key: 'Rad', unit: ' W/m²');
+    _humNow = _pickClosest(humBody, key: 'Humedad', unit: ' %');
+
+    final rain = _parseRain(rainBody);
+    _rainTotal =
+        rain.totalMm != null ? '${rain.totalMm!.toStringAsFixed(1)} mm' : '—';
+    _rainMaxInt = rain.maxIntervalMm != null
+        ? '${rain.maxIntervalMm!.toStringAsFixed(1)} mm'
+        : '—';
+    _rainNow = rain.closestValMm != null
+        ? '${rain.closestValMm!.toStringAsFixed(1)} mm'
+        : '—';
+    _rainTime = rain.closestTime != null
+        ? '${rain.closestTime!.hour.toString().padLeft(2, '0')}:${rain.closestTime!.minute.toString().padLeft(2, '0')}'
+        : '--:--';
+    _rainResumen =
+        'Total acumulada: ${_rainTotal ?? "—"} • Máx. intervalo: ${_rainMaxInt ?? "—"}';
+
+    final windStats = _dailyStats(windBody, key: 'VelViento');
+    if (windStats != null) {
+      _windResumen =
+          'Máximo: ${_num(windStats.max)} km/h a las ${windStats.tMax ?? "--:--"} • '
+          'Mínimo: ${_num(windStats.min)} km/h a las ${windStats.tMin ?? "--:--"} • '
+          'Promedio: ${_num(windStats.avg)} km/h';
+    }
+
+    final radStats = _dailyStats(radBody, key: 'Rad');
+    if (radStats != null) {
+      final total = _sumKey(radBody, key: 'Rad');
+      _radResumen =
+          'Total registrada: ${_num(total)} W/m² • Promedio: ${_num(radStats.avg)} W/m²';
+    }
+
+    final humStats = _dailyStats(humBody, key: 'Humedad');
+    if (humStats != null) {
+      _humResumen =
+          'Máximo: ${_num(humStats.max)}% a las ${humStats.tMax ?? "--:--"} • '
+          'Mínimo: ${_num(humStats.min)}% a las ${humStats.tMin ?? "--:--"} • '
+          'Promedio: ${_num(humStats.avg)}%';
     }
   }
 
   String _num(double? v) => v == null ? '—' : v.toStringAsFixed(1);
 
-  String? _pickClosest(String body, {required String key, required String unit}) {
+  String? _pickClosest(String body,
+      {required String key, required String unit}) {
     dynamic root;
     try {
       root = jsonDecode(body);
@@ -265,14 +349,19 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
       final m = Map<String, dynamic>.from(e);
       final hora = (m['Hora'] ?? m['hora'])?.toString();
       final vRaw = m[key] ?? m[key.toLowerCase()];
+
       if (hora == null || vRaw == null) continue;
+
       final parts = hora.split(':');
       if (parts.length < 2) continue;
+
       final hh = int.tryParse(parts[0]) ?? 0;
       final mm = int.tryParse(parts[1]) ?? 0;
       final t = DateTime(now.year, now.month, now.day, hh, mm);
+
       final val = double.tryParse(vRaw.toString().replaceAll(',', '.'));
       if (val == null) continue;
+
       if (bestT == null ||
           (t.difference(now)).inMinutes.abs() <
               (bestT!.difference(now)).inMinutes.abs()) {
@@ -335,7 +424,8 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
       return null;
     }
     if (root is! List || root.isEmpty || root.first is! Map) return null;
-    final lista = (root.first as Map)['Datos'] ?? (root.first as Map)['datos'];
+    final lista =
+        (root.first as Map)['Datos'] ?? (root.first as Map)['datos'];
     if (lista is! List) return null;
 
     double sum = 0.0;
@@ -384,7 +474,8 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
       final m = Map<String, dynamic>.from(e);
       final hhmm = (m['Hora'] ?? m['hora'])?.toString();
       final pre = (m['Pre'] ?? m['pre'])?.toString();
-      final val = double.tryParse((pre ?? '').toString().replaceAll(',', '.')) ?? 0.0;
+      final val =
+          double.tryParse((pre ?? '').toString().replaceAll(',', '.')) ?? 0.0;
 
       total += val;
       if (val > maxInt) maxInt = val;
@@ -425,8 +516,10 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
     }
 
     if (_error != null) {
-      return Text('Extras: $_error',
-          style: const TextStyle(color: Colors.white70, fontSize: 12));
+      return Text(
+        'Extras: $_error',
+        style: const TextStyle(color: Colors.white70, fontSize: 12),
+      );
     }
 
     final rainText = (_rainNow == null) ? '—' : '$_rainNow ${_rainTime ?? ""}';

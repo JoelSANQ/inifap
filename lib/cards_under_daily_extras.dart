@@ -1,4 +1,4 @@
-// lib/daily_extras.dart 
+// lib/daily_extras.dart
 // WIDGET DE DATOS EXTRA DIARIOS (Viento, Radiación, Humedad, Lluvia)
 import 'dart:convert';
 import 'package:flutter/material.dart';
@@ -8,7 +8,6 @@ import 'data/Stations.dart';
 import 'bin/generate_offline.dart';
 import 'notifications/permission_handler.dart';
 import 'notifications/precipitation_notifications.dart';
-
 
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
 const String _kProxyBase = 'http://localhost:8080';
@@ -112,7 +111,7 @@ class _MiniStat extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                color: const  Color(0xFFE6A700),
+                color: const Color(0xFFE6A700),
                 size: 22,
               ),
               const SizedBox(width: 10),
@@ -123,7 +122,7 @@ class _MiniStat extends StatelessWidget {
                     Text(
                       label,
                       style: const TextStyle(
-                        color:  Color(0xFFE6A700),
+                        color: Color(0xFFE6A700),
                         fontSize: 15,
                       ),
                     ),
@@ -198,22 +197,81 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
     final st = widget.station;
     if (st == null) return;
 
+    _error = null;
+
+    // Para saber si ya teníamos algo pintado
+    final hadDataBefore =
+        _wind != null || _rad != null || _humNow != null || _rainNow != null;
+
+    // 1️⃣ OFFLINE FIRST: intentar leer de offline_data.json y pintar al instante
+    try {
+      final root = await OfflineDataService.instance.loadOfflineRoot();
+      if (root != null) {
+        final extras = root['daily_extras'] as Map<String, dynamic>?;
+        final stationMap = extras?[st.id.toString()] as Map<String, dynamic>?;
+
+        if (stationMap != null) {
+          final dd = widget.day.day.toString().padLeft(2, '0');
+          final mm = widget.day.month.toString().padLeft(2, '0');
+          final yyyy = widget.day.year.toString();
+          final dayKey = '$yyyy-$mm-$dd';
+
+          final dayData = stationMap[dayKey] as Map<String, dynamic>?;
+          if (dayData != null) {
+            final rainBody = jsonEncode(dayData['r6']);
+            final humBody = jsonEncode(dayData['r7']);
+            final radBody = jsonEncode(dayData['r8']);
+            final windBody = jsonEncode(dayData['r9']);
+
+            _applyExtras(
+              rainBody: rainBody,
+              humBody: humBody,
+              radBody: radBody,
+              windBody: windBody,
+            );
+
+            if (mounted) {
+              setState(() {
+                _loading = false;
+                // Puedes dejar o quitar este mensaje si no lo quieres ver en UI
+                _error ??= 'Mostrando datos OFFLINE (última sincronización).';
+              });
+            }
+          }
+        }
+      }
+    } catch (_) {
+      // si falla offline, no nos detenemos: pasamos a online
+    }
+
+    if (!mounted) return;
+
+    // 2️⃣ ONLINE: refrescar en segundo plano
     setState(() {
-      _loading = true;
-      _error = null;
+      // Solo mostramos spinner si NO tenemos nada (ni antes ni de offline)
+      final hasAnyDataNow =
+          _wind != null || _rad != null || _humNow != null || _rainNow != null;
+      _loading = !(hadDataBefore || hasAnyDataNow);
     });
 
     try {
-      // 1️⃣ ONLINE (usa proxy en web, upstream directo en Android/iOS)
       final windUrl = _buildDailyUrl(r: 9, idEst: st.id, day: widget.day);
       final radUrl = _buildDailyUrl(r: 8, idEst: st.id, day: widget.day);
       final rainUrl = _buildDailyUrl(r: 6, idEst: st.id, day: widget.day);
       final humUrl = _buildDailyUrl(r: 7, idEst: st.id, day: widget.day);
 
-      final resWind = await http.get(Uri.parse(windUrl));
-      final resRad = await http.get(Uri.parse(radUrl));
-      final resRain = await http.get(Uri.parse(rainUrl));
-      final resHum = await http.get(Uri.parse(humUrl));
+      // 🚀 Peticiones en paralelo + timeout
+      final responses = await Future.wait([
+        http.get(Uri.parse(windUrl)).timeout(const Duration(seconds: 6)),
+        http.get(Uri.parse(radUrl)).timeout(const Duration(seconds: 6)),
+        http.get(Uri.parse(rainUrl)).timeout(const Duration(seconds: 6)),
+        http.get(Uri.parse(humUrl)).timeout(const Duration(seconds: 6)),
+      ]);
+
+      final resWind = responses[0];
+      final resRad = responses[1];
+      final resRain = responses[2];
+      final resHum = responses[3];
 
       _applyExtras(
         rainBody: resRain.body,
@@ -221,54 +279,22 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
         radBody: resRad.body,
         windBody: resWind.body,
       );
+
+      if (mounted) {
+        setState(() {
+          _error = null; // online ok, limpiamos mensaje de offline si quieres
+        });
+      }
     } catch (e) {
-      // 2️⃣ OFFLINE: usar archivo offline_data.json guardado por OfflineDataService
-      try {
-        final root = await OfflineDataService.instance.loadOfflineRoot();
-        if (root == null) {
-          throw Exception('No hay archivo offline guardado.');
+      if (mounted) {
+        // Solo mostramos error si no tenemos absolutamente nada que mostrar
+        final hasAnyData =
+            _wind != null || _rad != null || _humNow != null || _rainNow != null;
+        if (!hasAnyData) {
+          setState(() {
+            _error = 'Error extras online: $e';
+          });
         }
-
-        final extras = root['daily_extras'] as Map<String, dynamic>?;
-        if (extras == null) {
-          throw Exception('Sin sección daily_extras en offline_data.json');
-        }
-
-        final stationMap =
-            extras[st.id.toString()] as Map<String, dynamic>?;
-        if (stationMap == null) {
-          throw Exception('Sin extras para la estación ${st.id}');
-        }
-
-        final dd = widget.day.day.toString().padLeft(2, '0');
-        final mm = widget.day.month.toString().padLeft(2, '0');
-        final yyyy = widget.day.year.toString();
-        final dayKey = '$yyyy-$mm-$dd';
-
-        final dayData = stationMap[dayKey] as Map<String, dynamic>?;
-        if (dayData == null) {
-          throw Exception('Sin extras para el día $dayKey');
-        }
-
-        final rainBody = jsonEncode(dayData['r6']);
-        final humBody = jsonEncode(dayData['r7']);
-        final radBody = jsonEncode(dayData['r8']);
-        final windBody = jsonEncode(dayData['r9']);
-
-        _applyExtras(
-          rainBody: rainBody,
-          humBody: humBody,
-          radBody: radBody,
-          windBody: windBody,
-        );
-
-        setState(() {
-          _error = 'Mostrando datos OFFLINE (sin conexión).';
-        });
-      } catch (e2) {
-        setState(() {
-          _error = 'Error extras: $e\nOffline: $e2';
-        });
       }
     } finally {
       if (mounted) {
@@ -290,11 +316,12 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
 
     final rain = _parseRain(rainBody);
 
+    // 🔔 Notificación / SnackBar según plataforma
     checarLluviaWebYMovil(
-  context: context,
-  lluviaActualMm: rain.closestValMm,
-);
-    
+      context: context,
+      lluviaActualMm: rain.closestValMm,
+    );
+
     _rainTotal =
         rain.totalMm != null ? '${rain.totalMm!.toStringAsFixed(1)} mm' : '—';
     _rainMaxInt = rain.maxIntervalMm != null
@@ -335,8 +362,7 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
 
   String _num(double? v) => v == null ? '—' : v.toStringAsFixed(1);
 
-  String? _pickClosest(String body,
-      {required String key, required String unit}) {
+  String? _pickClosest(String body, {required String key, required String unit}) {
     dynamic root;
     try {
       root = jsonDecode(body);
@@ -481,7 +507,15 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
       if (e is! Map) continue;
       final m = Map<String, dynamic>.from(e);
       final hhmm = (m['Hora'] ?? m['hora'])?.toString();
-      final pre = (m['Pre'] ?? m['pre'])?.toString();
+      final pre = (m['Pre'] ??
+        m['pre'] ??
+        m['Prec'] ??
+        m['prec'] ??
+        m['Lluvia'] ??
+        m['lluvia'] ??
+        m['rain']) 
+    ?.toString();
+
       final val =
           double.tryParse((pre ?? '').toString().replaceAll(',', '.')) ?? 0.0;
 
@@ -523,7 +557,12 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
       );
     }
 
-    if (_error != null) {
+    if (_error != null &&
+        _wind == null &&
+        _rad == null &&
+        _humNow == null &&
+        _rainNow == null) {
+      // Solo mostramos texto de error si no hay nada que mostrar
       return Text(
         'Extras: $_error',
         style: const TextStyle(color: Colors.white70, fontSize: 12),

@@ -142,6 +142,19 @@ class OfflineDataService {
         }
       }
 
+      // 4) Tiempo real r=5 por estación para HOY
+      final Map<String, dynamic> realtime = {};
+      for (final st in kStations) {
+        final idStr = st.id.toString();
+        try {
+          final rt =
+              await _getJson(_buildDailyUrl(r: 5, idEst: st.id, day: now));
+          realtime[idStr] = rt;
+        } catch (_) {
+          // si falla esa estación, seguimos con las demás
+        }
+      }
+
       final root = <String, dynamic>{
         'generated_at': DateTime.now().toIso8601String(),
         'reports': {
@@ -151,6 +164,8 @@ class OfflineDataService {
         },
         'history': history,
         'daily_extras': dailyExtras,
+        // 🔹 Nuevo bloque para tiempo real
+        'realtime': realtime,
       };
 
       await _saveOfflineRoot(root);
@@ -161,5 +176,49 @@ class OfflineDataService {
       print('⚠️ OfflineDataService: error en syncFromNetwork: $e');
       // No lanzamos error, para no tronar la app si no hay internet.
     }
+  }
+
+  /// Lee del archivo offline el JSON de tiempo real (r=5) para una estación.
+  ///
+  /// Devuelve un String con el JSON (lista/objeto), o null si no hay datos.
+  Future<String?> getRealtimeJsonForStation(int idEst) async {
+    final root = await loadOfflineRoot();
+    if (root == null) return null;
+
+    final realtime = root['realtime'];
+    if (realtime is! Map) return null;
+
+    final idStr = idEst.toString();
+    final data = realtime[idStr];
+    if (data == null) return null;
+
+    return jsonEncode(data);
+  }
+
+  /// Actualiza el bloque `realtime` para una estación con un body JSON nuevo.
+  ///
+  /// Esto te permite, desde `_fetch()` en `WeatherProxyPage`,
+  /// guardar lo último que bajaste sin esperar al siguiente `syncFromNetwork`.
+  Future<void> saveRealtimeJsonForStation(int idEst, String body) async {
+    Map<String, dynamic> root =
+        await loadOfflineRoot() ?? <String, dynamic>{};
+
+    // Aseguramos estructura mínima si el archivo estaba vacío o no existía
+    root['generated_at'] ??= DateTime.now().toIso8601String();
+    root['reports'] ??= {};
+    root['history'] ??= {};
+    root['daily_extras'] ??= {};
+
+    final realtime = (root['realtime'] is Map<String, dynamic>)
+        ? root['realtime'] as Map<String, dynamic>
+        : <String, dynamic>{};
+
+    final decoded = jsonDecode(body);
+    final idStr = idEst.toString();
+    realtime[idStr] = decoded;
+
+    root['realtime'] = realtime;
+
+    await _saveOfflineRoot(root);
   }
 }

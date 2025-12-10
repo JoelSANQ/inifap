@@ -1,8 +1,7 @@
+// precipitation_notifications.dart
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart'; // Para kIsWeb
-import 'permission_handler.dart';    
-
-    // Para mostrarNotificacionSimple()
+import 'package:flutter/foundation.dart'; // kIsWeb
+import 'permission_handler.dart';        // para mostrarNotificacionSimple()
 
 /// ============================================================================
 /// 🟦 SISTEMA DE NOTIFICACIONES DE LLUVIA
@@ -16,42 +15,42 @@ void checarLluviaWebYMovil({
   required BuildContext context,
   required double? lluviaActualMm,
 }) {
-  // DEBUG: ver qué llega
+  // DEBUG
   // ignore: avoid_print
   print('💧 checarLluviaWebYMovil -> lluviaActualMm = $lluviaActualMm');
+
+  // 1) Si no hay valor, salimos
   if (lluviaActualMm == null) {
     print('💧 No hay valor de lluvia, no mostramos nada');
     return;
   }
+
+  // 2) Evitar spamear la misma notificación
   if (_ultimaLluviaNotificada == lluviaActualMm) {
     print('🔁 Mismo valor de lluvia que antes, no repetimos notificación');
     return;
   }
-
   _ultimaLluviaNotificada = lluviaActualMm;
 
-
+  // 3) Construimos título y cuerpo
   late final String titulo;
   late final String cuerpo;
 
   if (lluviaActualMm > 0.0) {
     titulo = '🌧️ Está lloviendo ahora';
+    cuerpo = 'Intensidad actual: ${lluviaActualMm.toStringAsFixed(1)} mm.';
+  } else if (lluviaActualMm == 0.0) {
+    titulo = 'No hay lluvia';
     cuerpo =
-        'Intensidad actual: ${lluviaActualMm.toStringAsFixed(1)} mm.';
-  } else 
-  
-  {
-    if (lluviaActualMm == 0.0) {
-      titulo = 'No hay lluvia';
-      cuerpo = 'El valor de lluvia actual es : ${lluviaActualMm.toStringAsFixed(1)} mm.';
-    } else
-  {
+        'El valor de lluvia actual es: ${lluviaActualMm.toStringAsFixed(1)} mm.';
+  } else {
+    // por si algún día llega un valor negativo
     titulo = '☀️ No está lloviendo';
     cuerpo =
         'La lluvia actual es de ${lluviaActualMm.toStringAsFixed(1)} mm.';
   }
 
-
+  // 4) Según la plataforma, mostramos SnackBar (web) o notificación local (móvil)
   if (kIsWeb) {
     print('🌐 Mostrando SnackBar en Web');
     ScaffoldMessenger.of(context).showSnackBar(
@@ -64,11 +63,8 @@ void checarLluviaWebYMovil({
         behavior: SnackBarBehavior.floating,
       ),
     );
-    return;
-  }
+  } else {
+    print('📱 Mostrando notificación local en móvil');
+    mostrarNotificacionSimple(titulo: titulo, cuerpo: cuerpo);
   }
 }
-
-/// ============================================================================
-/// 🟦 SISTEMA DE NOTIFICACIONES DE LLUVIA
-/// ============================================================================

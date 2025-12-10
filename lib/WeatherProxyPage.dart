@@ -1,36 +1,24 @@
-// weather_proxy_page.dart 
+// lib/WeatherProxyPage.dart
+
 import 'dart:convert';
+
 import 'package:clima/report.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+
 import 'About_Me.dart';
 import 'data/Stations.dart';
 import 'station_history.dart';
 import 'cards_under_daily_extras.dart';
 import 'package:clima/widgets/favorite_stations.dart';
 import 'package:clima/widgets/maps.dart';
-import 'notifications/permission_handler.dart';
-import 'notifications/precipitation_notifications.dart'; 
-import 'bin/generate_offline.dart';   // 👈 OfflineDataService
+import 'notifications/precipitation_notifications.dart';
+import 'bin/generate_offline.dart'; // OfflineDataService
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // 🔥 Siempre que abras la app, intenta sincronizar datos offline (solo móvil/escritorio)
-  if (!kIsWeb) {
-    await OfflineDataService.instance.syncFromNetwork();
-  }
-
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: WeatherProxyPage(),
-  ));
-}
-
-/// ====== CONFIG ======
+/// ====== CONFIG API ======
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
 
 String _buildProxyUrl({required int idEst}) {
@@ -75,7 +63,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   _Current? _current;
   List<_Hourly> _hourly = const [];
 
-  String? _cacheJson; // caché en memoria del día
+  String? _cacheJson; // caché en memoria del día (puede venir de SP u offline)
   final ScrollController _hourCtrl = ScrollController();
   static const double _itemWidth = 64;
   static const double _itemGap = 18;
@@ -84,7 +72,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   @override
   void initState() {
     super.initState();
-    _boot(); // arranque inmediato con última estación + caché
+    _boot(); // arranque inmediato con última estación + caché/offline
   }
 
   Future<void> _boot() async {
@@ -105,7 +93,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
       }
     }
 
-    // 2) Mostrar caché de hoy (instantáneo) si existe
+    // 2) Mostrar caché de hoy (SharedPreferences) si existe
     _cacheJson = sp.getString('cache_${_station!.id}_${_todayKey()}');
     if (_cacheJson != null) {
       final (c, h) =
@@ -115,11 +103,28 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
         _hourly = h;
         _currentIndex = _indexMasCercano(c.time, h);
       });
-      // hacemos scroll al actual tras pintar
       WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToCurrent());
     }
 
-    // 3) Refrescar en background (online)
+    // 2.5) Si NO hay caché del día, intentar leer del archivo offline (offline_data.json)
+    if (_cacheJson == null && !kIsWeb) {
+      final offlineJson = await OfflineDataService.instance
+          .getRealtimeJsonForStation(_station!.id);
+      if (offlineJson != null) {
+        _cacheJson = offlineJson;
+        final (c, h) =
+            _parseZacatecasJson(_cacheJson!, fallbackStation: _station!.name);
+        setState(() {
+          _current = c;
+          _hourly = h;
+          _currentIndex = _indexMasCercano(c.time, h);
+        });
+        WidgetsBinding.instance
+            .addPostFrameCallback((_) => _scrollToCurrent());
+      }
+    }
+
+    // 3) Refrescar en background (online) cuando haya conexión
     await _fetch();
   }
 
@@ -168,8 +173,9 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     final isSel = _station?.id == st.id;
                     return ListTile(
                       title: Text(st.name),
-                      trailing:
-                          isSel ? const Icon(Icons.check, color: kGuinda) : null,
+                      trailing: isSel
+                          ? const Icon(Icons.check, color: kGuinda)
+                          : null,
                       onTap: () => Navigator.of(ctx).pop(st),
                     );
                   },
@@ -211,18 +217,24 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
         throw Exception('HTTP ${res.statusCode} ${res.reasonPhrase}');
       }
 
-      // Guardar caché (memoria + disco)
+      // Guardar caché (memoria + disco rápido)
       _cacheJson = res.body;
       final sp = await SharedPreferences.getInstance();
       await sp.setString('cache_${st.id}_${_todayKey()}', res.body);
       await sp.setInt('last_station_id', st.id);
+
+      // Guardar también en offline_data.json (realtime)
+      if (!kIsWeb) {
+        await OfflineDataService.instance
+            .saveRealtimeJsonForStation(st.id, res.body);
+      }
 
       final (curr, hourly) =
           _parseZacatecasJson(res.body, fallbackStation: st.name);
 
       final idx = _indexMasCercano(curr.time, hourly);
 
-      // NOTIFICACIONES DE LLUVIA (aquí podrías usar hourly[idx].precipMm + checarLluviaWebYMovil)
+      // (aquí podrías enganchar notificaciones de lluvia con hourly[idx])
 
       setState(() {
         _current = curr;
@@ -232,12 +244,75 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
       WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToCurrent());
     } catch (e) {
-      // Si había caché, no molestes al usuario con error
+      // =========== FALLÓ LA API ===========
       if (_cacheJson == null) {
-        setState(() => _error = e.toString());
+        // No había nada en memoria → intentamos archivo offline
+        if (!kIsWeb && _station != null) {
+          final offlineJson = await OfflineDataService.instance
+              .getRealtimeJsonForStation(_station!.id);
+
+          if (offlineJson != null) {
+            _cacheJson = offlineJson;
+            final (c, h) = _parseZacatecasJson(
+              _cacheJson!,
+              fallbackStation: _station!.name,
+            );
+
+            if (mounted) {
+              setState(() {
+                _current = c;
+                _hourly = h;
+                _currentIndex = _indexMasCercano(c.time, h);
+                _error = null;
+              });
+
+              WidgetsBinding.instance
+                  .addPostFrameCallback((_) => _scrollToCurrent());
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text(
+                    'No hay conexión. Se muestran datos guardados offline.',
+                  ),
+                ),
+              );
+            }
+
+            // Ya resolvimos con offline, no mostramos popup de error.
+            return;
+          }
+        }
+
+        // Aquí ya no hubo ni caché ni offline → popup de sin conexión
+        if (mounted) {
+          setState(() => _error = e.toString());
+
+          await showDialog(
+            context: context,
+            builder: (_) => const AlertDialog(
+              title: Text('Sin conexión'),
+              content: Text(
+                'No se pudo conectar a la API y no hay datos guardados para hoy.\n\n'
+                'Verifica tu conexión a Internet e inténtalo de nuevo.',
+              ),
+            ),
+          );
+        }
+      } else {
+        // ✅ Sí hay datos en caché/offline: solo avisamos y seguimos mostrando
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content:
+                  Text('No hay conexión. Se muestran los últimos datos guardados.'),
+            ),
+          );
+        }
       }
     } finally {
-      setState(() => _loading = false);
+      if (mounted) {
+        setState(() => _loading = false);
+      }
     }
   }
 
@@ -310,7 +385,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                   ),
                   IconButton(
                     onPressed: () async {
-                      // 🔥 Cada vez que refresques, intenta actualizar el offline_data.json (solo móvil)
+                      // 🔥 Recargar: intenta sync global + fetch para esta estación
                       if (!kIsWeb) {
                         await OfflineDataService.instance.syncFromNetwork();
                       }
@@ -341,10 +416,11 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                             ? '—'
                             : (_current?.tempC?.toStringAsFixed(0) ?? '—') + '°',
                         style: const TextStyle(
-                            color: kBlack,
-                            fontSize: 72,
-                            fontWeight: FontWeight.w700,
-                            height: 0.9),
+                          color: kBlack,
+                          fontSize: 72,
+                          fontWeight: FontWeight.w700,
+                          height: 0.9,
+                        ),
                       ),
                     ),
 
@@ -391,7 +467,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
                     const SizedBox(height: 16),
 
-                    // ====== Tarjeta central con MAPA que ocupa TODO el área gris ======
+                    // ====== Tarjeta central con MAPA ======
                     Container(
                       clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
@@ -520,7 +596,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
               // 🔹 Reporte
               IconButton(
                 icon: const Icon(Icons.note, color: kBlack),
-                tooltip: 'reporte',
+                tooltip: 'Reporte',
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -542,7 +618,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   }
 }
 
-/// ====== UI widgrets ======
+/// ====== UI widgets ======
 class _HourTile extends StatelessWidget {
   final _Hourly h;
   final bool highlight;
@@ -558,7 +634,7 @@ class _HourTile extends StatelessWidget {
           style: const TextStyle(color: kBlack, fontSize: 14),
         ),
         const SizedBox(height: 4),
-        Icon(
+        const Icon(
           Icons.thermostat,
           color: kBlack,
           size: 24,

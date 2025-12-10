@@ -8,6 +8,7 @@
     proguardFiles="build\intermediates\default_proguard_files\global\proguard-android-optimize.txt-8.2.2;C:\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
     partialResultsDir="build\intermediates\lint_vital_partial_results\release\out">
   <buildFeatures
+      coreLibraryDesugaring="true"
       namespacing="REQUIRED"/>
   <sourceProviders>
     <sourceProvider
@@ -31,6 +32,6 @@
       applicationId="com.example.clima"
       generatedSourceFolders="build\generated\ap_generated_sources\release\out"
       generatedResourceFolders="build\generated\res\resValues\release"
-      desugaredMethodsFiles="C:\Users\joel8\.gradle\caches\transforms-4\64f3967dc0549781a29ec944a6b3cc28\transformed\D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="C:\Users\joel8\.gradle\caches\transforms-4\a6b61d9ebe39dda90f1b81fee3637d00\transformed\desugar_jdk_libs_configuration-2.0.4-desugar-lint.txt;C:\Users\joel8\.gradle\caches\transforms-4\194ea076734a4bce9dafc6b892dafd0b\transformed\D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

@@ -12,9 +12,18 @@ import 'station_history.dart';
 import 'cards_under_daily_extras.dart';
 import 'package:clima/widgets/favorite_stations.dart';
 import 'package:clima/widgets/maps.dart';
-import 'report.dart';
+import 'notifications/permission_handler.dart';
+import 'notifications/precipitation_notifications.dart'; 
+import 'bin/generate_offline.dart';   // 👈 OfflineDataService
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // 🔥 Siempre que abras la app, intenta sincronizar datos offline (solo móvil/escritorio)
+  if (!kIsWeb) {
+    await OfflineDataService.instance.syncFromNetwork();
+  }
+
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: WeatherProxyPage(),
@@ -110,7 +119,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
       WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToCurrent());
     }
 
-    // 3) Refrescar en background
+    // 3) Refrescar en background (online)
     await _fetch();
   }
 
@@ -213,6 +222,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
       final idx = _indexMasCercano(curr.time, hourly);
 
+      // NOTIFICACIONES DE LLUVIA (aquí podrías usar hourly[idx].precipMm + checarLluviaWebYMovil)
+
       setState(() {
         _current = curr;
         _hourly = hourly;
@@ -298,7 +309,13 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: _fetch,
+                    onPressed: () async {
+                      // 🔥 Cada vez que refresques, intenta actualizar el offline_data.json (solo móvil)
+                      if (!kIsWeb) {
+                        await OfflineDataService.instance.syncFromNetwork();
+                      }
+                      await _fetch();
+                    },
                     icon: const Icon(Icons.refresh, color: kWhite),
                     tooltip: 'Actualizar',
                   ),
@@ -691,8 +708,9 @@ class _Hourly {
     day = DateTime(int.parse(p[2]), int.parse(p[1]), int.parse(p[0]));
   }
   final now = DateTime.now();
-  final anchor =
-      day != null ? DateTime(day.year, day.month, day.day, now.hour, now.minute) : now;
+  final anchor = day != null
+      ? DateTime(day.year, day.month, day.day, now.hour, now.minute)
+      : now;
 
   _Hourly? closest;
   final list = <_Hourly>[];
@@ -715,6 +733,7 @@ class _Hourly {
         mm['t'] ??
         mm['temperatura'] ??
         mm['temperature']);
+
     final rain =
         _toDouble(mm['Prec'] ?? mm['prec'] ?? mm['lluvia'] ?? mm['rain']);
 

@@ -127,116 +127,144 @@ class _WeatherDashboardState extends State<WeatherDashboard> {
   // ================== UI ==================
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+
     // 👇 Ancho de pantalla y tamaño de fuente responsive para el subtítulo
-    final width = MediaQuery.of(context).size.width;
     final double subtitleFontSize = width < 380 ? 11.0 : 13.0;
+    final bool isMobile = width < 600;
 
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Título
-                const Center(
-                  child: Text(
-                    'Reportes de Monitoreo Agroclimático\n'
-                    'del Estado de Zacatecas',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black54,
-                      height: 1.3,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 30),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final maxWidth = constraints.maxWidth;
 
-                // Formatos / modos disponibles
-                const Text(
-                  'Formatos de Visualización Disponibles',
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black54,
-                  ),
-                ),
-                const SizedBox(height: 15),
+            // 📌 En pantallas grandes, centramos el contenido y limitamos el ancho
+            final double contentMaxWidth = maxWidth > 1100 ? 1100 : maxWidth;
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _GreenModeButton(
-                      text: 'Tiempo Real',
-                      active: _currentMode == '1',
-                      onTap: () => _fetchForMode(1),
+            return Center(
+              child: SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: contentMaxWidth),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isMobile ? 14.0 : 24.0,
+                      vertical: isMobile ? 18.0 : 28.0,
                     ),
-                    const SizedBox(width: 12),
-                    _GreenModeButton(
-                      text: 'Resumen en Tiempo Real',
-                      active: _currentMode == '3',
-                      onTap: () => _fetchForMode(3),
-                    ),
-                    const SizedBox(width: 12),
-                    _GreenModeButton(
-                      text: 'Avance Mensual',
-                      active: _currentMode == '4',
-                      onTap: () => _fetchForMode(4),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 20),
-                Text(
-                  _modeSubtitle(),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.black45,
-                    fontSize: subtitleFontSize, // 👈 tamaño adaptativo
-                    height: 1.3,
-                  ),
-                ),
-                const SizedBox(height: 25),
-
-                // Contenido: loader / error / tabla
-                if (_loading)
-                  const Center(
-                    child: Padding(
-                      padding: EdgeInsets.all(20),
-                      child: CircularProgressIndicator(
-                        color: Color.fromARGB(255, 97, 18, 50),
-                      ),
-                    ),
-                  )
-                else if (_error != null)
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        _error!,
-                        style: const TextStyle(
-                          color: Colors.redAccent,
-                          fontSize: 14,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Título
+                        const Center(
+                          child: Text(
+                            'Reportes de Monitoreo Agroclimático\n'
+                            'del Estado de Zacatecas',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
+                              height: 1.3,
+                            ),
+                          ),
                         ),
-                        textAlign: TextAlign.center,
-                      ),
+                        const SizedBox(height: 24),
+
+                        // Formatos / modos disponibles
+                        const Text(
+                          'Formatos de Visualización Disponibles',
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black54,
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+
+                        // 👇 SECCIÓN DE BOTONES RESPONSIVA
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Wrap(
+                            spacing: 10,
+                            runSpacing: 8,
+                            alignment: isMobile
+                                ? WrapAlignment.start
+                                : WrapAlignment.center,
+                            children: [
+                              _GreenModeButton(
+                                text: 'Tiempo Real',
+                                active: _currentMode == '1',
+                                onTap: () => _fetchForMode(1),
+                              ),
+                              _GreenModeButton(
+                                text: 'Resumen en Tiempo Real',
+                                active: _currentMode == '3',
+                                onTap: () => _fetchForMode(3),
+                              ),
+                              _GreenModeButton(
+                                text: 'Avance Mensual',
+                                active: _currentMode == '4',
+                                onTap: () => _fetchForMode(4),
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        const SizedBox(height: 18),
+                        // Subtítulo
+                        Center(
+                          child: Text(
+                            _modeSubtitle(),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black45,
+                              fontSize: subtitleFontSize, // 👈 tamaño adaptativo
+                              height: 1.3,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 22),
+
+                        // Contenido: loader / error / tabla
+                        if (_loading)
+                          const Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(20),
+                              child: CircularProgressIndicator(
+                                color: Color.fromARGB(255, 97, 18, 50),
+                              ),
+                            ),
+                          )
+                        else if (_error != null)
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                _error!,
+                                style: const TextStyle(
+                                  color: Colors.redAccent,
+                                  fontSize: 14,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          )
+                        else if (_rows.isNotEmpty && _currentMode != null)
+                          _ModeTable(
+                            title: _modeTitle(),
+                            rows: _rows,
+                          )
+                        else
+                          const SizedBox.shrink(),
+                      ],
                     ),
-                  )
-                else if (_rows.isNotEmpty && _currentMode != null)
-                  _ModeTable(
-                    title: _modeTitle(),
-                    rows: _rows,
-                  )
-                else
-                  const SizedBox.shrink(),
-              ],
-            ),
-          ),
+                  ),
+                ),
+              ),
+            );
+          },
         ),
       ),
     );
@@ -300,8 +328,12 @@ class _ModeTable extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     // Espaciado adaptable: más compacto en pantallas pequeñas
-    final columnSpacing = width < 800 ? 18.0 : 32.0;
-    final horizontalMargin = width < 800 ? 10.0 : 14.0;
+    final bool isNarrow = width < 800;
+    final columnSpacing = isNarrow ? 18.0 : 32.0;
+    final horizontalMargin = isNarrow ? 8.0 : 14.0;
+
+    // Ancho máximo por celda también se adapta
+    final double maxCellWidth = isNarrow ? 140 : 220;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -349,9 +381,9 @@ class _ModeTable extends StatelessWidget {
                         .map(
                           (c) => DataCell(
                             ConstrainedBox(
-                              constraints: const BoxConstraints(
+                              constraints: BoxConstraints(
                                 minWidth: 40,
-                                maxWidth: 160,
+                                maxWidth: maxCellWidth,
                               ),
                               child: Text(
                                 (r[c] ?? '—').toString(),

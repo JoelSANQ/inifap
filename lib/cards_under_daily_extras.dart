@@ -6,6 +6,8 @@ import 'package:flutter/foundation.dart'; // ✅ kIsWeb
 import 'package:http/http.dart' as http;
 import 'data/Stations.dart';
 import 'bin/generate_offline.dart';
+import 'notifications/permission_handler.dart';
+import 'notifications/precipitation_notifications.dart';
 
 
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
@@ -287,6 +289,12 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
     _humNow = _pickClosest(humBody, key: 'Humedad', unit: ' %');
 
     final rain = _parseRain(rainBody);
+
+    checarLluviaWebYMovil(
+  context: context,
+  lluviaActualMm: rain.closestValMm,
+);
+    
     _rainTotal =
         rain.totalMm != null ? '${rain.totalMm!.toStringAsFixed(1)} mm' : '—';
     _rainMaxInt = rain.maxIntervalMm != null

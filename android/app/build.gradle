@@ -28,14 +28,29 @@ android {
         }
     }
 
-    // 🔹 Java 17 (recomendado con AGP 8.2.2)
+    // 🔹 Java 17 + desugaring
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+
+        // 👇 ESTO es lo que te pedía el error
+        coreLibraryDesugaringEnabled true
     }
 
-    // 🔹 Kotlin apuntando a JVM 17 (evita el error de "Unknown Kotlin JVM target: 21")
+    // 🔹 Kotlin apuntando a JVM 17
     kotlinOptions {
         jvmTarget = "17"
     }
+}
+
+dependencies {
+    // (otras dependencias que ya tengas van aquí si las hay)
+
+    // 👇 Necesaria para el desugaring que pide flutter_local_notifications
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.0.4"
+}
+
+// 👇 Normalmente Flutter agrega esto al final
+flutter {
+    source "../.."
 }

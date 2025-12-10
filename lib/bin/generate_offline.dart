@@ -1,3 +1,4 @@
+// bin/generate_offline.dart
 import 'dart:convert';
 import 'dart:io';
 
@@ -80,7 +81,7 @@ class OfflineDataService {
     return jsonDecode(res.body);
   }
 
-  /// 🔥 Llamar esto al abrir la app para intentar sincronizar datos
+  /// 🔥 Llamar esto al abrir la app o al refrescar para intentar sincronizar datos
   Future<void> syncFromNetwork() async {
     try {
       final now = DateTime.now();
@@ -120,14 +121,14 @@ class OfflineDataService {
       for (final st in kStations) {
         final idStr = st.id.toString();
         try {
-          final rain = await _getJson(
-              _buildDailyUrl(r: 6, idEst: st.id, day: now));
-          final hum = await _getJson(
-              _buildDailyUrl(r: 7, idEst: st.id, day: now));
-          final rad = await _getJson(
-              _buildDailyUrl(r: 8, idEst: st.id, day: now));
-          final wind = await _getJson(
-              _buildDailyUrl(r: 9, idEst: st.id, day: now));
+          final rain =
+              await _getJson(_buildDailyUrl(r: 6, idEst: st.id, day: now));
+          final hum =
+              await _getJson(_buildDailyUrl(r: 7, idEst: st.id, day: now));
+          final rad =
+              await _getJson(_buildDailyUrl(r: 8, idEst: st.id, day: now));
+          final wind =
+              await _getJson(_buildDailyUrl(r: 9, idEst: st.id, day: now));
 
           dailyExtras[idStr] ??= {};
           dailyExtras[idStr][dayKey] = {

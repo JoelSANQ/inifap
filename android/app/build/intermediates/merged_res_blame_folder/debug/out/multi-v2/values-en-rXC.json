@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.clima.app-mergeDebugResources-39:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.example.clima.app-mergeDebugResources-42:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\bf8b0a774123e16a0d656b359d7f638a\\transformed\\preference-1.2.1\\res\\values-en-rXC\\values-en-rXC.xml",

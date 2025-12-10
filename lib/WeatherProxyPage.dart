@@ -464,7 +464,6 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                                   ),
                                 )),
                     ),
-
                     const SizedBox(height: 12),
 
                     // Daily extras

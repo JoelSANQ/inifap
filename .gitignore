@@ -53,3 +53,16 @@ build/
 android/app/build/
 *.apk
 *.aab
+
+\Downloads\clima Inifap\clima\android\app\build\outputs\flutter-apk
+
+# Flutter / build
+build/
+.dart_tool/
+
+# Android build
+android/app/build/
+
+# Paquetes
+*.apk
+*.aab

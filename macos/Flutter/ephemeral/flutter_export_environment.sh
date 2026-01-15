@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\Users\gerar\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\gerar\Documents\flutter_projects\clima-master"
+export "FLUTTER_ROOT=C:\flutter"
+export "FLUTTER_APPLICATION_PATH=C:\Users\joel8\Downloads\clima Inifap\clima"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"

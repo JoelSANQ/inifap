@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart'; // ✅ kIsWeb
 import 'package:http/http.dart' as http;
 import 'data/Stations.dart';
 import 'bin/generate_offline.dart';
+import 'indice.dart';
 /// ====== PALETA ======
 const kBurgundy = Color.fromARGB(255, 102, 6, 6);      // principal
 const kBurgundyDark = Color.fromARGB(255, 97, 18, 50);  // cards oscuras
@@ -451,7 +452,12 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
                   barColor: kWarmAccent,
                 ),
               ),
+              
+// 👇 AQUÍ AGREGAMOS EL ÍNDICE
+              const ChartLegend(),
+              
               const SizedBox(height: 16),
+              
 
               // Ficha del día
               if (selected != null) _DayDetailCard(day: selected),

@@ -1,7 +1,7 @@
 -- Merging decision tree log ---
 application
-INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:6:5-36:19
-INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:6:5-36:19
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
 MERGED from [androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:23:5-33:19
@@ -15,17 +15,17 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\joel8\.gradle\cach
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\48530ca59a7f3e575e2836f6b1171656\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\48530ca59a7f3e575e2836f6b1171656\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:name
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:1:1-44:12
-MERGED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:1:1-44:12
-INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:1:1-44:12
+MERGED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:1:1-44:12
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-10:12
 MERGED from [:path_provider_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:permission_handler_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.1.0\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -84,41 +84,41 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\joel8\.gradle\caches\transform
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\joel8\.gradle\caches\transforms-4\e2725bc8b2239a15fe5d2fc876c7b937\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\6e10ff017a49ced686c3b53a1c5ca26f\transformed\relinker-1.4.5\AndroidManifest.xml:2:1-7:12
 	package
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:3:5-67
-MERGED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:3:5-67
-MERGED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:3:5-67
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:5-67
+MERGED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:5-67
+MERGED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:5-67
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:3:22-64
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:22-64
 uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:4:5-77
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:4:5-77
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-77
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-77
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:4:22-74
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:4:22-74
 queries
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:38:5-43:15
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:38:5-43:15
 intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:39:9-42:18
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:39:9-42:18
 action#android.intent.action.PROCESS_TEXT
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:40:13-73
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:40:13-73
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:40:21-70
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:40:21-70
 data
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:41:13-51
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:41:13-51
 	android:mimeType
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:41:19-48
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:41:19-48
 uses-sdk
-INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
-INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
@@ -234,9 +234,9 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\joel8\.
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\6e10ff017a49ced686c3b53a1c5ca26f\transformed\relinker-1.4.5\AndroidManifest.xml:5:5-43
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\6e10ff017a49ced686c3b53a1c5ca26f\transformed\relinker-1.4.5\AndroidManifest.xml:5:5-43
 	android:targetSdkVersion
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\debug\AndroidManifest.xml
 uses-permission#android.permission.VIBRATE
 ADDED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-66
 	android:name

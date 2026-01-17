@@ -9,23 +9,23 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:3:5-67
-11-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:3:22-64
+11-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:5-67
+11-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:22-64
 12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-12-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:4:5-77
-12-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:4:22-74
+12-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:4:5-77
+12-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:4:22-74
 13
 14    <queries>
-14-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:38:5-43:15
+14-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:38:5-43:15
 15        <intent>
-15-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:39:9-42:18
+15-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:39:9-42:18
 16            <action android:name="android.intent.action.PROCESS_TEXT" />
-16-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:40:13-73
-16-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:40:21-70
+16-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:40:13-73
+16-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:40:21-70
 17
 18            <data android:mimeType="text/plain" />
-18-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:41:13-51
-18-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:41:19-48
+18-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:41:13-51
+18-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:41:19-48
 19        </intent>
 20    </queries>
 21
@@ -46,61 +46,61 @@
 29
 30    <application
 31        android:name="android.app.Application"
-31-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:8:9-42
+31-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:8:9-42
 32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 32-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 33        android:extractNativeLibs="true"
 34        android:icon="@mipmap/ic_launcher"
-34-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:9:9-43
+34-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:9:9-43
 35        android:label="clima"
-35-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:7:9-30
+35-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:7:9-30
 36        android:usesCleartextTraffic="true" >
-36-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:10:9-44
+36-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:10:9-44
 37        <activity
-37-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:12:9-31:20
+37-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:12:9-31:20
 38            android:name="com.example.clima.MainActivity"
-38-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:13:13-41
+38-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:13:13-41
 39            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-39-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:18:13-163
+39-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:18:13-163
 40            android:exported="true"
-40-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:14:13-36
+40-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:14:13-36
 41            android:hardwareAccelerated="true"
-41-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:19:13-47
+41-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:19:13-47
 42            android:launchMode="singleTop"
-42-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:15:13-43
+42-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:15:13-43
 43            android:taskAffinity=""
-43-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:16:13-36
+43-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:16:13-36
 44            android:theme="@style/LaunchTheme"
-44-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:17:13-47
+44-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:17:13-47
 45            android:windowSoftInputMode="adjustResize" >
-45-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:20:13-55
+45-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:20:13-55
 46
 47            <!-- Tema mientras Flutter inicializa -->
 48            <meta-data
-48-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:23:13-25:57
+48-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:23:13-25:57
 49                android:name="io.flutter.embedding.android.NormalTheme"
-49-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:24:17-72
+49-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:24:17-72
 50                android:resource="@style/NormalTheme" />
-50-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:25:17-54
+50-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:25:17-54
 51
 52            <intent-filter>
-52-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:27:13-30:29
+52-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:27:13-30:29
 53                <action android:name="android.intent.action.MAIN" />
-53-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:28:17-69
-53-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:28:25-66
+53-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:28:17-69
+53-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:28:25-66
 54
 55                <category android:name="android.intent.category.LAUNCHER" />
-55-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:29:17-77
-55-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:29:27-74
+55-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:29:17-77
+55-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:29:27-74
 56            </intent-filter>
 57        </activity>
 58
 59        <meta-data
-59-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:33:9-35:33
+59-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:33:9-35:33
 60            android:name="flutterEmbedding"
-60-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:34:13-44
+60-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:34:13-44
 61            android:value="2" />
-61-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:35:13-30
+61-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:35:13-30
 62
 63        <uses-library
 63-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:23:9-25:40

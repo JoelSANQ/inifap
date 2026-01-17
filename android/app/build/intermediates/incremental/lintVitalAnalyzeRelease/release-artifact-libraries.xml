@@ -1,8 +1,8 @@
 <libraries>
   <library
-      name="__local_aars__:C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\flutter\release\libs.jar:unspecified@jar"
-      jars="C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\flutter\release\libs.jar"
-      resolved="__local_aars__:C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\flutter\release\libs.jar:unspecified"/>
+      name="__local_aars__:C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\flutter\release\libs.jar:unspecified@jar"
+      jars="C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\flutter\release\libs.jar"
+      resolved="__local_aars__:C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\flutter\release\libs.jar:unspecified"/>
   <library
       name=":@@:flutter_local_notifications::release"
       jars="C:\Users\joel8\.gradle\caches\transforms-4\7ea7e7b79109150ee20380e708b0b545\transformed\out\jars\classes.jar;C:\Users\joel8\.gradle\caches\transforms-4\7ea7e7b79109150ee20380e708b0b545\transformed\out\jars\libs\R.jar"

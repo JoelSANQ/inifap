@@ -9,15 +9,11 @@ import 'permission_handler.dart';        // para mostrarNotificacionSimple()
 
 double? _ultimaLluviaNotificada;
 
-/// Checa la lluvia actual y muestra notificación en móvil
-/// o SnackBar en web.
+
 void checarLluviaWebYMovil({
   required BuildContext context,
   required double? lluviaActualMm,
 }) {
-  // DEBUG
-  // ignore: avoid_print
-  print('💧 checarLluviaWebYMovil -> lluviaActualMm = $lluviaActualMm');
 
   // 1) Si no hay valor, salimos
   if (lluviaActualMm == null) {
@@ -50,21 +46,5 @@ void checarLluviaWebYMovil({
         'La lluvia actual es de ${lluviaActualMm.toStringAsFixed(1)} mm.';
   }
 
-  // 4) Según la plataforma, mostramos SnackBar (web) o notificación local (móvil)
-  if (kIsWeb) {
-    print('🌐 Mostrando SnackBar en Web');
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          cuerpo,
-          style: const TextStyle(fontSize: 16),
-        ),
-        duration: const Duration(seconds: 5),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
-  } else {
-    print('📱 Mostrando notificación local en móvil');
-    mostrarNotificacionSimple(titulo: titulo, cuerpo: cuerpo);
-  }
+
 }

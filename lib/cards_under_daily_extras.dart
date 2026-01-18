@@ -6,7 +6,6 @@ import 'package:flutter/foundation.dart'; // ✅ kIsWeb
 import 'package:http/http.dart' as http;
 import 'data/Stations.dart';
 import 'bin/generate_offline.dart';
-import 'notifications/permission_handler.dart';
 import 'notifications/precipitation_notifications.dart';
 
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
@@ -398,14 +397,14 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
 
       if (bestT == null ||
           (t.difference(now)).inMinutes.abs() <
-              (bestT!.difference(now)).inMinutes.abs()) {
+              (bestT.difference(now)).inMinutes.abs()) {
         bestT = t;
         bestVal = val;
       }
     }
 
     if (bestVal == null) return null;
-    return '${bestVal!.toStringAsFixed(1)}$unit';
+    return '${bestVal.toStringAsFixed(1)}$unit';
   }
 
   _DayStats? _dailyStats(String body, {required String key}) {

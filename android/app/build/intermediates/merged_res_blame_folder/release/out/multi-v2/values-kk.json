@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.clima.app-mergeReleaseResources-42:/values-kk/values-kk.xml",
+            "outputFile": "com.example.clima.app-mergeReleaseResources-44:/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\ecd704aebb2c29a26d41223cb48c788e\\transformed\\appcompat-1.1.0\\res\\values-kk\\values-kk.xml",

@@ -34,14 +34,16 @@ com.example.clima.app-core-runtime-2.2.0-32 C:\Users\joel8\.gradle\caches\transf
 com.example.clima.app-profileinstaller-1.3.1-33 C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\res
 com.example.clima.app-tracing-1.2.0-34 C:\Users\joel8\.gradle\caches\transforms-4\f3b3542808a6a07e9e1e96d317b466a6\transformed\tracing-1.2.0\res
 com.example.clima.app-lifecycle-runtime-ktx-2.7.0-35 C:\Users\joel8\.gradle\caches\transforms-4\f87564927bd5d9310019f47fb0c27fcf\transformed\lifecycle-runtime-ktx-2.7.0\res
-com.example.clima.app-packaged_res-36 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\packaged_res\release
-com.example.clima.app-packaged_res-37 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\packaged_res\release
-com.example.clima.app-packaged_res-38 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.1.0\android\build\intermediates\packaged_res\release
-com.example.clima.app-packaged_res-39 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.11\android\build\intermediates\packaged_res\release
-com.example.clima.app-pngs-40 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\generated\res\pngs\release
-com.example.clima.app-resValues-41 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\generated\res\resValues\release
-com.example.clima.app-packageReleaseResources-42 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
-com.example.clima.app-packageReleaseResources-43 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
-com.example.clima.app-merged_res-44 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\merged_res\release
-com.example.clima.app-main-45 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\res
-com.example.clima.app-release-46 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\release\res
+com.example.clima.app-packaged_res-36 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\device_info_plus-11.3.0\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-37 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-38 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-39 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-40 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.1.0\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-41 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.11\android\build\intermediates\packaged_res\release
+com.example.clima.app-pngs-42 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\generated\res\pngs\release
+com.example.clima.app-resValues-43 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\generated\res\resValues\release
+com.example.clima.app-packageReleaseResources-44 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.example.clima.app-packageReleaseResources-45 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.example.clima.app-merged_res-46 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\build\intermediates\merged_res\release
+com.example.clima.app-main-47 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\res
+com.example.clima.app-release-48 C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\release\res

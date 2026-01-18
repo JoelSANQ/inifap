@@ -3,9 +3,12 @@ import 'package:flutter/foundation.dart'; // 👈 para kIsWeb
 
 import 'bin/generate_offline.dart';
 import 'WeatherProxyPage.dart';
-
+import 'notifications/notification_service.dart';
 // 👇 funciones de notificación
 import 'notifications/permission_handler.dart';
+
+///  inicialización para NOTIFICACIONES PROGRAMADAS (zonedSchedule)
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +20,8 @@ void main() async {
     await initLocalNotifications();
     await solicitarPermisoNotificaciones();
 
-    // ✅ MUY IMPORTANTE:
+    // ✅ AGREGADO: requerido para notificaciones programadas por TIEMPO
+    await NotificationService.init();
     // Lanzamos el sync en SEGUNDO PLANO
     // SIN bloquear el arranque de la app
     OfflineDataService.instance.syncFromNetwork();

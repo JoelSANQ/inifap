@@ -1,4 +1,4 @@
-#Sat Jan 17 15:33:22 CST 2026
+#Sun Jan 18 16:34:21 CST 2026
 base.0=C\:\\Users\\joel8\\Downloads\\Nueva carpeta (5)\\inifap\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 base.1=C\:\\Users\\joel8\\Downloads\\Nueva carpeta (5)\\inifap\\android\\app\\build\\intermediates\\desugar_lib_dex\\release\\classes1000.dex
 base.2=C\:\\Users\\joel8\\Downloads\\Nueva carpeta (5)\\inifap\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex

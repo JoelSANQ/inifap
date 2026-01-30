@@ -7,7 +7,6 @@ import 'notifications/notification_service.dart';
 // 👇 funciones de notificación
 import 'notifications/permission_handler.dart';
 
-<<<<<<< HEAD
 // ✅ FCM (Firebase Cloud Messaging)
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -20,10 +19,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 }
-=======
-///  inicialización para NOTIFICACIONES PROGRAMADAS (zonedSchedule)
 
->>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,7 +43,6 @@ void main() async {
     final token = await FirebaseMessaging.instance.getToken();
     debugPrint('🔥 FCM Token: $token');
 
-    // ✅ MUY IMPORTANTE:
     // ✅ AGREGADO: requerido para notificaciones programadas por TIEMPO
     await NotificationService.init();
     // Lanzamos el sync en SEGUNDO PLANO

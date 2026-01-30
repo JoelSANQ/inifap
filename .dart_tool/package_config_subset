@@ -62,7 +62,6 @@ file
 3.0
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/file-7.0.1/
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/file-7.0.1/lib/
-<<<<<<< HEAD
 firebase_core
 3.2
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core-3.15.2/
@@ -87,7 +86,6 @@ firebase_messaging_web
 3.4
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_messaging_web-3.10.10/
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_messaging_web-3.10.10/lib/
-=======
 flutter_background_service
 2.17
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_background_service-5.1.0/
@@ -104,7 +102,6 @@ flutter_background_service_platform_interface
 2.17
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_background_service_platform_interface-5.1.2/
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_background_service_platform_interface-5.1.2/lib/
->>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 flutter_lints
 3.5
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-5.0.0/
@@ -359,8 +356,8 @@ file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/xml-6.5.0/
 file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/xml-6.5.0/lib/
 clima
 3.6
-file:///C:/Users/joel8/Downloads/Nueva%20carpeta%20(5)/inifap/
-file:///C:/Users/joel8/Downloads/Nueva%20carpeta%20(5)/inifap/lib/
+file:///C:/Users/joel8/Downloads/clima%20Inifap/clima/
+file:///C:/Users/joel8/Downloads/clima%20Inifap/clima/lib/
 sky_engine
 3.2
 file:///C:/flutter/bin/cache/pkg/sky_engine/

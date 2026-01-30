@@ -566,11 +566,7 @@
       "languageVersion": "3.6"
     }
   ],
-<<<<<<< HEAD
-  "generated": "2026-01-30T22:50:44.895027Z",
-=======
-  "generated": "2026-01-18T22:20:19.921430Z",
->>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
+  "generated": "2026-01-30T23:41:03.344516Z",
   "generator": "pub",
   "generatorVersion": "3.6.1",
   "flutterRoot": "file:///C:/flutter",

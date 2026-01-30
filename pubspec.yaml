@@ -38,12 +38,9 @@ dependencies:
   flutter_map_cancellable_tile_provider: ^1.0.0
   flutter_local_notifications: ^17.2.3
   permission_handler: ^11.3.0
-<<<<<<< HEAD
   firebase_core: ^3.4.0
   firebase_messaging: ^15.1.0
-=======
   timezone: ^0.9.2
->>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
   
 
   # The following adds the Cupertino Icons font to your application.

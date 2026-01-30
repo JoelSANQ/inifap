@@ -7,8 +7,29 @@ import 'WeatherProxyPage.dart';
 // 👇 funciones de notificación
 import 'notifications/permission_handler.dart';
 
+// ✅ FCM (Firebase Cloud Messaging)
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'firebase_options.dart';
+
+// ✅ Handler para mensajes en segundo plano (FCM)
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // ✅ Inicializar Firebase (necesario para FCM)
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // ✅ Registrar handler de FCM en segundo plano
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   // ===========================
   // Inicializar notificaciones
@@ -16,6 +37,10 @@ void main() async {
   if (!kIsWeb) {
     await initLocalNotifications();
     await solicitarPermisoNotificaciones();
+
+    // ✅ Obtener token FCM (para enviarlo a tu servidor y poder mandar push)
+    final token = await FirebaseMessaging.instance.getToken();
+    debugPrint('🔥 FCM Token: $token');
 
     // ✅ MUY IMPORTANTE:
     // Lanzamos el sync en SEGUNDO PLANO

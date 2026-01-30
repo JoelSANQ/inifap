@@ -1,47 +1,55 @@
-com.example.clima.app-slidingpanelayout-1.2.0-0 C:\Users\joel8\.gradle\caches\transforms-4\015c0f112208038558c720b901fa3a4f\transformed\slidingpanelayout-1.2.0\res
-com.example.clima.app-datastore-core-release-1 C:\Users\joel8\.gradle\caches\transforms-4\0bb84cc1bf4a7fb8ead613925c925752\transformed\datastore-core-release\res
-com.example.clima.app-lifecycle-livedata-core-2.7.0-2 C:\Users\joel8\.gradle\caches\transforms-4\1852122d675cf2777fa1a0894ad091ed\transformed\lifecycle-livedata-core-2.7.0\res
-com.example.clima.app-activity-ktx-1.8.1-3 C:\Users\joel8\.gradle\caches\transforms-4\224468adc5f7c3a0c92ea7604fcbe211\transformed\activity-ktx-1.8.1\res
-com.example.clima.app-window-java-1.2.0-4 C:\Users\joel8\.gradle\caches\transforms-4\22847cee95bdf053649a815ba00d9566\transformed\window-java-1.2.0\res
-com.example.clima.app-fragment-1.7.1-5 C:\Users\joel8\.gradle\caches\transforms-4\245ca2f73ada23f6181b5609137fac3e\transformed\fragment-1.7.1\res
-com.example.clima.app-core-1.13.1-6 C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\res
-com.example.clima.app-lifecycle-livedata-2.7.0-7 C:\Users\joel8\.gradle\caches\transforms-4\297afe125d4f68946345cd767b14fc53\transformed\lifecycle-livedata-2.7.0\res
-com.example.clima.app-activity-1.8.1-8 C:\Users\joel8\.gradle\caches\transforms-4\4559efcad65b9cddc1b1aa14d3fb0b3e\transformed\activity-1.8.1\res
-com.example.clima.app-lifecycle-viewmodel-savedstate-2.7.0-9 C:\Users\joel8\.gradle\caches\transforms-4\4841b2b12bcba038f5206569ad75c3ca\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
-com.example.clima.app-recyclerview-1.0.0-10 C:\Users\joel8\.gradle\caches\transforms-4\4c6f87ab1416d1a983a61bdad2f73d53\transformed\recyclerview-1.0.0\res
-com.example.clima.app-savedstate-1.2.1-11 C:\Users\joel8\.gradle\caches\transforms-4\5c339f9970be944b44da60ce400be45f\transformed\savedstate-1.2.1\res
-com.example.clima.app-appcompat-resources-1.1.0-12 C:\Users\joel8\.gradle\caches\transforms-4\5e31e4b2db9d6fbd7782f681cdd90491\transformed\appcompat-resources-1.1.0\res
-com.example.clima.app-datastore-release-13 C:\Users\joel8\.gradle\caches\transforms-4\60696fd2cfa0c66d4e2915e6f7a83bd7\transformed\datastore-release\res
-com.example.clima.app-lifecycle-runtime-2.7.0-14 C:\Users\joel8\.gradle\caches\transforms-4\7f740a439a7b51a363414c83fd97266c\transformed\lifecycle-runtime-2.7.0\res
-com.example.clima.app-fragment-ktx-1.7.1-15 C:\Users\joel8\.gradle\caches\transforms-4\86f07a97eda53ee841f845f3100efb29\transformed\fragment-ktx-1.7.1\res
-com.example.clima.app-lifecycle-viewmodel-ktx-2.7.0-16 C:\Users\joel8\.gradle\caches\transforms-4\888203e31f321380062145a06ead97ad\transformed\lifecycle-viewmodel-ktx-2.7.0\res
-com.example.clima.app-datastore-preferences-release-17 C:\Users\joel8\.gradle\caches\transforms-4\88963f71c087697d24a253c5de7a97aa\transformed\datastore-preferences-release\res
-com.example.clima.app-window-1.2.0-18 C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\res
-com.example.clima.app-lifecycle-process-2.7.0-19 C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\res
-com.example.clima.app-lifecycle-viewmodel-2.7.0-20 C:\Users\joel8\.gradle\caches\transforms-4\a44b5936cdca8e5af408643afe9905a9\transformed\lifecycle-viewmodel-2.7.0\res
-com.example.clima.app-media-1.1.0-21 C:\Users\joel8\.gradle\caches\transforms-4\a89353e0da54a0e6a2df718a11e7766b\transformed\media-1.1.0\res
-com.example.clima.app-startup-runtime-1.1.1-22 C:\Users\joel8\.gradle\caches\transforms-4\b39b74b7c17a543b7bb55f5bf779a666\transformed\startup-runtime-1.1.1\res
-com.example.clima.app-preference-1.2.1-23 C:\Users\joel8\.gradle\caches\transforms-4\bf8b0a774123e16a0d656b359d7f638a\transformed\preference-1.2.1\res
-com.example.clima.app-core-ktx-1.13.1-24 C:\Users\joel8\.gradle\caches\transforms-4\c10e18499d61ebb60aff31d743b30595\transformed\core-ktx-1.13.1\res
-com.example.clima.app-core-1.0.0-25 C:\Users\joel8\.gradle\caches\transforms-4\c42ba8962a98454e1076fe170ddf0ae1\transformed\core-1.0.0\res
-com.example.clima.app-transition-1.4.1-26 C:\Users\joel8\.gradle\caches\transforms-4\cea46b09d5ffc97bb9e7c8ee50d9d62a\transformed\transition-1.4.1\res
-com.example.clima.app-coordinatorlayout-1.0.0-27 C:\Users\joel8\.gradle\caches\transforms-4\cfd7d921e107dc5ad68d514d6894b5dc\transformed\coordinatorlayout-1.0.0\res
-com.example.clima.app-savedstate-ktx-1.2.1-28 C:\Users\joel8\.gradle\caches\transforms-4\dba11f667737018eca99106d47400b13\transformed\savedstate-ktx-1.2.1\res
-com.example.clima.app-annotation-experimental-1.4.0-29 C:\Users\joel8\.gradle\caches\transforms-4\e2725bc8b2239a15fe5d2fc876c7b937\transformed\annotation-experimental-1.4.0\res
-com.example.clima.app-lifecycle-livedata-core-ktx-2.7.0-30 C:\Users\joel8\.gradle\caches\transforms-4\e32150af8cf596cd00a97d3be5b6827e\transformed\lifecycle-livedata-core-ktx-2.7.0\res
-com.example.clima.app-appcompat-1.1.0-31 C:\Users\joel8\.gradle\caches\transforms-4\ecd704aebb2c29a26d41223cb48c788e\transformed\appcompat-1.1.0\res
-com.example.clima.app-core-runtime-2.2.0-32 C:\Users\joel8\.gradle\caches\transforms-4\ed33601e26fe209f01a88197449a57c1\transformed\core-runtime-2.2.0\res
-com.example.clima.app-profileinstaller-1.3.1-33 C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\res
-com.example.clima.app-tracing-1.2.0-34 C:\Users\joel8\.gradle\caches\transforms-4\f3b3542808a6a07e9e1e96d317b466a6\transformed\tracing-1.2.0\res
-com.example.clima.app-lifecycle-runtime-ktx-2.7.0-35 C:\Users\joel8\.gradle\caches\transforms-4\f87564927bd5d9310019f47fb0c27fcf\transformed\lifecycle-runtime-ktx-2.7.0\res
-com.example.clima.app-packaged_res-36 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\packaged_res\release
-com.example.clima.app-packaged_res-37 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\packaged_res\release
-com.example.clima.app-packaged_res-38 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.1.0\android\build\intermediates\packaged_res\release
-com.example.clima.app-packaged_res-39 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.11\android\build\intermediates\packaged_res\release
-com.example.clima.app-pngs-40 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\generated\res\pngs\release
-com.example.clima.app-resValues-41 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\generated\res\resValues\release
-com.example.clima.app-packageReleaseResources-42 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
-com.example.clima.app-packageReleaseResources-43 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
-com.example.clima.app-merged_res-44 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\merged_res\release
-com.example.clima.app-main-45 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\res
-com.example.clima.app-release-46 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\release\res
+com.example.clima.app-lifecycle-runtime-2.7.0-0 C:\Users\joel8\.gradle\caches\transforms-4\023a07f9827f30574d7b1c666f5923b2\transformed\lifecycle-runtime-2.7.0\res
+com.example.clima.app-lifecycle-livedata-2.7.0-1 C:\Users\joel8\.gradle\caches\transforms-4\08fd20baf98c8ebb396b3e63161acf9c\transformed\lifecycle-livedata-2.7.0\res
+com.example.clima.app-lifecycle-viewmodel-savedstate-2.7.0-2 C:\Users\joel8\.gradle\caches\transforms-4\1816fb395dde1a78cb008fb09c9c86fc\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.clima.app-lifecycle-viewmodel-ktx-2.7.0-3 C:\Users\joel8\.gradle\caches\transforms-4\1da743c110e7f0f6759e9069af9990de\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.example.clima.app-window-1.2.0-4 C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\res
+com.example.clima.app-window-java-1.2.0-5 C:\Users\joel8\.gradle\caches\transforms-4\27d10ff131c221e5e430243079476404\transformed\window-java-1.2.0\res
+com.example.clima.app-appcompat-1.1.0-6 C:\Users\joel8\.gradle\caches\transforms-4\2e257ea3793d8a40a02e75e3940458d0\transformed\appcompat-1.1.0\res
+com.example.clima.app-lifecycle-livedata-core-2.7.0-7 C:\Users\joel8\.gradle\caches\transforms-4\35251ee2cf127a2dd7a8d3f0b829dd94\transformed\lifecycle-livedata-core-2.7.0\res
+com.example.clima.app-savedstate-1.2.1-8 C:\Users\joel8\.gradle\caches\transforms-4\37fd3d1e8cac45e7ab1563f36e8788db\transformed\savedstate-1.2.1\res
+com.example.clima.app-datastore-preferences-release-9 C:\Users\joel8\.gradle\caches\transforms-4\39725071f01ce70c756d821acd860f7f\transformed\datastore-preferences-release\res
+com.example.clima.app-core-runtime-2.2.0-10 C:\Users\joel8\.gradle\caches\transforms-4\3a6c2f92b522342d7453a15ce0d0b219\transformed\core-runtime-2.2.0\res
+com.example.clima.app-datastore-release-11 C:\Users\joel8\.gradle\caches\transforms-4\3ef86276c65e86e9242a0688d43da2e2\transformed\datastore-release\res
+com.example.clima.app-activity-ktx-1.8.1-12 C:\Users\joel8\.gradle\caches\transforms-4\3f66ec513579190d4ad271e18c968ec1\transformed\activity-ktx-1.8.1\res
+com.example.clima.app-startup-runtime-1.1.1-13 C:\Users\joel8\.gradle\caches\transforms-4\4b3b67a2ef73bc8fd05f9f5ee6ff483c\transformed\startup-runtime-1.1.1\res
+com.example.clima.app-lifecycle-runtime-ktx-2.7.0-14 C:\Users\joel8\.gradle\caches\transforms-4\52197bdca3f1721ba898f2d7c495b22b\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.example.clima.app-fragment-1.7.1-15 C:\Users\joel8\.gradle\caches\transforms-4\57b65acec74a712cd7c44270fb8f625d\transformed\fragment-1.7.1\res
+com.example.clima.app-play-services-basement-18.3.0-16 C:\Users\joel8\.gradle\caches\transforms-4\5f986ff1f6df83eff90b5f2654097dec\transformed\play-services-basement-18.3.0\res
+com.example.clima.app-lifecycle-livedata-core-ktx-2.7.0-17 C:\Users\joel8\.gradle\caches\transforms-4\625176315f6ae91b15c2ffbcfa41a3bd\transformed\lifecycle-livedata-core-ktx-2.7.0\res
+com.example.clima.app-tracing-1.2.0-18 C:\Users\joel8\.gradle\caches\transforms-4\65160c4ea82db73a3b9d53fd175fab76\transformed\tracing-1.2.0\res
+com.example.clima.app-preference-1.2.1-19 C:\Users\joel8\.gradle\caches\transforms-4\65d61a6eb71c388fb153ed0fc2f4d222\transformed\preference-1.2.1\res
+com.example.clima.app-firebase-common-21.0.0-20 C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\res
+com.example.clima.app-slidingpanelayout-1.2.0-21 C:\Users\joel8\.gradle\caches\transforms-4\7804350868f529772a0931afe33e88da\transformed\slidingpanelayout-1.2.0\res
+com.example.clima.app-localbroadcastmanager-1.1.0-22 C:\Users\joel8\.gradle\caches\transforms-4\7f7ea1edb3ee5086e3c2165fe92a5321\transformed\localbroadcastmanager-1.1.0\res
+com.example.clima.app-datastore-core-release-23 C:\Users\joel8\.gradle\caches\transforms-4\80316cf55f5a6510c4020c6c09b801c1\transformed\datastore-core-release\res
+com.example.clima.app-fragment-ktx-1.7.1-24 C:\Users\joel8\.gradle\caches\transforms-4\811b663fdbe4f283cefa509721c175e2\transformed\fragment-ktx-1.7.1\res
+com.example.clima.app-play-services-base-18.1.0-25 C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\res
+com.example.clima.app-coordinatorlayout-1.0.0-26 C:\Users\joel8\.gradle\caches\transforms-4\a834a585aeecd5b7691d5a5122981376\transformed\coordinatorlayout-1.0.0\res
+com.example.clima.app-media-1.1.0-27 C:\Users\joel8\.gradle\caches\transforms-4\ad97378b3e872df0e3f9bcaf6df8b5ae\transformed\media-1.1.0\res
+com.example.clima.app-core-1.13.1-28 C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\res
+com.example.clima.app-lifecycle-process-2.7.0-29 C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\res
+com.example.clima.app-firebase-messaging-24.1.2-30 C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\res
+com.example.clima.app-lifecycle-viewmodel-2.7.0-31 C:\Users\joel8\.gradle\caches\transforms-4\c9efceb8a662f9884a0ff2e255791e6a\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.clima.app-core-1.0.0-32 C:\Users\joel8\.gradle\caches\transforms-4\ce547b4e8b7fec9b67fe66fb267be976\transformed\core-1.0.0\res
+com.example.clima.app-activity-1.8.1-33 C:\Users\joel8\.gradle\caches\transforms-4\d69a10de5c9048d82edd72245b569f02\transformed\activity-1.8.1\res
+com.example.clima.app-recyclerview-1.0.0-34 C:\Users\joel8\.gradle\caches\transforms-4\d6f1f21dd822cc42075cfd2e4ce4f8a3\transformed\recyclerview-1.0.0\res
+com.example.clima.app-core-ktx-1.13.1-35 C:\Users\joel8\.gradle\caches\transforms-4\d8411677ec1d9ca951a9ead6f87cd352\transformed\core-ktx-1.13.1\res
+com.example.clima.app-appcompat-resources-1.1.0-36 C:\Users\joel8\.gradle\caches\transforms-4\e1741cb6e117959812c3d511d12f51f8\transformed\appcompat-resources-1.1.0\res
+com.example.clima.app-annotation-experimental-1.4.0-37 C:\Users\joel8\.gradle\caches\transforms-4\e7306e7bd49e354869a88f29709b3967\transformed\annotation-experimental-1.4.0\res
+com.example.clima.app-transition-1.4.1-38 C:\Users\joel8\.gradle\caches\transforms-4\ea821c4112d49a452788e43c7abd8126\transformed\transition-1.4.1\res
+com.example.clima.app-profileinstaller-1.3.1-39 C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\res
+com.example.clima.app-savedstate-ktx-1.2.1-40 C:\Users\joel8\.gradle\caches\transforms-4\febc687360938b3ce68cb408729f4e86\transformed\savedstate-ktx-1.2.1\res
+com.example.clima.app-packaged_res-41 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-42 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-43 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-44 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-45 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.1.0\android\build\intermediates\packaged_res\release
+com.example.clima.app-packaged_res-46 C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.11\android\build\intermediates\packaged_res\release
+com.example.clima.app-google-services-47 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\generated\res\google-services\release
+com.example.clima.app-pngs-48 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\generated\res\pngs\release
+com.example.clima.app-resValues-49 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\generated\res\resValues\release
+com.example.clima.app-packageReleaseResources-50 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.example.clima.app-packageReleaseResources-51 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.example.clima.app-merged_res-52 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\build\intermediates\merged_res\release
+com.example.clima.app-main-53 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\res
+com.example.clima.app-release-54 C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\release\res

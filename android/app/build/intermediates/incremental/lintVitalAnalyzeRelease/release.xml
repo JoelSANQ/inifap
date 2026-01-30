@@ -6,7 +6,7 @@
     mergedManifest="build\intermediates\merged_manifest\release\AndroidManifest.xml"
     proguardFiles="build\intermediates\default_proguard_files\global\proguard-android-optimize.txt-8.2.2;C:\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
     partialResultsDir="build\intermediates\lint_vital_partial_results\release\out"
-    desugaredMethodsFiles="C:\Users\joel8\.gradle\caches\transforms-4\a6b61d9ebe39dda90f1b81fee3637d00\transformed\desugar_jdk_libs_configuration-2.0.4-desugar-lint.txt;C:\Users\joel8\.gradle\caches\transforms-4\194ea076734a4bce9dafc6b892dafd0b\transformed\D8BackportedDesugaredMethods.txt">
+    desugaredMethodsFiles="C:\Users\joel8\.gradle\caches\transforms-4\945c7a782c5a539299388e13f27d65a7\transformed\desugar_jdk_libs_configuration-2.0.4-desugar-lint.txt;C:\Users\joel8\.gradle\caches\transforms-4\90d93ce03d8664b7355daee724fffee8\transformed\D8BackportedDesugaredMethods.txt">
   <buildFeatures
       coreLibraryDesugaring="true"
       namespacing="REQUIRED"/>
@@ -31,7 +31,7 @@
       type="MAIN"
       applicationId="com.example.clima"
       generatedSourceFolders="build\generated\ap_generated_sources\release\out"
-      generatedResourceFolders="build\generated\res\resValues\release"
-      desugaredMethodsFiles="C:\Users\joel8\.gradle\caches\transforms-4\a6b61d9ebe39dda90f1b81fee3637d00\transformed\desugar_jdk_libs_configuration-2.0.4-desugar-lint.txt;C:\Users\joel8\.gradle\caches\transforms-4\194ea076734a4bce9dafc6b892dafd0b\transformed\D8BackportedDesugaredMethods.txt">
+      generatedResourceFolders="build\generated\res\google-services\release;build\generated\res\resValues\release"
+      desugaredMethodsFiles="C:\Users\joel8\.gradle\caches\transforms-4\945c7a782c5a539299388e13f27d65a7\transformed\desugar_jdk_libs_configuration-2.0.4-desugar-lint.txt;C:\Users\joel8\.gradle\caches\transforms-4\90d93ce03d8664b7355daee724fffee8\transformed\D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

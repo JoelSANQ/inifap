@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.clima.app-mergeReleaseResources-42:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.example.clima.app-mergeReleaseResources-50:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\ecd704aebb2c29a26d41223cb48c788e\\transformed\\appcompat-1.1.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\2e257ea3793d8a40a02e75e3940458d0\\transformed\\appcompat-1.1.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

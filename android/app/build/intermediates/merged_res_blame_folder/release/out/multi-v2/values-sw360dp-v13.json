@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.clima.app-mergeReleaseResources-42:/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "outputFile": "com.example.clima.app-mergeReleaseResources-50:/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\bf8b0a774123e16a0d656b359d7f638a\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\65d61a6eb71c388fb153ed0fc2f4d222\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

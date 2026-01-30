@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "146466571790",
+    "project_id": "inifap-33d69",
+    "storage_bucket": "inifap-33d69.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146466571790:android:d254c95239e2943f7e9e5f",
+        "android_client_info": {
+          "package_name": "com.example.clima"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkGqlJvQfJXuaWydIN-EOmS8AluFzXeKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

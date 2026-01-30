@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.example.clima.app-mergeReleaseResources-50:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
@@ -22,6 +23,12 @@
                 },
                 {
                     "source": "C:\\Users\\joel8\\Downloads\\clima Inifap\\clima\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+=======
+            "outputFile": "com.example.clima.app-mergeReleaseResources-44:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\joel8\\Downloads\\Nueva carpeta (5)\\inifap\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

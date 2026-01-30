@@ -99,7 +99,11 @@ DateTime _parseFechaDDMMYYYY(String s) {
     String? estName;
     for (final e in root) {
       if (e is! Map) continue;
+<<<<<<< HEAD
       final m = Map<String, dynamic>.from(e );
+=======
+      final m = Map<String, dynamic>.from(e);
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 
       final fechaStr = (m['Fecha'] ?? m['fecha'])?.toString();
       if (fechaStr == null) continue;
@@ -135,7 +139,7 @@ DateTime _parseFechaDDMMYYYY(String s) {
     if (datos is List) {
       for (final e in datos) {
         if (e is! Map) continue;
-        final m = Map<String, dynamic>.from(e as Map);
+        final m = Map<String, dynamic>.from(e);
         final fechaStr = (m['Fecha'] ?? m['fecha'])?.toString();
         if (fechaStr == null) continue;
         final date = _parseFechaDDMMYYYY(fechaStr);
@@ -315,15 +319,6 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
   void _nextMonth() {
     setState(() { _cursor = DateTime(_cursor.year, _cursor.month + 1); });
     _fetch();
-  }
-
-  double _sum(Iterable<double?> xs) =>
-      xs.whereType<double>().fold(0.0, (a, b) => a + b);
-
-  double? _avg(Iterable<double?> xs) {
-    final v = xs.whereType<double>().toList();
-    if (v.isEmpty) return null;
-    return v.reduce((a, b) => a + b) / v.length;
   }
 
   @override

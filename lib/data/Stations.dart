@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-
-
+// ignore: file_names
 class Station {
   final int id;
   final String name;

@@ -1,5 +1,6 @@
 -- Merging decision tree log ---
 application
+<<<<<<< HEAD
 INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:6:5-36:19
 INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:6:5-36:19
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:5-46:19
@@ -44,30 +45,58 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:25:5-39:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\b5a85c733c1f86b08532a2f4f8eac35b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\b5a85c733c1f86b08532a2f4f8eac35b\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+=======
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:9:5-39:19
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:9:5-39:19
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-32:19
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-32:19
+MERGED from [androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\b39b74b7c17a543b7bb55f5bf779a666\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\b39b74b7c17a543b7bb55f5bf779a666\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\48530ca59a7f3e575e2836f6b1171656\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\48530ca59a7f3e575e2836f6b1171656\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 	android:extractNativeLibs
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:7:9-30
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:10:9-30
 	android:icon
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:12:9-43
 	android:usesCleartextTraffic
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:10:9-44
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:13:9-44
 	android:name
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:8:9-42
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:11:9-42
 manifest
+<<<<<<< HEAD
 ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:1:1-44:12
 INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:1:1-44:12
 INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:1:1-44:12
 INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:1:1-44:12
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-48:12
 MERGED from [:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-15:12
+=======
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:1:1-47:12
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:1:1-47:12
+MERGED from [:device_info_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\device_info_plus-11.3.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-34:12
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-10:12
 MERGED from [:path_provider_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [:permission_handler_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.1.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.11\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-7:12
+<<<<<<< HEAD
 MERGED from [com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:17:1-66:12
 MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\b5c6809ffb51680ed2d04e3130b70d8f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:2:1-18:12
@@ -139,15 +168,71 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\joel8\.gradle\ca
 MERGED from [androidx.print:print:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\32f5c4a56ce884d026181fdd97d2e269\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\joel8\.gradle\caches\transforms-4\e7306e7bd49e354869a88f29709b3967\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\2eed3c612d86ad8411e546f8db01315b\transformed\relinker-1.4.5\AndroidManifest.xml:2:1-7:12
+=======
+MERGED from [androidx.media:media:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\a89353e0da54a0e6a2df718a11e7766b\transformed\media-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\bf8b0a774123e16a0d656b359d7f638a\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\4c6f87ab1416d1a983a61bdad2f73d53\transformed\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\d57bda56c71963966111e3cecf40fac3\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\015c0f112208038558c720b901fa3a4f\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.window:window-java:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\22847cee95bdf053649a815ba00d9566\transformed\window-java-1.2.0\AndroidManifest.xml:17:1-21:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\ecd704aebb2c29a26d41223cb48c788e\transformed\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.7.1] C:\Users\joel8\.gradle\caches\transforms-4\86f07a97eda53ee841f845f3100efb29\transformed\fragment-ktx-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\joel8\.gradle\caches\transforms-4\245ca2f73ada23f6181b5609137fac3e\transformed\fragment-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-ktx:1.8.1] C:\Users\joel8\.gradle\caches\transforms-4\224468adc5f7c3a0c92ea7604fcbe211\transformed\activity-ktx-1.8.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\joel8\.gradle\caches\transforms-4\4559efcad65b9cddc1b1aa14d3fb0b3e\transformed\activity-1.8.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\1b22887446703edece2a4ebcaae41671\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\f2b53223730855de48b0316b9eddbdd7\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\e2a358cba045d3f8d44672be0d05bd07\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\f87564927bd5d9310019f47fb0c27fcf\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\297afe125d4f68946345cd767b14fc53\transformed\lifecycle-livedata-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\e32150af8cf596cd00a97d3be5b6827e\transformed\lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\888203e31f321380062145a06ead97ad\transformed\lifecycle-viewmodel-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a44b5936cdca8e5af408643afe9905a9\transformed\lifecycle-viewmodel-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\1852122d675cf2777fa1a0894ad091ed\transformed\lifecycle-livedata-core-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\dba11f667737018eca99106d47400b13\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\5c339f9970be944b44da60ce400be45f\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\7f740a439a7b51a363414c83fd97266c\transformed\lifecycle-runtime-2.7.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\4841b2b12bcba038f5206569ad75c3ca\transformed\lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\c10e18499d61ebb60aff31d743b30595\transformed\core-ktx-1.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\5e31e4b2db9d6fbd7782f681cdd90491\transformed\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\099c7d732d271bc887f32b85455a1a6d\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\cfd7d921e107dc5ad68d514d6894b5dc\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\c0feb42cf636308d270a5969f5c2ee2f\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.4.1] C:\Users\joel8\.gradle\caches\transforms-4\cea46b09d5ffc97bb9e7c8ee50d9d62a\transformed\transition-1.4.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\9677ee02dc7c7429e25819f2d4722107\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\9553507ff29fe9c5101d92411f710b53\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\8567370640a0dc744657f2ad1ab35294\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\ae2aadbb438f5ede36031367b960197d\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\b39b74b7c17a543b7bb55f5bf779a666\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\f3b3542808a6a07e9e1e96d317b466a6\transformed\tracing-1.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-core-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\0bb84cc1bf4a7fb8ead613925c925752\transformed\datastore-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\88963f71c087697d24a253c5de7a97aa\transformed\datastore-preferences-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\60696fd2cfa0c66d4e2915e6f7a83bd7\transformed\datastore-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\168ec772a16b577b2fcdf87f5fc5a4cc\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\48530ca59a7f3e575e2836f6b1171656\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\joel8\.gradle\caches\transforms-4\ed33601e26fe209f01a88197449a57c1\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\1b779b4f8d4d5a84e2a762d4da89d7d9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.window.extensions.core:core:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\c42ba8962a98454e1076fe170ddf0ae1\transformed\core-1.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\6c77cc2c7e649b1b55fe86ba70d0d7bb\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\a0c13119c601ff72bd7d4035e9154b15\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\d0c9566d2d3cccca9428c771cafd6b91\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\joel8\.gradle\caches\transforms-4\e2725bc8b2239a15fe5d2fc876c7b937\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\6e10ff017a49ced686c3b53a1c5ca26f\transformed\relinker-1.4.5\AndroidManifest.xml:2:1-7:12
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 	package
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
+<<<<<<< HEAD
 ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:3:5-67
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-67
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-67
@@ -157,71 +242,95 @@ MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Use
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] C:\Users\joel8\.gradle\caches\transforms-4\6ee831b47d0bf09c3d5f37b6b5c55850\transformed\play-services-cloud-messaging-17.2.0\AndroidManifest.xml:8:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:25:5-67
+=======
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:5-67
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:3:22-64
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:22-64
 uses-permission#android.permission.POST_NOTIFICATIONS
+<<<<<<< HEAD
 ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:4:5-77
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-77
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-77
+=======
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:4:5-77
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-77
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-77
 MERGED from [com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:23:5-77
 MERGED from [com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:23:5-77
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:4:22-74
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:4:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:5:5-77
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-77
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-77
+	android:name
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:5:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_DATA_SYNC
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:6:5-87
+	android:name
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:6:22-84
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:7:5-68
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-68
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:7:22-65
 queries
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:38:5-43:15
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:41:5-46:15
 intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:39:9-42:18
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:42:9-45:18
 action#android.intent.action.PROCESS_TEXT
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:40:13-73
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:43:13-73
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:40:21-70
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:43:21-70
 data
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:41:13-51
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:44:13-51
 	android:mimeType
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:41:19-48
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:44:19-48
 activity#com.example.clima.MainActivity
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:12:9-31:20
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:15:9-34:20
 	android:launchMode
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:15:13-43
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:18:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:19:13-47
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:22:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:20:13-55
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:23:13-55
 	android:exported
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:14:13-36
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:17:13-36
 	android:configChanges
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:18:13-163
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:21:13-163
 	android:theme
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:17:13-47
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:20:13-47
 	android:taskAffinity
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:16:13-36
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:13:13-41
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:16:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:23:13-25:57
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:26:13-28:57
 	android:resource
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:25:17-54
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:28:17-54
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:24:17-72
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:27:17-72
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:27:13-30:29
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:30:13-33:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:29:17-77
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:29:27-74
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:32:27-74
 meta-data#flutterEmbedding
-ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:33:9-35:33
+ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:36:9-38:33
 	android:value
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:35:13-30
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:38:13-30
 	android:name
-		ADDED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:34:13-44
+		ADDED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:37:13-44
 uses-sdk
+<<<<<<< HEAD
 INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
@@ -229,6 +338,15 @@ MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
+=======
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
+MERGED from [:device_info_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\device_info_plus-11.3.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:device_info_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\device_info_plus-11.3.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
@@ -237,6 +355,7 @@ MERGED from [:permission_handler_android] C:\Users\joel8\AppData\Local\Pub\Cache
 MERGED from [:permission_handler_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.1.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.11\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.11\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
+<<<<<<< HEAD
 MERGED from [com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:5:5-44
@@ -379,9 +498,118 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\joel8\.
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\joel8\.gradle\caches\transforms-4\e7306e7bd49e354869a88f29709b3967\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\2eed3c612d86ad8411e546f8db01315b\transformed\relinker-1.4.5\AndroidManifest.xml:5:5-43
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\2eed3c612d86ad8411e546f8db01315b\transformed\relinker-1.4.5\AndroidManifest.xml:5:5-43
+=======
+MERGED from [androidx.media:media:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\a89353e0da54a0e6a2df718a11e7766b\transformed\media-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\a89353e0da54a0e6a2df718a11e7766b\transformed\media-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\bf8b0a774123e16a0d656b359d7f638a\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\bf8b0a774123e16a0d656b359d7f638a\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\4c6f87ab1416d1a983a61bdad2f73d53\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\4c6f87ab1416d1a983a61bdad2f73d53\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\d57bda56c71963966111e3cecf40fac3\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\d57bda56c71963966111e3cecf40fac3\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\015c0f112208038558c720b901fa3a4f\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\015c0f112208038558c720b901fa3a4f\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window-java:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\22847cee95bdf053649a815ba00d9566\transformed\window-java-1.2.0\AndroidManifest.xml:19:5-44
+MERGED from [androidx.window:window-java:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\22847cee95bdf053649a815ba00d9566\transformed\window-java-1.2.0\AndroidManifest.xml:19:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\ecd704aebb2c29a26d41223cb48c788e\transformed\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\ecd704aebb2c29a26d41223cb48c788e\transformed\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.7.1] C:\Users\joel8\.gradle\caches\transforms-4\86f07a97eda53ee841f845f3100efb29\transformed\fragment-ktx-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.7.1] C:\Users\joel8\.gradle\caches\transforms-4\86f07a97eda53ee841f845f3100efb29\transformed\fragment-ktx-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\joel8\.gradle\caches\transforms-4\245ca2f73ada23f6181b5609137fac3e\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\joel8\.gradle\caches\transforms-4\245ca2f73ada23f6181b5609137fac3e\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.1] C:\Users\joel8\.gradle\caches\transforms-4\224468adc5f7c3a0c92ea7604fcbe211\transformed\activity-ktx-1.8.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.1] C:\Users\joel8\.gradle\caches\transforms-4\224468adc5f7c3a0c92ea7604fcbe211\transformed\activity-ktx-1.8.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\joel8\.gradle\caches\transforms-4\4559efcad65b9cddc1b1aa14d3fb0b3e\transformed\activity-1.8.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.1] C:\Users\joel8\.gradle\caches\transforms-4\4559efcad65b9cddc1b1aa14d3fb0b3e\transformed\activity-1.8.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\1b22887446703edece2a4ebcaae41671\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\1b22887446703edece2a4ebcaae41671\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\f2b53223730855de48b0316b9eddbdd7\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\f2b53223730855de48b0316b9eddbdd7\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\e2a358cba045d3f8d44672be0d05bd07\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\e2a358cba045d3f8d44672be0d05bd07\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\f87564927bd5d9310019f47fb0c27fcf\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\f87564927bd5d9310019f47fb0c27fcf\transformed\lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\297afe125d4f68946345cd767b14fc53\transformed\lifecycle-livedata-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\297afe125d4f68946345cd767b14fc53\transformed\lifecycle-livedata-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\e32150af8cf596cd00a97d3be5b6827e\transformed\lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\e32150af8cf596cd00a97d3be5b6827e\transformed\lifecycle-livedata-core-ktx-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\888203e31f321380062145a06ead97ad\transformed\lifecycle-viewmodel-ktx-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\888203e31f321380062145a06ead97ad\transformed\lifecycle-viewmodel-ktx-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a44b5936cdca8e5af408643afe9905a9\transformed\lifecycle-viewmodel-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a44b5936cdca8e5af408643afe9905a9\transformed\lifecycle-viewmodel-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\1852122d675cf2777fa1a0894ad091ed\transformed\lifecycle-livedata-core-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\1852122d675cf2777fa1a0894ad091ed\transformed\lifecycle-livedata-core-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\dba11f667737018eca99106d47400b13\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\dba11f667737018eca99106d47400b13\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\5c339f9970be944b44da60ce400be45f\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\joel8\.gradle\caches\transforms-4\5c339f9970be944b44da60ce400be45f\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\7f740a439a7b51a363414c83fd97266c\transformed\lifecycle-runtime-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\7f740a439a7b51a363414c83fd97266c\transformed\lifecycle-runtime-2.7.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\4841b2b12bcba038f5206569ad75c3ca\transformed\lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\4841b2b12bcba038f5206569ad75c3ca\transformed\lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\c10e18499d61ebb60aff31d743b30595\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\c10e18499d61ebb60aff31d743b30595\transformed\core-ktx-1.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\5e31e4b2db9d6fbd7782f681cdd90491\transformed\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\5e31e4b2db9d6fbd7782f681cdd90491\transformed\appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\099c7d732d271bc887f32b85455a1a6d\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\099c7d732d271bc887f32b85455a1a6d\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\cfd7d921e107dc5ad68d514d6894b5dc\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\cfd7d921e107dc5ad68d514d6894b5dc\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\c0feb42cf636308d270a5969f5c2ee2f\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\c0feb42cf636308d270a5969f5c2ee2f\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] C:\Users\joel8\.gradle\caches\transforms-4\cea46b09d5ffc97bb9e7c8ee50d9d62a\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] C:\Users\joel8\.gradle\caches\transforms-4\cea46b09d5ffc97bb9e7c8ee50d9d62a\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\9677ee02dc7c7429e25819f2d4722107\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\9677ee02dc7c7429e25819f2d4722107\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\9553507ff29fe9c5101d92411f710b53\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\joel8\.gradle\caches\transforms-4\9553507ff29fe9c5101d92411f710b53\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\8567370640a0dc744657f2ad1ab35294\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\8567370640a0dc744657f2ad1ab35294\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\ae2aadbb438f5ede36031367b960197d\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\ae2aadbb438f5ede36031367b960197d\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\b39b74b7c17a543b7bb55f5bf779a666\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\b39b74b7c17a543b7bb55f5bf779a666\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\f3b3542808a6a07e9e1e96d317b466a6\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\f3b3542808a6a07e9e1e96d317b466a6\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\0bb84cc1bf4a7fb8ead613925c925752\transformed\datastore-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\0bb84cc1bf4a7fb8ead613925c925752\transformed\datastore-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\88963f71c087697d24a253c5de7a97aa\transformed\datastore-preferences-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\88963f71c087697d24a253c5de7a97aa\transformed\datastore-preferences-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\60696fd2cfa0c66d4e2915e6f7a83bd7\transformed\datastore-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.3] C:\Users\joel8\.gradle\caches\transforms-4\60696fd2cfa0c66d4e2915e6f7a83bd7\transformed\datastore-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\168ec772a16b577b2fcdf87f5fc5a4cc\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\168ec772a16b577b2fcdf87f5fc5a4cc\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\48530ca59a7f3e575e2836f6b1171656\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\joel8\.gradle\caches\transforms-4\48530ca59a7f3e575e2836f6b1171656\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\joel8\.gradle\caches\transforms-4\ed33601e26fe209f01a88197449a57c1\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\joel8\.gradle\caches\transforms-4\ed33601e26fe209f01a88197449a57c1\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\1b779b4f8d4d5a84e2a762d4da89d7d9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\1b779b4f8d4d5a84e2a762d4da89d7d9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.window.extensions.core:core:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\c42ba8962a98454e1076fe170ddf0ae1\transformed\core-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.window.extensions.core:core:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\c42ba8962a98454e1076fe170ddf0ae1\transformed\core-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\6c77cc2c7e649b1b55fe86ba70d0d7bb\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\6c77cc2c7e649b1b55fe86ba70d0d7bb\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\a0c13119c601ff72bd7d4035e9154b15\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\a0c13119c601ff72bd7d4035e9154b15\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\d0c9566d2d3cccca9428c771cafd6b91\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\joel8\.gradle\caches\transforms-4\d0c9566d2d3cccca9428c771cafd6b91\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\joel8\.gradle\caches\transforms-4\e2725bc8b2239a15fe5d2fc876c7b937\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\joel8\.gradle\caches\transforms-4\e2725bc8b2239a15fe5d2fc876c7b937\transformed\annotation-experimental-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\6e10ff017a49ced686c3b53a1c5ca26f\transformed\relinker-1.4.5\AndroidManifest.xml:5:5-43
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\caches\transforms-4\6e10ff017a49ced686c3b53a1c5ca26f\transformed\relinker-1.4.5\AndroidManifest.xml:5:5-43
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 	android:targetSdkVersion
-		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
+<<<<<<< HEAD
 		INJECTED from C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-68
@@ -483,6 +711,53 @@ ADDED from [:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.de
 		ADDED from [:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:17-124
+=======
+		INJECTED from C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:22-78
+service#id.flutter.flutter_background_service.BackgroundService
+ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:9-16:44
+	android:enabled
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-35
+	android:exported
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-36
+	android:stopWithTask
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-41
+	android:name
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-83
+receiver#id.flutter.flutter_background_service.WatchdogReceiver
+ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:9-21:39
+	android:enabled
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:13-35
+	android:exported
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-36
+	android:name
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:13-82
+receiver#id.flutter.flutter_background_service.BootReceiver
+ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:9-31:20
+	android:enabled
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:24:13-35
+	android:exported
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:13-78
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.MY_PACKAGE_REPLACED+action:name:android.intent.action.QUICKBOOT_POWERON
+ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:13-30:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:17-79
+	android:name
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:25-76
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:17-82
+	android:name
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:25-79
+action#android.intent.action.MY_PACKAGE_REPLACED
+ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:17-84
+	android:name
+		ADDED from [:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:25-81
+>>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
 uses-permission#android.permission.VIBRATE
 ADDED from [:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-66
 	android:name

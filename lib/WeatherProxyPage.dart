@@ -8,14 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'About_Me.dart';
 import 'data/Stations.dart';
 import 'station_history.dart';
 import 'cards_under_daily_extras.dart';
 import 'package:clima/widgets/favorite_stations.dart';
 import 'package:clima/widgets/maps.dart';
-import 'notifications/precipitation_notifications.dart';
 import 'bin/generate_offline.dart'; // OfflineDataService
 
 /// ====== CONFIG API ======
@@ -737,7 +735,7 @@ class _Hourly {
   if (root is List && root.isNotEmpty && root.first is Map) {
     firstObj = Map<String, dynamic>.from(root.first as Map);
   } else if (root is Map) {
-    firstObj = Map<String, dynamic>.from(root as Map);
+    firstObj = Map<String, dynamic>.from(root);
   }
   if (firstObj == null) return (_Current(), <_Hourly>[]);
 
@@ -792,7 +790,7 @@ class _Hourly {
 
   for (final h in horas) {
     if (h is! Map) continue;
-    final mm = Map<String, dynamic>.from(h as Map);
+    final mm = Map<String, dynamic>.from(h);
 
     final horaTxt = (mm['Hora'] ??
             mm['hora'] ??
@@ -818,7 +816,7 @@ class _Hourly {
     if (when != null) {
       final diff = (when.difference(anchor)).inMinutes.abs();
       if (closest == null ||
-          diff < (closest!.time!.difference(anchor)).inMinutes.abs()) {
+          diff < (closest.time!.difference(anchor)).inMinutes.abs()) {
         closest = item;
       }
     }

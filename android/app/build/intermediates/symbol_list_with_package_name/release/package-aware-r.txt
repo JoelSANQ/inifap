@@ -771,6 +771,7 @@ drawable common_google_signin_btn_text_light_normal_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_down_24dp
+drawable ic_bg_service_small
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video

@@ -1,23 +1,17 @@
-// precipitation_notifications.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart'; // kIsWeb
-import 'permission_handler.dart';        // para mostrarNotificacionSimple()
-
+import 'notification_service.dart';       // 👈 nuestro servicio
+                                          
 /// ============================================================================
 /// 🟦 SISTEMA DE NOTIFICACIONES DE LLUVIA
 /// ============================================================================
 
 double? _ultimaLluviaNotificada;
 
-/// Checa la lluvia actual y muestra notificación en móvil
-/// o SnackBar en web.
 void checarLluviaWebYMovil({
   required BuildContext context,
   required double? lluviaActualMm,
 }) {
-  // DEBUG
-  // ignore: avoid_print
-  print('💧 checarLluviaWebYMovil -> lluviaActualMm = $lluviaActualMm');
 
   // 1) Si no hay valor, salimos
   if (lluviaActualMm == null) {
@@ -25,7 +19,7 @@ void checarLluviaWebYMovil({
     return;
   }
 
-  // 2) Evitar spamear la misma notificación
+  // 2) Evitar spamear
   if (_ultimaLluviaNotificada == lluviaActualMm) {
     print('🔁 Mismo valor de lluvia que antes, no repetimos notificación');
     return;
@@ -39,32 +33,41 @@ void checarLluviaWebYMovil({
   if (lluviaActualMm > 0.0) {
     titulo = '🌧️ Está lloviendo ahora';
     cuerpo = 'Intensidad actual: ${lluviaActualMm.toStringAsFixed(1)} mm.';
-  } else if (lluviaActualMm == 0.0) {
-    titulo = 'No hay lluvia';
-    cuerpo =
-        'El valor de lluvia actual es: ${lluviaActualMm.toStringAsFixed(1)} mm.';
   } else {
-    // por si algún día llega un valor negativo
-    titulo = '☀️ No está lloviendo';
-    cuerpo =
-        'La lluvia actual es de ${lluviaActualMm.toStringAsFixed(1)} mm.';
+    titulo = '☀️ Sin lluvia';
+    cuerpo = 'Actualmente no se detecta precipitación.';
   }
 
-  // 4) Según la plataforma, mostramos SnackBar (web) o notificación local (móvil)
+  // 4) Mostrar notificación
+  _mostrarNotificacion(
+    title: titulo,
+    body: cuerpo,
+  );
+}
+
+/// ============================================================================
+/// 🔔 NOTIFICACIÓN PROGRAMADA (FUNCIONA EN BACKGROUND)
+/// ============================================================================
+
+Future<void> _mostrarNotificacion({
+  required String title,
+  required String body,
+}) async {
+
+  // 🌐 Web no soporta notificaciones locales
   if (kIsWeb) {
-    print('🌐 Mostrando SnackBar en Web');
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          cuerpo,
-          style: const TextStyle(fontSize: 16),
-        ),
-        duration: const Duration(seconds: 5),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
-  } else {
-    print('📱 Mostrando notificación local en móvil');
-    mostrarNotificacionSimple(titulo: titulo, cuerpo: cuerpo);
+    print('⚠️ Web: notificaciones locales no soportadas');
+    return;
   }
+
+  // ⏰ Se programa 5 segundos después
+  final fecha = DateTime.now().add(
+    const Duration(seconds: 5),
+  );
+
+  await NotificationService.showScheduled(
+    title: title,
+    body: body,
+    date: fecha,
+  );
 }

@@ -99,7 +99,7 @@ DateTime _parseFechaDDMMYYYY(String s) {
     String? estName;
     for (final e in root) {
       if (e is! Map) continue;
-      final m = Map<String, dynamic>.from(e as Map);
+      final m = Map<String, dynamic>.from(e );
 
       final fechaStr = (m['Fecha'] ?? m['fecha'])?.toString();
       if (fechaStr == null) continue;

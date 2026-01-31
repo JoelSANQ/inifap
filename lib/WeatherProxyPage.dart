@@ -67,6 +67,37 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   static const double _itemGap = 18;
   int _currentIndex = 0;
 
+  // ===========================
+  // ✅ POPUP "SEGUIR USANDO"
+  // (solo se agrega, no cambia tu lógica)
+  // ===========================
+  bool _offlinePopupShown = false;
+
+  Future<void> _showKeepUsingPopup() async {
+    if (!mounted) return;
+    if (_offlinePopupShown) return; // evita que se repita muchas veces
+
+    _offlinePopupShown = true;
+
+    await showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => AlertDialog(
+        title: const Text('Sin conexión'),
+        content: const Text(
+          'No hay conexión, pero se muestran los últimos datos guardados.\n\n'
+          '¿Deseas seguir usando la aplicación?',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(), // ✅ solo cerrar
+            child: const Text('Seguir usando'),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   void initState() {
     super.initState();
@@ -299,10 +330,14 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
       } else {
         // ✅ Sí hay datos en caché/offline: solo avisamos y seguimos mostrando
         if (mounted) {
+          // ✅ POPUP "Seguir usando" (no refresca, solo cierra)
+          await _showKeepUsingPopup();
+
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content:
-                  Text('No hay conexión. Se muestran los últimos datos guardados.'),
+              content: Text(
+                'No hay conexión. Se muestran los últimos datos guardados.',
+              ),
             ),
           );
         }

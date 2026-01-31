@@ -1,20 +1,25 @@
-// lib/widgets/maps.dart 
+// lib/widgets/maps.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '../data/Stations.dart';
-import 'package:clima/widgets/favorite_stations.dart' show addFavoriteStation;
 import '../data/lat_and_long_cords.dart';
 
-/// Mapa OSM con:
-/// - Marcadores para TODAS las estaciones de kStations (si tenemos coordenadas)
-/// - Botones pequeños (+, −, recentrar)
-/// - Selector de capas base
-/// - Popups con nombre y link "Tiempo Real"
+// ⚠️ Ajusta esta ruta a donde tengas los helpers reales.
+// Debe exportar: addFavoriteStation, removeFavoriteStation, favoritesVersion, kFavPrefsKey
+import 'package:clima/widgets/favorite_stations.dart'
+    show addFavoriteStation, removeFavoriteStation, favoritesVersion, kFavPrefsKey;
+
+/// Mapa OSM con favoritos sincronizados con SharedPreferences:
+/// - Visual: marcador dorado si es favorito
+/// - Popup: Agregar / Quitar
+/// - Regla: EN EL MAPA solo puedes tener EXACTAMENTE 3 (máximo 3)
 class OSMMap extends StatefulWidget {
   const OSMMap({
     super.key,
-    this.initialCenter = const LatLng(23.216944, -103.036111), // Fresnillo - Col. Emancipación
+    this.initialCenter = const LatLng(23.216944, -103.036111),
     this.initialZoom = 9.0,
   });
 
@@ -31,23 +36,51 @@ class _OSMMapState extends State<OSMMap> {
   late final MapController _map;
   _BaseMap _currentBase = _BaseMap.cartoLight;
 
+  // ✅ favoritos cacheados para pintar marcadores y validar máximo 3
+  Set<String> _favIds = {};
+
+  late final VoidCallback _favListener = () {
+    _loadFavIds();
+  };
+
   @override
   void initState() {
     super.initState();
     _map = MapController();
+
+    _loadFavIds();
+    favoritesVersion.addListener(_favListener);
   }
+
+  @override
+  void dispose() {
+    favoritesVersion.removeListener(_favListener);
+    super.dispose();
+  }
+
+  Future<void> _loadFavIds() async {
+    final sp = await SharedPreferences.getInstance();
+    final ids = sp.getStringList(kFavPrefsKey) ?? [];
+    if (!mounted) return;
+    setState(() => _favIds = ids.toSet());
+  }
+
+  bool _isFav(Station st) => _favIds.contains(st.id.toString());
 
   // Controles
   void _recenter() => _map.move(widget.initialCenter, widget.initialZoom);
   void _zoomIn() => _map.move(_map.center, _map.zoom + 1);
   void _zoomOut() => _map.move(_map.center, _map.zoom - 1);
 
-  // ====== MARCADORES desde kStations usando el diccionario de coordenadas ======
+  // ====== MARCADORES ======
   List<Marker> get _markers {
     final List<Marker> out = [];
     for (final Station st in kStations) {
       final LatLng? ll = kStationCoords[st.id];
-      if (ll == null) continue; // si no tenemos coords para ese id, lo saltamos
+      if (ll == null) continue;
+
+      final fav = _isFav(st);
+
       out.add(
         Marker(
           point: ll,
@@ -55,9 +88,11 @@ class _OSMMapState extends State<OSMMap> {
           height: 44,
           child: GestureDetector(
             onTap: () => _showStationPopup(st, ll),
-            child: const Icon(Icons.location_on, color: Colors.red, size: 36),
-            // Si quieres el icono de viento del HTML:
-            // child: Image.network('http://zacatecas.inifap.gob.mx/images/wind.png', width: 28, height: 34),
+            child: Icon(
+              Icons.location_on,
+              color: fav ? const Color.fromARGB(255, 238, 204, 131) : Colors.red,
+              size: 36,
+            ),
           ),
         ),
       );
@@ -65,41 +100,82 @@ class _OSMMapState extends State<OSMMap> {
     return out;
   }
 
+  Future<void> _toggleFavoriteFromMap(Station st) async {
+    final alreadyFav = _isFav(st);
+
+    // ✅ si ya es favorito: siempre permitimos quitar
+    if (alreadyFav) {
+      await removeFavoriteStation(st);
+      await _loadFavIds();
+      return;
+    }
+
+    // ✅ si NO es favorito: SOLO permitir si aún no hay 3
+    if (_favIds.length >= 3) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Solo puedes seleccionar 3 estaciones en el mapa.')),
+      );
+      return;
+    }
+
+    await addFavoriteStation(st);
+    await _loadFavIds();
+  }
+
   void _showStationPopup(Station st, LatLng ll) {
+    final alreadyFav = _isFav(st);
+
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
         title: Text(st.name),
         content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Lat: ${ll.latitude.toStringAsFixed(6)}',
-                style: const TextStyle(fontSize: 19, fontFamily: 'monospace'),
-              ),
-              Text(
-                'Lon: ${ll.longitude.toStringAsFixed(6)}',
-                style: const TextStyle(fontSize: 19),
-              ),
-            ],
-          ),
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Lat: ${ll.latitude.toStringAsFixed(6)}',
+              style: const TextStyle(fontSize: 19, fontFamily: 'monospace'),
+            ),
+            Text(
+              'Lon: ${ll.longitude.toStringAsFixed(6)}',
+              style: const TextStyle(fontSize: 19),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'Favoritos: ${_favIds.length}/3',
+              style: const TextStyle(fontSize: 14, color: Colors.black54),
+            ),
+          ],
+        ),
         actions: [
-          // ⬇️ Integrado: usa la misma función de la barra para guardar en favoritos
           TextButton.icon(
-            icon: const Icon(Icons.favorite_border),
-            label: const Text('Agregar a favoritos'),
+            icon: Icon(alreadyFav ? Icons.favorite : Icons.favorite_border),
+            label: Text(alreadyFav ? 'Quitar de favoritos' : 'Agregar a favoritos'),
             onPressed: () async {
               Navigator.pop(context);
-              await addFavoriteStation(st);
-              if (context.mounted) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('“${st.name}” agregada a favoritos')),
-                );
-              }
+
+              await _toggleFavoriteFromMap(st);
+
+              if (!mounted) return;
+              // feedback
+              final nowFav = _isFav(st);
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    nowFav
+                        ? '“${st.name}” agregada. (${_favIds.length}/3)'
+                        : '“${st.name}” quitada. (${_favIds.length}/3)',
+                  ),
+                ),
+              );
             },
           ),
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cerrar')),
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cerrar'),
+          ),
         ],
       ),
     );
@@ -151,7 +227,6 @@ class _OSMMapState extends State<OSMMap> {
 
   @override
   Widget build(BuildContext context) {
-    // Se adapta 100% al tamaño del contenedor padre
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: Stack(
@@ -171,7 +246,6 @@ class _OSMMapState extends State<OSMMap> {
             ],
           ),
 
-          // Selector de estilo (solo 2 opciones: Carto Light y OSM)
           Positioned(
             right: 8,
             top: 8,
@@ -181,7 +255,6 @@ class _OSMMapState extends State<OSMMap> {
             ),
           ),
 
-          // Controles pequeños
           Positioned(
             right: 8,
             bottom: 8,
@@ -236,7 +309,7 @@ class _MiniRoundButton extends StatelessWidget {
   }
 }
 
-/// Dropdown compacto para cambiar la capa base (SOLO Carto Light y OSM).
+/// Dropdown compacto para cambiar la capa base
 class _MapStyleSelector extends StatelessWidget {
   const _MapStyleSelector({required this.current, required this.onChanged});
 
@@ -256,14 +329,16 @@ class _MapStyleSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Solo estas dos opciones quedan visibles en el selector
-    const allowed = [_BaseMap.cartoLight, _BaseMap.osm];
+    // ✅ SOLO Carto Light (como lo tenías)
+    const allowed = [_BaseMap.cartoLight];
 
     final _BaseMap safeValue =
         allowed.contains(current) ? current : allowed.first;
 
     return Material(
-      color: Colors.white, elevation: 3, borderRadius: BorderRadius.circular(20),
+      color: Colors.white,
+      elevation: 3,
+      borderRadius: BorderRadius.circular(20),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: DropdownButton<_BaseMap?>(
@@ -282,5 +357,3 @@ class _MapStyleSelector extends StatelessWidget {
     );
   }
 }
-
-

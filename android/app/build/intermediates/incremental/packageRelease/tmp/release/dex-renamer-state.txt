@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-#Tue Jan 27 12:15:36 CST 2026
-base.0=C\:\\Users\\joel8\\Downloads\\clima Inifap\\clima\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-base.1=C\:\\Users\\joel8\\Downloads\\clima Inifap\\clima\\android\\app\\build\\intermediates\\desugar_lib_dex\\release\\classes1000.dex
-base.2=C\:\\Users\\joel8\\Downloads\\clima Inifap\\clima\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
-=======
-#Sun Jan 18 16:34:21 CST 2026
-base.0=C\:\\Users\\joel8\\Downloads\\Nueva carpeta (5)\\inifap\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-base.1=C\:\\Users\\joel8\\Downloads\\Nueva carpeta (5)\\inifap\\android\\app\\build\\intermediates\\desugar_lib_dex\\release\\classes1000.dex
-base.2=C\:\\Users\\joel8\\Downloads\\Nueva carpeta (5)\\inifap\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
->>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
+#Thu Feb 05 14:06:44 CST 2026
+base.0=C\:\\Users\\joel8\\Downloads\\flutterapp\\inifap\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+base.1=C\:\\Users\\joel8\\Downloads\\flutterapp\\inifap\\android\\app\\build\\intermediates\\desugar_lib_dex\\release\\classes1000.dex
+base.2=C\:\\Users\\joel8\\Downloads\\flutterapp\\inifap\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
 path.0=classes.dex
 path.1=classes1000.dex
 path.2=classes2.dex

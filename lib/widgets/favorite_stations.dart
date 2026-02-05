@@ -12,6 +12,10 @@ class FavoriteStationsBar extends StatefulWidget {
 
 class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
   static const _prefsKey = 'favorite_station_ids';
+
+  // ✅ NUEVO (incorporado): flag para “activar notificaciones” cuando haya EXACTAMENTE 3
+  static const String _notifEnabledKey = 'notif_enabled';
+
   List<Station> _favorites = [];
 
   // ✅ guardamos el callback para poder quitarlo en dispose
@@ -52,6 +56,10 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
       _prefsKey,
       _favorites.map((s) => s.id.toString()).toList(),
     );
+
+    // ✅ NUEVO (incorporado): activa/desactiva notificaciones según regla EXACTAMENTE 3
+    await sp.setBool(_notifEnabledKey, _favorites.length == 3);
+
     // 👇 notifica a quien escuche (incluida esta barra si otro cambió la lista)
     favoritesVersion.value++;
   }
@@ -73,12 +81,12 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
     // canceló
     if (result == null) return;
 
-    // ✅ regla: mínimo 3
-    if (result.length > 3) {
+    // ✅ NUEVO (incorporado): asegurar EXACTAMENTE 3 (no cambia tu flujo, solo valida)
+    if (result.length != 3) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Selecciona mínimo 3 estaciones para activar notificaciones.'),
+          content: Text('Debes seleccionar EXACTAMENTE 3 estaciones para activar notificaciones.'),
         ),
       );
       return;
@@ -89,7 +97,7 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
     await _saveFavs();
 
     // 👇 siguiente paso (cuando lo conectemos a FCM):
-    // if (_favorites.length >= 3) { habilitarNotificaciones(); }
+    // if (_favorites.length == 3) { habilitarNotificaciones(); }
   }
 
   void _removeFavorite(Station s) async {
@@ -214,6 +222,13 @@ class _MultiSelectStationsSheetState extends State<_MultiSelectStationsSheet> {
                   onChanged: (v) {
                     setState(() {
                       if (v == true) {
+                        // ✅ NUEVO (incorporado): no permitir más de 3 seleccionadas
+                        if (_selectedIds.length >= 3) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Solo puedes seleccionar 3 estaciones.')),
+                          );
+                          return;
+                        }
                         _selectedIds.add(st.id);
                       } else {
                         _selectedIds.remove(st.id);
@@ -242,6 +257,16 @@ class _MultiSelectStationsSheetState extends State<_MultiSelectStationsSheet> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
+                        // ✅ NUEVO (incorporado): validar EXACTAMENTE 3 antes de guardar
+                        if (_selectedIds.length != 3) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Selecciona EXACTAMENTE 3 estaciones para guardar.'),
+                            ),
+                          );
+                          return;
+                        }
+
                         // Armamos lista de estaciones seleccionadas
                         final mapById = {for (final s in kStations) s.id: s};
                         final selectedStations = _selectedIds
@@ -267,6 +292,9 @@ class _MultiSelectStationsSheetState extends State<_MultiSelectStationsSheet> {
 // ---- helpers públicos reutilizables (para que el mapa use la misma lógica) ----
 const String kFavPrefsKey = 'favorite_station_ids';
 
+// ✅ NUEVO (incorporado): key pública para el flag
+const String kNotifEnabledKey = 'notif_enabled';
+
 /// Notificador global de “versión” de favoritos.
 /// Cada vez que cambie la lista, incrementa su valor.
 final ValueNotifier<int> favoritesVersion = ValueNotifier<int>(0);
@@ -275,9 +303,18 @@ Future<void> addFavoriteStation(Station station) async {
   final sp = await SharedPreferences.getInstance();
   final ids = sp.getStringList(kFavPrefsKey) ?? [];
   final idStr = station.id.toString();
+
+  // ✅ NUEVO (incorporado): si ya hay 3, no permitir agregar más
   if (!ids.contains(idStr)) {
+    if (ids.length >= 3) {
+      return;
+    }
     ids.add(idStr);
     await sp.setStringList(kFavPrefsKey, ids);
+
+    // ✅ NUEVO (incorporado): actualizar flag
+    await sp.setBool(kNotifEnabledKey, ids.length == 3);
+
     favoritesVersion.value++; // 🔔 avisa a todos los escuchas
   }
 }
@@ -288,6 +325,10 @@ Future<void> removeFavoriteStation(Station station) async {
   final idStr = station.id.toString();
   if (ids.remove(idStr)) {
     await sp.setStringList(kFavPrefsKey, ids);
+
+    // ✅ NUEVO (incorporado): actualizar flag (si baja de 3, se apaga)
+    await sp.setBool(kNotifEnabledKey, ids.length == 3);
+
     favoritesVersion.value++; // 🔔 avisa a todos los escuchas
   }
 }
@@ -297,4 +338,19 @@ Future<bool> hasMinFavoritesForNotifications({int min = 3}) async {
   final sp = await SharedPreferences.getInstance();
   final ids = sp.getStringList(kFavPrefsKey) ?? [];
   return ids.length >= min;
+}
+
+// ✅ NUEVO (incorporado): util para asegurar EXACTAMENTE 3 y que notificaciones estén “activas”
+Future<bool> hasExactly3FavoritesAndNotificationsEnabled() async {
+  final sp = await SharedPreferences.getInstance();
+  final ids = sp.getStringList(kFavPrefsKey) ?? [];
+  final enabled = sp.getBool(kNotifEnabledKey) ?? false;
+  return ids.length == 3 && enabled;
+}
+
+// ✅ NUEVO (incorporado): util para saber si una estación está dentro de las 3 seleccionadas
+Future<bool> isStationInTop3Favorites(String stationId) async {
+  final sp = await SharedPreferences.getInstance();
+  final ids = sp.getStringList(kFavPrefsKey) ?? [];
+  return ids.contains(stationId);
 }

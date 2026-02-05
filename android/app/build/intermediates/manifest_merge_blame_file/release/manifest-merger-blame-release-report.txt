@@ -9,615 +9,444 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:5-67
-11-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:3:22-64
+11-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:3:5-67
+11-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:3:22-64
 12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-<<<<<<< HEAD
-12-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:4:5-77
-12-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:4:22-74
-13
-14    <queries>
-14-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:38:5-43:15
-15        <intent>
-15-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:39:9-42:18
-16            <action android:name="android.intent.action.PROCESS_TEXT" />
-16-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:40:13-73
-16-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:40:21-70
-17
-18            <data android:mimeType="text/plain" />
-18-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:41:13-51
-18-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:41:19-48
-19        </intent>
-20    </queries>
-21
-22    <uses-permission android:name="android.permission.WAKE_LOCK" />
-22-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-68
-22-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:22-65
-23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-23-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
-23-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-76
-24    <uses-permission android:name="android.permission.VIBRATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-24-->[:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-66
-24-->[:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:22-63
-25    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-25-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:26:5-82
-25-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:26:22-79
-26
-27    <permission
-27-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
-28        android:name="com.example.clima.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-28-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-29        android:protectionLevel="signature" />
-29-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
-30
-31    <uses-permission android:name="com.example.clima.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-31-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-31-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
-32
-33    <application
-34        android:name="android.app.Application"
-34-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:8:9-42
-35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-35-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
-36        android:extractNativeLibs="true"
-37        android:icon="@mipmap/ic_launcher"
-37-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:9:9-43
-38        android:label="clima"
-38-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:7:9-30
-39        android:usesCleartextTraffic="true" >
-39-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:10:9-44
-40        <activity
-40-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:12:9-31:20
-41            android:name="com.example.clima.MainActivity"
-41-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:13:13-41
-42            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-42-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:18:13-163
-43            android:exported="true"
-43-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:14:13-36
-44            android:hardwareAccelerated="true"
-44-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:19:13-47
-45            android:launchMode="singleTop"
-45-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:15:13-43
-46            android:taskAffinity=""
-46-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:16:13-36
-47            android:theme="@style/LaunchTheme"
-47-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:17:13-47
-48            android:windowSoftInputMode="adjustResize" >
-48-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:20:13-55
-49
-50            <!-- Tema mientras Flutter inicializa -->
-51            <meta-data
-51-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:23:13-25:57
-52                android:name="io.flutter.embedding.android.NormalTheme"
-52-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:24:17-72
-53                android:resource="@style/NormalTheme" />
-53-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:25:17-54
-54
-55            <intent-filter>
-55-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:27:13-30:29
-56                <action android:name="android.intent.action.MAIN" />
-56-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:28:17-69
-56-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:28:25-66
-57
-58                <category android:name="android.intent.category.LAUNCHER" />
-58-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:29:17-77
-58-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:29:27-74
-59            </intent-filter>
-60        </activity>
-61
-62        <meta-data
-62-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:33:9-35:33
-63            android:name="flutterEmbedding"
-63-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:34:13-44
-64            android:value="2" />
-64-->C:\Users\joel8\Downloads\clima Inifap\clima\android\app\src\main\AndroidManifest.xml:35:13-30
-65
-66        <service
-66-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:9-17:72
-67            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
-67-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-107
-68            android:exported="false"
-68-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-37
-69            android:permission="android.permission.BIND_JOB_SERVICE" />
-69-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-69
-70        <service
-70-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:9-24:19
-71            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
-71-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:13-97
-72            android:exported="false" >
-72-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:13-37
-73            <intent-filter>
-73-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-23:29
-74                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-74-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:17-78
-74-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:25-75
-75            </intent-filter>
-76        </service>
-77
-78        <receiver
-78-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:9-33:20
-79            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
-79-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:13-98
-80            android:exported="true"
-80-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:13-36
-81            android:permission="com.google.android.c2dm.permission.SEND" >
-81-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:13-73
-82            <intent-filter>
-82-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:30:13-32:29
-83                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-83-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:17-81
-83-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:25-78
-84            </intent-filter>
-85        </receiver>
-86
-87        <service
-87-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:35:9-39:19
-88            android:name="com.google.firebase.components.ComponentDiscoveryService"
-88-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:35:18-89
-89            android:directBootAware="true"
-89-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
-90            android:exported="false" >
-90-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:56:13-37
-91            <meta-data
-91-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:36:13-38:85
-92                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
-92-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:37:17-128
-93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:38:17-82
-94            <meta-data
-94-->[:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:13-11:85
-95                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-95-->[:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:17-124
-96                android:value="com.google.firebase.components.ComponentRegistrar" />
-96-->[:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:17-82
-97            <meta-data
-97-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:57:13-59:85
-98                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
-98-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:58:17-122
-99                android:value="com.google.firebase.components.ComponentRegistrar" />
-99-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:59:17-82
-100            <meta-data
-100-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:60:13-62:85
-101                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-101-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:61:17-119
-102                android:value="com.google.firebase.components.ComponentRegistrar" />
-102-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:62:17-82
-103            <meta-data
-103-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
-104                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-104-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
-105                android:value="com.google.firebase.components.ComponentRegistrar" />
-105-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
-106            <meta-data
-106-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
-107                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-107-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
-108                android:value="com.google.firebase.components.ComponentRegistrar" />
-108-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
-109            <meta-data
-109-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\b5c6809ffb51680ed2d04e3130b70d8f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
-110                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-110-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\b5c6809ffb51680ed2d04e3130b70d8f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
-111                android:value="com.google.firebase.components.ComponentRegistrar" />
-111-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\b5c6809ffb51680ed2d04e3130b70d8f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
-112            <meta-data
-112-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
-113                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-113-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
-114                android:value="com.google.firebase.components.ComponentRegistrar" />
-114-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
-115            <meta-data
-115-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\joel8\.gradle\caches\transforms-4\e4923a89df1d9ee4624e8d0dbbc6bae2\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:25:13-27:85
-116                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-116-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\joel8\.gradle\caches\transforms-4\e4923a89df1d9ee4624e8d0dbbc6bae2\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:26:17-115
-117                android:value="com.google.firebase.components.ComponentRegistrar" />
-117-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\joel8\.gradle\caches\transforms-4\e4923a89df1d9ee4624e8d0dbbc6bae2\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:27:17-82
-118        </service>
-119
-120        <provider
-120-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:41:9-45:38
-121            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
-121-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:42:13-102
-122            android:authorities="com.example.clima.flutterfirebasemessaginginitprovider"
-122-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:43:13-88
-123            android:exported="false"
-123-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:44:13-37
-124            android:initOrder="99" />
-124-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:45:13-35
-125
-126        <receiver
-126-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:29:9-40:20
-127            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-127-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:30:13-78
-128            android:exported="true"
-128-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:31:13-36
-129            android:permission="com.google.android.c2dm.permission.SEND" >
-129-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:32:13-73
-130            <intent-filter>
-130-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:30:13-32:29
-131                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-131-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:17-81
-131-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:25-78
-132            </intent-filter>
-133
-134            <meta-data
-134-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:37:13-39:40
-135                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
-135-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:38:17-92
-136                android:value="true" />
-136-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:39:17-37
-137        </receiver>
-138        <!--
-139             FirebaseMessagingService performs security checks at runtime,
-140             but set to not exported to explicitly avoid allowing another app to call it.
-141        -->
-142        <service
-142-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:46:9-53:19
-143            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-143-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:47:13-82
-144            android:directBootAware="true"
-144-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:48:13-43
-145            android:exported="false" >
-145-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:49:13-37
-146            <intent-filter android:priority="-500" >
-146-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-23:29
-147                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-147-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:17-78
-147-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:25-75
-148            </intent-filter>
-149        </service>
-150
-151        <provider
-151-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
-152            android:name="com.google.firebase.provider.FirebaseInitProvider"
-152-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
-153            android:authorities="com.example.clima.firebaseinitprovider"
-153-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
-154            android:directBootAware="true"
-154-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
-155            android:exported="false"
-155-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
-156            android:initOrder="100" />
-156-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
-157
-158        <uses-library
-158-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:23:9-25:40
-159            android:name="androidx.window.extensions"
-159-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:24:13-54
-160            android:required="false" />
-160-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:25:13-37
-161        <uses-library
-161-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:26:9-28:40
-162            android:name="androidx.window.sidecar"
-162-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:27:13-51
-163            android:required="false" />
-163-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:28:13-37
-164
-165        <activity
-165-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
-166            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-166-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
-167            android:exported="false"
-167-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
-168            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-168-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
-169
-170        <provider
-170-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
-171            android:name="androidx.startup.InitializationProvider"
-171-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:25:13-67
-172            android:authorities="com.example.clima.androidx-startup"
-172-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:26:13-68
-173            android:exported="false" >
-173-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:27:13-37
-174            <meta-data
-174-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-175                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-175-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-176                android:value="androidx.startup" />
-176-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-177            <meta-data
-177-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-178                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-178-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-179                android:value="androidx.startup" />
-179-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-180        </provider>
-181
-182        <meta-data
-182-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\joel8\.gradle\caches\transforms-4\5f986ff1f6df83eff90b5f2654097dec\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
-183            android:name="com.google.android.gms.version"
-183-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\joel8\.gradle\caches\transforms-4\5f986ff1f6df83eff90b5f2654097dec\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
-184            android:value="@integer/google_play_services_version" />
-184-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\joel8\.gradle\caches\transforms-4\5f986ff1f6df83eff90b5f2654097dec\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
-185
-186        <receiver
-186-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-187            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-187-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-188            android:directBootAware="false"
-188-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-189            android:enabled="true"
-189-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-190            android:exported="true"
-190-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-191            android:permission="android.permission.DUMP" >
-191-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-192            <intent-filter>
-192-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-193                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-193-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-193-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-194            </intent-filter>
-195            <intent-filter>
-195-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-196                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-196-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-196-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-197            </intent-filter>
-198            <intent-filter>
-198-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-199                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-199-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-199-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-200            </intent-filter>
-201            <intent-filter>
-201-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-202                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-202-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-202-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-203            </intent-filter>
-204        </receiver>
-205
-206        <service
-206-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:28:9-34:19
-207            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-207-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:29:13-103
-208            android:exported="false" >
-208-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:30:13-37
-209            <meta-data
-209-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:31:13-33:39
-210                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-210-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:32:17-94
-211                android:value="cct" />
-211-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:33:17-36
-212        </service>
-213        <service
-213-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:26:9-30:19
-214            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-214-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:27:13-117
-215            android:exported="false"
-215-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:28:13-37
-216            android:permission="android.permission.BIND_JOB_SERVICE" >
-216-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:29:13-69
-217        </service>
-218
-219        <receiver
-219-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:32:9-34:40
-220            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-220-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:33:13-132
-221            android:exported="false" />
-221-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:34:13-37
-222    </application>
-223
-224</manifest>
-=======
-12-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:4:5-77
-12-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:4:22-74
+12-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:4:5-77
+12-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:4:22-74
 13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-13-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:5:5-77
-13-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:5:22-74
+13-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:5:5-77
+13-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:5:22-74
 14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
-14-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:6:5-87
-14-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:6:22-84
+14-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:6:5-87
+14-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:6:22-84
 15    <uses-permission android:name="android.permission.WAKE_LOCK" />
-15-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:7:5-68
-15-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:7:22-65
+15-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:7:5-68
+15-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:7:22-65
 16
 17    <queries>
-17-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:41:5-46:15
+17-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:41:5-46:15
 18        <intent>
-18-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:42:9-45:18
+18-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:42:9-45:18
 19            <action android:name="android.intent.action.PROCESS_TEXT" />
-19-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:43:13-73
-19-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:43:21-70
+19-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:43:13-73
+19-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:43:21-70
 20
 21            <data android:mimeType="text/plain" />
-21-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:44:13-51
-21-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:44:19-48
+21-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:44:13-51
+21-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:44:19-48
 22        </intent>
 23    </queries>
 24
-25    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-25-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-81
-25-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:22-78
-26    <uses-permission android:name="android.permission.VIBRATE" />
-26-->[:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-66
-26-->[:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:22-63
-27
-28    <permission
-28-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
-29        android:name="com.example.clima.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-29-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-30        android:protectionLevel="signature" />
-30-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
-31
-32    <uses-permission android:name="com.example.clima.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-32-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-32-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+25-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
+25-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-76
+26    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+26-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-81
+26-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:22-78
+27    <uses-permission android:name="android.permission.VIBRATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+27-->[:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-66
+27-->[:flutter_local_notifications] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_local_notifications-17.2.4\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:22-63
+28    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+28-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:26:5-82
+28-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:26:22-79
+29
+30    <permission
+30-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+31        android:name="com.example.clima.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+31-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+32        android:protectionLevel="signature" />
+32-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
 33
-34    <application
-35        android:name="android.app.Application"
-35-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:11:9-42
-36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-36-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\28452479f356bfa81ea76042baa9ad8d\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
-37        android:extractNativeLibs="true"
-38        android:icon="@mipmap/ic_launcher"
-38-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:12:9-43
-39        android:label="clima"
-39-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:10:9-30
-40        android:usesCleartextTraffic="true" >
-40-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:13:9-44
-41        <activity
-41-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:15:9-34:20
-42            android:name="com.example.clima.MainActivity"
-42-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:16:13-41
-43            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-43-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:21:13-163
-44            android:exported="true"
-44-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:17:13-36
-45            android:hardwareAccelerated="true"
-45-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:22:13-47
-46            android:launchMode="singleTop"
-46-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:18:13-43
-47            android:taskAffinity=""
-47-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:19:13-36
-48            android:theme="@style/LaunchTheme"
-48-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:20:13-47
-49            android:windowSoftInputMode="adjustResize" >
-49-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:23:13-55
-50
-51            <!-- Tema mientras Flutter inicializa -->
-52            <meta-data
-52-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:26:13-28:57
-53                android:name="io.flutter.embedding.android.NormalTheme"
-53-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:27:17-72
-54                android:resource="@style/NormalTheme" />
-54-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:28:17-54
-55
-56            <intent-filter>
-56-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:30:13-33:29
-57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:31:17-69
-57-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:31:25-66
-58
-59                <category android:name="android.intent.category.LAUNCHER" />
-59-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:32:17-77
-59-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:32:27-74
-60            </intent-filter>
-61        </activity>
-62
-63        <meta-data
-63-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:36:9-38:33
-64            android:name="flutterEmbedding"
-64-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:37:13-44
-65            android:value="2" />
-65-->C:\Users\joel8\Downloads\Nueva carpeta (5)\inifap\android\app\src\main\AndroidManifest.xml:38:13-30
-66
-67        <service
-67-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:9-16:44
-68            android:name="id.flutter.flutter_background_service.BackgroundService"
-68-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-83
-69            android:enabled="true"
-69-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-35
-70            android:exported="true"
-70-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-36
-71            android:stopWithTask="false" />
-71-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-41
-72
-73        <receiver
-73-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:9-21:39
-74            android:name="id.flutter.flutter_background_service.WatchdogReceiver"
-74-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:13-82
-75            android:enabled="true"
-75-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:13-35
-76            android:exported="true" />
-76-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-36
-77        <receiver
-77-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:9-31:20
-78            android:name="id.flutter.flutter_background_service.BootReceiver"
-78-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:13-78
-79            android:enabled="true"
-79-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:24:13-35
-80            android:exported="true" >
-80-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:13-36
-81            <intent-filter>
-81-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:13-30:29
-82                <action android:name="android.intent.action.BOOT_COMPLETED" />
-82-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:17-79
-82-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:25-76
-83                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-83-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:17-82
-83-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:25-79
-84                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-84-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:17-84
-84-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:25-81
-85            </intent-filter>
-86        </receiver>
-87
-88        <uses-library
-88-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:23:9-25:40
-89            android:name="androidx.window.extensions"
-89-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:24:13-54
-90            android:required="false" />
-90-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:25:13-37
-91        <uses-library
-91-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:26:9-28:40
-92            android:name="androidx.window.sidecar"
-92-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:27:13-51
-93            android:required="false" />
-93-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\96bb09ed0cf76b0dc56e779468379d4f\transformed\window-1.2.0\AndroidManifest.xml:28:13-37
-94
-95        <provider
-95-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
-96            android:name="androidx.startup.InitializationProvider"
-96-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:25:13-67
-97            android:authorities="com.example.clima.androidx-startup"
-97-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:26:13-68
-98            android:exported="false" >
-98-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:27:13-37
-99            <meta-data
-99-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-100                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-100-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-101                android:value="androidx.startup" />
-101-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\a05cc5a8a01484cfb28acc63917896cf\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-102            <meta-data
-102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-103                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-104                android:value="androidx.startup" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-105        </provider>
-106
-107        <receiver
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-108            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-109            android:directBootAware="false"
-109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-110            android:enabled="true"
-110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-111            android:exported="true"
-111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-112            android:permission="android.permission.DUMP" >
-112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-113            <intent-filter>
-113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-114                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-114-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-115            </intent-filter>
-116            <intent-filter>
-116-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-117                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-118            </intent-filter>
-119            <intent-filter>
-119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-120                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-121            </intent-filter>
-122            <intent-filter>
-122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-123                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f04c511de8414ae2386aa7cc820ec58e\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-124            </intent-filter>
-125        </receiver>
-126    </application>
-127
-128</manifest>
->>>>>>> 953101cc20f75a44998cc662775dbfadcdaf6562
+34    <uses-permission android:name="com.example.clima.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+34-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+35
+36    <application
+37        android:name="android.app.Application"
+37-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:11:9-42
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.13.1] C:\Users\joel8\.gradle\caches\transforms-4\b38d8c2abe822d6537962d53bc364836\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+39        android:extractNativeLibs="true"
+40        android:icon="@mipmap/ic_launcher"
+40-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:12:9-43
+41        android:label="clima"
+41-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:10:9-30
+42        android:usesCleartextTraffic="true" >
+42-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:13:9-44
+43        <activity
+43-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:15:9-34:20
+44            android:name="com.example.clima.MainActivity"
+44-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:16:13-41
+45            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+45-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:21:13-163
+46            android:exported="true"
+46-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:17:13-36
+47            android:hardwareAccelerated="true"
+47-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:22:13-47
+48            android:launchMode="singleTop"
+48-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:18:13-43
+49            android:taskAffinity=""
+49-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:19:13-36
+50            android:theme="@style/LaunchTheme"
+50-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:20:13-47
+51            android:windowSoftInputMode="adjustResize" >
+51-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:23:13-55
+52
+53            <!-- Tema mientras Flutter inicializa -->
+54            <meta-data
+54-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:26:13-28:57
+55                android:name="io.flutter.embedding.android.NormalTheme"
+55-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:27:17-72
+56                android:resource="@style/NormalTheme" />
+56-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:28:17-54
+57
+58            <intent-filter>
+58-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:30:13-33:29
+59                <action android:name="android.intent.action.MAIN" />
+59-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:31:17-69
+59-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:31:25-66
+60
+61                <category android:name="android.intent.category.LAUNCHER" />
+61-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:32:17-77
+61-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:32:27-74
+62            </intent-filter>
+63        </activity>
+64
+65        <meta-data
+65-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:36:9-38:33
+66            android:name="flutterEmbedding"
+66-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:37:13-44
+67            android:value="2" />
+67-->C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:38:13-30
+68
+69        <service
+69-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:9-17:72
+70            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
+70-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-107
+71            android:exported="false"
+71-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-37
+72            android:permission="android.permission.BIND_JOB_SERVICE" />
+72-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-69
+73        <service
+73-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:9-24:19
+74            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
+74-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:13-97
+75            android:exported="false" >
+75-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:13-37
+76            <intent-filter>
+76-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-23:29
+77                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+77-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:17-78
+77-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:25-75
+78            </intent-filter>
+79        </service>
+80
+81        <receiver
+81-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:9-33:20
+82            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
+82-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:13-98
+83            android:exported="true"
+83-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:13-36
+84            android:permission="com.google.android.c2dm.permission.SEND" >
+84-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:13-73
+85            <intent-filter>
+85-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:30:13-32:29
+86                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+86-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:17-81
+86-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:25-78
+87            </intent-filter>
+88        </receiver>
+89
+90        <service
+90-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:35:9-39:19
+91            android:name="com.google.firebase.components.ComponentDiscoveryService"
+91-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:35:18-89
+92            android:directBootAware="true"
+92-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+93            android:exported="false" >
+93-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:56:13-37
+94            <meta-data
+94-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:36:13-38:85
+95                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
+95-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:37:17-128
+96                android:value="com.google.firebase.components.ComponentRegistrar" />
+96-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:38:17-82
+97            <meta-data
+97-->[:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:13-11:85
+98                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+98-->[:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:17-124
+99                android:value="com.google.firebase.components.ComponentRegistrar" />
+99-->[:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:17-82
+100            <meta-data
+100-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:57:13-59:85
+101                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+101-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:58:17-122
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:59:17-82
+103            <meta-data
+103-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:60:13-62:85
+104                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+104-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:61:17-119
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:62:17-82
+106            <meta-data
+106-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
+107                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+107-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
+109            <meta-data
+109-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
+110                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+110-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\joel8\.gradle\caches\transforms-4\7121208c2df231b0a42cf2287f00b3a8\transformed\firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
+112            <meta-data
+112-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\b5c6809ffb51680ed2d04e3130b70d8f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+113                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+113-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\b5c6809ffb51680ed2d04e3130b70d8f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\b5c6809ffb51680ed2d04e3130b70d8f\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+115            <meta-data
+115-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+116                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+116-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+118            <meta-data
+118-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\joel8\.gradle\caches\transforms-4\e4923a89df1d9ee4624e8d0dbbc6bae2\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:25:13-27:85
+119                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+119-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\joel8\.gradle\caches\transforms-4\e4923a89df1d9ee4624e8d0dbbc6bae2\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:26:17-115
+120                android:value="com.google.firebase.components.ComponentRegistrar" />
+120-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\joel8\.gradle\caches\transforms-4\e4923a89df1d9ee4624e8d0dbbc6bae2\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:27:17-82
+121        </service>
+122
+123        <provider
+123-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:41:9-45:38
+124            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
+124-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:42:13-102
+125            android:authorities="com.example.clima.flutterfirebasemessaginginitprovider"
+125-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:43:13-88
+126            android:exported="false"
+126-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:44:13-37
+127            android:initOrder="99" />
+127-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:45:13-35
+128
+129        <service
+129-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:9-16:44
+130            android:name="id.flutter.flutter_background_service.BackgroundService"
+130-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-83
+131            android:enabled="true"
+131-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-35
+132            android:exported="true"
+132-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-36
+133            android:stopWithTask="false" />
+133-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-41
+134
+135        <receiver
+135-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:9-21:39
+136            android:name="id.flutter.flutter_background_service.WatchdogReceiver"
+136-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:13-82
+137            android:enabled="true"
+137-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:13-35
+138            android:exported="true" />
+138-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-36
+139        <receiver
+139-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:9-31:20
+140            android:name="id.flutter.flutter_background_service.BootReceiver"
+140-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:13-78
+141            android:enabled="true"
+141-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:24:13-35
+142            android:exported="true" >
+142-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:13-36
+143            <intent-filter>
+143-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:13-30:29
+144                <action android:name="android.intent.action.BOOT_COMPLETED" />
+144-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:17-79
+144-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:25-76
+145                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+145-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:17-82
+145-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:25-79
+146                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+146-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:17-84
+146-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:29:25-81
+147            </intent-filter>
+148        </receiver>
+149
+150        <uses-library
+150-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:23:9-25:40
+151            android:name="androidx.window.extensions"
+151-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:24:13-54
+152            android:required="false" />
+152-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:25:13-37
+153        <uses-library
+153-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:26:9-28:40
+154            android:name="androidx.window.sidecar"
+154-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:27:13-51
+155            android:required="false" />
+155-->[androidx.window:window:1.2.0] C:\Users\joel8\.gradle\caches\transforms-4\27c675581b681e0c099b479b4e6348c3\transformed\window-1.2.0\AndroidManifest.xml:28:13-37
+156
+157        <receiver
+157-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:29:9-40:20
+158            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+158-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:30:13-78
+159            android:exported="true"
+159-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:31:13-36
+160            android:permission="com.google.android.c2dm.permission.SEND" >
+160-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:32:13-73
+161            <intent-filter>
+161-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:30:13-32:29
+162                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+162-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:17-81
+162-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:25-78
+163            </intent-filter>
+164
+165            <meta-data
+165-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:37:13-39:40
+166                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+166-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:38:17-92
+167                android:value="true" />
+167-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:39:17-37
+168        </receiver>
+169        <!--
+170             FirebaseMessagingService performs security checks at runtime,
+171             but set to not exported to explicitly avoid allowing another app to call it.
+172        -->
+173        <service
+173-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:46:9-53:19
+174            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+174-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:47:13-82
+175            android:directBootAware="true"
+175-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:48:13-43
+176            android:exported="false" >
+176-->[com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:49:13-37
+177            <intent-filter android:priority="-500" >
+177-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:21:13-23:29
+178                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+178-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:17-78
+178-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:22:25-75
+179            </intent-filter>
+180        </service>
+181
+182        <provider
+182-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+183            android:name="com.google.firebase.provider.FirebaseInitProvider"
+183-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+184            android:authorities="com.example.clima.firebaseinitprovider"
+184-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+185            android:directBootAware="true"
+185-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+186            android:exported="false"
+186-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+187            android:initOrder="100" />
+187-->[com.google.firebase:firebase-common:21.0.0] C:\Users\joel8\.gradle\caches\transforms-4\756d17f31e2bd62a867d97dddafe7dfa\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+188
+189        <activity
+189-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:9-22:45
+190            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+190-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\AndroidManifest.xml:20:19-85
+191            android:exported="false"
+191-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\AndroidManifest.xml:22:19-43
+192            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+192-->[com.google.android.gms:play-services-base:18.1.0] C:\Users\joel8\.gradle\caches\transforms-4\979c869befbbc833a609286eef6ae3ab\transformed\play-services-base-18.1.0\AndroidManifest.xml:21:19-78
+193
+194        <provider
+194-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:24:9-32:20
+195            android:name="androidx.startup.InitializationProvider"
+195-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:25:13-67
+196            android:authorities="com.example.clima.androidx-startup"
+196-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:26:13-68
+197            android:exported="false" >
+197-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:27:13-37
+198            <meta-data
+198-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+199                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+199-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+200                android:value="androidx.startup" />
+200-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\joel8\.gradle\caches\transforms-4\c0e01e25979ab3b78e9afa7d4d16fb15\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+201            <meta-data
+201-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+202                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+202-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+203                android:value="androidx.startup" />
+203-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+204        </provider>
+205
+206        <meta-data
+206-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\joel8\.gradle\caches\transforms-4\5f986ff1f6df83eff90b5f2654097dec\transformed\play-services-basement-18.3.0\AndroidManifest.xml:21:9-23:69
+207            android:name="com.google.android.gms.version"
+207-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\joel8\.gradle\caches\transforms-4\5f986ff1f6df83eff90b5f2654097dec\transformed\play-services-basement-18.3.0\AndroidManifest.xml:22:13-58
+208            android:value="@integer/google_play_services_version" />
+208-->[com.google.android.gms:play-services-basement:18.3.0] C:\Users\joel8\.gradle\caches\transforms-4\5f986ff1f6df83eff90b5f2654097dec\transformed\play-services-basement-18.3.0\AndroidManifest.xml:23:13-66
+209
+210        <receiver
+210-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+211            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+211-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+212            android:directBootAware="false"
+212-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+213            android:enabled="true"
+213-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+214            android:exported="true"
+214-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+215            android:permission="android.permission.DUMP" >
+215-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+216            <intent-filter>
+216-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+217                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+218            </intent-filter>
+219            <intent-filter>
+219-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+220                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+220-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+220-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+221            </intent-filter>
+222            <intent-filter>
+222-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+223                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+223-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+223-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+224            </intent-filter>
+225            <intent-filter>
+225-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+226                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+226-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+226-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\joel8\.gradle\caches\transforms-4\f2561bd8ed171826f2a262a078bf4dea\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+227            </intent-filter>
+228        </receiver>
+229
+230        <service
+230-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:28:9-34:19
+231            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+231-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:29:13-103
+232            android:exported="false" >
+232-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:30:13-37
+233            <meta-data
+233-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:31:13-33:39
+234                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+234-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:32:17-94
+235                android:value="cct" />
+235-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\5a441cbfe0ba62fdb03538b57c3fae5c\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:33:17-36
+236        </service>
+237        <service
+237-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:26:9-30:19
+238            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+238-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:27:13-117
+239            android:exported="false"
+239-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:28:13-37
+240            android:permission="android.permission.BIND_JOB_SERVICE" >
+240-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:29:13-69
+241        </service>
+242
+243        <receiver
+243-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:32:9-34:40
+244            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+244-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:33:13-132
+245            android:exported="false" />
+245-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:34:13-37
+246    </application>
+247
+248</manifest>

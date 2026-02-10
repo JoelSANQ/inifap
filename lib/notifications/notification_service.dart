@@ -8,6 +8,11 @@ class NotificationService {
 
   static bool _inited = false;
 
+  // ✅ Canal (Android)
+  static const String _channelId = 'canal_1';
+  static const String _channelName = 'Recordatorios';
+  static const String _channelDesc = 'Notificaciones de alertas y recordatorios';
+
   static Future<void> init() async {
     if (_inited) return;
 
@@ -16,10 +21,46 @@ class NotificationService {
 
     await _notifications.initialize(settings);
 
+    // ✅ Crear canal en Android (recomendado)
+    final androidPlugin = _notifications.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+    await androidPlugin?.createNotificationChannel(
+      const AndroidNotificationChannel(
+        _channelId,
+        _channelName,
+        description: _channelDesc,
+        importance: Importance.max,
+      ),
+    );
+
     // ✅ Necesario para zonedSchedule
     tz.initializeTimeZones();
 
     _inited = true;
+  }
+
+  // ✅ NUEVO: mostrar notificación INMEDIATA (FCM foreground/background)
+  static Future<void> showNow({
+    required int id,
+    required String title,
+    required String body,
+    String? payload,
+  }) async {
+    await _notifications.show(
+      id,
+      title,
+      body,
+      const NotificationDetails(
+        android: AndroidNotificationDetails(
+          _channelId,
+          _channelName,
+          channelDescription: _channelDesc,
+          importance: Importance.max,
+          priority: Priority.high,
+        ),
+      ),
+      payload: payload,
+    );
   }
 
   static Future<void> showScheduled({
@@ -35,8 +76,9 @@ class NotificationService {
       tz.TZDateTime.from(date, tz.local),
       const NotificationDetails(
         android: AndroidNotificationDetails(
-          'canal_1',
-          'Recordatorios',
+          _channelId,
+          _channelName,
+          channelDescription: _channelDesc,
           importance: Importance.max,
           priority: Priority.high,
         ),

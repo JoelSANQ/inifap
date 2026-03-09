@@ -4,14 +4,15 @@ import 'package:flutter/foundation.dart'; // 👈 para kIsWeb
 import 'bin/generate_offline.dart';
 import 'WeatherProxyPage.dart';
 import 'notifications/notification_service.dart';
+import 'notifications/background_worker.dart'; // ✅ Workmanager
 // 👇 funciones de notificación
 import 'notifications/permission_handler.dart';
 // ✅ FCM (Firebase Cloud Messaging)
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'firebase_options.dart';
-import 'package:workmanager/workmanager.dart';
-import 'notifications/background_worker.dart.dart';
+import 'package:workmanager/workmanager.dart'; // ✅ Workmanager
+
 
 // ✅ Handler para mensajes en segundo plano (FCM)
 @pragma('vm:entry-point')
@@ -57,6 +58,23 @@ void main() async {
     await initLocalNotifications();
     await solicitarPermisoNotificaciones();
 
+    // ✅ WORKMANAGER: Inicializar y registrar tarea
+    await Workmanager().initialize(
+      callbackDispatcher,
+      isInDebugMode: false,
+    );
+    
+    // ✅ Registrar tarea periódica cada 15 minutos
+    await Workmanager().registerPeriodicTask(
+      'lluvia_check',
+      'checkRainTask',
+      frequency: const Duration(minutes: 15),
+      constraints: Constraints(
+        networkType: NetworkType.connected,
+      ),
+    );
+    debugPrint('✅ Workmanager inicializado - verifica lluvia cada 15 min');
+
     // ✅ Obtener token FCM (para enviarlo a tu servidor y poder mandar push)
     final token = await FirebaseMessaging.instance.getToken();
     debugPrint('🔥 FCM Token: $token');
@@ -78,19 +96,8 @@ void main() async {
         payload: message.data.isNotEmpty ? message.data.toString() : null,
       );
 
-            // ✅ Inicializa Workmanager (una sola vez)
-      await Workmanager().initialize(
-        callbackDispatcher,
-        isInDebugMode: true, // en debug para ver logs
-      );
-
-      // ✅ Tarea periódica (cambiar duracion de minutos)
-      await Workmanager().registerPeriodicTask(
-        'clima_bg_task',
-        'clima_bg_task',
-        frequency: const Duration(minutes: 15),
-        existingWorkPolicy: ExistingWorkPolicy.replace,
-      );
+   
+    
     });
 
     // Lanzamos el sync en SEGUNDO PLANO

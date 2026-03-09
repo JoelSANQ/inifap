@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.clima.app-mergeReleaseResources-52:/values-ro/values-ro.xml",
+            "outputFile": "com.example.clima.app-mergeReleaseResources-59:/values-ro/values-ro.xml",
             "map": [
                 {
                     "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\b38d8c2abe822d6537962d53bc364836\\transformed\\core-1.13.1\\res\\values-ro\\values-ro.xml",

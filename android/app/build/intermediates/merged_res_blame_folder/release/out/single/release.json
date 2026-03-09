@@ -1,26 +1,26 @@
 [
     {
-        "merged": "com.example.clima.app-merged_res-54:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.clima.app-main-55:/drawable-v21/launch_background.xml"
+        "merged": "com.example.clima.app-merged_res-61:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.clima.app-main-62:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.clima.app-merged_res-54:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.clima.app-main-55:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.example.clima.app-merged_res-61:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.clima.app-main-62:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.clima.app-merged_res-54:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.clima.app-main-55:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.example.clima.app-merged_res-61:/drawable-v21_launch_background.xml.flat",
+        "source": "com.example.clima.app-main-62:/drawable-v21/launch_background.xml"
     },
     {
-        "merged": "com.example.clima.app-merged_res-54:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.clima.app-main-55:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.example.clima.app-merged_res-61:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.clima.app-main-62:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.clima.app-merged_res-54:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.clima.app-main-55:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.example.clima.app-merged_res-61:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.clima.app-main-62:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.clima.app-merged_res-54:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.clima.app-main-55:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.example.clima.app-merged_res-61:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.clima.app-main-62:/mipmap-mdpi/ic_launcher.png"
     }
 ]

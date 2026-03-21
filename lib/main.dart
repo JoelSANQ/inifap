@@ -4,7 +4,8 @@ import 'package:flutter/foundation.dart'; // 👈 para kIsWeb
 import 'bin/generate_offline.dart';
 import 'WeatherProxyPage.dart';
 import 'notifications/notification_service.dart';
-import 'notifications/background_worker.dart'; // ✅ Workmanager
+import 'notifications/background_worker.dart'; // ✅ Workmanager (original)
+import 'notifications/rain_check_worker.dart'; // ✅ Precipitación cero
 // 👇 funciones de notificación
 import 'notifications/permission_handler.dart';
 // ✅ FCM (Firebase Cloud Messaging)
@@ -58,22 +59,26 @@ void main() async {
     await initLocalNotifications();
     await solicitarPermisoNotificaciones();
 
-    // ✅ WORKMANAGER: Inicializar y registrar tarea
+    // ✅ WORKMANAGER: Inicializar dispatcher compartido
     await Workmanager().initialize(
       callbackDispatcher,
-      isInDebugMode: false,
+      isInDebugMode: false, // ✅ Producción (cambiar a true solo para depurar)
     );
     
-    // ✅ Registrar tarea periódica cada 15 minutos
+    // ✅ Tarea periódica #1: chequeo clima extremo cada 15 min
     await Workmanager().registerPeriodicTask(
-      'lluvia_check',
+      'weather_check_periodic',
       'checkRainTask',
       frequency: const Duration(minutes: 15),
       constraints: Constraints(
         networkType: NetworkType.connected,
       ),
+      existingWorkPolicy: ExistingWorkPolicy.replace,
     );
-    debugPrint('✅ Workmanager inicializado - verifica lluvia cada 15 min');
+    debugPrint('✅ Workmanager: tarea periódica registrada (clima extremo cada ~15 min)');
+
+    // ✅ Tarea periódica #2: segundo chequeo (misma lógica, redundancia)
+    await initRainCheckWorker();
 
     // ✅ Obtener token FCM (para enviarlo a tu servidor y poder mandar push)
     final token = await FirebaseMessaging.instance.getToken();
@@ -116,7 +121,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WeatherProxyPage(),
+      home: WeatherProxyPage(key: ValueKey('main_page')),
     );
   }
 }

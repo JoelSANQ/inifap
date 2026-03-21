@@ -1,0 +1,30 @@
+﻿Analyzing inifap...                                             
+
+  error - Undefined name 'OfflineDataService' - lib\WeatherProxyPage.dart:58:30 - undefined_identifier
+  error - Undefined name 'OfflineDataService' - lib\WeatherProxyPage.dart:268:15 - undefined_identifier
+  error - Undefined name 'OfflineDataService' - lib\WeatherProxyPage.dart:291:37 - undefined_identifier
+   info - Don't use 'BuildContext's across async gaps - lib\WeatherProxyPage.dart:347:32 - use_build_context_synchronously
+  error - Undefined name 'OfflineDataService' - lib\WeatherProxyPage.dart:434:31 - undefined_identifier
+   info - Use interpolation to compose strings and values - lib\WeatherProxyPage.dart:481:31 - prefer_interpolation_to_compose_strings
+  error - Expected to find ')' - lib\WeatherProxyPage.dart:620:11 - expected_token
+warning - The declaration '_todayString' isn't referenced - lib\WeatherProxyPage.dart:951:8 - unused_element
+warning - Unused import: '../data/Stations.dart' - lib\bin\generate_offline.dart:12:8 - unused_import
+warning - Unused import: 'package:http/http.dart' - lib\cards_under_daily_extras.dart:6:8 - unused_import
+   info - Constructors for public widgets should have a named 'key' parameter - lib\indice.dart:4:9 - use_key_in_widget_constructors
+warning - Unused import: 'dart:convert' - lib\notifications\background_worker.dart:1:8 - unused_import
+warning - Unused import: 'package:flutter/foundation.dart' - lib\notifications\background_worker.dart:2:8 - unused_import
+warning - Unused import: 'package:shared_preferences/shared_preferences.dart' - lib\notifications\background_worker.dart:4:8 - unused_import
+warning - Unused import: 'package:http/http.dart' - lib\notifications\background_worker.dart:5:8 - unused_import
+warning - Unused import: 'notification_service.dart' - lib\notifications\background_worker.dart:7:8 - unused_import
+   info - Don't invoke 'print' in production code - lib\notifications\precipitation_notifications.dart:18:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\notifications\precipitation_notifications.dart:24:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\notifications\precipitation_notifications.dart:59:5 - avoid_print
+warning - Unused import: 'package:http/http.dart' - lib\notifications\rain_check_worker.dart:17:8 - unused_import
+warning - The declaration '_kCooldownMs' isn't referenced - lib\notifications\rain_check_worker.dart:32:11 - unused_element
+warning - Unused import: 'package:http/http.dart' - lib\report.dart:4:8 - unused_import
+warning - Unused import: 'package:flutter/foundation.dart' - lib\services\station_service.dart:5:8 - unused_import
+warning - Unused import: 'package:http/http.dart' - lib\station_history.dart:7:8 - unused_import
+warning - Unused import: '../services/station_service.dart' - lib\widgets\favorite_stations.dart:4:8 - unused_import
+   info - Use a function declaration rather than a variable assignment to bind a function to a name - lib\widgets\favorite_stations.dart:23:27 - prefer_function_declarations_over_variables
+   info - Use a function declaration rather than a variable assignment to bind a function to a name - lib\widgets\maps.dart:43:27 - prefer_function_declarations_over_variables
+

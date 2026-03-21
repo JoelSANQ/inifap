@@ -9,7 +9,8 @@ import '../data/lat_and_long_cords.dart';
 
 // ⚠️ Ajusta esta ruta a donde tengas los helpers reales.
 // Debe exportar: addFavoriteStation, removeFavoriteStation, favoritesVersion, kFavPrefsKey
-import 'package:clima/widgets/favorite_stations.dart'
+import '../services/station_service.dart';
+import 'favorite_stations.dart'
     show addFavoriteStation, removeFavoriteStation, favoritesVersion, kFavPrefsKey;
 
 /// Mapa OSM con favoritos sincronizados con SharedPreferences:
@@ -39,9 +40,9 @@ class _OSMMapState extends State<OSMMap> {
   // ✅ favoritos cacheados para pintar marcadores y validar máximo 3
   Set<String> _favIds = {};
 
-  late final VoidCallback _favListener = () {
+  void _favListener() {
     _loadFavIds();
-  };
+  }
 
   @override
   void initState() {
@@ -75,7 +76,7 @@ class _OSMMapState extends State<OSMMap> {
   // ====== MARCADORES ======
   List<Marker> get _markers {
     final List<Marker> out = [];
-    for (final Station st in kStations) {
+    for (final Station st in StationService.instance.stations) {
       final LatLng? ll = kStationCoords[st.id];
       if (ll == null) continue;
 

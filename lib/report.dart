@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart'; // ✅ para kIsWeb
-import 'package:http/http.dart' as http;
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'dart:async';
+import 'bin/generate_offline.dart'; // OfflineDataService
 
 // ================== CONFIGURACIÓN DEL PROXY ==================
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
@@ -29,60 +31,104 @@ class _WeatherDashboardState extends State<WeatherDashboard> {
   bool _loading = false;
   String? _error;
   List<Map<String, dynamic>> _rows = [];
+  
+  StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
+  bool _isOffline = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _connectivitySubscription = Connectivity().onConnectivityChanged.listen((results) {
+      final hasConn = !results.contains(ConnectivityResult.none);
+      if (_isOffline && hasConn && _currentMode != null) {
+        // Red recuperada, reintentamos el último reporte solicitado
+        _fetchForMode(int.parse(_currentMode!));
+      }
+      setState(() {
+        _isOffline = !hasConn;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _connectivitySubscription?.cancel();
+    _buttonScrollController.dispose();
+    super.dispose();
+  }
 
   // ================== FETCH GENÉRICO POR MODO ==================
   Future<void> _fetchForMode(int r) async {
     setState(() {
       _currentMode = '$r';
-      _loading = true;
       _error = null;
-      _rows = [];
+      // ⚠️ Solo ponemos loading si no tenemos nada
+      if (_rows.isEmpty) _loading = true;
     });
 
+    // ─────────────────────────────────────────
+    // 1️⃣ OFFLINE FIRST: mostrar datos guardados al instante
+    // ─────────────────────────────────────────
+    try {
+      final root = await OfflineDataService.instance.loadOfflineRoot();
+      if (root != null && root.containsKey('reports')) {
+        final reports = root['reports'];
+        final modeKey = 'r$r';
+        final offlineData = reports[modeKey];
+
+        if (offlineData != null) {
+          final rows = _parseReportData(offlineData);
+          if (rows.isNotEmpty) {
+            setState(() {
+              _rows = rows;
+              _error = null;
+            });
+          }
+        }
+      }
+    } catch (_) {
+      // Si falla offline, seguimos al online
+    }
+
+    // ─────────────────────────────────────────
+    // 2️⃣ ONLINE: refrescar en background
+    // ─────────────────────────────────────────
     try {
       final url = _buildProxyUrl(r: r);
-      final res = await http.get(Uri.parse(url));
+      final res = await OfflineDataService.sharedClient.get(Uri.parse(url)).timeout(const Duration(seconds: 8));
 
       if (res.statusCode != 200) {
         throw Exception('Error HTTP ${res.statusCode}');
       }
 
       final data = jsonDecode(res.body);
-      List<Map<String, dynamic>> rows = [];
+      final rows = _parseReportData(data);
 
-      if (data is List && data.isNotEmpty) {
-        final first = data.first;
-        if (first is Map &&
-            (first.containsKey('Datos') || first.containsKey('datos'))) {
-          final root = Map<String, dynamic>.from(first);
-          final nested = root['Datos'] ?? root['datos'];
-          if (nested is List) {
-            for (final item in nested) {
-              if (item is Map) {
-                rows.add(Map<String, dynamic>.from(item));
-              }
-            }
-          }
-        } else {
-          for (final item in data) {
-            if (item is Map) {
-              rows.add(Map<String, dynamic>.from(item));
-            }
-          }
-        }
-      }
+      // ✅ Guardar en offline
+      await OfflineDataService.instance.saveReportData(r, res.body);
 
       setState(() {
         _rows = rows;
         if (_rows.isEmpty) {
           _error = 'Sin datos disponibles para este reporte.';
+        } else {
+          _error = null;
         }
       });
     } catch (e) {
-      setState(() {
-        _error = 'Error al cargar datos: $e';
-        _rows = [];
-      });
+      // Solo mostramos error si no hay datos offline
+      if (_rows.isEmpty) {
+        setState(() {
+          _error = 'Error al cargar datos: $e';
+        });
+      } else {
+        // Hay datos offline, solo avisamos con snackbar
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Sin conexión. Mostrando datos guardados.')),
+          );
+        }
+      }
     } finally {
       if (mounted) {
         setState(() {
@@ -91,6 +137,34 @@ class _WeatherDashboardState extends State<WeatherDashboard> {
       }
     }
   }
+
+  /// Parsea la respuesta del reporte (online u offline) a lista de mapas.
+  List<Map<String, dynamic>> _parseReportData(dynamic data) {
+    List<Map<String, dynamic>> rows = [];
+    if (data is List && data.isNotEmpty) {
+      final first = data.first;
+      if (first is Map &&
+          (first.containsKey('Datos') || first.containsKey('datos'))) {
+        final root = Map<String, dynamic>.from(first);
+        final nested = root['Datos'] ?? root['datos'];
+        if (nested is List) {
+          for (final item in nested) {
+            if (item is Map) {
+              rows.add(Map<String, dynamic>.from(item));
+            }
+          }
+        }
+      } else {
+        for (final item in data) {
+          if (item is Map) {
+            rows.add(Map<String, dynamic>.from(item));
+          }
+        }
+      }
+    }
+    return rows;
+  }
+
 
   // ================== TEXTOS POR MODO ==================
   String _modeTitle() {
@@ -147,6 +221,31 @@ class _WeatherDashboardState extends State<WeatherDashboard> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // 🛰️ BANNER DE ESTADO (Aparece solo si no hay 4G/WiFi)
+                        if (_isOffline)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 16),
+                            child: Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              decoration: BoxDecoration(
+                                color: Colors.orange.shade800,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.signal_wifi_off, color: Colors.white, size: 16),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    'Sin conexión - Esperando 4G / WiFi...',
+                                    style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        
                         // Título
                         Center(
                           child: Text(

@@ -4,9 +4,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart'; // ✅ kIsWeb
-import 'package:http/http.dart' as http;
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'dart:async';
+import 'bin/generate_offline.dart'; // OfflineDataService
 import 'data/Stations.dart';
-import 'bin/generate_offline.dart';
 import 'indice.dart';
 /// ====== PALETA ======
 const kBurgundy = Color.fromARGB(255, 102, 6, 6);      // principal
@@ -182,6 +183,9 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
 
   late DateTime _cursor; // mes visible (día 1)
   int _selectedIndex = -1;
+  
+  StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
+  bool _isOffline = false;
 
   // autoscroll de chips al final
   final ScrollController _chipCtrl = ScrollController();
@@ -191,11 +195,24 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
     super.initState();
     final now = widget.initialMonth ?? DateTime.now();
     _cursor = DateTime(now.year, now.month);
+
+    _connectivitySubscription = Connectivity().onConnectivityChanged.listen((results) {
+      final hasConn = !results.contains(ConnectivityResult.none);
+      if (_isOffline && hasConn) {
+        debugPrint('🌐 Historial: Red recuperada. Actualizando...');
+        _fetch();
+      }
+      setState(() {
+        _isOffline = !hasConn;
+      });
+    });
+
     _fetch();
   }
 
   @override
   void dispose() {
+    _connectivitySubscription?.cancel();
     _chipCtrl.dispose();
     super.dispose();
   }
@@ -206,64 +223,70 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
       setState(() => _error = 'No hay estación seleccionada.');
       return;
     }
-    setState(() { _loading = true; _error = null; });
+    setState(() {
+      _error = null;
+      // ⚠️ Solo si la lista está vacía mostramos el spinner principal
+      if (_days.isEmpty) _loading = true;
+    });
 
+    // ─────────────────────────────────────────
+    // 1️⃣ OFFLINE FIRST: mostrar datos guardados al instante
+    // ─────────────────────────────────────────
     try {
-      // 1️⃣ ONLINE primero
+      final root = await OfflineDataService.instance.loadOfflineRoot();
+      if (root != null) {
+        final history = root['history'] as Map<String, dynamic>?;
+        final stKey = st.id.toString();
+        final stMap = history?[stKey] as Map<String, dynamic>?;
+        if (stMap != null) {
+          final mm = _cursor.month.toString().padLeft(2, '0');
+          final y = _cursor.year.toString();
+          final monKey = '$y-$mm';
+          final monthData = stMap[monKey];
+          if (monthData != null) {
+            final body = jsonEncode(monthData);
+            final (list, estName) = _parseR10(body);
+            if (list.isNotEmpty) {
+              _applyNewData(list, estName ?? st.name);
+            }
+          }
+        }
+      }
+    } catch (_) {
+      // Si falla offline, seguimos al online
+    }
+
+    // ─────────────────────────────────────────
+    // 2️⃣ ONLINE: refrescar en background
+    // ─────────────────────────────────────────
+    try {
       final url = _buildHistoryUrl(
         idEst: st.id,
         month: _cursor.month,
         year: _cursor.year,
       );
-      final res = await http.get(Uri.parse(url), headers: const {'Accept': 'application/json'});
+      final res = await OfflineDataService.sharedClient.get(Uri.parse(url), headers: const {'Accept': 'application/json'})
+          .timeout(const Duration(seconds: 8));
       if (res.statusCode != 200) {
         throw Exception('HTTP ${res.statusCode} ${res.reasonPhrase}');
       }
       final (list, estName) = _parseR10(res.body);
-
       _applyNewData(list, estName ?? st.name);
+
+      // ✅ Guardar en offline
+      await OfflineDataService.instance.saveHistoryForStation(
+        st.id, _cursor.month, _cursor.year, res.body,
+      );
     } catch (e) {
-      // 2️⃣ OFFLINE fallback → offline_data.json → history.[idEst].[yyyy-mm]
-      try {
-        final root = await OfflineDataService.instance.loadOfflineRoot();
-        if (root == null) {
-          throw Exception('No hay archivo offline guardado.');
+      // Solo mostramos error si no hay datos offline
+      if (_days.isEmpty) {
+        setState(() => _error = 'Error al cargar datos: $e');
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Sin conexión. Mostrando datos guardados.')),
+          );
         }
-
-        final history = root['history'] as Map<String, dynamic>?;
-        if (history == null) {
-          throw Exception('Sin sección history en offline_data.json');
-        }
-
-        final stKey = st.id.toString();
-        final stMap = history[stKey] as Map<String, dynamic>?;
-        if (stMap == null) {
-          throw Exception('Sin histórico offline para estación $stKey');
-        }
-
-        final mm = _cursor.month.toString().padLeft(2, '0');
-        final y = _cursor.year.toString();
-        final monKey = '$y-$mm';
-
-        final monthData = stMap[monKey];
-        if (monthData == null) {
-          throw Exception('Sin datos offline para $stKey en $monKey');
-        }
-
-        // monthData es la respuesta r=10 que guardaste (lista u objeto con Datos)
-        final body = jsonEncode(monthData);
-        final (list, estName) = _parseR10(body);
-
-        if (list.isEmpty) {
-          throw Exception('Lista offline vacía para $stKey en $monKey');
-        }
-
-        _applyNewData(list, estName ?? st.name);
-
-        // (opcional) si quisieras marcar que son datos offline podrías tocar _error o un Snackbar
-        // pero el layout actual muestra _Error solo si _error != null
-      } catch (e2) {
-        setState(() => _error = 'Error al cargar datos: $e\nOffline: $e2');
       }
     } finally {
       if (mounted) {
@@ -339,8 +362,29 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
       body: RefreshIndicator(
         onRefresh: _fetch,
         color: kBurgundy,
-        child: ListView(
-          padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            // 🛰️ BANNER DE ESTADO (Aparece solo si no hay 4G/WiFi)
+            if (_isOffline)
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                color: Colors.orange.shade800,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.signal_wifi_off, color: Colors.white, size: 16),
+                    SizedBox(width: 8),
+                    Text(
+                      'Sin conexión - Esperando 4G / WiFi...',
+                      style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.all(16),
           children: [
             // Selector de mes
             Row(
@@ -446,7 +490,7 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
               ),
               
 // 👇 AQUÍ AGREGAMOS EL ÍNDICE
-              const ChartLegend(),
+              const ChartLegend(key: ValueKey('history_legend')),
               
               const SizedBox(height: 16),
               
@@ -462,8 +506,11 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
           ],
         ),
       ),
-    );
-  }
+    ],
+  ),
+),
+);
+}
 
   String _monthName(int m) {
     const months = [

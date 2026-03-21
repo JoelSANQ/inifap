@@ -15,13 +15,13 @@ void checarLluviaWebYMovil({
 
   // 1) Si no hay valor, salimos
   if (lluviaActualMm == null) {
-    print('💧 No hay valor de lluvia, no mostramos nada');
+    debugPrint('💧 No hay valor de lluvia, no mostramos nada');
     return;
   }
 
   // 2) Evitar spamear
   if (_ultimaLluviaNotificada == lluviaActualMm) {
-    print('🔁 Mismo valor de lluvia que antes, no repetimos notificación');
+    debugPrint('🔁 Mismo valor de lluvia que antes, no repetimos notificación');
     return;
   }
   _ultimaLluviaNotificada = lluviaActualMm;
@@ -56,7 +56,7 @@ Future<void> _mostrarNotificacion({
 
   // 🌐 Web no soporta notificaciones locales
   if (kIsWeb) {
-    print('⚠️ Web: notificaciones locales no soportadas');
+    debugPrint('⚠️ Web: notificaciones locales no soportadas');
     return;
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../data/Stations.dart'; // ajusta la ruta si es distinta
+import '../data/Stations.dart';
+import '../services/station_service.dart';
 
 class FavoriteStationsBar extends StatefulWidget {
   final void Function(Station station) onSelect;
@@ -13,15 +14,13 @@ class FavoriteStationsBar extends StatefulWidget {
 class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
   static const _prefsKey = 'favorite_station_ids';
 
-  // ✅ NUEVO (incorporado): flag para “activar notificaciones” cuando haya EXACTAMENTE 3
   static const String _notifEnabledKey = 'notif_enabled';
 
   List<Station> _favorites = [];
 
-  // ✅ guardamos el callback para poder quitarlo en dispose
-  late final VoidCallback _favListener = () {
+  void _favListener() {
     _loadFavs();
-  };
+  }
 
   @override
   void initState() {
@@ -40,7 +39,7 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
   Future<void> _loadFavs() async {
     final sp = await SharedPreferences.getInstance();
     final ids = sp.getStringList(_prefsKey) ?? [];
-    final mapById = {for (final s in kStations) s.id.toString(): s};
+    final mapById = {for (final s in StationService.instance.stations) s.id.toString(): s};
     final restored = [
       for (final id in ids)
         if (mapById[id] != null) mapById[id]!,
@@ -209,10 +208,10 @@ class _MultiSelectStationsSheetState extends State<_MultiSelectStationsSheet> {
           Expanded(
             child: ListView.separated(
               controller: controller,
-              itemCount: kStations.length,
+              itemCount: StationService.instance.stations.length,
               separatorBuilder: (_, __) => const Divider(height: 1),
               itemBuilder: (_, i) {
-                final st = kStations[i];
+                final st = StationService.instance.stations[i];
                 final checked = _selectedIds.contains(st.id);
 
                 return CheckboxListTile(
@@ -268,7 +267,7 @@ class _MultiSelectStationsSheetState extends State<_MultiSelectStationsSheet> {
                         }
 
                         // Armamos lista de estaciones seleccionadas
-                        final mapById = {for (final s in kStations) s.id: s};
+                        final mapById = {for (final s in StationService.instance.stations) s.id: s};
                         final selectedStations = _selectedIds
                             .where((id) => mapById[id] != null)
                             .map((id) => mapById[id]!)

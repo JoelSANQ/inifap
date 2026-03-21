@@ -44,6 +44,18 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "connectivity_plus",
+      "rootUri": "file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_plus-7.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "connectivity_plus_platform_interface",
+      "rootUri": "file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_plus_platform_interface-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.8",
       "packageUri": "lib/",
@@ -300,6 +312,12 @@
       "rootUri": "file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/mime-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "nm",
+      "rootUri": "file:///C:/Users/joel8/AppData/Local/Pub/Cache/hosted/pub.dev/nm-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "path",
@@ -572,7 +590,7 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2026-02-10T17:20:26.329102Z",
+  "generated": "2026-03-09T20:25:09.499229Z",
   "generator": "pub",
   "generatorVersion": "3.6.1",
   "flutterRoot": "file:///C:/flutter",

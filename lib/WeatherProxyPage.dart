@@ -1,20 +1,23 @@
 // lib/WeatherProxyPage.dart
 
 import 'dart:convert';
-
-import 'package:clima/report.dart';
-import 'package:flutter/gestures.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'About_Me.dart';
-import 'data/Stations.dart';
-import 'station_history.dart';
-import 'cards_under_daily_extras.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+
+import 'package:clima/report.dart';
+import 'package:clima/About_Me.dart';
+import 'package:clima/data/Stations.dart';
+import 'package:clima/station_history.dart';
+import 'package:clima/cards_under_daily_extras.dart';
 import 'package:clima/widgets/favorite_stations.dart';
 import 'package:clima/widgets/maps.dart';
-import 'bin/generate_offline.dart'; // OfflineDataService
+import 'package:clima/services/station_service.dart';
+import 'package:clima/bin/generate_offline.dart';
 
 /// ====== CONFIG API ======
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
@@ -52,7 +55,8 @@ class WeatherProxyPage extends StatefulWidget {
 }
 
 class _WeatherProxyPageState extends State<WeatherProxyPage> {
-  final http.Client _client = http.Client();
+  // ⚡ Usamos el cliente compartido de OfflineDataService para mayor velocidad
+  http.Client get _client => OfflineDataService.sharedClient;
 
   bool _loading = false;
   String? _error;
@@ -66,6 +70,10 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   static const double _itemWidth = 64;
   static const double _itemGap = 18;
   int _currentIndex = 0;
+
+  // 🛰️ SUSCRIPCIÓN DE RED (4G/WIFI)
+  StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
+  bool _isOffline = false;
 
   // ===========================
   // ✅ POPUP "SEGUIR USANDO"
@@ -101,10 +109,30 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   @override
   void initState() {
     super.initState();
+    
+    // 1. Escuchar cambios de red para autorecarga (4G / WiFi)
+    _connectivitySubscription = Connectivity().onConnectivityChanged.listen((results) {
+      final hasConn = !results.contains(ConnectivityResult.none);
+      
+      // Si antes estábamos offline y ahora tenemos conexión, recargamos (Online First)
+      if (_isOffline && hasConn) {
+        debugPrint('🌐 Red recuperada (4G/WiFi). Recargando datos...');
+        _fetch();
+      }
+      
+      setState(() {
+        _isOffline = !hasConn;
+      });
+    });
+
     _boot(); // arranque inmediato con última estación + caché/offline
   }
 
   Future<void> _boot() async {
+    // ⚡ Cargar lista de estaciones dinámica r=all (con cache)
+    await StationService.instance.loadStations();
+    _prefetchFavorites(); // Pre-cargar favoritos en background
+
     final sp = await SharedPreferences.getInstance();
 
     // 1) Estación por defecto o última usada
@@ -113,12 +141,16 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
     } else {
       final lastId = sp.getInt('last_station_id');
       if (lastId != null) {
-        _station = kStations.firstWhere(
+        // Buscamos en la lista dinámica primero
+        final dynamicStations = StationService.instance.stations;
+        _station = dynamicStations.firstWhere(
           (s) => s.id == lastId,
-          orElse: () => kStations.first,
+          orElse: () => dynamicStations.isNotEmpty ? dynamicStations.first : kStations.first,
         );
       } else {
-        _station = kStations.first; // por defecto
+        _station = StationService.instance.stations.isNotEmpty 
+            ? StationService.instance.stations.first 
+            : kStations.first;
       }
     }
 
@@ -157,10 +189,19 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
     await _fetch();
   }
 
+  Future<void> _prefetchFavorites() async {
+    final sp = await SharedPreferences.getInstance();
+    final idsStr = sp.getStringList('favorite_station_ids') ?? [];
+    final ids = idsStr.map((e) => int.tryParse(e) ?? 0).where((id) => id > 0).toList();
+    if (ids.isNotEmpty) {
+      await StationService.instance.prefetchFavorites(ids);
+    }
+  }
+
   @override
   void dispose() {
+    _connectivitySubscription?.cancel();
     _hourCtrl.dispose();
-    _client.close();
     super.dispose();
   }
 
@@ -195,10 +236,10 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
               Expanded(
                 child: ListView.separated(
                   controller: controller,
-                  itemCount: kStations.length,
+                  itemCount: StationService.instance.stations.length,
                   separatorBuilder: (_, __) => const Divider(height: 1),
                   itemBuilder: (_, i) {
-                    final st = kStations[i];
+                    final st = StationService.instance.stations[i];
                     final isSel = _station?.id == st.id;
                     return ListTile(
                       title: Text(st.name),
@@ -333,6 +374,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
           // ✅ POPUP "Seguir usando" (no refresca, solo cierra)
           await _showKeepUsingPopup();
 
+          if (!mounted) return;
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text(
@@ -431,13 +473,33 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
               ),
             ),
 
+            // 🛰️ BANNER DE ESTADO (Aparece solo si no hay 4G/WiFi)
+            if (_isOffline)
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                color: Colors.orange.shade800,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.signal_wifi_off, color: Colors.white, size: 16),
+                    SizedBox(width: 8),
+                    Text(
+                      'Sin conexión - Esperando 4G / WiFi...',
+                      style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
+
             // ====== CONTENIDO BLANCO ======
             Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
+              child: RepaintBoundary(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
                     const SizedBox(height: 8),
 
                     // Ícono + temperatura
@@ -447,7 +509,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                       child: Text(
                         _loading
                             ? '—'
-                            : (_current?.tempC?.toStringAsFixed(0) ?? '—') + '°',
+                            : '${_current?.tempC?.toStringAsFixed(0) ?? '—'}°',
                         style: const TextStyle(
                           color: kBlack,
                           fontSize: 72,
@@ -470,11 +532,13 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     const SizedBox(height: 4),
 
                     // SELECTOR DE FAVORITOS
-                    FavoriteStationsBar(
-                      onSelect: (st) async {
-                        setState(() => _station = st);
-                        await _fetch();
-                      },
+                    RepaintBoundary(
+                      child: FavoriteStationsBar(
+                        onSelect: (st) async {
+                          setState(() => _station = st);
+                          await _fetch();
+                        },
+                      ),
                     ),
 
                     // Estación debajo de Max/Min
@@ -535,12 +599,9 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                       child: _error != null
                           ? _ErrorStrip(error: _error!)
                           : (_loading && _hourly.isEmpty
-                              ? const Center(
-                                  child: CircularProgressIndicator(),
-                                )
+                              ? const Center(child: CircularProgressIndicator())
                               : ScrollConfiguration(
-                                  behavior: const MaterialScrollBehavior()
-                                      .copyWith(
+                                  behavior: const MaterialScrollBehavior().copyWith(
                                     dragDevices: {
                                       PointerDeviceKind.touch,
                                       PointerDeviceKind.mouse,
@@ -553,21 +614,14 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                                     scrollDirection: Axis.horizontal,
                                     physics: const BouncingScrollPhysics(),
                                     primary: false,
-                                    itemCount:
-                                        _hourly.isNotEmpty ? _hourly.length : 8,
-                                    separatorBuilder: (_, __) =>
-                                        const SizedBox(width: _itemGap),
+                                    itemCount: _hourly.isNotEmpty ? _hourly.length : 8,
+                                    separatorBuilder: (_, __) => const SizedBox(width: _itemGap),
                                     itemBuilder: (_, i) {
-                                      final h = _hourly.isEmpty
-                                          ? _Hourly.placeholder(i)
-                                          : _hourly[i];
+                                      final h = _hourly.isEmpty ? _Hourly.placeholder(i) : _hourly[i];
                                       final isCurrent = i == _currentIndex;
                                       return SizedBox(
                                         width: _itemWidth,
-                                        child: _HourTile(
-                                          h: h,
-                                          highlight: isCurrent,
-                                        ),
+                                        child: _HourTile(h: h, highlight: isCurrent),
                                       );
                                     },
                                   ),
@@ -584,7 +638,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                 ),
               ),
             ),
-          ],
+          ),
+        ],
         ),
       ),
 
@@ -913,24 +968,4 @@ double? _toDouble(dynamic v) {
   if (v is num) return v.toDouble();
   final s = v.toString().replaceAll(',', '.');
   return double.tryParse(s);
-}
-
-String _todayString() {
-  final now = DateTime.now();
-  const months = [
-    '',
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ];
-  return '${months[now.month]}, ${now.day}';
 }

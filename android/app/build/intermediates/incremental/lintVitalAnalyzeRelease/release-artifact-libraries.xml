@@ -4,6 +4,19 @@
       jars="C:\Users\joel8\Downloads\flutterapp\inifap\android\app\build\intermediates\flutter\release\libs.jar"
       resolved="__local_aars__:C:\Users\joel8\Downloads\flutterapp\inifap\android\app\build\intermediates\flutter\release\libs.jar:unspecified"/>
   <library
+      name=":@@:connectivity_plus::release"
+      jars="C:\Users\joel8\.gradle\caches\transforms-4\8cfc05cfba2273ff36666e811e06fb45\transformed\out\jars\classes.jar;C:\Users\joel8\.gradle\caches\transforms-4\8cfc05cfba2273ff36666e811e06fb45\transformed\out\jars\libs\R.jar"
+      resolved="dev.fluttercommunity.plus.connectivity:connectivity_plus:unspecified"
+      folder="C:\Users\joel8\.gradle\caches\transforms-4\8cfc05cfba2273ff36666e811e06fb45\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name=":@@:device_info_plus::release"
       jars="C:\Users\joel8\.gradle\caches\transforms-4\830aaeec7ee352516de30abe01f0c456\transformed\out\jars\classes.jar;C:\Users\joel8\.gradle\caches\transforms-4\830aaeec7ee352516de30abe01f0c456\transformed\out\jars\libs\R.jar"
       resolved="dev.fluttercommunity.plus.device_info:device_info_plus:unspecified"

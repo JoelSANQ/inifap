@@ -4,8 +4,12 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
-import '../data/Stations.dart';
+import '../services/station_service.dart';
+
+
 
 const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
 
@@ -44,6 +48,8 @@ class OfflineDataService {
 
   static final OfflineDataService instance = OfflineDataService._internal();
 
+  static final http.Client sharedClient = http.Client();
+
   Map<String, dynamic>? _cachedRoot;
 
   /// Ruta completa del archivo offline en el almacenamiento interno.
@@ -52,29 +58,49 @@ class OfflineDataService {
     return File('${dir.path}/offline_data.json');
   }
 
-  /// Carga el JSON offline desde disco (si existe) y lo deja en memoria.
+  /// Carga el JSON offline desde disco (Mobile/Desktop) o SharedPreferences (Web).
   Future<Map<String, dynamic>?> loadOfflineRoot() async {
     if (_cachedRoot != null) return _cachedRoot;
 
-    final file = await _getOfflineFile();
-    if (!await file.exists()) return null;
-
-    final contents = await file.readAsString();
-    _cachedRoot = jsonDecode(contents) as Map<String, dynamic>;
-    return _cachedRoot;
+    if (kIsWeb) {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonStr = prefs.getString('offline_data_json');
+      if (jsonStr == null) return null;
+      try {
+        _cachedRoot = jsonDecode(jsonStr) as Map<String, dynamic>;
+        return _cachedRoot;
+      } catch (_) {
+        return null;
+      }
+    } else {
+      final file = await _getOfflineFile();
+      if (!await file.exists()) return null;
+      final contents = await file.readAsString();
+      try {
+        _cachedRoot = jsonDecode(contents) as Map<String, dynamic>;
+        return _cachedRoot;
+      } catch (_) {
+        return null;
+      }
+    }
   }
 
   /// Guardar root en disco y cache
   Future<void> _saveOfflineRoot(Map<String, dynamic> root) async {
-    final file = await _getOfflineFile();
-    await file.writeAsString(
-      const JsonEncoder.withIndent('  ').convert(root),
-    );
     _cachedRoot = root;
+    final jsonStr = const JsonEncoder.withIndent('  ').convert(root);
+
+    if (kIsWeb) {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('offline_data_json', jsonStr);
+    } else {
+      final file = await _getOfflineFile();
+      await file.writeAsString(jsonStr);
+    }
   }
 
   Future<dynamic> _getJson(String url) async {
-    final res = await http.get(Uri.parse(url));
+    final res = await sharedClient.get(Uri.parse(url));
     if (res.statusCode != 200) {
       throw Exception('HTTP ${res.statusCode} en $url');
     }
@@ -100,7 +126,7 @@ class OfflineDataService {
       // 2) Histórico por estación (r=10) mes actual
       final Map<String, dynamic> history = {};
 
-      for (final st in kStations) {
+      for (final st in StationService.instance.stations) {
         final url = _buildHistoryUrl(
           idEst: st.id,
           month: now.month,
@@ -118,7 +144,7 @@ class OfflineDataService {
 
       // 3) Daily extras (r=6 lluvia, 7 hum, 8 rad, 9 viento) para HOY
       final Map<String, dynamic> dailyExtras = {};
-      for (final st in kStations) {
+      for (final st in StationService.instance.stations) {
         final idStr = st.id.toString();
         try {
           final rain =
@@ -144,7 +170,7 @@ class OfflineDataService {
 
       // 4) Tiempo real r=5 por estación para HOY
       final Map<String, dynamic> realtime = {};
-      for (final st in kStations) {
+      for (final st in StationService.instance.stations) {
         final idStr = st.id.toString();
         try {
           final rt =
@@ -219,6 +245,79 @@ class OfflineDataService {
 
     root['realtime'] = realtime;
 
+    await _saveOfflineRoot(root);
+  }
+
+  /// Guarda el histórico (r=10) de una estación para un mes específico.
+  /// Se llama desde station_history.dart después de un fetch online exitoso.
+  Future<void> saveHistoryForStation(int idEst, int month, int year, String body) async {
+    Map<String, dynamic> root = await loadOfflineRoot() ?? <String, dynamic>{};
+    root['generated_at'] ??= DateTime.now().toIso8601String();
+    root['reports'] ??= {};
+    root['history'] ??= {};
+    root['daily_extras'] ??= {};
+    root['realtime'] ??= {};
+
+    final history = (root['history'] is Map<String, dynamic>)
+        ? root['history'] as Map<String, dynamic>
+        : <String, dynamic>{};
+
+    final idStr = idEst.toString();
+    history[idStr] ??= <String, dynamic>{};
+
+    final mm = month.toString().padLeft(2, '0');
+    final monKey = '$year-$mm';
+    history[idStr][monKey] = jsonDecode(body);
+
+    root['history'] = history;
+    await _saveOfflineRoot(root);
+  }
+
+  /// Guarda datos de reporte (r=1, r=3, r=4) para acceso offline.
+  /// Se llama desde report.dart después de un fetch online exitoso.
+  Future<void> saveReportData(int r, String body) async {
+    Map<String, dynamic> root = await loadOfflineRoot() ?? <String, dynamic>{};
+    root['generated_at'] ??= DateTime.now().toIso8601String();
+    root['reports'] ??= {};
+    root['history'] ??= {};
+    root['daily_extras'] ??= {};
+    root['realtime'] ??= {};
+
+    final reports = (root['reports'] is Map<String, dynamic>)
+        ? root['reports'] as Map<String, dynamic>
+        : <String, dynamic>{};
+
+    reports['r$r'] = jsonDecode(body);
+
+    root['reports'] = reports;
+    await _saveOfflineRoot(root);
+  }
+
+  /// Guarda los daily extras (r6, r7, r8, r9) de una estación para un día.
+  /// Se llama desde cards_under_daily_extras.dart después de fetch online exitoso.
+  Future<void> saveDailyExtrasForStation(int idEst, DateTime day, Map<String, dynamic> extras) async {
+    Map<String, dynamic> root = await loadOfflineRoot() ?? <String, dynamic>{};
+    root['generated_at'] ??= DateTime.now().toIso8601String();
+    root['reports'] ??= {};
+    root['history'] ??= {};
+    root['daily_extras'] ??= {};
+    root['realtime'] ??= {};
+
+    final dailyExtras = (root['daily_extras'] is Map<String, dynamic>)
+        ? root['daily_extras'] as Map<String, dynamic>
+        : <String, dynamic>{};
+
+    final idStr = idEst.toString();
+    dailyExtras[idStr] ??= <String, dynamic>{};
+
+    final dd = day.day.toString().padLeft(2, '0');
+    final mm = day.month.toString().padLeft(2, '0');
+    final yyyy = day.year.toString();
+    final dayKey = '$yyyy-$mm-$dd';
+
+    dailyExtras[idStr][dayKey] = extras;
+
+    root['daily_extras'] = dailyExtras;
     await _saveOfflineRoot(root);
   }
 }

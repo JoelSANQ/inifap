@@ -68,6 +68,7 @@ ADDED from C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\Andro
 INJECTED from C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:2:1-72:12
 INJECTED from C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:2:1-72:12
 INJECTED from C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml:2:1-72:12
+MERGED from [:connectivity_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-7.0.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
 MERGED from [:device_info_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\device_info_plus-11.3.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-7:12
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-48:12
 MERGED from [:firebase_core] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.15.2\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-15:12
@@ -285,6 +286,8 @@ uses-sdk
 INJECTED from C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml
+MERGED from [:connectivity_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-7.0.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
+MERGED from [:connectivity_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-7.0.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:device_info_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\device_info_plus-11.3.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:device_info_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\device_info_plus-11.3.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-44
@@ -462,7 +465,9 @@ MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\joel8\.gradle\cac
 	android:minSdkVersion
 		INJECTED from C:\Users\joel8\Downloads\flutterapp\inifap\android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
+ADDED from [:connectivity_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-7.0.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-79
+MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
+MERGED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\joel8\.gradle\caches\transforms-4\c644aedda01a4df78b2053b3aa80040a\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\joel8\.gradle\caches\transforms-4\c644aedda01a4df78b2053b3aa80040a\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-messaging:24.1.2] C:\Users\joel8\.gradle\caches\transforms-4\c2e51b63b50e97c466a7ab1cad40e09c\transformed\firebase-messaging-24.1.2\AndroidManifest.xml:22:5-79
@@ -476,7 +481,7 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Us
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:22:5-79
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\joel8\.gradle\caches\transforms-4\86c423418ef5a90144feead5606f3e70\transformed\transport-runtime-3.1.9\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-76
+		ADDED from [:connectivity_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-7.0.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:22-76
 service#io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService
 ADDED from [:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:9-17:72
 	android:exported

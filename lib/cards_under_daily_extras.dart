@@ -3,7 +3,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart'; // ✅ kIsWeb
-import 'package:http/http.dart' as http;
 import 'data/Stations.dart';
 import 'bin/generate_offline.dart';
 import 'notifications/precipitation_notifications.dart';
@@ -261,10 +260,10 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
 
       // 🚀 Peticiones en paralelo + timeout
       final responses = await Future.wait([
-        http.get(Uri.parse(windUrl)).timeout(const Duration(seconds: 6)),
-        http.get(Uri.parse(radUrl)).timeout(const Duration(seconds: 6)),
-        http.get(Uri.parse(rainUrl)).timeout(const Duration(seconds: 6)),
-        http.get(Uri.parse(humUrl)).timeout(const Duration(seconds: 6)),
+        OfflineDataService.sharedClient.get(Uri.parse(windUrl)).timeout(const Duration(seconds: 10)),
+        OfflineDataService.sharedClient.get(Uri.parse(radUrl)).timeout(const Duration(seconds: 10)),
+        OfflineDataService.sharedClient.get(Uri.parse(rainUrl)).timeout(const Duration(seconds: 10)),
+        OfflineDataService.sharedClient.get(Uri.parse(humUrl)).timeout(const Duration(seconds: 10)),
       ]);
 
       final resWind = responses[0];
@@ -279,9 +278,21 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
         windBody: resWind.body,
       );
 
+      // ✅ Guardar en offline
+      await OfflineDataService.instance.saveDailyExtrasForStation(
+        st.id,
+        widget.day,
+        {
+          'r6': jsonDecode(resRain.body),
+          'r7': jsonDecode(resHum.body),
+          'r8': jsonDecode(resRad.body),
+          'r9': jsonDecode(resWind.body),
+        },
+      );
+
       if (mounted) {
         setState(() {
-          _error = null; // online ok, limpiamos mensaje de offline si quieres
+          _error = null;
         });
       }
     } catch (e) {

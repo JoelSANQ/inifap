@@ -45,8 +45,8 @@
 29    </queries>
 30
 31    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-31-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
-31-->[:firebase_messaging] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-15.2.10\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-76
+31-->[:connectivity_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-7.0.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:5-79
+31-->[:connectivity_plus] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-7.0.0\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:7:22-76
 32    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 32-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-81
 32-->[:flutter_background_service_android] C:\Users\joel8\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_background_service_android-6.3.1\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:22-78

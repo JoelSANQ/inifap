@@ -1,12 +1,12 @@
 // lib/notifications/rain_check_worker.dart
 //
 // ============================================================================
-// 🔔 NOTIFICACIÓN DE PRECIPITACIÓN CERO — WorkManager + Local Notifications
+// 🔔 NOTIFICACIÓN DE CLIMA EXTREMO Y LLUVIA — WorkManager + Local Notifications
 // ============================================================================
 //
 // ▸ Se ejecuta en segundo plano cada ~15 min (mínimo de Android WorkManager).
-// ▸ Internamente usa un cooldown propio de 5 minutos para no repetir antes.
-// ▸ Dispara notificación cuando la precipitación de una estación favorita == 0.
+// ▸ Internamente usa un cooldown propio de 15 minutos para no repetir antes.
+// ▸ Dispara notificación por: Temp (<0 o >38), Viento (>23 km/h) o Lluvia (>=1 mm).
 // ▸ NO depende de Firebase — solo WorkManager + flutter_local_notifications.
 // ============================================================================
 
@@ -20,8 +20,8 @@ import '../bin/generate_offline.dart'; // ✅ OfflineDataService.sharedClient
 // ─────────────────────────────────────────────
 // Constantes
 // ─────────────────────────────────────────────
-const String kRainCheckTaskName = 'precipitacionCeroCheck';
-const String kRainCheckTaskTag = 'rainZeroTag';
+const String kRainCheckTaskName = 'climaExtremoCheck';
+const String kRainCheckTaskTag = 'weatherAlertTag';
 
 /// Endpoint que devuelve TODAS las estaciones con su valor `rainMm`.
 const String _kApiAllStations =
@@ -138,6 +138,9 @@ Future<void> handleExtremeWeatherCheck() async {
       final windVal = s['velViento'] ?? s['viento'] ?? s['vv'];
       final wind = double.tryParse((windVal ?? '0').toString()) ?? 0.0;
 
+      final rainVal = s['lluvia'] ?? s['rainMm'] ?? s['precip'] ?? s['pp'] ?? '0';
+      final rain = double.tryParse(rainVal.toString()) ?? 0.0;
+
       final name = (s['nombre'] ?? 'Estación $id').toString();
       final now = DateTime.now().millisecondsSinceEpoch;
       final nowDt = DateTime.now();
@@ -171,6 +174,22 @@ Future<void> handleExtremeWeatherCheck() async {
             id: id.hashCode + 2,
             title: '🌬️ Vientos Fuertes',
             body: '$name: ${wind.toStringAsFixed(1)} km/h detectados a las $hora',
+          );
+        }
+      }
+
+      // --- 🌧️ CONDICIÓN LLUVIA (>= 1.0 mm) ---
+      if (rain >= 1.0) {
+        final lastKeyR = 'rain_notif_$id';
+        final lastR = prefs.getInt(lastKeyR) ?? 0;
+        const cooldownR = 15 * 60 * 1000; // 15 minutos
+
+        if (now - lastR > cooldownR) {
+          await prefs.setInt(lastKeyR, now);
+          await _showNotification(
+            id: id.hashCode + 3,
+            title: '🌧️ Está lloviendo',
+            body: '$name: Se detectan ${rain.toStringAsFixed(1)} mm a las $hora',
           );
         }
       }

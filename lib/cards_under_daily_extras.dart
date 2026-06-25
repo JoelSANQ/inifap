@@ -7,7 +7,7 @@ import 'data/Stations.dart';
 import 'bin/generate_offline.dart';
 import 'notifications/precipitation_notifications.dart';
 
-const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
+const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
 const String _kProxyBase = 'http://localhost:8080';
 
 /// Construye la URL con r, fecha y estación

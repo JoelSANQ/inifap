@@ -11,7 +11,7 @@ import '../services/station_service.dart';
 
 
 
-const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
+const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
 
 // Si sigues usando proxy en Web, no pasa nada, esto es solo para app móvil
 String _buildUrlR(int r) {
@@ -100,7 +100,9 @@ class OfflineDataService {
   }
 
   Future<dynamic> _getJson(String url) async {
-    final res = await sharedClient.get(Uri.parse(url));
+    final res = await sharedClient
+        .get(Uri.parse(url))
+        .timeout(const Duration(seconds: 15)); // ⏱️ evita colgado sin red
     if (res.statusCode != 200) {
       throw Exception('HTTP ${res.statusCode} en $url');
     }

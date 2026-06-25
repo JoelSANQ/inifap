@@ -27,7 +27,7 @@ class StationService {
 
   Future<void> _refreshFromNetwork() async {
     try {
-      const url = 'http://zacatecas.inifap.gob.mx/apiApp2.php?r=all';
+      const url = 'https://zacatecas.inifap.gob.mx/apiApp2.php?r=all';
       // Usamos el cliente compartido para mayor velocidad
       final res = await OfflineDataService.sharedClient.get(Uri.parse(url))
           .timeout(const Duration(seconds: 10));
@@ -78,7 +78,7 @@ class StationService {
       final mm = now.month.toString().padLeft(2, '0');
       final yyyy = now.year.toString();
       
-      final url = 'http://zacatecas.inifap.gob.mx/apiApp2.php?r=5&day=$dd&month=$mm&year=$yyyy&id_est_given=$idEst';
+      final url = 'https://zacatecas.inifap.gob.mx/apiApp2.php?r=5&day=$dd&month=$mm&year=$yyyy&id_est_given=$idEst';
       
       // Fetch silencioso
       final res = await OfflineDataService.sharedClient.get(Uri.parse(url))

@@ -25,7 +25,7 @@ const String kRainCheckTaskTag = 'weatherAlertTag';
 
 /// Endpoint que devuelve TODAS las estaciones con su valor `rainMm`.
 const String _kApiAllStations =
-    'http://zacatecas.inifap.gob.mx/apiApp2.php?r=all';
+    'https://zacatecas.inifap.gob.mx/apiApp2.php?r=all';
 
 // ─────────────────────────────────────────────
 // Plugin de notificaciones locales (propio del
@@ -99,6 +99,12 @@ Future<void> _showNotification({
 
 /// Función pública que ejecuta el chequeo de clima extremo.
 /// Se llama desde [callbackDispatcher] en `background_worker.dart`.
+///
+/// Estrategia ONLINE-FIRST con fallback OFFLINE:
+///   1) Intenta r=all (todas las estaciones, datos frescos).
+///   2) Si no hay red / falla, usa el cache offline (r=5 por estación)
+///      guardado en `offline_data.json`. Así las notificaciones siguen
+///      evaluándose aunque el dispositivo esté sin internet.
 Future<void> handleExtremeWeatherCheck() async {
   try {
     // 1) Iniciar plugin de notificaciones locales
@@ -114,89 +120,197 @@ Future<void> handleExtremeWeatherCheck() async {
       return;
     }
 
-    // 3) Pedir datos al API
-    final response = await OfflineDataService.sharedClient
-        .get(Uri.parse(_kApiAllStations))
-        .timeout(const Duration(seconds: 15));
+    // 3) Intentar datos ONLINE (r=all)
+    List<dynamic>? stations;
+    try {
+      final response = await OfflineDataService.sharedClient
+          .get(Uri.parse(_kApiAllStations))
+          .timeout(const Duration(seconds: 15));
 
-    if (response.statusCode != 200) {
-      debugPrint(
-          '⚠️ [WeatherCheck] API respondió ${response.statusCode} — se omite.');
-      return;
+      if (response.statusCode == 200) {
+        final decoded = jsonDecode(response.body);
+        if (decoded is List) stations = decoded;
+      } else {
+        debugPrint('⚠️ [WeatherCheck] API respondió ${response.statusCode}.');
+      }
+    } catch (e) {
+      debugPrint('📴 [WeatherCheck] Sin red ($e) — uso cache offline.');
     }
 
-    final List<dynamic> stations = jsonDecode(response.body);
+    if (stations != null) {
+      // ── PATH ONLINE: recorrer todas las estaciones del r=all ──
+      for (final s in stations) {
+        if (s is! Map) continue;
+        final id = (s['idEst'] ?? '').toString();
+        if (!favoriteIds.contains(id)) continue;
 
-    for (final s in stations) {
-      final id = (s['idEst'] ?? '').toString();
-      if (!favoriteIds.contains(id)) continue;
+        final tempVal = s['tempC'] ?? s['temp'] ?? s['tc'];
+        final temp = double.tryParse((tempVal ?? '—').toString()) ?? 999.0;
 
-      // --- 🔍 EXTRACCIÓN DE DATOS ---
-      final tempVal = s['tempC'] ?? s['temp'] ?? s['tc'];
-      final temp = double.tryParse((tempVal ?? '—').toString()) ?? 999.0;
+        final windVal = s['velViento'] ?? s['viento'] ?? s['vv'];
+        final wind = double.tryParse((windVal ?? '0').toString()) ?? 0.0;
 
-      final windVal = s['velViento'] ?? s['viento'] ?? s['vv'];
-      final wind = double.tryParse((windVal ?? '0').toString()) ?? 0.0;
+        final rainVal =
+            s['lluvia'] ?? s['rainMm'] ?? s['precip'] ?? s['pp'] ?? '0';
+        final rain = double.tryParse(rainVal.toString()) ?? 0.0;
 
-      final rainVal = s['lluvia'] ?? s['rainMm'] ?? s['precip'] ?? s['pp'] ?? '0';
-      final rain = double.tryParse(rainVal.toString()) ?? 0.0;
+        final name = (s['nombre'] ?? 'Estación $id').toString();
 
-      final name = (s['nombre'] ?? 'Estación $id').toString();
-      final now = DateTime.now().millisecondsSinceEpoch;
-      final nowDt = DateTime.now();
-      final hora = '${nowDt.hour.toString().padLeft(2, '0')}:${nowDt.minute.toString().padLeft(2, '0')}';
-
-      // --- 🌡️ CONDICIÓN TEMPERATURA (< 0 o > 38) ---
-      if (temp != 999.0 && (temp < 0 || temp > 38)) {
-        final lastKeyT = 'extreme_temp_notif_$id';
-        final lastT = prefs.getInt(lastKeyT) ?? 0;
-        const cooldownT = 15 * 60 * 1000;
-
-        if (now - lastT > cooldownT) {
-          await prefs.setInt(lastKeyT, now);
-          await _showNotification(
-            id: id.hashCode + 1,
-            title: temp < 0 ? '❄️ Temperatura Helada' : '🔥 Temperatura Muy Caliente',
-            body: '$name: ${temp.toStringAsFixed(1)}°C detectada a las $hora',
-          );
-        }
+        await _checkAndNotify(
+          prefs: prefs,
+          id: id,
+          name: name,
+          temp: temp,
+          wind: wind,
+          rain: rain,
+        );
       }
+    } else {
+      // ── PATH OFFLINE: usar cache (r=5 por estación favorita) ──
+      for (final id in favoriteIds) {
+        final idInt = int.tryParse(id);
+        if (idInt == null) continue;
 
-      // --- 💨 CONDICIÓN VIENTO (> 23) ---
-      if (wind > 23) {
-        final lastKeyW = 'high_wind_notif_$id';
-        final lastW = prefs.getInt(lastKeyW) ?? 0;
-        const cooldownW = 15 * 60 * 1000;
+        final json =
+            await OfflineDataService.instance.getRealtimeJsonForStation(idInt);
+        if (json == null) continue;
 
-        if (now - lastW > cooldownW) {
-          await prefs.setInt(lastKeyW, now);
-          await _showNotification(
-            id: id.hashCode + 2,
-            title: '🌬️ Vientos Fuertes',
-            body: '$name: ${wind.toStringAsFixed(1)} km/h detectados a las $hora',
-          );
-        }
-      }
+        final parsed = _parseOfflineRealtime(json, fallbackId: id);
+        if (parsed == null) continue;
 
-      // --- 🌧️ CONDICIÓN LLUVIA (>= 1.0 mm) ---
-      if (rain >= 1.0) {
-        final lastKeyR = 'rain_notif_$id';
-        final lastR = prefs.getInt(lastKeyR) ?? 0;
-        const cooldownR = 15 * 60 * 1000; // 15 minutos
-
-        if (now - lastR > cooldownR) {
-          await prefs.setInt(lastKeyR, now);
-          await _showNotification(
-            id: id.hashCode + 3,
-            title: '🌧️ Está lloviendo',
-            body: '$name: Se detectan ${rain.toStringAsFixed(1)} mm a las $hora',
-          );
-        }
+        await _checkAndNotify(
+          prefs: prefs,
+          id: id,
+          name: parsed.name,
+          temp: parsed.temp,
+          wind: parsed.wind, // r=5 no trae viento → 0 (condición se omite)
+          rain: parsed.rain,
+        );
       }
     }
   } catch (e, stack) {
     debugPrint('❌ [WeatherCheck] Error en tarea background: $e\n$stack');
   }
+}
+
+/// Evalúa las 3 condiciones (temp / viento / lluvia) para una estación y
+/// dispara notificación si corresponde, respetando el cooldown de 15 min.
+Future<void> _checkAndNotify({
+  required SharedPreferences prefs,
+  required String id,
+  required String name,
+  required double temp,
+  required double wind,
+  required double rain,
+}) async {
+  final now = DateTime.now().millisecondsSinceEpoch;
+  final nowDt = DateTime.now();
+  final hora =
+      '${nowDt.hour.toString().padLeft(2, '0')}:${nowDt.minute.toString().padLeft(2, '0')}';
+  const cooldown = 15 * 60 * 1000;
+
+  // --- 🌡️ TEMPERATURA (< 0 o > 38) ---
+  if (temp != 999.0 && (temp < 0 || temp > 38)) {
+    final key = 'extreme_temp_notif_$id';
+    if (now - (prefs.getInt(key) ?? 0) > cooldown) {
+      await prefs.setInt(key, now);
+      await _showNotification(
+        id: id.hashCode + 1,
+        title: temp < 0 ? '❄️ Temperatura Helada' : '🔥 Temperatura Muy Caliente',
+        body: '$name: ${temp.toStringAsFixed(1)}°C detectada a las $hora',
+      );
+    }
+  }
+
+  // --- 💨 VIENTO (> 23) ---
+  if (wind > 23) {
+    final key = 'high_wind_notif_$id';
+    if (now - (prefs.getInt(key) ?? 0) > cooldown) {
+      await prefs.setInt(key, now);
+      await _showNotification(
+        id: id.hashCode + 2,
+        title: '🌬️ Vientos Fuertes',
+        body: '$name: ${wind.toStringAsFixed(1)} km/h detectados a las $hora',
+      );
+    }
+  }
+
+  // --- 🌧️ LLUVIA (>= 1.0 mm) ---
+  if (rain >= 1.0) {
+    final key = 'rain_notif_$id';
+    if (now - (prefs.getInt(key) ?? 0) > cooldown) {
+      await prefs.setInt(key, now);
+      await _showNotification(
+        id: id.hashCode + 3,
+        title: '🌧️ Está lloviendo',
+        body: '$name: Se detectan ${rain.toStringAsFixed(1)} mm a las $hora',
+      );
+    }
+  }
+}
+
+/// Datos mínimos extraídos del cache offline (r=5) de una estación.
+class _OfflineReading {
+  final String name;
+  final double temp;
+  final double wind;
+  final double rain;
+  _OfflineReading(this.name, this.temp, this.wind, this.rain);
+}
+
+/// Parsea el JSON r=5 guardado offline y devuelve la lectura más reciente
+/// (último registro horario con temperatura válida).
+///
+/// Estructura esperada (igual que en WeatherProxyPage):
+///   [ { "Est": "...", "Datos": [ { "Hora": "..", "Temp": "..", "Prec": ".." }, ... ] } ]
+_OfflineReading? _parseOfflineRealtime(String json, {required String fallbackId}) {
+  try {
+    final root = jsonDecode(json);
+
+    Map<String, dynamic>? obj;
+    if (root is List && root.isNotEmpty && root.first is Map) {
+      obj = Map<String, dynamic>.from(root.first as Map);
+    } else if (root is Map) {
+      obj = Map<String, dynamic>.from(root);
+    }
+    if (obj == null) return null;
+
+    final name = (obj['Est'] ??
+            obj['est'] ??
+            obj['nombre'] ??
+            obj['estacion'] ??
+            'Estación $fallbackId')
+        .toString();
+
+    // Buscar la lista de registros horarios
+    List horas = const [];
+    for (final k in ['Datos', 'datos', 'data', 'values', 'horas']) {
+      final v = obj[k];
+      if (v is List) {
+        horas = v;
+        break;
+      }
+    }
+    if (horas.isEmpty) return null;
+
+    // Recorrer de atrás hacia adelante: tomar el registro más reciente válido
+    for (var i = horas.length - 1; i >= 0; i--) {
+      final h = horas[i];
+      if (h is! Map) continue;
+      final mm = Map<String, dynamic>.from(h);
+
+      final tempVal = mm['Temp'] ?? mm['temp'] ?? mm['T'] ?? mm['temperatura'];
+      final temp = double.tryParse((tempVal ?? '').toString().replaceAll(',', '.'));
+      if (temp == null) continue; // saltar horas vacías
+
+      final rainVal = mm['Prec'] ?? mm['prec'] ?? mm['lluvia'] ?? mm['rain'];
+      final rain =
+          double.tryParse((rainVal ?? '0').toString().replaceAll(',', '.')) ?? 0.0;
+
+      return _OfflineReading(name, temp, 0.0, rain);
+    }
+  } catch (_) {}
+  return null;
 }
 
 // ─────────────────────────────────────────────
@@ -223,7 +337,7 @@ Future<void> initRainCheckWorker() async {
     frequency: const Duration(minutes: 15), // mínimo Android = 15 min
     initialDelay: const Duration(seconds: 10), // demora inicial
     constraints: Constraints(
-      networkType: NetworkType.connected, // solo con internet
+      networkType: NetworkType.not_required, // ✅ corre aunque NO haya internet (usa cache offline)
     ),
     existingWorkPolicy: ExistingWorkPolicy.replace, // reemplaza si ya existe
     tag: kRainCheckTaskTag,

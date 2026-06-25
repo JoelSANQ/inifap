@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.clima.app-mergeDebugResources-42:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.example.clima.app-mergeDebugResources-60:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\ecd704aebb2c29a26d41223cb48c788e\\transformed\\appcompat-1.1.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\joel8\\.gradle\\caches\\transforms-4\\2e257ea3793d8a40a02e75e3940458d0\\transformed\\appcompat-1.1.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

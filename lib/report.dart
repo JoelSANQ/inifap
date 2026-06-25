@@ -6,7 +6,7 @@ import 'dart:async';
 import 'bin/generate_offline.dart'; // OfflineDataService
 
 // ================== CONFIGURACIÓN DEL PROXY ==================
-const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
+const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
 
 String _buildProxyUrl({required int r}) {
   final upstream = '$_kUpstream?r=$r';

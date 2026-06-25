@@ -20,7 +20,7 @@ import 'package:clima/services/station_service.dart';
 import 'package:clima/bin/generate_offline.dart';
 
 /// ====== CONFIG API ======
-const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
+const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
 
 String _buildProxyUrl({required int idEst}) {
   final now = DateTime.now();
@@ -74,6 +74,10 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   // 🛰️ SUSCRIPCIÓN DE RED (4G/WIFI)
   StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
   bool _isOffline = false;
+
+  // 📦 true cuando se están mostrando datos guardados (cache/offline) porque
+  //     la descarga online falló. Controla la barra "Datos guardados activados".
+  bool _usingOfflineData = false;
 
   // ===========================
   // ✅ POPUP "SEGUIR USANDO"
@@ -281,7 +285,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
       final url = _buildProxyUrl(idEst: st.id);
       final res = await _client
           .get(Uri.parse(url), headers: const {'Accept': 'application/json'})
-          .timeout(const Duration(seconds: 6)); // ⏱️ timeout
+          .timeout(const Duration(seconds: 15)); // ⏱️ timeout corto (antes 240s = bug "Future not completed")
 
       if (res.statusCode != 200) {
         throw Exception('HTTP ${res.statusCode} ${res.reasonPhrase}');
@@ -310,6 +314,8 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
         _current = curr;
         _hourly = hourly;
         _currentIndex = idx;
+        _usingOfflineData = false; // ✅ datos frescos online → ocultar barra
+        _offlinePopupShown = false; // permite mostrar popup de nuevo si se cae luego
       });
 
       WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToCurrent());
@@ -334,18 +340,14 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                 _hourly = h;
                 _currentIndex = _indexMasCercano(c.time, h);
                 _error = null;
+                _usingOfflineData = true; // 📦 barra "Datos guardados activados"
               });
 
               WidgetsBinding.instance
                   .addPostFrameCallback((_) => _scrollToCurrent());
 
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text(
-                    'No hay conexión. Se muestran datos guardados offline.',
-                  ),
-                ),
-              );
+              // Popup "Seguir usando" (recuadro de datos guardados)
+              await _showKeepUsingPopup();
             }
 
             // Ya resolvimos con offline, no mostramos popup de error.
@@ -371,17 +373,10 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
       } else {
         // ✅ Sí hay datos en caché/offline: solo avisamos y seguimos mostrando
         if (mounted) {
+          setState(() => _usingOfflineData = true); // 📦 barra "Datos guardados activados"
+
           // ✅ POPUP "Seguir usando" (no refresca, solo cierra)
           await _showKeepUsingPopup();
-
-          if (!mounted) return;
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text(
-                'No hay conexión. Se muestran los últimos datos guardados.',
-              ),
-            ),
-          );
         }
       }
     } finally {
@@ -473,20 +468,25 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
               ),
             ),
 
-            // 🛰️ BANNER DE ESTADO (Aparece solo si no hay 4G/WiFi)
-            if (_isOffline)
+            // 🛰️ BANNER DE ESTADO (sin conexión o mostrando datos guardados)
+            if (_isOffline || _usingOfflineData)
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 6),
                 color: Colors.orange.shade800,
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.signal_wifi_off, color: Colors.white, size: 16),
-                    SizedBox(width: 8),
+                    const Icon(Icons.offline_bolt, color: Colors.white, size: 16),
+                    const SizedBox(width: 8),
                     Text(
-                      'Sin conexión - Esperando 4G / WiFi...',
-                      style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w500),
+                      _isOffline
+                          ? 'Datos guardados activados - Esperando 4G / WiFi...'
+                          : 'Datos guardados activados',
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),

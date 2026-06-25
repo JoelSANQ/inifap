@@ -18,7 +18,7 @@ const kStroke = Color(0xFFE5E5E5);
 const kWarmAccent = Color(0xFFE6A700);    // acento cálido (barras, iconos)
 
 /// ====== CONFIG API ======
-const String _kUpstream = 'http://zacatecas.inifap.gob.mx/apiApp2.php';
+const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
 const String _kProxyBase = 'http://localhost:8080';
 
 String _buildHistoryUrl({

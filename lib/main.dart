@@ -65,19 +65,8 @@ void main() async {
       isInDebugMode: false, // ✅ Producción (cambiar a true solo para depurar)
     );
     
-    // ✅ Tarea periódica #1: chequeo clima extremo cada 15 min
-    await Workmanager().registerPeriodicTask(
-      'weather_check_periodic',
-      'checkRainTask',
-      frequency: const Duration(minutes: 15),
-      constraints: Constraints(
-        networkType: NetworkType.connected,
-      ),
-      existingWorkPolicy: ExistingWorkPolicy.replace,
-    );
-    debugPrint('✅ Workmanager: tarea periódica registrada (clima extremo cada ~15 min)');
-
-    // ✅ Tarea periódica #2: segundo chequeo (misma lógica, redundancia)
+    // ✅ Tarea periódica única: chequeo clima extremo cada ~15 min
+    //    (con tag + cancelable vía cancelRainCheckWorker)
     await initRainCheckWorker();
 
     // ✅ Obtener token FCM (para enviarlo a tu servidor y poder mandar push)

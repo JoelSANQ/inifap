@@ -1,0 +1,8 @@
+{
+  "name": "inifap-scraper",
+  "private": true,
+  "description": "Scraper aislado (no relacionado a Firebase Functions) que visita apiApp2.php con Puppeteer para esquivar el WAF del servidor de INIFAP.",
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}

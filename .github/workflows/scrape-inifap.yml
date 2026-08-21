@@ -1,0 +1,35 @@
+name: Scrape INIFAP (bypass WAF)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias del scraper
+        working-directory: scripts
+        run: npm install
+
+      - name: Correr scraper
+        working-directory: scripts
+        run: node scrape.js
+
+      - name: Commit del JSON actualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json
+          git diff --staged --quiet && echo "Sin cambios, nada que commitear." || git commit -m "chore: actualiza data/latest.json [skip ci]"
+          git push

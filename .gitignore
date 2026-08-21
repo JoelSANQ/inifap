@@ -66,3 +66,6 @@ android/app/build/
 # Paquetes
 *.apk
 *.aab
+
+# Scraper de scripts/ (dependencias, no se commitean)
+scripts/node_modules/

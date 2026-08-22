@@ -13,6 +13,113 @@ import '../services/station_service.dart';
 
 const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
 
+// ─────────────────────────────────────────────
+// 🩹 PARCHE TEMPORAL: el WAF (SafeLine) del servidor del INIFAP bloquea
+// con 403 cualquier cliente que no tenga huella de navegador real —
+// confirmado que hasta curl y Postman caen, pero Chrome/Edge normal sí
+// pasa. Un cron en GitHub Actions (ver .github/workflows/scrape-inifap.yml
+// y scripts/scrape.js) visita la API cada 15 min con Puppeteer (Chrome
+// real automatizado) y publica el resultado en data/latest.json de este
+// mismo repo. Cuando el dominio nos da 403, en vez de pelear con el WAF
+// desde el celular, leemos ese espejo público.
+//
+// Cubre lo que usa la pantalla principal: reportes r=1,3,4 y tiempo
+// real r=5 por estación. Lo que NO está en el espejo (r=6-10, r=all)
+// simplemente deja pasar el 403 original — la app ya sabe caer a su
+// caché offline en esos casos.
+//
+// Quitar este parche por completo en cuanto INIFAP confirme que el WAF
+// ya no bloquea a la app.
+// ─────────────────────────────────────────────
+const String _kDomain = 'zacatecas.inifap.gob.mx';
+const String _kMirrorUrl =
+    'https://raw.githubusercontent.com/JoelSANQ/inifap/notifications/data/latest.json';
+
+/// Cliente HTTP que cae al espejo de GitHub (ver nota del parche arriba)
+/// cuando el dominio real responde 403.
+class _WafFallbackClient extends http.BaseClient {
+  final http.Client _primary = http.Client();
+  final http.Client _mirrorClient = http.Client();
+  Map<String, dynamic>? _mirrorCache;
+  Future<Map<String, dynamic>?>? _mirrorFetch;
+
+  Future<Map<String, dynamic>?> _getMirror() {
+    if (_mirrorCache != null) return Future.value(_mirrorCache);
+    return _mirrorFetch ??= () async {
+      try {
+        final res = await _mirrorClient
+            .get(Uri.parse(_kMirrorUrl))
+            .timeout(const Duration(seconds: 15));
+        if (res.statusCode != 200) return null;
+        _mirrorCache = jsonDecode(res.body) as Map<String, dynamic>;
+        return _mirrorCache;
+      } catch (_) {
+        return null;
+      }
+    }();
+  }
+
+  /// Busca en el espejo el pedazo que corresponde a este request
+  /// (según los mismos parámetros `r` / `id_est_given` que usó la app),
+  /// o null si ese endpoint no está cubierto por el espejo.
+  dynamic _lookupInMirror(Map<String, dynamic> mirror, Uri url) {
+    final r = url.queryParameters['r'];
+    if (r == '1' || r == '3' || r == '4') {
+      final reports = mirror['reports'];
+      if (reports is Map) return reports['r$r'];
+      return null;
+    }
+    if (r == '5') {
+      final idEst = url.queryParameters['id_est_given'];
+      final realtime = mirror['realtime'];
+      if (idEst != null && realtime is Map) return realtime[idEst];
+      return null;
+    }
+    return null; // r=6,7,8,9,10,all: no cubierto por el espejo todavía.
+  }
+
+  @override
+  Future<http.StreamedResponse> send(http.BaseRequest request) async {
+    if (request.url.host != _kDomain) {
+      return _primary.send(request);
+    }
+
+    http.StreamedResponse primaryRes;
+    try {
+      primaryRes = await _primary.send(request);
+      if (primaryRes.statusCode != 403) return primaryRes;
+    } catch (_) {
+      // Sin conexión o timeout: probamos el espejo también.
+      primaryRes = http.StreamedResponse(
+        const Stream<List<int>>.empty(),
+        403,
+        request: request,
+      );
+    }
+
+    final mirror = await _getMirror();
+    final match = mirror == null ? null : _lookupInMirror(mirror, request.url);
+    if (match == null) {
+      return primaryRes; // No cubierto por el espejo: deja pasar el 403 original.
+    }
+
+    final bytes = utf8.encode(jsonEncode(match));
+    return http.StreamedResponse(
+      Stream<List<int>>.value(bytes),
+      200,
+      request: request,
+      headers: const {'content-type': 'application/json'},
+    );
+  }
+
+  @override
+  void close() {
+    _primary.close();
+    _mirrorClient.close();
+    super.close();
+  }
+}
+
 // Si sigues usando proxy en Web, no pasa nada, esto es solo para app móvil
 String _buildUrlR(int r) {
   final upstream = '$_kUpstream?r=$r';
@@ -48,7 +155,7 @@ class OfflineDataService {
 
   static final OfflineDataService instance = OfflineDataService._internal();
 
-  static final http.Client sharedClient = http.Client();
+  static final http.Client sharedClient = _WafFallbackClient();
 
   Map<String, dynamic>? _cachedRoot;
 
@@ -100,6 +207,8 @@ class OfflineDataService {
   }
 
   Future<dynamic> _getJson(String url) async {
+    // 🐢 Throttle: evita ráfagas que el WAF del servidor marca como "too fast".
+    await Future.delayed(const Duration(milliseconds: 300));
     final res = await sharedClient
         .get(Uri.parse(url))
         .timeout(const Duration(seconds: 15)); // ⏱️ evita colgado sin red

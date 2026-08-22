@@ -69,3 +69,6 @@ android/app/build/
 
 # Scraper de scripts/ (dependencias, no se commitean)
 scripts/node_modules/
+
+# Scripts de prueba/debug sueltos, no forman parte de la app
+tool_test/

@@ -43,40 +43,55 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // ✅ Inicializar Firebase (necesario para FCM)
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // ✅ La app arranca INMEDIATO: pintamos la UI antes de tocar
+  // Firebase/red/notificaciones, para que un colgón ahí nunca
+  // deje la pantalla en negro.
+  runApp(const MyApp());
 
-  // ✅ Registrar handler de FCM en segundo plano
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  // El resto se inicializa en background, cada paso aislado:
+  // si uno falla o se cuelga, los demás igual se ejecutan.
+  _initBackground();
+}
 
-  // ===========================
-  // Inicializar notificaciones
-  // ===========================
-  if (!kIsWeb) {
-    // ✅ (se deja igual como lo tenías)
+/// Corre cada paso de arranque por separado con try/catch + timeout,
+/// del más confiable al más propenso a fallar (red/Google al final),
+/// para que un solo paso roto nunca bloquee ni tumbe los demás.
+Future<void> _initBackground() async {
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    ).timeout(const Duration(seconds: 10));
+  } catch (e) {
+    debugPrint('⚠️ Firebase.initializeApp falló: $e');
+  }
+
+  try {
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  } catch (e) {
+    debugPrint('⚠️ onBackgroundMessage falló: $e');
+  }
+
+  if (kIsWeb) return;
+
+  try {
     await initLocalNotifications();
+  } catch (e) {
+    debugPrint('⚠️ initLocalNotifications falló: $e');
+  }
+
+  try {
     await solicitarPermisoNotificaciones();
+  } catch (e) {
+    debugPrint('⚠️ solicitarPermisoNotificaciones falló: $e');
+  }
 
-    // ✅ WORKMANAGER: Inicializar dispatcher compartido
-    await Workmanager().initialize(
-      callbackDispatcher,
-      isInDebugMode: false, // ✅ Producción (cambiar a true solo para depurar)
-    );
-    
-    // ✅ Tarea periódica única: chequeo clima extremo cada ~15 min
-    //    (con tag + cancelable vía cancelRainCheckWorker)
-    await initRainCheckWorker();
-
-    // ✅ Obtener token FCM (para enviarlo a tu servidor y poder mandar push)
-    final token = await FirebaseMessaging.instance.getToken();
-    debugPrint('🔥 FCM Token: $token');
-
-    // ✅ AGREGADO: requerido para notificaciones programadas por TIEMPO
+  try {
     await NotificationService.init();
+  } catch (e) {
+    debugPrint('⚠️ NotificationService.init falló: $e');
+  }
 
-    // ✅ AGREGADO: listener cuando la app está ABIERTA (foreground)
+  try {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
       final title =
           message.notification?.title ?? message.data['title'] ?? 'Clima INIFAP';
@@ -89,18 +104,37 @@ void main() async {
         body: body,
         payload: message.data.isNotEmpty ? message.data.toString() : null,
       );
-
-   
-    
     });
-
-    // Lanzamos el sync en SEGUNDO PLANO
-    // SIN bloquear el arranque de la app
-    OfflineDataService.instance.syncFromNetwork();
+  } catch (e) {
+    debugPrint('⚠️ onMessage.listen falló: $e');
   }
 
-  // ✅ La app arranca INMEDIATO
-  runApp(const MyApp());
+  // Lanzamos el sync en SEGUNDO PLANO, sin esperar a nada más.
+  OfflineDataService.instance.syncFromNetwork();
+
+  // ⬇️ Lo más propenso a colgarse (Workmanager nativo, y sobre todo
+  // getToken() que pega a servidores de Google) va al final, con
+  // timeout, para que nunca detenga lo de arriba.
+  try {
+    await Workmanager().initialize(
+      callbackDispatcher,
+      isInDebugMode: false, // ✅ Producción (cambiar a true solo para depurar)
+    ).timeout(const Duration(seconds: 10));
+
+    // ✅ Tarea periódica única: chequeo clima extremo cada ~15 min
+    await initRainCheckWorker();
+  } catch (e) {
+    debugPrint('⚠️ Workmanager/initRainCheckWorker falló: $e');
+  }
+
+  try {
+    final token = await FirebaseMessaging.instance
+        .getToken()
+        .timeout(const Duration(seconds: 10));
+    debugPrint('🔥 FCM Token: $token');
+  } catch (e) {
+    debugPrint('⚠️ getToken falló: $e');
+  }
 }
 
 class MyApp extends StatelessWidget {

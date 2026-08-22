@@ -65,9 +65,11 @@ class StationService {
     
     // Solo pre-fetchear las primeras 5 favoritas para no saturar
     final targets = favoriteIds.take(5);
-    
+
     for (final id in targets) {
-      _prefetchStation(id);
+      // 🐢 Throttle: evita ráfaga paralela que el WAF marca como "too fast".
+      await Future.delayed(const Duration(milliseconds: 300));
+      await _prefetchStation(id);
     }
   }
 

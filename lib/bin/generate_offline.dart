@@ -23,10 +23,12 @@ const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
 // mismo repo. Cuando el dominio nos da 403, en vez de pelear con el WAF
 // desde el celular, leemos ese espejo público.
 //
-// Cubre lo que usa la pantalla principal: reportes r=1,3,4 y tiempo
-// real r=5 por estación. Lo que NO está en el espejo (r=6-10, r=all)
-// simplemente deja pasar el 403 original — la app ya sabe caer a su
-// caché offline en esos casos.
+// Cubre lista de estaciones (r=all), reportes (r=1,3,4), y por
+// estación: tiempo real (r=5), extras del día (r=6,7,8,9) e histórico
+// del mes actual (r=10). El histórico/extras del espejo son siempre
+// "lo último disponible" — si la app pide un día/mes distinto al de
+// la última corrida del scraper, no hay match y cae al 403 normal
+// (la app ya sabe usar su caché offline en ese caso).
 //
 // Quitar este parche por completo en cuanto INIFAP confirme que el WAF
 // ya no bloquea a la app.
@@ -47,8 +49,13 @@ class _WafFallbackClient extends http.BaseClient {
     if (_mirrorCache != null) return Future.value(_mirrorCache);
     return _mirrorFetch ??= () async {
       try {
+        // Cache-bust: raw.githubusercontent.com (Fastly) puede servir una
+        // copia vieja desde algún edge node por un rato tras cada push.
+        final bustedUrl = Uri.parse(_kMirrorUrl).replace(queryParameters: {
+          't': DateTime.now().millisecondsSinceEpoch.toString(),
+        });
         final res = await _mirrorClient
-            .get(Uri.parse(_kMirrorUrl))
+            .get(bustedUrl)
             .timeout(const Duration(seconds: 15));
         if (res.statusCode != 200) return null;
         _mirrorCache = jsonDecode(res.body) as Map<String, dynamic>;
@@ -64,18 +71,37 @@ class _WafFallbackClient extends http.BaseClient {
   /// o null si ese endpoint no está cubierto por el espejo.
   dynamic _lookupInMirror(Map<String, dynamic> mirror, Uri url) {
     final r = url.queryParameters['r'];
+    final idEst = url.queryParameters['id_est_given'];
+
+    if (r == 'all') return mirror['all'];
+
     if (r == '1' || r == '3' || r == '4') {
       final reports = mirror['reports'];
       if (reports is Map) return reports['r$r'];
       return null;
     }
+
     if (r == '5') {
-      final idEst = url.queryParameters['id_est_given'];
       final realtime = mirror['realtime'];
       if (idEst != null && realtime is Map) return realtime[idEst];
       return null;
     }
-    return null; // r=6,7,8,9,10,all: no cubierto por el espejo todavía.
+
+    if (r == '6' || r == '7' || r == '8' || r == '9') {
+      final daily = mirror['daily'];
+      if (idEst != null && daily is Map && daily[idEst] is Map) {
+        return (daily[idEst] as Map)['r$r'];
+      }
+      return null;
+    }
+
+    if (r == '10') {
+      final history = mirror['history'];
+      if (idEst != null && history is Map) return history[idEst];
+      return null;
+    }
+
+    return null;
   }
 
   @override
@@ -89,7 +115,7 @@ class _WafFallbackClient extends http.BaseClient {
       primaryRes = await _primary.send(request);
       if (primaryRes.statusCode != 403) return primaryRes;
     } catch (_) {
-      // Sin conexión o timeout: probamos el espejo también.
+      // Sin conexión, CORS bloqueado en Web, o timeout: probamos el espejo también.
       primaryRes = http.StreamedResponse(
         const Stream<List<int>>.empty(),
         403,

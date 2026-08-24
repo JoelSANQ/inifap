@@ -1,6 +1,7 @@
 // lib/widgets/maps.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_cancellable_tile_provider/flutter_map_cancellable_tile_provider.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,6 +13,16 @@ import '../data/lat_and_long_cords.dart';
 import '../services/station_service.dart';
 import 'favorite_stations.dart'
     show addFavoriteStation, removeFavoriteStation, favoritesVersion, kFavPrefsKey;
+import 'warning_dialog.dart';
+
+// ================== TOKENS DE DISEÑO (marca INIFAP) ==================
+const Color _kGuinda = Color.fromARGB(255, 97, 18, 50);
+const Color _kGuindaDeep = Color(0xFF3D0A20);
+const Color _kGold = Color(0xFFE6A700);
+const Color _kBg = Color(0xFFF4F1F2);
+const Color _kStroke = Color(0xFFE3DDDF);
+const Color _kText = Color(0xFF1A1416);
+const Color _kTextMuted = Color(0xFF5C5257); // ~7:1 sobre blanco
 
 /// Mapa OSM con favoritos sincronizados con SharedPreferences:
 /// - Visual: marcador dorado si es favorito
@@ -31,11 +42,11 @@ class OSMMap extends StatefulWidget {
   State<OSMMap> createState() => _OSMMapState();
 }
 
-enum _BaseMap { cartoLight, osm, esriStreet, cartoDark, esriSatellite, esriTopo }
-
 class _OSMMapState extends State<OSMMap> {
   late final MapController _map;
-  _BaseMap _currentBase = _BaseMap.cartoLight;
+  // Cancela las peticiones de tiles que quedan fuera de vista al hacer zoom/pan
+  // rápido, en vez de dejarlas en cola bloqueando las peticiones nuevas.
+  final _tileProvider = CancellableNetworkTileProvider();
 
   // ✅ favoritos cacheados para pintar marcadores y validar máximo 3
   Set<String> _favIds = {};
@@ -69,7 +80,6 @@ class _OSMMapState extends State<OSMMap> {
   bool _isFav(Station st) => _favIds.contains(st.id.toString());
 
   // Controles
-  void _recenter() => _map.move(widget.initialCenter, widget.initialZoom);
   void _zoomIn() => _map.move(_map.center, _map.zoom + 1);
   void _zoomOut() => _map.move(_map.center, _map.zoom - 1);
 
@@ -114,8 +124,9 @@ class _OSMMapState extends State<OSMMap> {
     // ✅ si NO es favorito: SOLO permitir si aún no hay 3
     if (_favIds.length >= 3) {
       if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Solo puedes seleccionar 3 estaciones en el mapa.')),
+      await showWarningDialog(
+        context,
+        message: 'Solo puedes seleccionar 3 estaciones en el mapa.',
       );
       return;
     }
@@ -126,105 +137,52 @@ class _OSMMapState extends State<OSMMap> {
 
   void _showStationPopup(Station st, LatLng ll) {
     final alreadyFav = _isFav(st);
+    final atLimit = _favIds.length >= 3;
 
     showDialog(
       context: context,
-      builder: (_) => AlertDialog(
-        title: Text(st.name),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Lat: ${ll.latitude.toStringAsFixed(6)}',
-              style: const TextStyle(fontSize: 19, fontFamily: 'monospace'),
-            ),
-            Text(
-              'Lon: ${ll.longitude.toStringAsFixed(6)}',
-              style: const TextStyle(fontSize: 19),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Favoritos: ${_favIds.length}/3',
-              style: const TextStyle(fontSize: 14, color: Colors.black54),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton.icon(
-            icon: Icon(alreadyFav ? Icons.favorite : Icons.favorite_border),
-            label: Text(alreadyFav ? 'Quitar de favoritos' : 'Agregar a favoritos'),
-            onPressed: () async {
-              Navigator.pop(context);
+      barrierColor: Colors.black.withOpacity(0.45),
+      builder: (dialogContext) => _StationPopupCard(
+        stationName: st.name,
+        latitude: ll.latitude,
+        longitude: ll.longitude,
+        favoriteCount: _favIds.length,
+        isFavorite: alreadyFav,
+        atLimit: atLimit,
+        onClose: () => Navigator.pop(dialogContext),
+        onToggleFavorite: () async {
+          Navigator.pop(dialogContext);
 
-              await _toggleFavoriteFromMap(st);
+          await _toggleFavoriteFromMap(st);
 
-              if (!mounted) return;
-              // feedback
-              final nowFav = _isFav(st);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    nowFav
-                        ? '“${st.name}” agregada. (${_favIds.length}/3)'
-                        : '“${st.name}” quitada. (${_favIds.length}/3)',
-                  ),
-                ),
-              );
-            },
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cerrar'),
-          ),
-        ],
+          if (!mounted) return;
+          final nowFav = _isFav(st);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              behavior: SnackBarBehavior.floating,
+              backgroundColor: _kGuindaDeep,
+              content: Text(
+                nowFav
+                    ? '“${st.name}” agregada a favoritos (${_favIds.length}/3)'
+                    : '“${st.name}” quitada de favoritos (${_favIds.length}/3)',
+              ),
+            ),
+          );
+        },
       ),
     );
   }
 
-  // ====== CAPAS BASE ======
-  TileLayer _tileFor(_BaseMap type) {
-    switch (type) {
-      case _BaseMap.osm:
-        return TileLayer(
-          urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-          subdomains: const ['a', 'b', 'c'],
-          userAgentPackageName: 'com.example.app',
-        );
-      case _BaseMap.cartoLight:
-        return TileLayer(
-          urlTemplate:
-              'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-          subdomains: const ['a', 'b', 'c', 'd'],
-          userAgentPackageName: 'com.example.app',
-        );
-      case _BaseMap.cartoDark:
-        return TileLayer(
-          urlTemplate:
-              'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-          subdomains: const ['a', 'b', 'c', 'd'],
-          userAgentPackageName: 'com.example.app',
-        );
-      case _BaseMap.esriStreet:
-        return TileLayer(
-          urlTemplate:
-              'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-          userAgentPackageName: 'com.example.app',
-        );
-      case _BaseMap.esriSatellite:
-        return TileLayer(
-          urlTemplate:
-              'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-          userAgentPackageName: 'com.example.app',
-        );
-      case _BaseMap.esriTopo:
-        return TileLayer(
-          urlTemplate:
-              'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
-          userAgentPackageName: 'com.example.app',
-        );
-    }
-  }
+  // ====== CAPA BASE (Carto Light — único estilo usado en la app) ======
+  TileLayer get _baseTileLayer => TileLayer(
+        urlTemplate:
+            'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        subdomains: const ['a', 'b', 'c', 'd'],
+        userAgentPackageName: 'com.example.app',
+        tileProvider: _tileProvider,
+        keepBuffer: 4,
+        panBuffer: 2,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -239,21 +197,12 @@ class _OSMMapState extends State<OSMMap> {
               initialZoom: widget.initialZoom,
             ),
             children: [
-              _tileFor(_currentBase),
+              _baseTileLayer,
               MarkerLayer(markers: _markers),
               const RichAttributionWidget(
                 attributions: [TextSourceAttribution('© OpenStreetMap contributors')],
               ),
             ],
-          ),
-
-          Positioned(
-            right: 8,
-            top: 8,
-            child: _MapStyleSelector(
-              current: _currentBase,
-              onChanged: (v) => setState(() => _currentBase = v),
-            ),
           ),
 
           Positioned(
@@ -265,13 +214,216 @@ class _OSMMapState extends State<OSMMap> {
                 _MiniRoundButton(icon: Icons.add, tooltip: 'Acercar', onPressed: _zoomIn),
                 const SizedBox(height: 6),
                 _MiniRoundButton(icon: Icons.remove, tooltip: 'Alejar', onPressed: _zoomOut),
-                const SizedBox(height: 6),
-                _MiniRoundButton(icon: Icons.my_location, tooltip: 'Recentrar', onPressed: _recenter),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+/// Tarjeta emergente al seleccionar una estación en el mapa.
+class _StationPopupCard extends StatelessWidget {
+  const _StationPopupCard({
+    required this.stationName,
+    required this.latitude,
+    required this.longitude,
+    required this.favoriteCount,
+    required this.isFavorite,
+    required this.atLimit,
+    required this.onClose,
+    required this.onToggleFavorite,
+  });
+
+  final String stationName;
+  final double latitude;
+  final double longitude;
+  final int favoriteCount;
+  final bool isFavorite;
+  final bool atLimit;
+  final VoidCallback onClose;
+  final VoidCallback onToggleFavorite;
+
+  @override
+  Widget build(BuildContext context) {
+    // No se puede agregar si ya se llegó al límite de 3, salvo que ya sea favorita.
+    final canToggle = isFavorite || !atLimit;
+
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Container(
+        constraints: const BoxConstraints(maxWidth: 380),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.20),
+              blurRadius: 28,
+              offset: const Offset(0, 14),
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 18, 12, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: _kGuinda.withOpacity(0.10),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(Icons.location_on_rounded, color: _kGuinda, size: 22),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Text(
+                        stationName,
+                        style: const TextStyle(
+                          color: _kText,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w800,
+                          height: 1.25,
+                        ),
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: onClose,
+                    icon: const Icon(Icons.close_rounded),
+                    color: _kTextMuted,
+                    tooltip: 'Cerrar',
+                    splashRadius: 20,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                decoration: BoxDecoration(
+                  color: _kBg,
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: _CoordItem(label: 'Latitud', value: latitude.toStringAsFixed(6)),
+                    ),
+                    Container(width: 1, height: 32, color: _kStroke),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: _CoordItem(label: 'Longitud', value: longitude.toStringAsFixed(6)),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  const Icon(Icons.favorite_rounded, size: 15, color: _kGold),
+                  const SizedBox(width: 6),
+                  const Text(
+                    'Favoritos en el mapa',
+                    style: TextStyle(fontSize: 12.5, color: _kTextMuted, fontWeight: FontWeight.w600),
+                  ),
+                  const Spacer(),
+                  Text(
+                    '$favoriteCount/3',
+                    style: const TextStyle(fontSize: 12.5, color: _kText, fontWeight: FontWeight.w800),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: LinearProgressIndicator(
+                  value: favoriteCount / 3,
+                  minHeight: 6,
+                  backgroundColor: _kStroke,
+                  valueColor: const AlwaysStoppedAnimation<Color>(_kGold),
+                ),
+              ),
+              if (atLimit && !isFavorite) ...[
+                const SizedBox(height: 8),
+                const Text(
+                  'Límite alcanzado. Quita una estación favorita para agregar esta.',
+                  style: TextStyle(fontSize: 12, color: _kTextMuted, height: 1.3),
+                ),
+              ],
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: isFavorite
+                    ? OutlinedButton.icon(
+                        onPressed: onToggleFavorite,
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: _kGuindaDeep,
+                          side: const BorderSide(color: _kGuinda),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        ),
+                        icon: const Icon(Icons.favorite_rounded, size: 18),
+                        label: const Text('Quitar de favoritos', style: TextStyle(fontWeight: FontWeight.w700)),
+                      )
+                    : FilledButton.icon(
+                        onPressed: canToggle ? onToggleFavorite : null,
+                        style: FilledButton.styleFrom(
+                          backgroundColor: _kGuinda,
+                          disabledBackgroundColor: _kStroke,
+                          disabledForegroundColor: _kTextMuted,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        ),
+                        icon: const Icon(Icons.favorite_border_rounded, size: 18),
+                        label: const Text('Agregar a favoritos', style: TextStyle(fontWeight: FontWeight.w700)),
+                      ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Par etiqueta/valor para las coordenadas dentro de la tarjeta.
+class _CoordItem extends StatelessWidget {
+  const _CoordItem({required this.label, required this.value});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(fontSize: 11.5, color: _kTextMuted, fontWeight: FontWeight.w600),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 15,
+            color: _kText,
+            fontWeight: FontWeight.w700,
+            fontFeatures: [FontFeature.tabularFigures()],
+          ),
+        ),
+      ],
     );
   }
 }
@@ -310,51 +462,3 @@ class _MiniRoundButton extends StatelessWidget {
   }
 }
 
-/// Dropdown compacto para cambiar la capa base
-class _MapStyleSelector extends StatelessWidget {
-  const _MapStyleSelector({required this.current, required this.onChanged});
-
-  final _BaseMap current;
-  final ValueChanged<_BaseMap> onChanged;
-
-  String _label(_BaseMap b) {
-    switch (b) {
-      case _BaseMap.cartoLight: return 'Carto Light';
-      case _BaseMap.osm: return 'OSM';
-      case _BaseMap.esriStreet: return 'Esri Street';
-      case _BaseMap.cartoDark: return 'Carto Dark';
-      case _BaseMap.esriSatellite: return 'Esri Sat';
-      case _BaseMap.esriTopo: return 'Esri Topo';
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // ✅ SOLO Carto Light (como lo tenías)
-    const allowed = [_BaseMap.cartoLight];
-
-    final _BaseMap safeValue =
-        allowed.contains(current) ? current : allowed.first;
-
-    return Material(
-      color: Colors.white,
-      elevation: 3,
-      borderRadius: BorderRadius.circular(20),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: DropdownButton<_BaseMap?>(
-          value: safeValue,
-          underline: const SizedBox.shrink(),
-          style: const TextStyle(fontSize: 12, color: Colors.black87),
-          onChanged: (v) { if (v != null) onChanged(v); },
-          items: allowed.map((b) {
-            return DropdownMenuItem<_BaseMap?>(
-              value: b,
-              child: Text(_label(b)),
-            );
-          }).toList(),
-        ),
-      ),
-    );
-  }
-}

@@ -16,6 +16,7 @@ import 'package:clima/station_history.dart';
 import 'package:clima/cards_under_daily_extras.dart';
 import 'package:clima/widgets/favorite_stations.dart';
 import 'package:clima/widgets/maps.dart';
+import 'package:clima/widgets/shimmer.dart';
 import 'package:clima/services/station_service.dart';
 import 'package:clima/bin/generate_offline.dart';
 
@@ -41,7 +42,7 @@ String _buildProxyUrl({required int idEst}) {
 }
 
 /// 🎨 Paleta
-const Color kGuinda = Color.fromARGB(255, 102, 6, 6); // barra superior
+const Color kGuinda = Color.fromARGB(255, 97, 18, 50); // barra superior
 const Color kWhite = Colors.white;
 const Color kBlack = Colors.black;
 const Color kBlack70 = Colors.black54;
@@ -74,6 +75,10 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   // 🛰️ SUSCRIPCIÓN DE RED (4G/WIFI)
   StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
   bool _isOffline = false;
+  // Evita que el aviso "sin conexión" parpadee con caídas de señal
+  // momentáneas (cambio de torre, túnel corto, etc.).
+  Timer? _offlineDebounce;
+  static const Duration _offlineDebounceDelay = Duration(seconds: 3);
 
   // 📦 true cuando se están mostrando datos guardados (cache/offline) porque
   //     la descarga online falló. Controla la barra "Datos guardados activados".
@@ -117,15 +122,25 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
     // 1. Escuchar cambios de red para autorecarga (4G / WiFi)
     _connectivitySubscription = Connectivity().onConnectivityChanged.listen((results) {
       final hasConn = !results.contains(ConnectivityResult.none);
-      
-      // Si antes estábamos offline y ahora tenemos conexión, recargamos (Online First)
-      if (_isOffline && hasConn) {
-        debugPrint('🌐 Red recuperada (4G/WiFi). Recargando datos...');
-        _fetch();
+
+      if (hasConn) {
+        _offlineDebounce?.cancel();
+        // Si antes estábamos offline y ahora tenemos conexión, recargamos (Online First)
+        if (_isOffline) {
+          debugPrint('🌐 Red recuperada (4G/WiFi). Recargando datos...');
+          _fetch();
+        }
+        if (!mounted) return;
+        setState(() => _isOffline = false);
+        return;
       }
-      
-      setState(() {
-        _isOffline = !hasConn;
+
+      // No marcamos "sin conexión" de inmediato: esperamos a ver si la señal
+      // vuelve sola en unos segundos antes de mostrar el aviso.
+      _offlineDebounce?.cancel();
+      _offlineDebounce = Timer(_offlineDebounceDelay, () {
+        if (!mounted) return;
+        setState(() => _isOffline = true);
       });
     });
 
@@ -205,6 +220,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
   @override
   void dispose() {
     _connectivitySubscription?.cancel();
+    _offlineDebounce?.cancel();
     _hourCtrl.dispose();
     super.dispose();
   }
@@ -428,11 +444,6 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    TimeOfDay.now().format(context),
-                    style: const TextStyle(
-                        color: kWhite, fontWeight: FontWeight.w600),
-                  ),
                   Expanded(
                     child: TextButton.icon(
                       style: TextButton.styleFrom(
@@ -506,16 +517,23 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                     const Icon(Icons.thermostat, color: kBlack, size: 72),
                     const SizedBox(height: 8),
                     Center(
-                      child: Text(
-                        _loading
-                            ? '—'
-                            : '${_current?.tempC?.toStringAsFixed(0) ?? '—'}°',
-                        style: const TextStyle(
-                          color: kBlack,
-                          fontSize: 72,
-                          fontWeight: FontWeight.w700,
-                          height: 0.9,
-                        ),
+                      child: ContentSwitcher(
+                        child: (_loading && _current == null)
+                            ? const Shimmer(
+                                key: ValueKey('tempSkeleton'),
+                                child: ShimmerBox(
+                                    width: 130, height: 64, borderRadius: 14),
+                              )
+                            : Text(
+                                key: const ValueKey('tempValue'),
+                                '${_current?.tempC?.toStringAsFixed(0) ?? '—'}°',
+                                style: const TextStyle(
+                                  color: kBlack,
+                                  fontSize: 72,
+                                  fontWeight: FontWeight.w700,
+                                  height: 0.9,
+                                ),
+                              ),
                       ),
                     ),
 
@@ -523,10 +541,19 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
 
                     // Max/Min del día
                     Center(
-                      child: Text(
-                        'Maxima: ${_current?.tMaxC?.toStringAsFixed(0) ?? '—'}°  '
-                        'Mininima: ${_current?.tMinC?.toStringAsFixed(0) ?? '—'}°',
-                        style: const TextStyle(color: kBlack70, fontSize: 14),
+                      child: ContentSwitcher(
+                        child: (_loading && _current == null)
+                            ? const Shimmer(
+                                key: ValueKey('maxMinSkeleton'),
+                                child: ShimmerBox(width: 170, height: 14),
+                              )
+                            : Text(
+                                key: const ValueKey('maxMinValue'),
+                                'Maxima: ${_current?.tMaxC?.toStringAsFixed(0) ?? '—'}°  '
+                                'Mininima: ${_current?.tMinC?.toStringAsFixed(0) ?? '—'}°',
+                                style: const TextStyle(
+                                    color: kBlack70, fontSize: 14),
+                              ),
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -581,11 +608,15 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                                 height: 300,
                                 child: const OSMMap(),
                               )
-                            : SizedBox(
-                                key: const ValueKey('mapSkeleton'),
+                            : const SizedBox(
+                                key: ValueKey('mapSkeleton'),
                                 height: 300,
-                                child: const Center(
-                                  child: CircularProgressIndicator(),
+                                child: Shimmer(
+                                  child: ShimmerBox(
+                                    width: double.infinity,
+                                    height: 300,
+                                    borderRadius: 16,
+                                  ),
                                 ),
                               ),
                       ),
@@ -599,7 +630,7 @@ class _WeatherProxyPageState extends State<WeatherProxyPage> {
                       child: _error != null
                           ? _ErrorStrip(error: _error!)
                           : (_loading && _hourly.isEmpty
-                              ? const Center(child: CircularProgressIndicator())
+                              ? const _HourlyStripSkeleton()
                               : ScrollConfiguration(
                                   behavior: const MaterialScrollBehavior().copyWith(
                                     dragDevices: {
@@ -745,6 +776,41 @@ class _HourTile extends StatelessWidget {
         border: Border.all(color: Colors.black26),
       ),
       child: base,
+    );
+  }
+}
+
+/// Placeholder de la franja de horas mientras llega la primera respuesta.
+class _HourlyStripSkeleton extends StatelessWidget {
+  const _HourlyStripSkeleton();
+
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        physics: const NeverScrollableScrollPhysics(),
+        child: Row(
+          children: [
+            for (int i = 0; i < 8; i++) ...[
+              if (i > 0) const SizedBox(width: _WeatherProxyPageState._itemGap),
+              const SizedBox(
+                width: _WeatherProxyPageState._itemWidth,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ShimmerBox(width: 30, height: 14),
+                    SizedBox(height: 6),
+                    ShimmerBox(width: 24, height: 24, borderRadius: 12),
+                    SizedBox(height: 6),
+                    ShimmerBox(width: 34, height: 11),
+                  ],
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
     );
   }
 }

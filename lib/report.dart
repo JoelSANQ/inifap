@@ -93,6 +93,10 @@ class _WeatherDashboardState extends State<WeatherDashboard>
 
   StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
   bool _isOffline = false;
+  // Evita que el aviso "sin conexión" parpadee con caídas de señal
+  // momentáneas (cambio de torre, túnel corto, etc.).
+  Timer? _offlineDebounce;
+  static const Duration _offlineDebounceDelay = Duration(seconds: 3);
 
   @override
   void initState() {
@@ -100,12 +104,22 @@ class _WeatherDashboardState extends State<WeatherDashboard>
     _connectivitySubscription =
         Connectivity().onConnectivityChanged.listen((results) {
       final hasConn = !results.contains(ConnectivityResult.none);
-      if (_isOffline && hasConn && _currentMode != null) {
-        // Red recuperada, reintentamos el último reporte solicitado
-        _fetchForMode(int.parse(_currentMode!));
+
+      if (hasConn) {
+        _offlineDebounce?.cancel();
+        if (_isOffline && _currentMode != null) {
+          // Red recuperada, reintentamos el último reporte solicitado
+          _fetchForMode(int.parse(_currentMode!));
+        }
+        if (!mounted) return;
+        setState(() => _isOffline = false);
+        return;
       }
-      setState(() {
-        _isOffline = !hasConn;
+
+      _offlineDebounce?.cancel();
+      _offlineDebounce = Timer(_offlineDebounceDelay, () {
+        if (!mounted) return;
+        setState(() => _isOffline = true);
       });
     });
   }
@@ -119,6 +133,7 @@ class _WeatherDashboardState extends State<WeatherDashboard>
   @override
   void dispose() {
     _connectivitySubscription?.cancel();
+    _offlineDebounce?.cancel();
     _modeScrollController.dispose();
     super.dispose();
   }
@@ -510,7 +525,7 @@ class _Header extends StatelessWidget {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  'Estado de Zacatecas · 38 estaciones',
+                  'Estado de Zacatecas · 39 estaciones',
                   style: TextStyle(
                     color: Color(0xFFF3E8ED),
                     fontSize: 13.5,

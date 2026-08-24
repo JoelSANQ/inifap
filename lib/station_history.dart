@@ -9,13 +9,16 @@ import 'dart:async';
 import 'bin/generate_offline.dart'; // OfflineDataService
 import 'data/Stations.dart';
 import 'indice.dart';
+import 'widgets/shimmer.dart';
 /// ====== PALETA ======
-const kBurgundy = Color.fromARGB(255, 102, 6, 6);      // principal
-const kBurgundyDark = Color.fromARGB(255, 97, 18, 50);  // cards oscuras
+const kBurgundy = Color.fromARGB(255, 97, 18, 50);      // principal
+const kBurgundyDark = Color(0xFF3D0A20);                 // cards oscuras
 const kOnBurgundy = Colors.white;         // texto sobre oscuro
 const kOnBurgundyMuted = Color(0xFFF3E8ED);
 const kStroke = Color(0xFFE5E5E5);
 const kWarmAccent = Color(0xFFE6A700);    // acento cálido (barras, iconos)
+const kTextMuted = Color(0xFF5C5257);     // texto secundario sobre fondo claro
+const kBurgundySoft = Color(0xFFF3E8ED);  // fondo suave para badges/insignias
 
 /// ====== CONFIG API ======
 const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
@@ -186,6 +189,10 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
   
   StreamSubscription<List<ConnectivityResult>>? _connectivitySubscription;
   bool _isOffline = false;
+  // Evita que el aviso "sin conexión" parpadee con caídas de señal
+  // momentáneas (cambio de torre, túnel corto, etc.).
+  Timer? _offlineDebounce;
+  static const Duration _offlineDebounceDelay = Duration(seconds: 3);
 
   // autoscroll de chips al final
   final ScrollController _chipCtrl = ScrollController();
@@ -198,12 +205,22 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
 
     _connectivitySubscription = Connectivity().onConnectivityChanged.listen((results) {
       final hasConn = !results.contains(ConnectivityResult.none);
-      if (_isOffline && hasConn) {
-        debugPrint('🌐 Historial: Red recuperada. Actualizando...');
-        _fetch();
+
+      if (hasConn) {
+        _offlineDebounce?.cancel();
+        if (_isOffline) {
+          debugPrint('🌐 Historial: Red recuperada. Actualizando...');
+          _fetch();
+        }
+        if (!mounted) return;
+        setState(() => _isOffline = false);
+        return;
       }
-      setState(() {
-        _isOffline = !hasConn;
+
+      _offlineDebounce?.cancel();
+      _offlineDebounce = Timer(_offlineDebounceDelay, () {
+        if (!mounted) return;
+        setState(() => _isOffline = true);
       });
     });
 
@@ -213,6 +230,7 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
   @override
   void dispose() {
     _connectivitySubscription?.cancel();
+    _offlineDebounce?.cancel();
     _chipCtrl.dispose();
     super.dispose();
   }
@@ -344,7 +362,6 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
   @override
   Widget build(BuildContext context) {
     final stName = _stationNameApi ?? widget.station?.name ?? 'Estación';
-    final theme = Theme.of(context);
 
     final selected = (_selectedIndex >= 0 && _selectedIndex < _days.length)
         ? _days[_selectedIndex]
@@ -354,7 +371,10 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
       appBar: AppBar(
         backgroundColor: kBurgundy,
         foregroundColor: kOnBurgundy,
-        title: Text('$stName — Histórico'),
+        title: Text(
+          '$stName — Histórico',
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+        ),
         actions: [
           IconButton(onPressed: _fetch, icon: const Icon(Icons.refresh)),
         ],
@@ -386,30 +406,73 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
               child: ListView(
                 padding: const EdgeInsets.all(16),
           children: [
-            // Selector de mes
+            // Eyebrow de sección
             Row(
               children: [
-                IconButton(
-                    onPressed: _prevMonth,
-                    icon: const Icon(Icons.chevron_left)),
-                Text('${_monthName(_cursor.month)} ${_cursor.year}',
-                    style: theme.textTheme.titleMedium),
-                IconButton(
-                    onPressed: _nextMonth,
-                    icon: const Icon(Icons.chevron_right)),
-                const Spacer(),
-                if (_loading)
-                  const SizedBox(
-                      width: 18,
-                      height: 18,
-                      child: CircularProgressIndicator(
-                          strokeWidth: 2, color: kBurgundy)),
+                Container(width: 22, height: 3, color: kWarmAccent),
+                const SizedBox(width: 8),
+                const Text(
+                  'PERÍODO',
+                  style: TextStyle(
+                    fontSize: 11.5,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 1.2,
+                    color: kTextMuted,
+                  ),
+                ),
               ],
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 10),
+
+            // Selector de mes
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(color: kStroke),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.04),
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  _MonthNavButton(icon: Icons.chevron_left, onPressed: _prevMonth),
+                  Expanded(
+                    child: Center(
+                      child: Text(
+                        '${_monthName(_cursor.month)} ${_cursor.year}',
+                        style: const TextStyle(
+                          fontSize: 15.5,
+                          fontWeight: FontWeight.w700,
+                          color: kBurgundy,
+                        ),
+                      ),
+                    ),
+                  ),
+                  _MonthNavButton(icon: Icons.chevron_right, onPressed: _nextMonth),
+                  if (_loading) ...[
+                    const SizedBox(width: 4),
+                    const SizedBox(
+                        width: 16,
+                        height: 16,
+                        child: CircularProgressIndicator(
+                            strokeWidth: 2, color: kBurgundy)),
+                    const SizedBox(width: 10),
+                  ],
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
 
             if (_error != null)
               const _Error(msg: 'Ocurrió un problema al cargar los datos.')
+            else if (_loading && _days.isEmpty)
+              const _HistorySkeleton()
             else if (_days.isEmpty && !_loading)
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 32),
@@ -434,66 +497,120 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
                       selected: isSel,
                       onSelected: (_) => setState(() => _selectedIndex = i),
                       selectedColor: kBurgundy,
-                      backgroundColor: kWarmAccent,
+                      backgroundColor: kWarmAccent.withOpacity(0.16),
+                      checkmarkColor: kOnBurgundy,
                       labelStyle: TextStyle(
-                        color: isSel ? kOnBurgundy : Colors.black87,
+                        color: isSel ? kOnBurgundy : kBurgundy,
                         fontWeight:
-                            isSel ? FontWeight.w600 : FontWeight.w500,
+                            isSel ? FontWeight.w700 : FontWeight.w600,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                         side: BorderSide(
-                            color: isSel ? kBurgundy : kStroke),
+                          color: isSel ? kBurgundy : kWarmAccent.withOpacity(0.55),
+                        ),
                       ),
                     );
                   },
                 ),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 16),
 
-              // ===== MÉTRICAS DEL DÍA SELECCIONADO =====
-              Wrap(
-                spacing: 12,
-                runSpacing: 12,
+              // Eyebrow de sección
+              Row(
                 children: [
-                  _DayMetricCard(
-                    title: 'Precipitación',
-                    value: selected?.pre,
-                    unit: ' mm',
-                    icon: Icons.water_drop_outlined,
-                  ),
-                  _DayMetricCard(
-                    title: 'T. máx',
-                    value: selected?.tMax,
-                    unit: ' °C',
-                    icon: Icons.thermostat_outlined,
-                  ),
-                  _DayMetricCard(
-                    title: 'T. mín',
-                    value: selected?.tMin,
-                    unit: ' °C',
-                    icon: Icons.ac_unit_outlined,
+                  Container(width: 22, height: 3, color: kWarmAccent),
+                  const SizedBox(width: 8),
+                  const Text(
+                    'MÉTRICAS DEL DÍA',
+                    style: TextStyle(
+                      fontSize: 11.5,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.2,
+                      color: kTextMuted,
+                    ),
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 10),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: _DayMetricCard(
+                      title: 'Precipitación',
+                      value: selected?.pre,
+                      unit: ' mm',
+                      icon: Icons.water_drop_outlined,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _DayMetricCard(
+                      title: 'T. máx',
+                      value: selected?.tMax,
+                      unit: ' °C',
+                      icon: Icons.thermostat_outlined,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _DayMetricCard(
+                      title: 'T. mín',
+                      value: selected?.tMin,
+                      unit: ' °C',
+                      icon: Icons.ac_unit_outlined,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+
+              // Eyebrow de sección
+              Row(
+                children: [
+                  Container(width: 22, height: 3, color: kWarmAccent),
+                  const SizedBox(width: 8),
+                  const Text(
+                    'TENDENCIA MENSUAL',
+                    style: TextStyle(
+                      fontSize: 11.5,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.2,
+                      color: kTextMuted,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
 
               // Gráfica
-              AspectRatio(
-                aspectRatio: 16 / 9,
-                child: _MonthChart(
-                  days: _days,
-                  selectedIndex: _selectedIndex,
-                  lineColor: kBurgundy,
-                  barColor: kWarmAccent,
+              Container(
+                padding: const EdgeInsets.fromLTRB(12, 16, 12, 4),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: kStroke),
+                  boxShadow: const [
+                    BoxShadow(color: Colors.black12, blurRadius: 8, offset: Offset(0, 3)),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: _MonthChart(
+                        days: _days,
+                        selectedIndex: _selectedIndex,
+                        lineColor: kBurgundy,
+                        barColor: kWarmAccent,
+                      ),
+                    ),
+                    const ChartLegend(key: ValueKey('history_legend')),
+                  ],
                 ),
               ),
-              
-// 👇 AQUÍ AGREGAMOS EL ÍNDICE
-              const ChartLegend(key: ValueKey('history_legend')),
-              
-              const SizedBox(height: 16),
-              
+              const SizedBox(height: 20),
 
               // Ficha del día
               if (selected != null) _DayDetailCard(day: selected),
@@ -534,6 +651,30 @@ class _StationHistoryPageState extends State<StationHistoryPage> {
 
 /// ====== UI widgets ======
 
+/// Botón circular del selector de mes (< / >), con área táctil de 40x40.
+class _MonthNavButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback onPressed;
+  const _MonthNavButton({required this.icon, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: kBurgundySoft,
+      shape: const CircleBorder(),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: onPressed,
+        child: SizedBox(
+          width: 40,
+          height: 40,
+          child: Icon(icon, color: kBurgundy, size: 22),
+        ),
+      ),
+    );
+  }
+}
+
 class _DayMetricCard extends StatelessWidget {
   final String title;
   final double? value;
@@ -552,52 +693,71 @@ class _DayMetricCard extends StatelessWidget {
     String fmt(double? x) =>
         x == null ? '—' : '${x.toStringAsFixed(1)}$unit';
 
-    return SizedBox(
-      width: 220,
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: kBurgundyDark,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: const [
-            BoxShadow(
-                color: Colors.black12,
-                blurRadius: 8,
-                offset: Offset(0, 3))
-          ],
+    return Container(
+      constraints: const BoxConstraints(minHeight: 92),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [kBurgundyDark, kBurgundy],
         ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (icon != null) ...[
-              Icon(icon, color: kWarmAccent, size: 22),
-              const SizedBox(width: 10),
-            ],
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title,
-                      style: const TextStyle(
-                        color: kOnBurgundyMuted,
-                        fontSize: 12.5,
-                        fontWeight: FontWeight.w600,
-                      )),
-                  const SizedBox(height: 6),
-                  Text(fmt(value),
-                      style: const TextStyle(
-                        color: kOnBurgundy,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
-                      )),
-                ],
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: kBurgundy.withOpacity(0.22),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (icon != null)
+            Container(
+              width: 30,
+              height: 30,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: kWarmAccent.withOpacity(0.18),
+                shape: BoxShape.circle,
               ),
+              child: Icon(icon, color: kWarmAccent, size: 16),
             ),
-          ],
-        ),
+          const SizedBox(height: 10),
+          Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
+              color: kOnBurgundyMuted,
+              fontSize: 11.5,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            fmt(value),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
+              color: kOnBurgundy,
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ],
       ),
     );
   }
+}
+
+class _DetailEntry {
+  final IconData icon;
+  final String label;
+  final String value;
+  const _DetailEntry(this.icon, this.label, this.value);
 }
 
 class _DayDetailCard extends StatelessWidget {
@@ -611,38 +771,83 @@ class _DayDetailCard extends StatelessWidget {
     final dd = day.date.day.toString().padLeft(2, '0');
     final mm = day.date.month.toString().padLeft(2, '0');
 
+    final entries = <_DetailEntry>[
+      _DetailEntry(Icons.thermostat_outlined, 'T. máx', fmt(day.tMax, ' °C')),
+      _DetailEntry(Icons.ac_unit_outlined, 'T. mín', fmt(day.tMin, ' °C')),
+      _DetailEntry(Icons.thermostat, 'T. med', fmt(day.tMed, ' °C')),
+      _DetailEntry(Icons.water_drop_outlined, 'Precip', fmt(day.pre, ' mm')),
+      _DetailEntry(Icons.water_outlined, 'Humedad', fmt(day.humMed, ' %')),
+      _DetailEntry(Icons.air, 'Viento med', fmt(day.velMed)),
+      _DetailEntry(Icons.explore_outlined, 'Dir. viento', day.dirViento ?? '—'),
+      _DetailEntry(Icons.eco_outlined, 'ETo', fmt(day.eto)),
+      _DetailEntry(Icons.wb_sunny_outlined, 'Rad', fmt(day.rad)),
+    ];
+
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: kBurgundyDark,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: const [
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [kBurgundyDark, kBurgundy],
+        ),
+        borderRadius: BorderRadius.circular(18),
+        boxShadow: [
           BoxShadow(
-              color: Colors.black12, blurRadius: 8, offset: Offset(0, 3))
+            color: kBurgundy.withOpacity(0.22),
+            blurRadius: 14,
+            offset: const Offset(0, 6),
+          ),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Detalle del $dd-$mm-${day.date.year}',
-              style: const TextStyle(
-                  color: kOnBurgundy,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700)),
-          const SizedBox(height: 10),
-          Wrap(
-            spacing: 18,
-            runSpacing: 10,
+          Row(
             children: [
-              _kv('T. máx', fmt(day.tMax, ' °C')),
-              _kv('T. mín', fmt(day.tMin, ' °C')),
-              _kv('T. med', fmt(day.tMed, ' °C')),
-              _kv('Precip', fmt(day.pre, ' mm')),
-              _kv('Humedad', fmt(day.humMed, ' %')),
-              _kv('Viento med', fmt(day.velMed)),
-              _kv('Dir. viento', day.dirViento ?? '—'),
-              _kv('ETo', fmt(day.eto)),
-              _kv('Rad', fmt(day.rad)),
+              Container(
+                width: 32,
+                height: 32,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: kWarmAccent.withOpacity(0.18),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.event_note_rounded, color: kWarmAccent, size: 17),
+              ),
+              const SizedBox(width: 10),
+              Text('Detalle del $dd-$mm-${day.date.year}',
+                  style: const TextStyle(
+                      color: kOnBurgundy,
+                      fontSize: 16.5,
+                      fontWeight: FontWeight.w700)),
+            ],
+          ),
+          const SizedBox(height: 14),
+          Table(
+            columnWidths: const {
+              0: FlexColumnWidth(1.2),
+              1: FlexColumnWidth(1),
+              2: FlexColumnWidth(1.2),
+              3: FlexColumnWidth(1),
+            },
+            border: TableBorder(
+              horizontalInside: BorderSide(color: Colors.white.withOpacity(0.10)),
+            ),
+            children: [
+              for (int i = 0; i < entries.length; i += 2)
+                TableRow(children: [
+                  _label(entries[i].icon, entries[i].label),
+                  _value(entries[i].value),
+                  if (i + 1 < entries.length)
+                    _label(entries[i + 1].icon, entries[i + 1].label)
+                  else
+                    const SizedBox.shrink(),
+                  if (i + 1 < entries.length)
+                    _value(entries[i + 1].value)
+                  else
+                    const SizedBox.shrink(),
+                ]),
             ],
           ),
         ],
@@ -650,22 +855,39 @@ class _DayDetailCard extends StatelessWidget {
     );
   }
 
-  Widget _kv(String k, String v) {
-    return SizedBox(
-      width: 160,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(k,
-              style: const TextStyle(
+  Widget _label(IconData icon, String k) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 11),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 14, color: kWarmAccent),
+            const SizedBox(width: 6),
+            Flexible(
+              child: Text(
+                k,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
                   color: kOnBurgundyMuted,
-                  fontWeight: FontWeight.w600)),
-          const SizedBox(width: 8),
-          Text(v, style: const TextStyle(color: kOnBurgundy)),
-        ],
-      ),
-    );
-  }
+                  fontWeight: FontWeight.w600,
+                  fontSize: 12.5,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+
+  Widget _value(String v) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 11),
+        child: Text(
+          v,
+          style: const TextStyle(
+            color: kOnBurgundy,
+            fontWeight: FontWeight.w700,
+            fontSize: 14,
+          ),
+        ),
+      );
 }
 
 // ====== TABLA con scroll horizontal ======
@@ -677,12 +899,21 @@ class _DayTable extends StatelessWidget {
   Widget build(BuildContext context) {
     String fmt(double? x) => x == null ? '—' : x.toStringAsFixed(1);
 
+    const stripeColor = Color(0xFFFAF7F8);
+    const cellStyle = TextStyle(fontSize: 13, color: Color(0xFF1A1416));
+
     final table = DataTable(
-      headingTextStyle: const TextStyle(fontWeight: FontWeight.w700),
-      headingRowHeight: 44,
-      dataRowMinHeight: 40,
-      dataRowMaxHeight: 44,
-      columnSpacing: 14, // compacto
+      headingRowColor: WidgetStateProperty.all(kBurgundy),
+      headingTextStyle: const TextStyle(
+        fontWeight: FontWeight.w700,
+        color: Colors.white,
+        fontSize: 13,
+      ),
+      dividerThickness: 0.5,
+      columnSpacing: 18,
+      horizontalMargin: 16,
+      dataRowMinHeight: 44,
+      dataRowMaxHeight: 56,
       columns: const [
         DataColumn(label: Text('Fecha')),
         DataColumn(label: Text('Tmax'), numeric: true),
@@ -693,34 +924,185 @@ class _DayTable extends StatelessWidget {
         DataColumn(label: Text('Vvmed'), numeric: true),
         DataColumn(label: Text('ETo'), numeric: true),
       ],
-      rows: days.map((d) {
-        final dd = d.date.day.toString().padLeft(2, '0');
-        final mm = d.date.month.toString().padLeft(2, '0');
-        return DataRow(cells: [
-          DataCell(Text('$dd-$mm-${d.date.year}')),
-          DataCell(Text(fmt(d.tMax))),
-          DataCell(Text(fmt(d.tMin))),
-          DataCell(Text(fmt(d.tMed))),
-          DataCell(Text(fmt(d.pre))),
-          DataCell(Text(fmt(d.humMed))),
-          DataCell(Text(fmt(d.velMed))),
-          DataCell(Text(fmt(d.eto))),
-        ]);
-      }).toList(),
+      rows: [
+        for (int i = 0; i < days.length; i++)
+          DataRow(
+            // Zebra: facilita seguir la fila en tablas anchas.
+            color: WidgetStateProperty.all(i.isEven ? Colors.white : stripeColor),
+            cells: [
+              DataCell(Text(
+                '${days[i].date.day.toString().padLeft(2, '0')}-'
+                '${days[i].date.month.toString().padLeft(2, '0')}-'
+                '${days[i].date.year}',
+                style: cellStyle,
+              )),
+              DataCell(Text(fmt(days[i].tMax), style: cellStyle)),
+              DataCell(Text(fmt(days[i].tMin), style: cellStyle)),
+              DataCell(Text(fmt(days[i].tMed), style: cellStyle)),
+              DataCell(Text(fmt(days[i].pre), style: cellStyle)),
+              DataCell(Text(fmt(days[i].humMed), style: cellStyle)),
+              DataCell(Text(fmt(days[i].velMed), style: cellStyle)),
+              DataCell(Text(fmt(days[i].eto), style: cellStyle)),
+            ],
+          ),
+      ],
     );
 
-    // Scroll horizontal para ver todo sin redimensionar
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            // ocupa al menos el ancho visible (ajusta si cambias padding externo)
-            minWidth: MediaQuery.of(context).size.width - 32,
-          ),
-          child: table,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Expanded(
+              child: Text(
+                'Historial del mes',
+                style: TextStyle(
+                  color: kBurgundy,
+                  fontSize: 15.5,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: -0.2,
+                ),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+              decoration: BoxDecoration(
+                color: kBurgundySoft,
+                borderRadius: BorderRadius.circular(999),
+              ),
+              child: Text(
+                '${days.length} días',
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: kBurgundy,
+                ),
+              ),
+            ),
+          ],
         ),
+        const SizedBox(height: 6),
+        const Row(
+          children: [
+            Icon(Icons.swipe_left_outlined, size: 14, color: kTextMuted),
+            SizedBox(width: 6),
+            Text(
+              'Desliza la tabla para ver todas las columnas',
+              style: TextStyle(fontSize: 12, color: kTextMuted),
+            ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        Container(
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: kStroke),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.04),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          // Scroll horizontal para ver todo sin redimensionar
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                // ocupa al menos el ancho visible (ajusta si cambias padding externo)
+                minWidth: MediaQuery.of(context).size.width - 32,
+              ),
+              child: table,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Placeholder de toda la sección (chips + métricas + tabla) mientras
+/// llega la primera respuesta del mes. Ocupa el mismo espacio que el
+/// contenido real → no hay salto al llegar los datos.
+class _HistorySkeleton extends StatelessWidget {
+  const _HistorySkeleton();
+
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Chips de días
+          SizedBox(
+            height: 48,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              physics: const NeverScrollableScrollPhysics(),
+              child: Row(
+                children: [
+                  for (int i = 0; i < 10; i++) ...[
+                    if (i > 0) const SizedBox(width: 8),
+                    const ShimmerBox(width: 40, height: 40, borderRadius: 12),
+                  ],
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          const ShimmerBox(width: 150, height: 12),
+          const SizedBox(height: 10),
+          // Tarjetas de métricas del día
+          Row(
+            children: [
+              for (int i = 0; i < 3; i++) ...[
+                if (i > 0) const SizedBox(width: 10),
+                const Expanded(
+                  child: ShimmerBox(width: double.infinity, height: 92, borderRadius: 16),
+                ),
+              ],
+            ],
+          ),
+          const SizedBox(height: 20),
+          const ShimmerBox(width: 150, height: 12),
+          const SizedBox(height: 10),
+          // Tabla de historial
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: kStroke),
+            ),
+            clipBehavior: Clip.antiAlias,
+            child: Column(
+              children: [
+                Container(height: 56, color: kBurgundy),
+                for (int i = 0; i < 5; i++)
+                  Container(
+                    height: 44,
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    decoration: BoxDecoration(
+                      color: i.isEven ? Colors.white : const Color(0xFFFAF7F8),
+                      border: const Border(
+                        top: BorderSide(color: kStroke, width: 0.5),
+                      ),
+                    ),
+                    child: const Row(
+                      children: [
+                        ShimmerBox(width: 60, height: 12),
+                        Spacer(),
+                        ShimmerBox(width: 100, height: 12),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -797,10 +1179,13 @@ class _MonthChartPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     if (days.isEmpty) return;
 
-    final padding = 28.0;
-    final chartW = size.width - padding * 2;
-    final chartH = size.height - padding * 2;
-    final origin = Offset(padding, padding);
+    const paddingLeft = 34.0;
+    const paddingRight = 10.0;
+    const paddingTop = 14.0;
+    const paddingBottom = 22.0;
+    final chartW = size.width - paddingLeft - paddingRight;
+    final chartH = size.height - paddingTop - paddingBottom;
+    final origin = Offset(paddingLeft, paddingTop);
 
     final ts = days.map((d) => d.tMax ?? 0).toList();
     final ps = days.map((d) => d.pre ?? 0).toList();
@@ -816,12 +1201,10 @@ class _MonthChartPainter extends CustomPainter {
     final axisPaint = Paint()
       ..color = const Color(0xFFE0E0E0)
       ..strokeWidth = 1;
-    canvas.drawRect(
-      Rect.fromLTWH(origin.dx, origin.dy, chartW, chartH),
-      Paint()
-        ..color = Colors.transparent
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1,
+
+    final axisLabelStyle = textStyle.copyWith(
+      fontSize: 10,
+      color: const Color(0xFF8A8386),
     );
 
     for (int i = 0; i <= 4; i++) {
@@ -832,6 +1215,18 @@ class _MonthChartPainter extends CustomPainter {
         axisPaint,
       );
     }
+
+    // referencia de escala: T. máx y T. mín del mes en el eje Y
+    void paintYLabel(String text, double y) {
+      final tp = TextPainter(
+        text: TextSpan(text: text, style: axisLabelStyle),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      tp.paint(canvas, Offset(origin.dx - tp.width - 6, y - tp.height / 2));
+    }
+
+    paintYLabel('${maxT.toStringAsFixed(0)}°', origin.dy);
+    paintYLabel('${minT.toStringAsFixed(0)}°', origin.dy + chartH);
 
     // escala x
     final stepX = chartW / (days.length - 1).clamp(1, 999);
@@ -871,6 +1266,23 @@ class _MonthChartPainter extends CustomPainter {
       );
     }
 
+    // referencia de fechas: primer y último día del rango visible
+    void paintDayTick(int i) {
+      if (i == selectedIndex) return; // el día seleccionado ya se resalta abajo
+      final tx = origin.dx + stepX * i;
+      final tp = TextPainter(
+        text: TextSpan(
+          text: days[i].date.day.toString().padLeft(2, '0'),
+          style: axisLabelStyle,
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      tp.paint(canvas, Offset(tx - tp.width / 2, origin.dy + chartH + 6));
+    }
+
+    // solo el último día: el primero chocaría con la etiqueta de T. mín del eje Y
+    if (days.length > 1) paintDayTick(days.length - 1);
+
     // selección
     if (selectedIndex >= 0 && selectedIndex < days.length) {
       final sx = origin.dx + stepX * selectedIndex;
@@ -892,7 +1304,7 @@ class _MonthChartPainter extends CustomPainter {
       final tp = TextPainter(
         text: TextSpan(
           text: days[selectedIndex].date.day.toString().padLeft(2, '0'),
-          style: textStyle,
+          style: textStyle.copyWith(color: lineColor, fontWeight: FontWeight.w700),
         ),
         textDirection: TextDirection.ltr,
       )..layout();

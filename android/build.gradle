@@ -1,3 +1,22 @@
 // Top-level Gradle file for the Android build.
 // Using Flutter's dev.flutter.flutter-gradle-plugin & plugin loader.
 // No Android plugins deben declararse aquí.
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

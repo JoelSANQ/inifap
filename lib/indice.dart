@@ -12,7 +12,7 @@ class ChartLegend extends StatelessWidget {
         children: [
           // Ítem para Temperatura
           _LegendItem(
-            color: const Color.fromARGB(255, 102, 6, 6), // kBurgundy
+            color: const Color.fromARGB(255, 97, 18, 50), // kBurgundy
             label: 'Temp. Máxima (°C)',
             isLine: true,
           ),

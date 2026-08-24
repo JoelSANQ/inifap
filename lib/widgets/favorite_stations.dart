@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../data/Stations.dart';
 import '../services/station_service.dart';
+import 'warning_dialog.dart';
 
 class FavoriteStationsBar extends StatefulWidget {
   final void Function(Station station) onSelect;
@@ -83,10 +84,9 @@ class _FavoriteStationsBarState extends State<FavoriteStationsBar> {
     // ✅ NUEVO (incorporado): asegurar EXACTAMENTE 3 (no cambia tu flujo, solo valida)
     if (result.length != 3) {
       if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Debes seleccionar EXACTAMENTE 3 estaciones para activar notificaciones.'),
-        ),
+      await showWarningDialog(
+        context,
+        message: 'Debes seleccionar EXACTAMENTE 3 estaciones para activar notificaciones.',
       );
       return;
     }
@@ -219,15 +219,16 @@ class _MultiSelectStationsSheetState extends State<_MultiSelectStationsSheet> {
                   title: Text(st.name),
                   controlAffinity: ListTileControlAffinity.trailing,
                   onChanged: (v) {
+                    // ✅ NUEVO (incorporado): no permitir más de 3 seleccionadas
+                    if (v == true && _selectedIds.length >= 3) {
+                      showWarningDialog(
+                        context,
+                        message: 'Solo puedes seleccionar 3 estaciones.',
+                      );
+                      return;
+                    }
                     setState(() {
                       if (v == true) {
-                        // ✅ NUEVO (incorporado): no permitir más de 3 seleccionadas
-                        if (_selectedIds.length >= 3) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Solo puedes seleccionar 3 estaciones.')),
-                          );
-                          return;
-                        }
                         _selectedIds.add(st.id);
                       } else {
                         _selectedIds.remove(st.id);
@@ -258,10 +259,9 @@ class _MultiSelectStationsSheetState extends State<_MultiSelectStationsSheet> {
                       onPressed: () {
                         // ✅ NUEVO (incorporado): validar EXACTAMENTE 3 antes de guardar
                         if (_selectedIds.length != 3) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Selecciona EXACTAMENTE 3 estaciones para guardar.'),
-                            ),
+                          showWarningDialog(
+                            context,
+                            message: 'Selecciona EXACTAMENTE 3 estaciones para guardar.',
                           );
                           return;
                         }

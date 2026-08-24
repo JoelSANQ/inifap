@@ -4,8 +4,8 @@
 import 'package:flutter/material.dart';
 
 /// ====== TOKENS ======
-const Color _kGuinda = Color.fromARGB(255, 102, 6, 6);
-const Color _kGuindaDeep = Color(0xFF3D0404);
+const Color _kGuinda = Color.fromARGB(255, 97, 18, 50);
+const Color _kGuindaDeep = Color(0xFF3D0A20);
 const Color _kGold = Color(0xFFE6A700);
 
 const double _kMaxContentWidth = 560;
@@ -122,11 +122,6 @@ class _AboutUsPageState extends State<AboutUsPage>
                         child: _Intro(p: p),
                       ),
                       const SizedBox(height: 20),
-                      _Reveal(
-                        anim: _anim,
-                        index: 1,
-                        child: const _FactChips(),
-                      ),
                       const SizedBox(height: 32),
                       _Reveal(
                         anim: _anim,
@@ -309,64 +304,6 @@ class _Intro extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-/// ====== CHIPS DE DATOS ======
-class _FactChips extends StatelessWidget {
-  const _FactChips();
-
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 8,
-      runSpacing: 8,
-      children: const [
-        _Chip(icon: Icons.apartment_outlined, label: ''),
-        _Chip(icon: Icons.school_outlined, label: ''),
-        _Chip(icon: Icons.schedule_outlined, label: ''),
-      ],
-    );
-  }
-}
-
-class _Chip extends StatelessWidget {
-  const _Chip({required this.icon, required this.label});
-  final IconData icon;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    final p = _Palette.of(context);
-    final dark = Theme.of(context).brightness == Brightness.dark;
-    final fg = dark ? const Color(0xFFEBC7C7) : _kGuinda;
-
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        color: p.accentSoft,
-        borderRadius: BorderRadius.circular(999),
-        border: Border.all(color: fg.withOpacity(0.20)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Decorativo: el texto de al lado ya comunica el dato.
-          ExcludeSemantics(child: Icon(icon, size: 16, color: fg)),
-          const SizedBox(width: 6),
-          Text(
-            label,
-            softWrap: false,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: fg,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

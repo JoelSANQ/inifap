@@ -5,10 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart'; // ✅ kIsWeb
 import 'data/Stations.dart';
 import 'bin/generate_offline.dart';
-import 'notifications/precipitation_notifications.dart';
 
 const String _kUpstream = 'https://zacatecas.inifap.gob.mx/apiApp2.php';
 const String _kProxyBase = 'http://localhost:8080';
+
+// ================== TOKENS DE DISEÑO (marca INIFAP) ==================
+const Color _kCardTop = Color.fromARGB(255, 97, 18, 50);
+const Color _kCardBottom = Color(0xFF3D0A20);
+const Color _kGold = Color(0xFFE6A700);
 
 /// Construye la URL con r, fecha y estación
 /// ✅ Web  -> usa PROXY (evita CORS)
@@ -30,45 +34,58 @@ String _buildDailyUrl({
   return upstream;
 }
 
-/// Barra de "Resumen registrado"
-class _ResumenBar extends StatelessWidget {
-  final String? text;
-  const _ResumenBar(this.text);
+/// Desglose de estadísticas (Máximo/Mínimo/Promedio, etc.) de una tarjeta.
+class _StatBreakdown extends StatelessWidget {
+  final List<MapEntry<String, String>>? entries;
+  const _StatBreakdown(this.entries);
 
   @override
   Widget build(BuildContext context) {
-    if (text == null || text!.trim().isEmpty) return const SizedBox.shrink();
-
-    // 🔹 Divide el texto por "•" para mostrarlos en líneas verticales (columna)
-    final parts = text!
-        .split('•')
-        .map((e) => e.trim())
-        .where((e) => e.isNotEmpty)
-        .toList();
+    final items = entries;
+    if (items == null || items.isEmpty) return const SizedBox.shrink();
 
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.only(top: 8),
-      padding: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+      margin: const EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 79, 14, 41),
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.white24, width: 0.6),
+        color: Colors.black.withOpacity(0.18),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.white.withOpacity(0.14)),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          for (int i = 0; i < parts.length; i++) ...[
-            if (i > 0) const SizedBox(height: 2),
-            Text(
-              parts[i],
-              softWrap: true,
-              maxLines: null,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 12.5,
-                height: 1.15,
+          for (int i = 0; i < items.length; i++) ...[
+            if (i > 0)
+              Divider(color: Colors.white.withOpacity(0.12), height: 1, thickness: 0.6),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 7),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    items[i].key,
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.72),
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    items[i].value,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 12.5,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -78,72 +95,344 @@ class _ResumenBar extends StatelessWidget {
   }
 }
 
-/// Mini tarjeta para un valor actual + barra de resumen
+/// Mini tarjeta para un valor actual + desglose de estadísticas.
 class _MiniStat extends StatelessWidget {
   final IconData icon;
   final String label;
   final String value;
-  final String? resumen;
+  final String? time;
+  final List<MapEntry<String, String>>? resumen;
+  final List<double>? series;
+  final Widget? customVisual;
 
   const _MiniStat({
     required this.icon,
     required this.label,
     required this.value,
+    this.time,
     this.resumen,
+    this.series,
+    this.customVisual,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 97, 18, 50),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.white24),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [_kCardTop, _kCardBottom],
+        ),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: _kCardTop.withOpacity(0.28),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(
-                icon,
-                color: const Color(0xFFE6A700),
-                size: 22,
+              Container(
+                width: 30,
+                height: 30,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: _kGold.withOpacity(0.18),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, color: _kGold, size: 16),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 8),
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      label,
-                      style: const TextStyle(
-                        color: Color(0xFFE6A700),
-                        fontSize: 15,
-                      ),
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      value,
-                      softWrap: true,
-                      maxLines: null,
-                      overflow: TextOverflow.visible,
-                      style: const TextStyle(
-                        color: Color.fromRGBO(241, 116, 116, 1),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        height: 1.15,
-                      ),
-                    ),
-                  ],
+                child: Text(
+                  label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: _kGold,
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ],
           ),
-          _ResumenBar(resumen),
+          const SizedBox(height: 10),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
+            children: [
+              Flexible(
+                child: Text(
+                  value,
+                  softWrap: true,
+                  overflow: TextOverflow.visible,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w700,
+                    height: 1.15,
+                  ),
+                ),
+              ),
+              if (time != null) ...[
+                const SizedBox(width: 6),
+                Text(
+                  time!,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.65),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ],
+          ),
+          if (customVisual != null) ...[
+            const SizedBox(height: 10),
+            SizedBox(height: 44, child: customVisual),
+          ] else if (series != null && series!.length > 1) ...[
+            const SizedBox(height: 10),
+            SizedBox(height: 44, child: _MiniChart(values: series!)),
+          ],
+          _StatBreakdown(resumen),
         ],
+      ),
+    );
+  }
+}
+
+/// Mini-gráfica de tendencia del día (línea con relleno).
+class _MiniChart extends StatelessWidget {
+  final List<double> values;
+  const _MiniChart({required this.values});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      size: Size.infinite,
+      painter: _MiniChartPainter(values: values),
+    );
+  }
+}
+
+class _MiniChartPainter extends CustomPainter {
+  final List<double> values;
+  _MiniChartPainter({required this.values});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (values.length < 2) return;
+
+    final maxV = values.reduce((a, b) => a > b ? a : b);
+    final minV = values.reduce((a, b) => a < b ? a : b);
+    final range = (maxV - minV) == 0 ? 1.0 : (maxV - minV);
+    final stepX = size.width / (values.length - 1);
+
+    double yOf(double v) => size.height - ((v - minV) / range) * size.height;
+
+    final linePath = Path();
+    for (int i = 0; i < values.length; i++) {
+      final x = stepX * i;
+      final y = yOf(values[i]);
+      if (i == 0) {
+        linePath.moveTo(x, y);
+      } else {
+        linePath.lineTo(x, y);
+      }
+    }
+
+    final fillPath = Path.from(linePath)
+      ..lineTo(stepX * (values.length - 1), size.height)
+      ..lineTo(0, size.height)
+      ..close();
+
+    canvas.drawPath(
+      fillPath,
+      Paint()
+        ..shader = LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [_kGold.withOpacity(0.30), _kGold.withOpacity(0.0)],
+        ).createShader(Rect.fromLTWH(0, 0, size.width, size.height)),
+    );
+
+    canvas.drawPath(
+      linePath,
+      Paint()
+        ..color = _kGold
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2
+        ..strokeJoin = StrokeJoin.round
+        ..strokeCap = StrokeCap.round,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant _MiniChartPainter old) => old.values != values;
+}
+
+/// Animación decorativa de la tarjeta de precipitación: lluvia cayendo si hay
+/// precipitación ahora mismo, o una nube pasando si no la hay. Usa la misma
+/// condición (> 0.0 mm) que ya dispara la notificación de lluvia.
+class _PrecipAnimation extends StatefulWidget {
+  final bool isRaining;
+  const _PrecipAnimation({required this.isRaining});
+
+  @override
+  State<_PrecipAnimation> createState() => _PrecipAnimationState();
+}
+
+class _PrecipAnimationState extends State<_PrecipAnimation>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _ctrl = AnimationController(
+    vsync: this,
+    duration: Duration(milliseconds: widget.isRaining ? 1100 : 8000),
+  );
+  bool _started = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_started) {
+      _started = true;
+      if (MediaQuery.of(context).disableAnimations) {
+        _ctrl.value = 0;
+      } else {
+        _ctrl.repeat();
+      }
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant _PrecipAnimation old) {
+    super.didUpdateWidget(old);
+    if (old.isRaining != widget.isRaining) {
+      _ctrl.duration = Duration(milliseconds: widget.isRaining ? 1100 : 8000);
+      if (!MediaQuery.of(context).disableAnimations) {
+        _ctrl.repeat();
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _ctrl,
+      builder: (_, __) => widget.isRaining
+          ? _RainyCloud(progress: _ctrl.value)
+          : _DriftingCloud(progress: _ctrl.value),
+    );
+  }
+}
+
+/// Nube de fondo + nube de frente, superpuestas para dar sensación de
+/// profundidad, desplazándose lentamente de un lado a otro.
+class _DriftingCloud extends StatelessWidget {
+  final double progress;
+  const _DriftingCloud({required this.progress});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final w = constraints.maxWidth;
+        final x = -34 + progress * (w + 68);
+        return Stack(
+          clipBehavior: Clip.hardEdge,
+          children: [
+            Positioned(
+              left: x - 20,
+              top: constraints.maxHeight * 0.42,
+              child: Icon(Icons.cloud_rounded, size: 30, color: Colors.white.withOpacity(0.18)),
+            ),
+            Positioned(
+              left: x + 2,
+              top: constraints.maxHeight * 0.24,
+              child: Icon(Icons.cloud_rounded, size: 25, color: Colors.white.withOpacity(0.28)),
+            ),
+            Positioned(
+              left: x + 20,
+              top: constraints.maxHeight * 0.42,
+              child: Icon(Icons.cloud_rounded, size: 20, color: Colors.white.withOpacity(0.40)),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+/// Nube fija con gotas de lluvia cayendo debajo, en capas para dar profundidad.
+class _RainyCloud extends StatelessWidget {
+  final double progress;
+  const _RainyCloud({required this.progress});
+
+  // (posición horizontal 0-1, desfase de caída 0-1) por gota.
+  static const _drops = [
+    (0.14, 0.00), (0.30, 0.40), (0.46, 0.75), (0.62, 0.20), (0.78, 0.55),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final w = constraints.maxWidth;
+        final h = constraints.maxHeight;
+        final cloudCenterX = w * 0.5;
+        final dropTop = h * 0.5;
+
+        return Stack(
+          clipBehavior: Clip.hardEdge,
+          children: [
+            Positioned(
+              left: cloudCenterX - 24,
+              top: 0,
+              child: Icon(Icons.cloud_rounded, size: 28, color: Colors.white.withOpacity(0.85)),
+            ),
+            Positioned(
+              left: cloudCenterX + 2,
+              top: -2,
+              child: Icon(Icons.cloud_rounded, size: 20, color: Colors.white.withOpacity(0.55)),
+            ),
+            for (final d in _drops) _drop(w, h, dropTop, d.$1, d.$2),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _drop(double w, double h, double top, double xf, double phase) {
+    final t = (progress + phase) % 1.0;
+    final y = top + t * (h - top);
+    final opacity = (1 - t).clamp(0.25, 1.0);
+    return Positioned(
+      left: xf * w,
+      top: y,
+      child: Opacity(
+        opacity: opacity,
+        child: Container(
+          width: 2.2,
+          height: 8,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.75),
+            borderRadius: BorderRadius.circular(2),
+          ),
+        ),
       ),
     );
   }
@@ -166,12 +455,17 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
   String? _rainTotal;
   String? _rainMaxInt;
   String? _rainNow;
+  double? _rainNowMm;
   String? _rainTime;
 
-  String? _windResumen;
-  String? _radResumen;
-  String? _humResumen;
-  String? _rainResumen;
+  List<MapEntry<String, String>>? _windResumen;
+  List<MapEntry<String, String>>? _radResumen;
+  List<MapEntry<String, String>>? _humResumen;
+  List<MapEntry<String, String>>? _rainResumen;
+
+  List<double>? _windSeries;
+  List<double>? _radSeries;
+  List<double>? _humSeries;
 
   String? _error;
   bool _loading = false;
@@ -326,48 +620,78 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
 
     final rain = _parseRain(rainBody);
 
-    // 🔔 Notificación / SnackBar según plataforma
-    checarLluviaWebYMovil(
-      context: context,
-      lluviaActualMm: rain.closestValMm,
-    );
-
     _rainTotal =
         rain.totalMm != null ? '${rain.totalMm!.toStringAsFixed(1)} mm' : '—';
     _rainMaxInt = rain.maxIntervalMm != null
         ? '${rain.maxIntervalMm!.toStringAsFixed(1)} mm'
         : '—';
+    _rainNowMm = rain.closestValMm;
     _rainNow = rain.closestValMm != null
         ? '${rain.closestValMm!.toStringAsFixed(1)} mm'
         : '—';
     _rainTime = rain.closestTime != null
         ? '${rain.closestTime!.hour.toString().padLeft(2, '0')}:${rain.closestTime!.minute.toString().padLeft(2, '0')}'
         : '--:--';
-    _rainResumen =
-        'Total acumulada: ${_rainTotal ?? "—"} • Máx. intervalo: ${_rainMaxInt ?? "—"}';
+    _rainResumen = [
+      MapEntry('Total acumulada', _rainTotal ?? '—'),
+      MapEntry('Máx. intervalo', _rainMaxInt ?? '—'),
+      MapEntry('Promedio', '${_num(rain.avgMm)} mm'),
+    ];
 
     final windStats = _dailyStats(windBody, key: 'VelViento');
     if (windStats != null) {
-      _windResumen =
-          'Máximo: ${_num(windStats.max)} km/h a las ${windStats.tMax ?? "--:--"} • '
-          'Mínimo: ${_num(windStats.min)} km/h a las ${windStats.tMin ?? "--:--"} • '
-          'Promedio: ${_num(windStats.avg)} km/h';
+      _windResumen = [
+        MapEntry('Máximo', '${_num(windStats.max)} km/h a las ${windStats.tMax ?? "--:--"}'),
+        MapEntry('Mínimo', '${_num(windStats.min)} km/h a las ${windStats.tMin ?? "--:--"}'),
+        MapEntry('Promedio', '${_num(windStats.avg)} km/h'),
+      ];
     }
 
     final radStats = _dailyStats(radBody, key: 'Rad');
     if (radStats != null) {
       final total = _sumKey(radBody, key: 'Rad');
-      _radResumen =
-          'Total registrada: ${_num(total)} W/m² • Promedio: ${_num(radStats.avg)} W/m²';
+      _radResumen = [
+        MapEntry('Total registrada', '${_num(total)} W/m²'),
+        MapEntry('Promedio', '${_num(radStats.avg)} W/m²'),
+      ];
     }
 
     final humStats = _dailyStats(humBody, key: 'Humedad');
     if (humStats != null) {
-      _humResumen =
-          'Máximo: ${_num(humStats.max)}% a las ${humStats.tMax ?? "--:--"} • '
-          'Mínimo: ${_num(humStats.min)}% a las ${humStats.tMin ?? "--:--"} • '
-          'Promedio: ${_num(humStats.avg)}%';
+      _humResumen = [
+        MapEntry('Máximo', '${_num(humStats.max)}% a las ${humStats.tMax ?? "--:--"}'),
+        MapEntry('Mínimo', '${_num(humStats.min)}% a las ${humStats.tMin ?? "--:--"}'),
+        MapEntry('Promedio', '${_num(humStats.avg)}%'),
+      ];
     }
+
+    // Series horarias para las mini-gráficas de viento/radiación/humedad.
+    _windSeries = _series(windBody, key: 'VelViento');
+    _radSeries = _series(radBody, key: 'Rad');
+    _humSeries = _series(humBody, key: 'Humedad');
+  }
+
+  /// Extrae la serie horaria (en orden) de un cuerpo r6-r9 para dibujar mini-gráficas.
+  List<double> _series(String body, {required String key}) {
+    dynamic root;
+    try {
+      root = jsonDecode(body);
+    } catch (_) {
+      return const [];
+    }
+    if (root is! List || root.isEmpty || root.first is! Map) return const [];
+    final lista = (root.first as Map)['Datos'] ?? (root.first as Map)['datos'];
+    if (lista is! List) return const [];
+
+    final out = <double>[];
+    for (final e in lista) {
+      if (e is! Map) continue;
+      final m = Map<String, dynamic>.from(e);
+      final vRaw = m[key] ?? m[key.toLowerCase()];
+      final v = double.tryParse((vRaw ?? '').toString().replaceAll(',', '.'));
+      if (v != null) out.add(v);
+    }
+    return out;
   }
 
   String _num(double? v) => v == null ? '—' : v.toStringAsFixed(1);
@@ -549,6 +873,7 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
     return _RainSummary(
       totalMm: v.isEmpty ? null : total,
       maxIntervalMm: v.isEmpty ? null : maxInt,
+      avgMm: v.isEmpty ? null : total / v.length,
       closestValMm: closestVal,
       closestTime: closestT,
     );
@@ -579,52 +904,61 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
       );
     }
 
-    final rainText = (_rainNow == null) ? '—' : '$_rainNow ${_rainTime ?? ""}';
-
     return Column(
       children: [
-        Row(
-          children: [
-            Expanded(
-              child: _MiniStat(
-                icon: Icons.air,
-                label: 'Viento (ahora)',
-                value: _wind ?? '—',
-                resumen: _windResumen,
+        IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: _MiniStat(
+                  icon: Icons.air,
+                  label: 'Viento (ahora)',
+                  value: _wind ?? '—',
+                  resumen: _windResumen,
+                  series: _windSeries,
+                ),
               ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: _MiniStat(
-                icon: Icons.wb_sunny_outlined,
-                label: 'Radiación (ahora)',
-                value: _rad ?? '—',
-                resumen: _radResumen,
+              const SizedBox(width: 12),
+              Expanded(
+                child: _MiniStat(
+                  icon: Icons.wb_sunny_outlined,
+                  label: 'Radiación (ahora)',
+                  value: _rad ?? '—',
+                  resumen: _radResumen,
+                  series: _radSeries,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         const SizedBox(height: 12),
-        Row(
-          children: [
-            Expanded(
-              child: _MiniStat(
-                icon: Icons.water_drop,
-                label: 'Precipitación (hoy)',
-                value: rainText,
-                resumen: _rainResumen,
+        IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: _MiniStat(
+                  icon: Icons.water_drop,
+                  label: 'Precipitación (hoy)',
+                  value: _rainNow ?? '—',
+                  time: _rainTime,
+                  resumen: _rainResumen,
+                  customVisual: _PrecipAnimation(isRaining: (_rainNowMm ?? 0) > 0.0),
+                ),
               ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: _MiniStat(
-                icon: Icons.opacity,
-                label: 'Humedad (ahora)',
-                value: _humNow ?? '—',
-                resumen: _humResumen,
+              const SizedBox(width: 12),
+              Expanded(
+                child: _MiniStat(
+                  icon: Icons.invert_colors,
+                  label: 'Humedad (ahora)',
+                  value: _humNow ?? '—',
+                  resumen: _humResumen,
+                  series: _humSeries,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );
@@ -635,11 +969,13 @@ class _DailyExtrasStripState extends State<DailyExtrasStrip> {
 class _RainSummary {
   final double? totalMm;
   final double? maxIntervalMm;
+  final double? avgMm;
   final double? closestValMm;
   final DateTime? closestTime;
   const _RainSummary({
     this.totalMm,
     this.maxIntervalMm,
+    this.avgMm,
     this.closestValMm,
     this.closestTime,
   });

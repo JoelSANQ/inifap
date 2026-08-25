@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T12:06:24.718Z",
+  "fetched_at": "2026-08-25T13:14:32.892Z",
   "all": null,
   "reports": {
     "r1": [
@@ -7,133 +7,133 @@
         "Id": "18882",
         "Est": "Guadalupe - U.A. Biología",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "15.3",
+        "Hora": "07:00",
+        "Temp": "14.1",
         "Pre": "0.0",
-        "Hum": "63.6",
-        "Rad": "0.0",
-        "VelViento": "2.0",
-        "DirViento": "120.5"
+        "Hum": "65.8",
+        "Rad": "11.0",
+        "VelViento": "1.8",
+        "DirViento": "42.0"
       },
       {
         "Id": "26767",
         "Est": "Momax - Momax",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "16.0",
+        "Hora": "07:00",
+        "Temp": "15.9",
         "Pre": "0.0",
-        "Hum": "91.0",
-        "Rad": "0.0",
+        "Hum": "93.9",
+        "Rad": "10.3",
         "VelViento": "0.0",
-        "DirViento": "83.4"
+        "DirViento": "57.2"
       },
       {
         "Id": "26786",
         "Est": "Sombrerete - Col. Gonzalez Ortega",
         "Fecha": "25-08-2026",
-        "Hora": "03:15",
+        "Hora": "03:45",
         "Temp": "14.6",
         "Pre": "0.0",
-        "Hum": "70.0",
+        "Hum": "70.2",
         "Rad": "0.0",
-        "VelViento": "6.3",
-        "DirViento": "151.8"
+        "VelViento": "5.0",
+        "DirViento": "145.1"
       },
       {
         "Id": "18837",
         "Est": "Villa de Cos - Sierra Vieja",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "15.5",
+        "Hora": "07:00",
+        "Temp": "15.3",
         "Pre": "0.0",
-        "Hum": "69.8",
-        "Rad": "0.0",
-        "VelViento": "0.6",
-        "DirViento": "64.0"
+        "Hum": "74.3",
+        "Rad": "43.3",
+        "VelViento": "5.3",
+        "DirViento": "85.0"
       },
       {
         "Id": "35254",
         "Est": "Estación Desconocida",
         "Fecha": "25-08-2026",
-        "Hora": "04:15",
-        "Temp": "16.8",
+        "Hora": "06:45",
+        "Temp": "14.0",
         "Pre": "0.0",
-        "Hum": "61.9",
-        "Rad": "0.0",
-        "VelViento": "2.4",
-        "DirViento": "226.5"
+        "Hum": "77.2",
+        "Rad": "14.8",
+        "VelViento": "1.0",
+        "DirViento": "44.4"
       },
       {
         "Id": "18680",
         "Est": "Zacatecas - U.A. Agronomía",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "15.1",
+        "Hora": "07:00",
+        "Temp": "14.3",
         "Pre": "0.0",
-        "Hum": "73.8",
-        "Rad": "0.0",
-        "VelViento": "2.9",
-        "DirViento": "232.3"
+        "Hum": "77.0",
+        "Rad": "19.1",
+        "VelViento": "2.5",
+        "DirViento": "12.0"
       },
       {
         "Id": "18682",
         "Est": "Jerez - Santa Rita",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "13.9",
+        "Hora": "06:45",
+        "Temp": "14.1",
         "Pre": "0.0",
-        "Hum": "74.0",
-        "Rad": "0.3",
-        "VelViento": "3.0",
-        "DirViento": "55.6"
+        "Hum": "72.8",
+        "Rad": "5.2",
+        "VelViento": "4.4",
+        "DirViento": "42.3"
       },
       {
         "Id": "26772",
         "Est": "Villa Glez. Ortega - Estancia de Ánimas",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
+        "Hora": "07:00",
         "Temp": "15.3",
         "Pre": "0.0",
-        "Hum": "68.0",
-        "Rad": "0.0",
-        "VelViento": "3.9",
-        "DirViento": "135.1"
+        "Hum": "69.6",
+        "Rad": "13.6",
+        "VelViento": "2.1",
+        "DirViento": "142.2"
       },
       {
         "Id": "15960",
         "Est": "Villa de Cos - COBAEZ Villa de Cos",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "15.3",
+        "Hora": "07:00",
+        "Temp": "14.5",
         "Pre": "0.0",
-        "Hum": "68.9",
-        "Rad": "0.0",
-        "VelViento": "3.69",
-        "DirViento": "118.2"
+        "Hum": "72.0",
+        "Rad": "17.6",
+        "VelViento": "5.08",
+        "DirViento": "65.8"
       },
       {
         "Id": "18829",
         "Est": "Rio Grande - Col. Progreso",
         "Fecha": "25-08-2026",
-        "Hora": "03:15",
-        "Temp": "16.1",
+        "Hora": "03:30",
+        "Temp": "16.0",
         "Pre": "0.0",
-        "Hum": "59.4",
+        "Hum": "59.2",
         "Rad": "0.0",
-        "VelViento": "0.3",
-        "DirViento": "247.1"
+        "VelViento": "0.9",
+        "DirViento": "204.5"
       },
       {
         "Id": "86031",
         "Est": "Juchipila - UPSZ El Remolino",
         "Fecha": "25-08-2026",
-        "Hora": "06:00",
-        "Temp": "17.8",
+        "Hora": "07:15",
+        "Temp": "17.5",
         "Pre": "0.0",
-        "Hum": "99.4",
-        "Rad": "0.0",
-        "VelViento": "2.9",
-        "DirViento": "199.5"
+        "Hum": "99.6",
+        "Rad": "0.4",
+        "VelViento": "2.3",
+        "DirViento": "192.9"
       },
       {
         "Id": "26684",
@@ -151,121 +151,121 @@
         "Id": "18679",
         "Est": "Pinos - La Victoria",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "14.1",
+        "Hora": "07:00",
+        "Temp": "13.2",
         "Pre": "0.0",
-        "Hum": "84.2",
-        "Rad": "0.0",
-        "VelViento": "6.2",
-        "DirViento": "98.5"
+        "Hum": "92.5",
+        "Rad": "6.0",
+        "VelViento": "9.4",
+        "DirViento": "95.9"
       },
       {
         "Id": "18879",
         "Est": "Tepechitlan - CBTA Tepechitlan",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "16.0",
+        "Hora": "07:00",
+        "Temp": "15.7",
         "Pre": "0.0",
-        "Hum": "86.0",
-        "Rad": "0.0",
-        "VelViento": "0.3",
-        "DirViento": "154.5"
+        "Hum": "93.3",
+        "Rad": "4.7",
+        "VelViento": "0.0",
+        "DirViento": "195.8"
       },
       {
         "Id": "18842",
         "Est": "Villanueva - Villanueva",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "14.3",
+        "Hora": "07:00",
+        "Temp": "16.7",
         "Pre": "0.0",
-        "Hum": "85.3",
-        "Rad": "0.0",
-        "VelViento": "3.3",
-        "DirViento": "167.3"
+        "Hum": "71.9",
+        "Rad": "9.8",
+        "VelViento": "3.2",
+        "DirViento": "222.4"
       },
       {
         "Id": "18836",
         "Est": "Fresnillo - Col. Emancipación",
         "Fecha": "25-08-2026",
-        "Hora": "05:00",
-        "Temp": "13.8",
+        "Hora": "07:00",
+        "Temp": "12.8",
         "Pre": "0.0",
-        "Hum": "76.1",
-        "Rad": "0.0",
-        "VelViento": "0.9",
-        "DirViento": "0.0"
+        "Hum": "84.1",
+        "Rad": "16.9",
+        "VelViento": "1.8",
+        "DirViento": "81.6"
       },
       {
         "Id": "18851",
         "Est": "Calera - CEZAC",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "14.4",
+        "Hora": "06:45",
+        "Temp": "13.8",
         "Pre": "0.0",
-        "Hum": "70.7",
-        "Rad": "0.3",
-        "VelViento": "2.60",
-        "DirViento": "209.0"
+        "Hum": "76.5",
+        "Rad": "9.7",
+        "VelViento": "3.74",
+        "DirViento": "57.8"
       },
       {
         "Id": "26779",
         "Est": "Pánfilo Natera - El Saladillo",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "15.0",
+        "Hora": "07:00",
+        "Temp": "14.6",
         "Pre": "0.0",
-        "Hum": "70.5",
-        "Rad": "0.0",
-        "VelViento": "0.2",
-        "DirViento": "77.0"
+        "Hum": "77.6",
+        "Rad": "14.5",
+        "VelViento": "0.4",
+        "DirViento": "359.7"
       },
       {
         "Id": "15951",
         "Est": "Mazapil - Tanque de Hacheros",
         "Fecha": "25-08-2026",
-        "Hora": "05:30",
-        "Temp": "13.0",
+        "Hora": "06:30",
+        "Temp": "12.8",
         "Pre": "0.0",
-        "Hum": "95.7",
-        "Rad": "0.0",
+        "Hum": "98.9",
+        "Rad": "2.4",
         "VelViento": "0.9",
-        "DirViento": "97.4"
+        "DirViento": "15.0"
       },
       {
         "Id": "18849",
         "Est": "Mazapil - Marianita",
         "Fecha": "25-08-2026",
-        "Hora": "05:30",
-        "Temp": "14.4",
+        "Hora": "07:00",
+        "Temp": "13.8",
         "Pre": "0.0",
-        "Hum": "78.9",
-        "Rad": "0.0",
-        "VelViento": "4.0",
-        "DirViento": "148.0"
+        "Hum": "82.6",
+        "Rad": "20.6",
+        "VelViento": "2.5",
+        "DirViento": "124.5"
       },
       {
         "Id": "18791",
         "Est": "Ojocaliente - El Alpino",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "15.7",
+        "Hora": "07:00",
+        "Temp": "14.8",
         "Pre": "0.0",
-        "Hum": "67.8",
-        "Rad": "0.0",
-        "VelViento": "5.0",
-        "DirViento": "170.2"
+        "Hum": "71.9",
+        "Rad": "0.8",
+        "VelViento": "0.7",
+        "DirViento": "1.8"
       },
       {
         "Id": "15922",
         "Est": "Jalpa - Santo Domingo",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "17.4",
+        "Hora": "07:00",
+        "Temp": "17.5",
         "Pre": "0.0",
-        "Hum": "83.4",
-        "Rad": "0.0",
+        "Hum": "83.0",
+        "Rad": "7.3",
         "VelViento": "0.0",
-        "DirViento": "359.0"
+        "DirViento": "295.0"
       },
       {
         "Id": "18806",
@@ -283,61 +283,61 @@
         "Id": "26775",
         "Est": "Trancoso - Las Arcinas",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "15.1",
+        "Hora": "07:00",
+        "Temp": "13.9",
         "Pre": "0.0",
-        "Hum": "64.8",
-        "Rad": "0.0",
-        "VelViento": "4.1",
-        "DirViento": "35.1"
+        "Hum": "73.4",
+        "Rad": "12.2",
+        "VelViento": "1.2",
+        "DirViento": "38.2"
       },
       {
         "Id": "18664",
         "Est": "Fresnillo - El Pardillo 3",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "13.1",
+        "Hora": "06:45",
+        "Temp": "12.4",
         "Pre": "0.0",
-        "Hum": "68.7",
-        "Rad": "0.3",
-        "VelViento": "1.7",
-        "DirViento": "63.2"
+        "Hum": "73.2",
+        "Rad": "6.3",
+        "VelViento": "2.5",
+        "DirViento": "265.4"
       },
       {
         "Id": "18796",
         "Est": "Sombrerete - Col. Hidalgo",
         "Fecha": "25-08-2026",
-        "Hora": "03:00",
-        "Temp": "14.9",
+        "Hora": "06:00",
+        "Temp": "11.2",
         "Pre": "0.0",
-        "Hum": "59.8",
+        "Hum": "71.7",
         "Rad": "0.0",
-        "VelViento": "0.7",
-        "DirViento": "7.2"
+        "VelViento": "0.0",
+        "DirViento": "51.1"
       },
       {
         "Id": "50060",
         "Est": "Jerez - Palmas Altas",
         "Fecha": "25-08-2026",
-        "Hora": "04:45",
-        "Temp": "13.3",
+        "Hora": "05:15",
+        "Temp": "13.5",
         "Pre": "0.0",
-        "Hum": "70.3",
+        "Hum": "69.9",
         "Rad": "0.3",
-        "VelViento": "5.35",
-        "DirViento": "342.0"
+        "VelViento": "3.60",
+        "DirViento": "19.7"
       },
       {
         "Id": "18777",
         "Est": "Sombrerete - Providencia",
         "Fecha": "25-08-2026",
-        "Hora": "04:15",
-        "Temp": "14.0",
+        "Hora": "06:45",
+        "Temp": "11.1",
         "Pre": "0.0",
-        "Hum": "56.3",
-        "Rad": "0.0",
-        "VelViento": "8.1",
-        "DirViento": "190.4"
+        "Hum": "67.0",
+        "Rad": "3.7",
+        "VelViento": "3.0",
+        "DirViento": "95.6"
       },
       {
         "Id": "26766",
@@ -355,470 +355,470 @@
         "Id": "18779",
         "Est": "Villa de Cos - Agua Nueva",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "13.5",
+        "Hora": "07:00",
+        "Temp": "12.9",
         "Pre": "0.0",
-        "Hum": "94.9",
-        "Rad": "0.0",
-        "VelViento": "3.6",
-        "DirViento": "164.0"
+        "Hum": "98.9",
+        "Rad": "40.7",
+        "VelViento": "5.2",
+        "DirViento": "145.8"
       },
       {
         "Id": "18786",
         "Est": "Enrique Estrada - Mesa de Fuentes",
         "Fecha": "25-08-2026",
-        "Hora": "05:30",
-        "Temp": "13.6",
+        "Hora": "06:45",
+        "Temp": "12.6",
         "Pre": "0.0",
-        "Hum": "74.5",
-        "Rad": "0.0",
-        "VelViento": "4.0",
-        "DirViento": "250.4"
+        "Hum": "80.5",
+        "Rad": "10.8",
+        "VelViento": "2.3",
+        "DirViento": "258.7"
       },
       {
         "Id": "18783",
         "Est": "Villa de Cos - Chaparrosa",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "13.9",
+        "Hora": "07:00",
+        "Temp": "13.4",
         "Pre": "0.0",
-        "Hum": "76.7",
-        "Rad": "0.0",
-        "VelViento": "4.8",
-        "DirViento": "7.3"
+        "Hum": "80.8",
+        "Rad": "44.8",
+        "VelViento": "3.5",
+        "DirViento": "47.1"
       },
       {
         "Id": "18670",
         "Est": "Tabasco - Tierra Blanca",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "17.2",
+        "Hora": "06:45",
+        "Temp": "17.1",
         "Pre": "0.0",
-        "Hum": "83.1",
-        "Rad": "0.0",
-        "VelViento": "1.2",
-        "DirViento": "137.4"
+        "Hum": "86.2",
+        "Rad": "1.5",
+        "VelViento": "0.8",
+        "DirViento": "167.6"
       },
       {
         "Id": "18802",
         "Est": "Fresnillo - Ábrego",
         "Fecha": "25-08-2026",
-        "Hora": "05:30",
-        "Temp": "12.3",
+        "Hora": "06:30",
+        "Temp": "12.5",
         "Pre": "0.0",
-        "Hum": "84.4",
-        "Rad": "0.0",
-        "VelViento": "0.0",
-        "DirViento": "193.8"
+        "Hum": "83.6",
+        "Rad": "0.5",
+        "VelViento": "1.4",
+        "DirViento": "252.1"
       },
       {
         "Id": "15933",
         "Est": "Miguel Auza - Campo Uno",
         "Fecha": "25-08-2026",
-        "Hora": "04:30",
+        "Hora": "05:00",
         "Temp": "12.0",
         "Pre": "0.0",
-        "Hum": "79.2",
+        "Hum": "80.7",
         "Rad": "0.0",
-        "VelViento": "3.5",
-        "DirViento": "116.3"
+        "VelViento": "2.8",
+        "DirViento": "129.0"
       },
       {
         "Id": "18798",
         "Est": "Jerez - Santa Fe",
         "Fecha": "25-08-2026",
-        "Hora": "05:45",
-        "Temp": "12.8",
+        "Hora": "07:00",
+        "Temp": "12.6",
         "Pre": "0.0",
-        "Hum": "86.2",
-        "Rad": "0.0",
+        "Hum": "88.4",
+        "Rad": "29.9",
         "VelViento": "0.0",
-        "DirViento": "240.2"
+        "DirViento": "238.3"
       },
       {
         "Id": "15930",
         "Est": "Valparaíso - CBTA Valparaíso",
         "Fecha": "25-08-2026",
-        "Hora": "05:30",
-        "Temp": "14.3",
+        "Hora": "07:00",
+        "Temp": "13.1",
         "Pre": "0.0",
-        "Hum": "67.9",
-        "Rad": "0.0",
+        "Hum": "76.7",
+        "Rad": "25.9",
         "VelViento": "0.0",
-        "DirViento": "114.3"
+        "DirViento": "349.8"
       },
       {
         "Id": "18663",
         "Est": "Loreto - Loreto",
         "Fecha": "25-08-2026",
-        "Hora": "05:30",
-        "Temp": "16.1",
+        "Hora": "06:45",
+        "Temp": "15.8",
         "Pre": "0.0",
-        "Hum": "63.3",
-        "Rad": "0.2",
-        "VelViento": "3.1",
-        "DirViento": "138.0"
+        "Hum": "66.6",
+        "Rad": "5.8",
+        "VelViento": "3.8",
+        "DirViento": "116.2"
       },
       {
         "Id": "18782",
         "Est": "Sombrerete - Emiliano Zapata",
         "Fecha": "25-08-2026",
-        "Hora": "02:45",
-        "Temp": "15.4",
+        "Hora": "03:45",
+        "Temp": "14.2",
         "Pre": "0.0",
-        "Hum": "52.4",
+        "Hum": "59.4",
         "Rad": "0.0",
-        "VelViento": "13.1",
-        "DirViento": "124.8"
+        "VelViento": "7.4",
+        "DirViento": "128.9"
       }
     ],
     "r3": [
       {
         "Id": "15922",
         "Est": "Jalpa - Santo Domingo",
-        "Fecha": "23-08-2026",
-        "TempMax": "31.6",
-        "TempMin": "14.9",
-        "TempMed": "22.1",
+        "Fecha": "24-08-2026",
+        "TempMax": "31.9",
+        "TempMin": "16.0",
+        "TempMed": "23.0",
         "Pre": "0.0",
-        "VelMed": "2.0",
-        "VelMax": "7.7",
-        "DirViento": "SSE"
+        "VelMed": "1.9",
+        "VelMax": "8.8",
+        "DirViento": "S"
       },
       {
         "Id": "15930",
         "Est": "Valparaíso - CBTA Valparaíso",
-        "Fecha": "23-08-2026",
-        "TempMax": "31.5",
-        "TempMin": "10.8",
-        "TempMed": "20.8",
-        "Pre": "0.0",
-        "VelMed": "2.8",
-        "VelMax": "10.8",
-        "DirViento": "SE"
+        "Fecha": "24-08-2026",
+        "TempMax": "28.2",
+        "TempMin": "11.6",
+        "TempMed": "19.7",
+        "Pre": "0.2",
+        "VelMed": "2.7",
+        "VelMax": "12.9",
+        "DirViento": "SSE"
       },
       {
         "Id": "15933",
         "Est": "Miguel Auza - Campo Uno",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.3",
-        "TempMin": "9.3",
-        "TempMed": "18.7",
+        "Fecha": "24-08-2026",
+        "TempMax": "28.5",
+        "TempMin": "9.0",
+        "TempMed": "19.4",
         "Pre": "0.0",
-        "VelMed": "4.6",
-        "VelMax": "9.3",
-        "DirViento": "SE"
+        "VelMed": "5.5",
+        "VelMax": "11.6",
+        "DirViento": "E"
       },
       {
         "Id": "15951",
         "Est": "Mazapil - Tanque de Hacheros",
-        "Fecha": "23-08-2026",
-        "TempMax": "31.4",
-        "TempMin": "10.4",
-        "TempMed": "22.2",
+        "Fecha": "24-08-2026",
+        "TempMax": "32.3",
+        "TempMin": "10.5",
+        "TempMed": "22.1",
         "Pre": "0.0",
-        "VelMed": "6.7",
-        "VelMax": "17.2",
-        "DirViento": "E"
+        "VelMed": "4.3",
+        "VelMax": "14.0",
+        "DirViento": "ESE"
       },
       {
         "Id": "15960",
         "Est": "Villa de Cos - COBAEZ Villa de Cos",
-        "Fecha": "23-08-2026",
-        "TempMax": "30.2",
-        "TempMin": "10.2",
-        "TempMed": "21.0",
-        "Pre": "0.0",
-        "VelMed": "7.1",
-        "VelMax": "13.7",
-        "DirViento": "ESE"
-      },
-      {
-        "Id": "18663",
-        "Est": "Loreto - Loreto",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.1",
-        "TempMin": "8.0",
-        "TempMed": "19.3",
-        "Pre": "0.0",
-        "VelMed": "7.2",
-        "VelMax": "16.4",
-        "DirViento": "SE"
-      },
-      {
-        "Id": "18664",
-        "Est": "Fresnillo - El Pardillo 3",
-        "Fecha": "23-08-2026",
-        "TempMax": "29.4",
-        "TempMin": "5.9",
-        "TempMed": "19.0",
-        "Pre": "0.0",
-        "VelMed": "7.0",
-        "VelMax": "17.8",
-        "DirViento": "SE"
-      },
-      {
-        "Id": "18670",
-        "Est": "Tabasco - Tierra Blanca",
-        "Fecha": "23-08-2026",
-        "TempMax": "31.9",
-        "TempMin": "13.9",
-        "TempMed": "22.6",
-        "Pre": "0.0",
-        "VelMed": "3.5",
-        "VelMax": "13.0",
-        "DirViento": "SO"
-      },
-      {
-        "Id": "18679",
-        "Est": "Pinos - La Victoria",
-        "Fecha": "23-08-2026",
-        "TempMax": "25.4",
-        "TempMin": "9.0",
-        "TempMed": "17.7",
-        "Pre": "0.0",
-        "VelMed": "8.7",
-        "VelMax": "16.3",
-        "DirViento": "E"
-      },
-      {
-        "Id": "18680",
-        "Est": "Zacatecas - U.A. Agronomía",
-        "Fecha": "23-08-2026",
-        "TempMax": "27.9",
-        "TempMin": "6.3",
-        "TempMed": "18.7",
-        "Pre": "0.0",
-        "VelMed": "5.1",
-        "VelMax": "12.2",
-        "DirViento": "ESE"
-      },
-      {
-        "Id": "18682",
-        "Est": "Jerez - Santa Rita",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.3",
-        "TempMin": "10.8",
-        "TempMed": "19.5",
-        "Pre": "0.0",
-        "VelMed": "6.7",
-        "VelMax": "17.4",
-        "DirViento": "ESE"
-      },
-      {
-        "Id": "18777",
-        "Est": "Sombrerete - Providencia",
-        "Fecha": "23-08-2026",
-        "TempMax": "25.9",
-        "TempMin": "9.7",
-        "TempMed": "18.3",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.7",
+        "TempMin": "12.3",
+        "TempMed": "19.8",
         "Pre": "0.0",
         "VelMed": "7.9",
         "VelMax": "16.7",
         "DirViento": "SE"
       },
       {
+        "Id": "18663",
+        "Est": "Loreto - Loreto",
+        "Fecha": "24-08-2026",
+        "TempMax": "26.5",
+        "TempMin": "10.9",
+        "TempMed": "18.8",
+        "Pre": "0.0",
+        "VelMed": "6.4",
+        "VelMax": "23.3",
+        "DirViento": "SE"
+      },
+      {
+        "Id": "18664",
+        "Est": "Fresnillo - El Pardillo 3",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.5",
+        "TempMin": "9.4",
+        "TempMed": "18.3",
+        "Pre": "0.0",
+        "VelMed": "8.5",
+        "VelMax": "23.7",
+        "DirViento": "SE"
+      },
+      {
+        "Id": "18670",
+        "Est": "Tabasco - Tierra Blanca",
+        "Fecha": "24-08-2026",
+        "TempMax": "31.9",
+        "TempMin": "14.8",
+        "TempMed": "23.0",
+        "Pre": "0.0",
+        "VelMed": "7.3",
+        "VelMax": "30.2",
+        "DirViento": "S"
+      },
+      {
+        "Id": "18679",
+        "Est": "Pinos - La Victoria",
+        "Fecha": "24-08-2026",
+        "TempMax": "23.1",
+        "TempMin": "12.7",
+        "TempMed": "17.1",
+        "Pre": "0.0",
+        "VelMed": "9.6",
+        "VelMax": "20.5",
+        "DirViento": "E"
+      },
+      {
+        "Id": "18680",
+        "Est": "Zacatecas - U.A. Agronomía",
+        "Fecha": "24-08-2026",
+        "TempMax": "26.0",
+        "TempMin": "10.2",
+        "TempMed": "18.0",
+        "Pre": "0.0",
+        "VelMed": "5.5",
+        "VelMax": "16.3",
+        "DirViento": "ESE"
+      },
+      {
+        "Id": "18682",
+        "Est": "Jerez - Santa Rita",
+        "Fecha": "24-08-2026",
+        "TempMax": "25.5",
+        "TempMin": "9.7",
+        "TempMed": "18.1",
+        "Pre": "0.0",
+        "VelMed": "7.0",
+        "VelMax": "22.2",
+        "DirViento": "SE"
+      },
+      {
+        "Id": "18777",
+        "Est": "Sombrerete - Providencia",
+        "Fecha": "24-08-2026",
+        "TempMax": "26.0",
+        "TempMin": "9.5",
+        "TempMed": "18.5",
+        "Pre": "0.0",
+        "VelMed": "8.2",
+        "VelMax": "16.4",
+        "DirViento": "SSE"
+      },
+      {
         "Id": "18779",
         "Est": "Villa de Cos - Agua Nueva",
-        "Fecha": "23-08-2026",
-        "TempMax": "32.0",
-        "TempMin": "8.0",
-        "TempMed": "21.4",
+        "Fecha": "24-08-2026",
+        "TempMax": "29.6",
+        "TempMin": "11.6",
+        "TempMed": "20.7",
         "Pre": "0.0",
-        "VelMed": "6.5",
-        "VelMax": "14.3",
-        "DirViento": "ESE"
+        "VelMed": "7.3",
+        "VelMax": "19.2",
+        "DirViento": "SSE"
       },
       {
         "Id": "18782",
         "Est": "Sombrerete - Emiliano Zapata",
-        "Fecha": "23-08-2026",
-        "TempMax": "25.8",
-        "TempMin": "10.6",
-        "TempMed": "18.6",
+        "Fecha": "24-08-2026",
+        "TempMax": "26.0",
+        "TempMin": "11.4",
+        "TempMed": "18.7",
         "Pre": "0.0",
-        "VelMed": "9.9",
-        "VelMax": "19.3",
-        "DirViento": "E"
+        "VelMed": "10.6",
+        "VelMax": "22.0",
+        "DirViento": "ESE"
       },
       {
         "Id": "18783",
         "Est": "Villa de Cos - Chaparrosa",
-        "Fecha": "23-08-2026",
-        "TempMax": "29.1",
-        "TempMin": "7.6",
-        "TempMed": "19.6",
+        "Fecha": "24-08-2026",
+        "TempMax": "26.1",
+        "TempMin": "10.7",
+        "TempMed": "18.2",
         "Pre": "0.0",
-        "VelMed": "8.1",
-        "VelMax": "18.9",
-        "DirViento": "ESE"
+        "VelMed": "7.1",
+        "VelMax": "23.7",
+        "DirViento": "SE"
       },
       {
         "Id": "18786",
         "Est": "Enrique Estrada - Mesa de Fuentes",
-        "Fecha": "23-08-2026",
-        "TempMax": "26.4",
-        "TempMin": "8.2",
-        "TempMed": "18.3",
+        "Fecha": "24-08-2026",
+        "TempMax": "25.3",
+        "TempMin": "10.6",
+        "TempMed": "17.6",
         "Pre": "0.0",
-        "VelMed": "8.4",
-        "VelMax": "19.5",
-        "DirViento": "SE"
+        "VelMed": "9.7",
+        "VelMax": "25.9",
+        "DirViento": "SSE"
       },
       {
         "Id": "18791",
         "Est": "Ojocaliente - El Alpino",
-        "Fecha": "23-08-2026",
-        "TempMax": "30.1",
-        "TempMin": "7.7",
-        "TempMed": "19.4",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.9",
+        "TempMin": "9.8",
+        "TempMed": "18.4",
         "Pre": "0.0",
-        "VelMed": "5.1",
-        "VelMax": "14.6",
-        "DirViento": "ESE"
+        "VelMed": "4.1",
+        "VelMax": "16.8",
+        "DirViento": "SSE"
       },
       {
         "Id": "18796",
         "Est": "Sombrerete - Col. Hidalgo",
-        "Fecha": "23-08-2026",
+        "Fecha": "24-08-2026",
         "TempMax": "28.4",
-        "TempMin": "10.1",
-        "TempMed": "19.8",
+        "TempMin": "8.9",
+        "TempMed": "20.1",
         "Pre": "0.0",
-        "VelMed": "5.8",
-        "VelMax": "13.3",
+        "VelMed": "6.0",
+        "VelMax": "12.7",
         "DirViento": "ESE"
       },
       {
         "Id": "18798",
         "Est": "Jerez - Santa Fe",
-        "Fecha": "23-08-2026",
-        "TempMax": "29.3",
-        "TempMin": "10.6",
-        "TempMed": "19.1",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.4",
+        "TempMin": "10.4",
+        "TempMed": "18.1",
         "Pre": "0.0",
-        "VelMed": "4.1",
-        "VelMax": "16.3",
-        "DirViento": "SSE"
+        "VelMed": "3.9",
+        "VelMax": "17.4",
+        "DirViento": "S"
       },
       {
         "Id": "18802",
         "Est": "Fresnillo - Ábrego",
-        "Fecha": "23-08-2026",
-        "TempMax": "27.7",
-        "TempMin": "8.4",
-        "TempMed": "17.9",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.2",
+        "TempMin": "8.1",
+        "TempMed": "17.8",
         "Pre": "0.0",
-        "VelMed": "4.6",
-        "VelMax": "15.4",
+        "VelMed": "5.1",
+        "VelMax": "22.0",
         "DirViento": "S"
       },
       {
         "Id": "18806",
         "Est": "Fresnillo - Rancho Grande",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.8",
-        "TempMin": "9.4",
-        "TempMed": "19.6",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.9",
+        "TempMin": "11.4",
+        "TempMed": "19.4",
         "Pre": "0.0",
-        "VelMed": "8.8",
-        "VelMax": "21.5",
-        "DirViento": "E"
+        "VelMed": "12.8",
+        "VelMax": "32.4",
+        "DirViento": "ESE"
       },
       {
         "Id": "18829",
         "Est": "Rio Grande - Col. Progreso",
-        "Fecha": "23-08-2026",
-        "TempMax": "29.1",
-        "TempMin": "9.4",
+        "Fecha": "24-08-2026",
+        "TempMax": "28.7",
+        "TempMin": "9.2",
         "TempMed": "19.4",
         "Pre": "0.0",
-        "VelMed": "4.3",
-        "VelMax": "13.9",
-        "DirViento": "SE"
+        "VelMed": "5.7",
+        "VelMax": "21.4",
+        "DirViento": "SSE"
       },
       {
         "Id": "18836",
         "Est": "Fresnillo - Col. Emancipación",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.6",
-        "TempMin": "8.2",
-        "TempMed": "19.1",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.5",
+        "TempMin": "8.8",
+        "TempMed": "18.6",
         "Pre": "0.0",
-        "VelMed": "5.7",
-        "VelMax": "18.4",
-        "DirViento": "SE"
+        "VelMed": "8.0",
+        "VelMax": "28.6",
+        "DirViento": "SSE"
       },
       {
         "Id": "18837",
         "Est": "Villa de Cos - Sierra Vieja",
-        "Fecha": "23-08-2026",
-        "TempMax": "30.2",
-        "TempMin": "8.8",
-        "TempMed": "20.5",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.6",
+        "TempMin": "10.8",
+        "TempMed": "19.7",
         "Pre": "0.0",
-        "VelMed": "5.6",
-        "VelMax": "15.2",
+        "VelMed": "6.5",
+        "VelMax": "24.6",
         "DirViento": "SE"
       },
       {
         "Id": "18842",
         "Est": "Villanueva - Villanueva",
-        "Fecha": "23-08-2026",
-        "TempMax": "30.5",
-        "TempMin": "10.5",
-        "TempMed": "20.2",
+        "Fecha": "24-08-2026",
+        "TempMax": "28.5",
+        "TempMin": "12.3",
+        "TempMed": "20.0",
         "Pre": "0.0",
-        "VelMed": "3.8",
-        "VelMax": "13.3",
+        "VelMed": "4.8",
+        "VelMax": "15.3",
         "DirViento": "SSE"
       },
       {
         "Id": "18849",
         "Est": "Mazapil - Marianita",
-        "Fecha": "23-08-2026",
-        "TempMax": "32.6",
-        "TempMin": "12.8",
+        "Fecha": "24-08-2026",
+        "TempMax": "32.0",
+        "TempMin": "13.9",
         "TempMed": "22.8",
         "Pre": "0.0",
-        "VelMed": "4.1",
-        "VelMax": "11.9",
-        "DirViento": "SE"
+        "VelMed": "5.7",
+        "VelMax": "12.0",
+        "DirViento": "SSE"
       },
       {
         "Id": "18851",
         "Est": "Calera - CEZAC",
-        "Fecha": "23-08-2026",
-        "TempMax": "27.9",
-        "TempMin": "7.0",
-        "TempMed": "19.0",
+        "Fecha": "24-08-2026",
+        "TempMax": "25.4",
+        "TempMin": "9.5",
+        "TempMed": "18.3",
         "Pre": "0.0",
-        "VelMed": "12.8",
-        "VelMax": "32.2",
-        "DirViento": "E"
+        "VelMed": "14.3",
+        "VelMax": "36.6",
+        "DirViento": "ESE"
       },
       {
         "Id": "18879",
         "Est": "Tepechitlan - CBTA Tepechitlan",
-        "Fecha": "23-08-2026",
-        "TempMax": "30.2",
-        "TempMin": "14.1",
-        "TempMed": "20.1",
-        "Pre": "0.2",
-        "VelMed": "1.2",
-        "VelMax": "5.6",
-        "DirViento": "SSO"
+        "Fecha": "24-08-2026",
+        "TempMax": "29.3",
+        "TempMin": "14.2",
+        "TempMed": "20.7",
+        "Pre": "3.4",
+        "VelMed": "2.6",
+        "VelMax": "9.4",
+        "DirViento": "SSE"
       },
       {
         "Id": "18882",
         "Est": "Guadalupe - U.A. Biología",
-        "Fecha": "23-08-2026",
-        "TempMax": "27.6",
-        "TempMin": "11.3",
-        "TempMed": "19.9",
+        "Fecha": "24-08-2026",
+        "TempMax": "25.0",
+        "TempMin": "12.5",
+        "TempMed": "18.4",
         "Pre": "0.0",
-        "VelMed": "4.6",
-        "VelMax": "12.6",
+        "VelMed": "5.0",
+        "VelMax": "13.1",
         "DirViento": "ESE"
       },
       {
@@ -836,109 +836,109 @@
       {
         "Id": "26766",
         "Est": "Francisco Murguía - Mogotes",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.0",
-        "TempMin": "10.7",
-        "TempMed": "20.1",
+        "Fecha": "24-08-2026",
+        "TempMax": "28.2",
+        "TempMin": "11.8",
+        "TempMed": "20.5",
         "Pre": "0.0",
-        "VelMed": "6.4",
-        "VelMax": "11.4",
+        "VelMed": "6.7",
+        "VelMax": "13.4",
         "DirViento": "E"
       },
       {
         "Id": "26767",
         "Est": "Momax - Momax",
-        "Fecha": "23-08-2026",
-        "TempMax": "31.2",
-        "TempMin": "13.4",
-        "TempMed": "20.9",
+        "Fecha": "24-08-2026",
+        "TempMax": "31.8",
+        "TempMin": "15.5",
+        "TempMed": "22.3",
         "Pre": "0.0",
-        "VelMed": "0.8",
-        "VelMax": "5.5",
-        "DirViento": "S"
+        "VelMed": "1.0",
+        "VelMax": "8.2",
+        "DirViento": "SSE"
       },
       {
         "Id": "26772",
         "Est": "Villa Glez. Ortega - Estancia de Ánimas",
-        "Fecha": "23-08-2026",
-        "TempMax": "27.9",
-        "TempMin": "5.8",
-        "TempMed": "18.1",
+        "Fecha": "24-08-2026",
+        "TempMax": "26.5",
+        "TempMin": "10.5",
+        "TempMed": "17.8",
         "Pre": "0.0",
-        "VelMed": "6.2",
-        "VelMax": "14.5",
-        "DirViento": "E"
+        "VelMed": "5.6",
+        "VelMax": "22.1",
+        "DirViento": "ESE"
       },
       {
         "Id": "26775",
         "Est": "Trancoso - Las Arcinas",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.5",
-        "TempMin": "8.7",
-        "TempMed": "19.0",
+        "Fecha": "24-08-2026",
+        "TempMax": "26.2",
+        "TempMin": "9.7",
+        "TempMed": "17.8",
         "Pre": "0.0",
-        "VelMed": "6.5",
-        "VelMax": "15.6",
+        "VelMed": "6.3",
+        "VelMax": "17.9",
         "DirViento": "SE"
       },
       {
         "Id": "26779",
         "Est": "Pánfilo Natera - El Saladillo",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.2",
-        "TempMin": "8.0",
-        "TempMed": "18.9",
-        "Pre": "0.0",
-        "VelMed": "6.9",
-        "VelMax": "18.5",
+        "Fecha": "24-08-2026",
+        "TempMax": "26.1",
+        "TempMin": "10.3",
+        "TempMed": "17.8",
+        "Pre": "0.1",
+        "VelMed": "4.4",
+        "VelMax": "21.0",
         "DirViento": "SSE"
       },
       {
         "Id": "26786",
         "Est": "Sombrerete - Col. Gonzalez Ortega",
-        "Fecha": "23-08-2026",
+        "Fecha": "24-08-2026",
         "TempMax": "28.7",
-        "TempMin": "11.4",
-        "TempMed": "20.1",
+        "TempMin": "11.2",
+        "TempMed": "19.9",
         "Pre": "0.0",
-        "VelMed": "6.1",
-        "VelMax": "14.0",
-        "DirViento": "SSE"
+        "VelMed": "6.4",
+        "VelMax": "18.1",
+        "DirViento": "SE"
       },
       {
         "Id": "35254",
         "Est": "Estación Desconocida",
-        "Fecha": "23-08-2026",
-        "TempMax": "28.4",
-        "TempMin": "9.9",
-        "TempMed": "19.7",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.2",
+        "TempMin": "11.3",
+        "TempMed": "18.9",
         "Pre": "0.0",
-        "VelMed": "4.2",
-        "VelMax": "11.2",
-        "DirViento": "SE"
+        "VelMed": "4.7",
+        "VelMax": "14.4",
+        "DirViento": "SSE"
       },
       {
         "Id": "50060",
         "Est": "Jerez - Palmas Altas",
-        "Fecha": "23-08-2026",
-        "TempMax": "25.4",
-        "TempMin": "9.1",
-        "TempMed": "18.0",
+        "Fecha": "24-08-2026",
+        "TempMax": "24.2",
+        "TempMin": "10.2",
+        "TempMed": "17.4",
         "Pre": "0.0",
         "VelMed": "6.8",
-        "VelMax": "17.9",
+        "VelMax": "21.4",
         "DirViento": "SE"
       },
       {
         "Id": "86031",
         "Est": "Juchipila - UPSZ El Remolino",
-        "Fecha": "23-08-2026",
-        "TempMax": "32.2",
-        "TempMin": "16.3",
-        "TempMed": "22.9",
-        "Pre": "0.2",
-        "VelMed": "3.9",
-        "VelMax": "8.4",
+        "Fecha": "24-08-2026",
+        "TempMax": "33.5",
+        "TempMin": "16.1",
+        "TempMed": "23.9",
+        "Pre": "0.0",
+        "VelMed": "3.8",
+        "VelMax": "9.3",
         "DirViento": "S"
       }
     ],
@@ -952,11 +952,11 @@
         "Pre": "54.6",
         "HumRMax": "98.8",
         "HumRMin": "18.9",
-        "HumRMed": "63.0",
-        "Rad": "555,352.0",
+        "HumRMed": "62.8",
+        "Rad": "575,175.1",
         "VelMed": "2.5",
         "VelMax": "17.6",
-        "Eto": "107.6",
+        "Eto": "111.4",
         "Mes": "08"
       },
       {
@@ -965,30 +965,30 @@
         "TempMax": "31.8",
         "TempMin": "10.8",
         "TempMed": "20.6",
-        "Pre": "103.6",
+        "Pre": "103.8",
         "HumRMax": "94.9",
         "HumRMin": "13.3",
-        "HumRMed": "61.9",
-        "Rad": "618,558.3",
+        "HumRMed": "61.4",
+        "Rad": "641,527.0",
         "VelMed": "2.9",
         "VelMax": "19.0",
-        "Eto": "116.1",
+        "Eto": "120.5",
         "Mes": "08"
       },
       {
         "Id": "15933",
         "Est": "Miguel Auza - Campo Uno",
         "TempMax": "30.4",
-        "TempMin": "9.3",
+        "TempMin": "9.0",
         "TempMed": "18.9",
         "Pre": "150.7",
         "HumRMax": "99.6",
         "HumRMin": "22.0",
-        "HumRMed": "69.2",
-        "Rad": "591,123.4",
+        "HumRMed": "68.5",
+        "Rad": "618,602.0",
         "VelMed": "5.3",
         "VelMax": "23.5",
-        "Eto": "105.9",
+        "Eto": "111.2",
         "Mes": "08"
       },
       {
@@ -1000,11 +1000,11 @@
         "Pre": "4.2",
         "HumRMax": "99.9",
         "HumRMin": "16.8",
-        "HumRMed": "64.1",
-        "Rad": "570,640.3",
-        "VelMed": "6.0",
+        "HumRMed": "63.6",
+        "Rad": "596,941.5",
+        "VelMed": "5.9",
         "VelMax": "28.6",
-        "Eto": "120.2",
+        "Eto": "125.9",
         "Mes": "08"
       },
       {
@@ -1016,11 +1016,11 @@
         "Pre": "34.2",
         "HumRMax": "93.3",
         "HumRMin": "10.3",
-        "HumRMed": "54.1",
-        "Rad": "674,588.7",
+        "HumRMed": "53.8",
+        "Rad": "696,572.3",
         "VelMed": "7.8",
         "VelMax": "26.7",
-        "Eto": "138.4",
+        "Eto": "143.4",
         "Mes": "08"
       },
       {
@@ -1032,11 +1032,11 @@
         "Pre": "34.2",
         "HumRMax": "92.6",
         "HumRMin": "16.8",
-        "HumRMed": "56.2",
-        "Rad": "606,899.5",
+        "HumRMed": "55.9",
+        "Rad": "623,053.3",
         "VelMed": "7.8",
         "VelMax": "31.6",
-        "Eto": "126.3",
+        "Eto": "130.2",
         "Mes": "08"
       },
       {
@@ -1044,15 +1044,15 @@
         "Est": "Fresnillo - El Pardillo 3",
         "TempMax": "32.0",
         "TempMin": "5.9",
-        "TempMed": "20.1",
+        "TempMed": "20.0",
         "Pre": "31.2",
         "HumRMax": "92.7",
         "HumRMin": "12.9",
-        "HumRMed": "54.0",
-        "Rad": "618,557.9",
+        "HumRMed": "53.7",
+        "Rad": "639,508.3",
         "VelMed": "9.0",
         "VelMax": "35.3",
-        "Eto": "130.4",
+        "Eto": "135.3",
         "Mes": "08"
       },
       {
@@ -1064,11 +1064,11 @@
         "Pre": "80.2",
         "HumRMax": "96.5",
         "HumRMin": "19.8",
-        "HumRMed": "63.4",
-        "Rad": "654,566.2",
-        "VelMed": "3.9",
-        "VelMax": "28.9",
-        "Eto": "129.0",
+        "HumRMed": "63.0",
+        "Rad": "676,772.5",
+        "VelMed": "4.0",
+        "VelMax": "30.2",
+        "Eto": "134.4",
         "Mes": "08"
       },
       {
@@ -1076,15 +1076,15 @@
         "Est": "Pinos - La Victoria",
         "TempMax": "28.3",
         "TempMin": "9.0",
-        "TempMed": "18.1",
+        "TempMed": "18.0",
         "Pre": "16.2",
         "HumRMax": "99.9",
         "HumRMin": "24.4",
-        "HumRMed": "71.8",
-        "Rad": "612,466.5",
-        "VelMed": "11.1",
+        "HumRMed": "71.5",
+        "Rad": "625,734.4",
+        "VelMed": "11.0",
         "VelMax": "27.9",
-        "Eto": "115.7",
+        "Eto": "118.7",
         "Mes": "08"
       },
       {
@@ -1096,11 +1096,11 @@
         "Pre": "43.6",
         "HumRMax": "99.3",
         "HumRMin": "16.4",
-        "HumRMed": "60.0",
-        "Rad": "643,257.3",
+        "HumRMed": "59.7",
+        "Rad": "660,880.1",
         "VelMed": "5.5",
         "VelMax": "21.5",
-        "Eto": "122.8",
+        "Eto": "126.6",
         "Mes": "08"
       },
       {
@@ -1108,15 +1108,15 @@
         "Est": "Jerez - Santa Rita",
         "TempMax": "31.5",
         "TempMin": "9.6",
-        "TempMed": "20.1",
+        "TempMed": "20.0",
         "Pre": "34.6",
         "HumRMax": "100.0",
         "HumRMin": "19.9",
-        "HumRMed": "61.1",
-        "Rad": "618,460.1",
+        "HumRMed": "60.9",
+        "Rad": "635,997.5",
         "VelMed": "7.0",
         "VelMax": "26.5",
-        "Eto": "122.7",
+        "Eto": "126.7",
         "Mes": "08"
       },
       {
@@ -1124,15 +1124,15 @@
         "Est": "Sombrerete - Providencia",
         "TempMax": "27.8",
         "TempMin": "8.5",
-        "TempMed": "17.7",
+        "TempMed": "17.8",
         "Pre": "89.2",
         "HumRMax": "97.2",
         "HumRMin": "20.5",
-        "HumRMed": "62.2",
-        "Rad": "524,491.2",
+        "HumRMed": "61.4",
+        "Rad": "547,797.6",
         "VelMed": "8.1",
         "VelMax": "26.8",
-        "Eto": "102.3",
+        "Eto": "107.4",
         "Mes": "08"
       },
       {
@@ -1144,11 +1144,11 @@
         "Pre": "18.6",
         "HumRMax": "99.9",
         "HumRMin": "19.9",
-        "HumRMed": "70.4",
-        "Rad": "571,250.6",
+        "HumRMed": "70.0",
+        "Rad": "593,355.6",
         "VelMed": "6.9",
         "VelMax": "20.9",
-        "Eto": "110.7",
+        "Eto": "115.3",
         "Mes": "08"
       },
       {
@@ -1160,11 +1160,11 @@
         "Pre": "91.9",
         "HumRMax": "95.3",
         "HumRMin": "21.6",
-        "HumRMed": "61.2",
-        "Rad": "605,789.3",
-        "VelMed": "11.3",
+        "HumRMed": "60.4",
+        "Rad": "631,768.1",
+        "VelMed": "11.2",
         "VelMax": "32.9",
-        "Eto": "119.6",
+        "Eto": "125.4",
         "Mes": "08"
       },
       {
@@ -1172,15 +1172,15 @@
         "Est": "Villa de Cos - Chaparrosa",
         "TempMax": "31.8",
         "TempMin": "7.6",
-        "TempMed": "20.5",
+        "TempMed": "20.4",
         "Pre": "16.8",
         "HumRMax": "95.8",
         "HumRMin": "13.5",
-        "HumRMed": "55.8",
-        "Rad": "827,328.9",
-        "VelMed": "9.6",
+        "HumRMed": "55.5",
+        "Rad": "848,682.5",
+        "VelMed": "9.4",
         "VelMax": "28.6",
-        "Eto": "165.4",
+        "Eto": "170.1",
         "Mes": "08"
       },
       {
@@ -1192,11 +1192,11 @@
         "Pre": "22.0",
         "HumRMax": "95.6",
         "HumRMin": "15.5",
-        "HumRMed": "60.4",
-        "Rad": "625,294.8",
+        "HumRMed": "60.0",
+        "Rad": "648,083.3",
         "VelMed": "8.4",
         "VelMax": "26.7",
-        "Eto": "121.0",
+        "Eto": "125.8",
         "Mes": "08"
       },
       {
@@ -1204,31 +1204,31 @@
         "Est": "Ojocaliente - El Alpino",
         "TempMax": "33.0",
         "TempMin": "6.2",
-        "TempMed": "19.8",
+        "TempMed": "19.7",
         "Pre": "17.8",
         "HumRMax": "95.0",
         "HumRMin": "13.1",
-        "HumRMed": "57.7",
-        "Rad": "551,308.9",
+        "HumRMed": "57.5",
+        "Rad": "566,848.8",
         "VelMed": "4.7",
         "VelMax": "18.9",
-        "Eto": "113.1",
+        "Eto": "116.7",
         "Mes": "08"
       },
       {
         "Id": "18796",
         "Est": "Sombrerete - Col. Hidalgo",
         "TempMax": "30.8",
-        "TempMin": "10.0",
+        "TempMin": "8.9",
         "TempMed": "19.2",
         "Pre": "67.1",
         "HumRMax": "97.9",
         "HumRMin": "18.1",
-        "HumRMed": "60.8",
-        "Rad": "548,670.6",
+        "HumRMed": "59.9",
+        "Rad": "573,333.1",
         "VelMed": "6.6",
         "VelMax": "25.6",
-        "Eto": "108.1",
+        "Eto": "113.5",
         "Mes": "08"
       },
       {
@@ -1240,11 +1240,11 @@
         "Pre": "49.6",
         "HumRMax": "98.5",
         "HumRMin": "17.8",
-        "HumRMed": "64.9",
-        "Rad": "640,288.9",
+        "HumRMed": "64.8",
+        "Rad": "661,718.4",
         "VelMed": "3.4",
         "VelMax": "21.4",
-        "Eto": "120.7",
+        "Eto": "125.2",
         "Mes": "08"
       },
       {
@@ -1256,11 +1256,11 @@
         "Pre": "59.8",
         "HumRMax": "98.7",
         "HumRMin": "18.5",
-        "HumRMed": "66.9",
-        "Rad": "606,174.4",
-        "VelMed": "4.8",
+        "HumRMed": "66.4",
+        "Rad": "629,005.1",
+        "VelMed": "4.9",
         "VelMax": "27.7",
-        "Eto": "108.5",
+        "Eto": "113.1",
         "Mes": "08"
       },
       {
@@ -1268,31 +1268,31 @@
         "Est": "Fresnillo - Rancho Grande",
         "TempMax": "31.7",
         "TempMin": "9.4",
-        "TempMed": "20.1",
+        "TempMed": "20.0",
         "Pre": "71.5",
         "HumRMax": "98.0",
         "HumRMin": "17.2",
-        "HumRMed": "60.2",
-        "Rad": "703,088.7",
+        "HumRMed": "59.7",
+        "Rad": "726,522.8",
         "VelMed": "11.8",
         "VelMax": "45.6",
-        "Eto": "144.0",
+        "Eto": "149.7",
         "Mes": "08"
       },
       {
         "Id": "18829",
         "Est": "Rio Grande - Col. Progreso",
         "TempMax": "32.3",
-        "TempMin": "9.4",
-        "TempMed": "20.0",
+        "TempMin": "9.2",
+        "TempMed": "19.9",
         "Pre": "74.5",
         "HumRMax": "96.8",
         "HumRMin": "18.3",
-        "HumRMed": "60.5",
-        "Rad": "619,685.3",
-        "VelMed": "6.9",
+        "HumRMed": "60.0",
+        "Rad": "645,705.1",
+        "VelMed": "6.8",
         "VelMax": "32.5",
-        "Eto": "123.1",
+        "Eto": "128.5",
         "Mes": "08"
       },
       {
@@ -1304,11 +1304,11 @@
         "Pre": "21.5",
         "HumRMax": "96.8",
         "HumRMin": "17.1",
-        "HumRMed": "58.6",
-        "Rad": "628,012.4",
+        "HumRMed": "58.3",
+        "Rad": "649,290.4",
         "VelMed": "7.9",
         "VelMax": "33.0",
-        "Eto": "128.3",
+        "Eto": "133.3",
         "Mes": "08"
       },
       {
@@ -1320,11 +1320,11 @@
         "Pre": "73.3",
         "HumRMax": "97.8",
         "HumRMin": "12.2",
-        "HumRMed": "58.0",
-        "Rad": "641,142.0",
+        "HumRMed": "57.7",
+        "Rad": "659,895.0",
         "VelMed": "7.6",
         "VelMax": "34.5",
-        "Eto": "130.6",
+        "Eto": "134.9",
         "Mes": "08"
       },
       {
@@ -1336,11 +1336,11 @@
         "Pre": "63.4",
         "HumRMax": "98.4",
         "HumRMin": "15.2",
-        "HumRMed": "64.3",
-        "Rad": "585,366.3",
+        "HumRMed": "64.1",
+        "Rad": "604,196.7",
         "VelMed": "4.2",
         "VelMax": "40.2",
-        "Eto": "111.9",
+        "Eto": "115.9",
         "Mes": "08"
       },
       {
@@ -1352,11 +1352,11 @@
         "Pre": "60.6",
         "HumRMax": "99.9",
         "HumRMin": "19.0",
-        "HumRMed": "62.5",
-        "Rad": "421,211.1",
+        "HumRMed": "61.9",
+        "Rad": "438,363.6",
         "VelMed": "5.2",
         "VelMax": "27.4",
-        "Eto": "89.3",
+        "Eto": "93.2",
         "Mes": "08"
       },
       {
@@ -1368,11 +1368,11 @@
         "Pre": "46.8",
         "HumRMax": "100.0",
         "HumRMin": "18.6",
-        "HumRMed": "61.1",
-        "Rad": "666,750.7",
+        "HumRMed": "60.7",
+        "Rad": "686,546.3",
         "VelMed": "12.9",
         "VelMax": "40.5",
-        "Eto": "131.9",
+        "Eto": "136.9",
         "Mes": "08"
       },
       {
@@ -1381,14 +1381,14 @@
         "TempMax": "32.6",
         "TempMin": "11.2",
         "TempMed": "20.3",
-        "Pre": "97.4",
+        "Pre": "100.8",
         "HumRMax": "99.1",
         "HumRMin": "22.8",
-        "HumRMed": "73.0",
-        "Rad": "536,187.3",
-        "VelMed": "1.6",
+        "HumRMed": "72.7",
+        "Rad": "559,864.9",
+        "VelMed": "1.7",
         "VelMax": "19.3",
-        "Eto": "97.8",
+        "Eto": "102.2",
         "Mes": "08"
       },
       {
@@ -1400,11 +1400,11 @@
         "Pre": "40.4",
         "HumRMax": "91.9",
         "HumRMin": "14.0",
-        "HumRMed": "53.9",
-        "Rad": "588,045.9",
+        "HumRMed": "53.6",
+        "Rad": "604,404.0",
         "VelMed": "4.6",
         "VelMax": "15.3",
-        "Eto": "111.9",
+        "Eto": "115.4",
         "Mes": "08"
       },
       {
@@ -1428,15 +1428,15 @@
         "Est": "Francisco Murguía - Mogotes",
         "TempMax": "30.7",
         "TempMin": "10.3",
-        "TempMed": "19.6",
+        "TempMed": "19.7",
         "Pre": "40.7",
         "HumRMax": "98.0",
         "HumRMin": "19.5",
-        "HumRMed": "62.2",
-        "Rad": "676,814.1",
+        "HumRMed": "61.4",
+        "Rad": "707,794.8",
         "VelMed": "6.3",
         "VelMax": "27.5",
-        "Eto": "127.2",
+        "Eto": "133.6",
         "Mes": "08"
       },
       {
@@ -1444,15 +1444,15 @@
         "Est": "Momax - Momax",
         "TempMax": "34.6",
         "TempMin": "11.3",
-        "TempMed": "21.4",
+        "TempMed": "21.5",
         "Pre": "92.0",
         "HumRMax": "98.8",
         "HumRMin": "20.1",
-        "HumRMed": "71.4",
-        "Rad": "548,524.7",
-        "VelMed": "1.3",
+        "HumRMed": "71.2",
+        "Rad": "572,081.2",
+        "VelMed": "1.2",
         "VelMax": "17.8",
-        "Eto": "101.6",
+        "Eto": "106.0",
         "Mes": "08"
       },
       {
@@ -1460,15 +1460,15 @@
         "Est": "Villa Glez. Ortega - Estancia de Ánimas",
         "TempMax": "30.6",
         "TempMin": "5.8",
-        "TempMed": "18.9",
+        "TempMed": "18.8",
         "Pre": "76.4",
         "HumRMax": "99.9",
         "HumRMin": "15.5",
-        "HumRMed": "61.9",
-        "Rad": "637,543.4",
-        "VelMed": "7.0",
+        "HumRMed": "61.4",
+        "Rad": "654,455.5",
+        "VelMed": "6.9",
         "VelMax": "25.0",
-        "Eto": "126.2",
+        "Eto": "129.9",
         "Mes": "08"
       },
       {
@@ -1476,15 +1476,15 @@
         "Est": "Trancoso - Las Arcinas",
         "TempMax": "31.5",
         "TempMin": "8.7",
-        "TempMed": "19.4",
+        "TempMed": "19.3",
         "Pre": "32.4",
         "HumRMax": "94.4",
         "HumRMin": "13.4",
-        "HumRMed": "58.1",
-        "Rad": "661,423.3",
+        "HumRMed": "57.8",
+        "Rad": "678,376.0",
         "VelMed": "6.8",
         "VelMax": "24.1",
-        "Eto": "130.1",
+        "Eto": "134.0",
         "Mes": "08"
       },
       {
@@ -1492,15 +1492,15 @@
         "Est": "Pánfilo Natera - El Saladillo",
         "TempMax": "30.5",
         "TempMin": "8.0",
-        "TempMed": "19.9",
-        "Pre": "12.0",
+        "TempMed": "19.8",
+        "Pre": "12.1",
         "HumRMax": "97.8",
         "HumRMin": "12.5",
-        "HumRMed": "57.2",
-        "Rad": "617,577.6",
-        "VelMed": "7.2",
+        "HumRMed": "57.0",
+        "Rad": "633,084.1",
+        "VelMed": "7.0",
         "VelMax": "25.9",
-        "Eto": "128.5",
+        "Eto": "131.9",
         "Mes": "08"
       },
       {
@@ -1508,15 +1508,15 @@
         "Est": "Sombrerete - Col. Gonzalez Ortega",
         "TempMax": "31.5",
         "TempMin": "11.2",
-        "TempMed": "19.5",
+        "TempMed": "19.6",
         "Pre": "74.0",
         "HumRMax": "99.9",
         "HumRMin": "29.9",
-        "HumRMed": "72.8",
-        "Rad": "671,780.5",
-        "VelMed": "7.2",
+        "HumRMed": "72.0",
+        "Rad": "701,928.0",
+        "VelMed": "7.1",
         "VelMax": "24.1",
-        "Eto": "121.9",
+        "Eto": "127.9",
         "Mes": "08"
       },
       {
@@ -1528,11 +1528,11 @@
         "Pre": "48.6",
         "HumRMax": "99.9",
         "HumRMin": "20.5",
-        "HumRMed": "63.0",
-        "Rad": "658,557.1",
+        "HumRMed": "62.5",
+        "Rad": "680,936.7",
         "VelMed": "4.2",
-        "VelMax": "14.1",
-        "Eto": "120.6",
+        "VelMax": "14.4",
+        "Eto": "125.1",
         "Mes": "08"
       },
       {
@@ -1544,11 +1544,11 @@
         "Pre": "122.3",
         "HumRMax": "100.0",
         "HumRMin": "24.7",
-        "HumRMed": "68.3",
-        "Rad": "647,912.4",
+        "HumRMed": "67.8",
+        "Rad": "671,771.8",
         "VelMed": "6.5",
         "VelMax": "22.2",
-        "Eto": "120.5",
+        "Eto": "125.5",
         "Mes": "08"
       },
       {
@@ -1560,11 +1560,11 @@
         "Pre": "116.8",
         "HumRMax": "100.0",
         "HumRMin": "32.7",
-        "HumRMed": "75.8",
-        "Rad": "635,655.9",
+        "HumRMed": "75.5",
+        "Rad": "662,657.7",
         "VelMed": "4.2",
         "VelMax": "22.4",
-        "Eto": "122.5",
+        "Eto": "127.8",
         "Mes": "08"
       }
     ]
@@ -1671,6 +1671,26 @@
           {
             "Hora": "05:45",
             "Temp": "17.4"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "17.2"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "17.4"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "17.4"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "17.3"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "17.5"
           }
         ]
       }
@@ -1772,6 +1792,30 @@
           {
             "Hora": "05:30",
             "Temp": "14.3"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "14.1"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "13.8"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "13.5"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "13.2"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "13.1"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "13.1"
           }
         ]
       }
@@ -1856,6 +1900,14 @@
           },
           {
             "Hora": "04:30",
+            "Temp": "12.0"
+          },
+          {
+            "Hora": "04:45",
+            "Temp": "11.9"
+          },
+          {
+            "Hora": "05:00",
             "Temp": "12.0"
           }
         ]
@@ -1958,6 +2010,22 @@
           {
             "Hora": "05:30",
             "Temp": "13.0"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "12.9"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "12.9"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "12.9"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "12.8"
           }
         ]
       }
@@ -2063,6 +2131,26 @@
           {
             "Hora": "05:45",
             "Temp": "15.3"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "15.0"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "14.8"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "14.9"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "14.8"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "14.5"
           }
         ]
       }
@@ -2164,6 +2252,26 @@
           {
             "Hora": "05:30",
             "Temp": "16.1"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "16.2"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "16.1"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "16.0"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "15.8"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "15.8"
           }
         ]
       }
@@ -2269,6 +2377,22 @@
           {
             "Hora": "05:45",
             "Temp": "13.1"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "12.6"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "12.9"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "12.8"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "12.4"
           }
         ]
       }
@@ -2374,6 +2498,22 @@
           {
             "Hora": "05:45",
             "Temp": "17.2"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "17.4"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "17.5"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "17.3"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "17.1"
           }
         ]
       }
@@ -2479,6 +2619,26 @@
           {
             "Hora": "05:45",
             "Temp": "14.1"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "14.0"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "13.9"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "13.6"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "13.5"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "13.2"
           }
         ]
       }
@@ -2584,6 +2744,26 @@
           {
             "Hora": "05:45",
             "Temp": "15.1"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "15.1"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "15.0"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "14.7"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "14.3"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "14.3"
           }
         ]
       }
@@ -2689,6 +2869,22 @@
           {
             "Hora": "05:45",
             "Temp": "13.9"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "13.9"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "13.7"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "14.0"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "14.1"
           }
         ]
       }
@@ -2770,6 +2966,46 @@
           {
             "Hora": "04:15",
             "Temp": "14.0"
+          },
+          {
+            "Hora": "04:30",
+            "Temp": "13.3"
+          },
+          {
+            "Hora": "04:45",
+            "Temp": "13.2"
+          },
+          {
+            "Hora": "05:00",
+            "Temp": "12.8"
+          },
+          {
+            "Hora": "05:15",
+            "Temp": "12.8"
+          },
+          {
+            "Hora": "05:30",
+            "Temp": "13.0"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "12.9"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "12.8"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "12.6"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "12.2"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "11.1"
           }
         ]
       }
@@ -2875,6 +3111,26 @@
           {
             "Hora": "05:45",
             "Temp": "13.5"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "13.2"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "13.1"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "12.9"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "12.9"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "12.9"
           }
         ]
       }
@@ -2932,6 +3188,22 @@
           {
             "Hora": "02:45",
             "Temp": "15.4"
+          },
+          {
+            "Hora": "03:00",
+            "Temp": "15.1"
+          },
+          {
+            "Hora": "03:15",
+            "Temp": "14.8"
+          },
+          {
+            "Hora": "03:30",
+            "Temp": "14.5"
+          },
+          {
+            "Hora": "03:45",
+            "Temp": "14.2"
           }
         ]
       }
@@ -3033,6 +3305,26 @@
           {
             "Hora": "05:30",
             "Temp": "13.6"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "13.0"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "12.6"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "12.8"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "12.7"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "12.6"
           }
         ]
       }
@@ -3138,6 +3430,26 @@
           {
             "Hora": "05:45",
             "Temp": "15.7"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "15.5"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "15.0"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "15.1"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "14.8"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "14.8"
           }
         ]
       }
@@ -3199,6 +3511,54 @@
           {
             "Hora": "03:00",
             "Temp": "14.9"
+          },
+          {
+            "Hora": "03:15",
+            "Temp": "14.4"
+          },
+          {
+            "Hora": "03:30",
+            "Temp": "13.8"
+          },
+          {
+            "Hora": "03:45",
+            "Temp": "13.9"
+          },
+          {
+            "Hora": "04:00",
+            "Temp": "14.0"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "12.2"
+          },
+          {
+            "Hora": "04:30",
+            "Temp": "13.4"
+          },
+          {
+            "Hora": "04:45",
+            "Temp": "13.0"
+          },
+          {
+            "Hora": "05:00",
+            "Temp": "13.2"
+          },
+          {
+            "Hora": "05:15",
+            "Temp": "12.7"
+          },
+          {
+            "Hora": "05:30",
+            "Temp": "11.6"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "11.5"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "11.2"
           }
         ]
       }
@@ -3304,6 +3664,26 @@
           {
             "Hora": "05:45",
             "Temp": "12.8"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "13.0"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "12.7"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "12.5"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "12.4"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "12.6"
           }
         ]
       }
@@ -3405,6 +3785,22 @@
           {
             "Hora": "05:30",
             "Temp": "12.3"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "12.3"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "12.1"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "12.4"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "12.5"
           }
         ]
       }
@@ -3559,6 +3955,10 @@
           {
             "Hora": "03:15",
             "Temp": "16.1"
+          },
+          {
+            "Hora": "03:30",
+            "Temp": "16.0"
           }
         ]
       }
@@ -3652,6 +4052,38 @@
           {
             "Hora": "05:00",
             "Temp": "13.8"
+          },
+          {
+            "Hora": "05:15",
+            "Temp": "13.4"
+          },
+          {
+            "Hora": "05:30",
+            "Temp": "13.5"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "13.1"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "12.7"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "12.5"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "12.2"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "12.3"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "12.8"
           }
         ]
       }
@@ -3757,6 +4189,26 @@
           {
             "Hora": "05:45",
             "Temp": "15.5"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "15.3"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "15.1"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "15.0"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "15.0"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "15.3"
           }
         ]
       }
@@ -3862,6 +4314,26 @@
           {
             "Hora": "05:45",
             "Temp": "14.3"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "14.8"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "15.2"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "16.0"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "16.5"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "16.7"
           }
         ]
       }
@@ -3963,6 +4435,30 @@
           {
             "Hora": "05:30",
             "Temp": "14.4"
+          },
+          {
+            "Hora": "05:45",
+            "Temp": "14.2"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "14.4"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "14.4"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "13.9"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "13.7"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "13.8"
           }
         ]
       }
@@ -4068,6 +4564,22 @@
           {
             "Hora": "05:45",
             "Temp": "14.4"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "14.2"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "14.0"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "14.1"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "13.8"
           }
         ]
       }
@@ -4173,6 +4685,26 @@
           {
             "Hora": "05:45",
             "Temp": "16.0"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "15.9"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "15.9"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "15.8"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "15.7"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "15.7"
           }
         ]
       }
@@ -4278,6 +4810,26 @@
           {
             "Hora": "05:45",
             "Temp": "15.3"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "15.2"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "14.8"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "14.7"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "14.3"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "14.1"
           }
         ]
       }
@@ -4453,6 +5005,26 @@
           {
             "Hora": "05:45",
             "Temp": "16.0"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "16.0"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "15.9"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "15.9"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "15.8"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "15.9"
           }
         ]
       }
@@ -4557,6 +5129,26 @@
           },
           {
             "Hora": "05:45",
+            "Temp": "15.3"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "15.3"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "15.3"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "15.4"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "15.2"
+          },
+          {
+            "Hora": "07:00",
             "Temp": "15.3"
           }
         ]
@@ -4663,6 +5255,26 @@
           {
             "Hora": "05:45",
             "Temp": "15.1"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "14.5"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "14.0"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "13.9"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "14.0"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "13.9"
           }
         ]
       }
@@ -4768,6 +5380,26 @@
           {
             "Hora": "05:45",
             "Temp": "15.0"
+          },
+          {
+            "Hora": "06:00",
+            "Temp": "15.0"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "14.9"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "15.0"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "14.8"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "14.6"
           }
         ]
       }
@@ -4832,6 +5464,14 @@
           },
           {
             "Hora": "03:15",
+            "Temp": "14.6"
+          },
+          {
+            "Hora": "03:30",
+            "Temp": "14.8"
+          },
+          {
+            "Hora": "03:45",
             "Temp": "14.6"
           }
         ]
@@ -4922,6 +5562,14 @@
           {
             "Hora": "04:45",
             "Temp": "13.3"
+          },
+          {
+            "Hora": "05:00",
+            "Temp": "13.6"
+          },
+          {
+            "Hora": "05:15",
+            "Temp": "13.5"
           }
         ]
       }
@@ -5031,6 +5679,26 @@
           {
             "Hora": "06:00",
             "Temp": "17.8"
+          },
+          {
+            "Hora": "06:15",
+            "Temp": "17.7"
+          },
+          {
+            "Hora": "06:30",
+            "Temp": "17.7"
+          },
+          {
+            "Hora": "06:45",
+            "Temp": "17.7"
+          },
+          {
+            "Hora": "07:00",
+            "Temp": "17.6"
+          },
+          {
+            "Hora": "07:15",
+            "Temp": "17.5"
           }
         ]
       }
@@ -5139,6 +5807,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -5244,6 +5932,26 @@
             {
               "Hora": "05:45",
               "Humedad": "83.4"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "84.8"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "82.7"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "82.1"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "82.0"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "83.0"
             }
           ]
         }
@@ -5349,6 +6057,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "7.3"
             }
           ]
         }
@@ -5454,6 +6182,26 @@
             {
               "Hora": "05:45",
               "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.5"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.3"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.2"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "0.0"
             }
           ]
         }
@@ -5557,6 +6305,30 @@
             {
               "Hora": "05:30",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -5658,6 +6430,30 @@
             {
               "Hora": "05:30",
               "Humedad": "67.9"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "70.8"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "74.7"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "77.3"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "77.3"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "77.0"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "76.7"
             }
           ]
         }
@@ -5759,6 +6555,30 @@
             {
               "Hora": "05:30",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "4.4"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "25.9"
             }
           ]
         }
@@ -5860,6 +6680,30 @@
             {
               "Hora": "05:30",
               "VelViento": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.3"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.5"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.6"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "0.0"
             }
           ]
         }
@@ -5947,6 +6791,14 @@
             {
               "Hora": "04:30",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -6032,6 +6884,14 @@
             {
               "Hora": "04:30",
               "Humedad": "79.2"
+            },
+            {
+              "Hora": "04:45",
+              "Humedad": "81.1"
+            },
+            {
+              "Hora": "05:00",
+              "Humedad": "80.7"
             }
           ]
         }
@@ -6116,6 +6976,14 @@
             },
             {
               "Hora": "04:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:00",
               "Rad": "0.0"
             }
           ]
@@ -6202,6 +7070,14 @@
             {
               "Hora": "04:30",
               "VelViento": "3.5"
+            },
+            {
+              "Hora": "04:45",
+              "VelViento": "4.2"
+            },
+            {
+              "Hora": "05:00",
+              "VelViento": "2.8"
             }
           ]
         }
@@ -6305,6 +7181,22 @@
             {
               "Hora": "05:30",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
             }
           ]
         }
@@ -6406,6 +7298,22 @@
             {
               "Hora": "05:30",
               "Humedad": "95.7"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "96.8"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "97.5"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "98.4"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "98.9"
             }
           ]
         }
@@ -6507,6 +7415,22 @@
             {
               "Hora": "05:30",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "2.4"
             }
           ]
         }
@@ -6607,6 +7531,22 @@
             },
             {
               "Hora": "05:30",
+              "VelViento": "0.9"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "3.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "1.2"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "2.5"
+            },
+            {
+              "Hora": "06:30",
               "VelViento": "0.9"
             }
           ]
@@ -6715,6 +7655,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -6820,6 +7780,26 @@
             {
               "Hora": "05:45",
               "Humedad": "68.9"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "70.0"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "70.5"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "70.5"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "70.5"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "72.0"
             }
           ]
         }
@@ -6925,6 +7905,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "1.7"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "9.1"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "17.6"
             }
           ]
         }
@@ -7030,6 +8030,26 @@
             {
               "Hora": "05:45",
               "VelViento": "3.69"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "1.98"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "3.43"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "1.52"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "2.24"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "5.08"
             }
           ]
         }
@@ -7133,6 +8153,26 @@
             {
               "Hora": "05:30",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -7234,6 +8274,26 @@
             {
               "Hora": "05:30",
               "Humedad": "63.3"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "63.1"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "63.6"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "64.0"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "65.5"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "66.6"
             }
           ]
         }
@@ -7335,6 +8395,26 @@
             {
               "Hora": "05:30",
               "Rad": "0.2"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.3"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.3"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.3"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "1.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "5.8"
             }
           ]
         }
@@ -7436,6 +8516,26 @@
             {
               "Hora": "05:30",
               "VelViento": "3.1"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "2.6"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "2.8"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "3.0"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "4.1"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "3.8"
             }
           ]
         }
@@ -7543,6 +8643,22 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -7648,6 +8764,22 @@
             {
               "Hora": "05:45",
               "Humedad": "68.7"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "69.9"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "70.0"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "70.7"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "73.2"
             }
           ]
         }
@@ -7753,6 +8885,22 @@
             {
               "Hora": "05:45",
               "Rad": "0.3"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.2"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.3"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "2.4"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "6.3"
             }
           ]
         }
@@ -7858,6 +9006,22 @@
             {
               "Hora": "05:45",
               "VelViento": "1.7"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "4.6"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "7.5"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "2.8"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "2.5"
             }
           ]
         }
@@ -7965,6 +9129,22 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -8070,6 +9250,22 @@
             {
               "Hora": "05:45",
               "Humedad": "83.1"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "81.2"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "80.6"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "83.3"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "86.2"
             }
           ]
         }
@@ -8175,6 +9371,22 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "1.5"
             }
           ]
         }
@@ -8280,6 +9492,22 @@
             {
               "Hora": "05:45",
               "VelViento": "1.2"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.5"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.2"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.7"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.8"
             }
           ]
         }
@@ -8387,6 +9615,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -8492,6 +9740,26 @@
             {
               "Hora": "05:45",
               "Humedad": "84.2"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "84.3"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "85.7"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "88.2"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "89.6"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "92.5"
             }
           ]
         }
@@ -8597,6 +9865,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "2.4"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "6.0"
             }
           ]
         }
@@ -8702,6 +9990,26 @@
             {
               "Hora": "05:45",
               "VelViento": "6.2"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "6.4"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "6.6"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "8.7"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "8.8"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "9.4"
             }
           ]
         }
@@ -8809,6 +10117,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -8914,6 +10242,26 @@
             {
               "Hora": "05:45",
               "Humedad": "73.8"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "74.8"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "75.6"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "76.6"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "77.4"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "77.0"
             }
           ]
         }
@@ -9019,6 +10367,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.5"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "5.8"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "19.1"
             }
           ]
         }
@@ -9124,6 +10492,26 @@
             {
               "Hora": "05:45",
               "VelViento": "2.9"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.4"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.9"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "1.3"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "1.9"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "2.5"
             }
           ]
         }
@@ -9231,6 +10619,22 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -9336,6 +10740,22 @@
             {
               "Hora": "05:45",
               "Humedad": "74.0"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "74.1"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "75.0"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "72.4"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "72.8"
             }
           ]
         }
@@ -9441,6 +10861,22 @@
             {
               "Hora": "05:45",
               "Rad": "0.3"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.2"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.3"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "1.3"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "5.2"
             }
           ]
         }
@@ -9546,6 +10982,22 @@
             {
               "Hora": "05:45",
               "VelViento": "3.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.6"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "5.1"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "4.0"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "4.4"
             }
           ]
         }
@@ -9629,6 +11081,46 @@
             {
               "Hora": "04:15",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "04:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -9710,6 +11202,46 @@
             {
               "Hora": "04:15",
               "Humedad": "56.3"
+            },
+            {
+              "Hora": "04:30",
+              "Humedad": "59.2"
+            },
+            {
+              "Hora": "04:45",
+              "Humedad": "60.1"
+            },
+            {
+              "Hora": "05:00",
+              "Humedad": "61.8"
+            },
+            {
+              "Hora": "05:15",
+              "Humedad": "61.7"
+            },
+            {
+              "Hora": "05:30",
+              "Humedad": "59.6"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "57.8"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "58.2"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "60.1"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "62.1"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "67.0"
             }
           ]
         }
@@ -9791,6 +11323,46 @@
             {
               "Hora": "04:15",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "3.7"
             }
           ]
         }
@@ -9872,6 +11444,46 @@
             {
               "Hora": "04:15",
               "VelViento": "8.1"
+            },
+            {
+              "Hora": "04:30",
+              "VelViento": "6.3"
+            },
+            {
+              "Hora": "04:45",
+              "VelViento": "6.3"
+            },
+            {
+              "Hora": "05:00",
+              "VelViento": "7.4"
+            },
+            {
+              "Hora": "05:15",
+              "VelViento": "7.0"
+            },
+            {
+              "Hora": "05:30",
+              "VelViento": "6.9"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "6.1"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "6.3"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "5.1"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "2.4"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "3.0"
             }
           ]
         }
@@ -9979,6 +11591,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -10084,6 +11716,26 @@
             {
               "Hora": "05:45",
               "Humedad": "94.9"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "95.9"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "96.8"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "98.5"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "98.5"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "98.9"
             }
           ]
         }
@@ -10189,6 +11841,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "2.7"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "10.9"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "40.7"
             }
           ]
         }
@@ -10294,6 +11966,26 @@
             {
               "Hora": "05:45",
               "VelViento": "3.6"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "4.8"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "3.3"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "5.1"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "4.9"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "5.2"
             }
           ]
         }
@@ -10353,6 +12045,22 @@
             {
               "Hora": "02:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "03:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "03:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "03:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "03:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -10410,6 +12118,22 @@
             {
               "Hora": "02:45",
               "Humedad": "52.4"
+            },
+            {
+              "Hora": "03:00",
+              "Humedad": "53.6"
+            },
+            {
+              "Hora": "03:15",
+              "Humedad": "55.5"
+            },
+            {
+              "Hora": "03:30",
+              "Humedad": "58.1"
+            },
+            {
+              "Hora": "03:45",
+              "Humedad": "59.4"
             }
           ]
         }
@@ -10466,6 +12190,22 @@
             },
             {
               "Hora": "02:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:45",
               "Rad": "0.0"
             }
           ]
@@ -10524,6 +12264,22 @@
             {
               "Hora": "02:45",
               "VelViento": "13.1"
+            },
+            {
+              "Hora": "03:00",
+              "VelViento": "11.8"
+            },
+            {
+              "Hora": "03:15",
+              "VelViento": "9.3"
+            },
+            {
+              "Hora": "03:30",
+              "VelViento": "8.8"
+            },
+            {
+              "Hora": "03:45",
+              "VelViento": "7.4"
             }
           ]
         }
@@ -10627,6 +12383,26 @@
             {
               "Hora": "05:30",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -10728,6 +12504,26 @@
             {
               "Hora": "05:30",
               "Humedad": "74.5"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "77.3"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "78.7"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "78.5"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "80.0"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "80.5"
             }
           ]
         }
@@ -10829,6 +12625,26 @@
             {
               "Hora": "05:30",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "10.8"
             }
           ]
         }
@@ -10930,6 +12746,26 @@
             {
               "Hora": "05:30",
               "VelViento": "4.0"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "0.9"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "1.5"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "3.5"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "2.1"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "2.3"
             }
           ]
         }
@@ -11037,6 +12873,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -11142,6 +12998,26 @@
             {
               "Hora": "05:45",
               "Humedad": "67.8"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "68.9"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "70.3"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "70.2"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "71.5"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "71.9"
             }
           ]
         }
@@ -11247,6 +13123,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "0.8"
             }
           ]
         }
@@ -11352,6 +13248,26 @@
             {
               "Hora": "05:45",
               "VelViento": "5.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "3.7"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "1.8"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.7"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.2"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "0.7"
             }
           ]
         }
@@ -11415,6 +13331,54 @@
             {
               "Hora": "03:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "03:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "03:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "03:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "04:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "04:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "04:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -11476,6 +13440,54 @@
             {
               "Hora": "03:00",
               "Humedad": "59.8"
+            },
+            {
+              "Hora": "03:15",
+              "Humedad": "61.2"
+            },
+            {
+              "Hora": "03:30",
+              "Humedad": "61.9"
+            },
+            {
+              "Hora": "03:45",
+              "Humedad": "62.5"
+            },
+            {
+              "Hora": "04:00",
+              "Humedad": "61.5"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "64.7"
+            },
+            {
+              "Hora": "04:30",
+              "Humedad": "66.2"
+            },
+            {
+              "Hora": "04:45",
+              "Humedad": "65.6"
+            },
+            {
+              "Hora": "05:00",
+              "Humedad": "63.1"
+            },
+            {
+              "Hora": "05:15",
+              "Humedad": "65.7"
+            },
+            {
+              "Hora": "05:30",
+              "Humedad": "68.4"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "70.6"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "71.7"
             }
           ]
         }
@@ -11536,6 +13548,54 @@
             },
             {
               "Hora": "03:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
               "Rad": "0.0"
             }
           ]
@@ -11598,6 +13658,54 @@
             {
               "Hora": "03:00",
               "VelViento": "0.7"
+            },
+            {
+              "Hora": "03:15",
+              "VelViento": "1.2"
+            },
+            {
+              "Hora": "03:30",
+              "VelViento": "0.1"
+            },
+            {
+              "Hora": "03:45",
+              "VelViento": "2.7"
+            },
+            {
+              "Hora": "04:00",
+              "VelViento": "1.1"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "3.3"
+            },
+            {
+              "Hora": "04:30",
+              "VelViento": "2.5"
+            },
+            {
+              "Hora": "04:45",
+              "VelViento": "4.1"
+            },
+            {
+              "Hora": "05:00",
+              "VelViento": "3.5"
+            },
+            {
+              "Hora": "05:15",
+              "VelViento": "0.9"
+            },
+            {
+              "Hora": "05:30",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.0"
             }
           ]
         }
@@ -11705,6 +13813,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -11810,6 +13938,26 @@
             {
               "Hora": "05:45",
               "Humedad": "86.2"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "87.7"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "88.2"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "89.2"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "90.1"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "88.4"
             }
           ]
         }
@@ -11915,6 +14063,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "5.0"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "29.9"
             }
           ]
         }
@@ -12020,6 +14188,26 @@
             {
               "Hora": "05:45",
               "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.2"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.2"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "0.0"
             }
           ]
         }
@@ -12123,6 +14311,22 @@
             {
               "Hora": "05:30",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
             }
           ]
         }
@@ -12224,6 +14428,22 @@
             {
               "Hora": "05:30",
               "Humedad": "84.4"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "83.3"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "85.4"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "85.5"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "83.6"
             }
           ]
         }
@@ -12325,6 +14545,22 @@
             {
               "Hora": "05:30",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.5"
             }
           ]
         }
@@ -12426,6 +14662,22 @@
             {
               "Hora": "05:30",
               "VelViento": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "2.1"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "1.8"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "1.8"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "1.4"
             }
           ]
         }
@@ -12851,6 +15103,10 @@
             {
               "Hora": "03:15",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "03:30",
+              "Pre": "0.0"
             }
           ]
         }
@@ -12916,6 +15172,10 @@
             {
               "Hora": "03:15",
               "Humedad": "59.4"
+            },
+            {
+              "Hora": "03:30",
+              "Humedad": "59.2"
             }
           ]
         }
@@ -12980,6 +15240,10 @@
             },
             {
               "Hora": "03:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:30",
               "Rad": "0.0"
             }
           ]
@@ -13046,6 +15310,10 @@
             {
               "Hora": "03:15",
               "VelViento": "0.3"
+            },
+            {
+              "Hora": "03:30",
+              "VelViento": "0.9"
             }
           ]
         }
@@ -13141,6 +15409,38 @@
             {
               "Hora": "05:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "05:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -13234,6 +15534,38 @@
             {
               "Hora": "05:00",
               "Humedad": "76.1"
+            },
+            {
+              "Hora": "05:15",
+              "Humedad": "74.6"
+            },
+            {
+              "Hora": "05:30",
+              "Humedad": "74.0"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "76.3"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "78.3"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "78.6"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "80.4"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "82.5"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "84.1"
             }
           ]
         }
@@ -13327,6 +15659,38 @@
             {
               "Hora": "05:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "05:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "1.3"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "4.4"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "16.9"
             }
           ]
         }
@@ -13420,6 +15784,38 @@
             {
               "Hora": "05:00",
               "VelViento": "0.9"
+            },
+            {
+              "Hora": "05:15",
+              "VelViento": "0.5"
+            },
+            {
+              "Hora": "05:30",
+              "VelViento": "1.0"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "3.2"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "2.1"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "1.4"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "2.4"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "1.8"
             }
           ]
         }
@@ -13527,6 +15923,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -13632,6 +16048,26 @@
             {
               "Hora": "05:45",
               "Humedad": "69.8"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "70.5"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "72.0"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "72.6"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "73.5"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "74.3"
             }
           ]
         }
@@ -13737,6 +16173,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "2.4"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "15.3"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "43.3"
             }
           ]
         }
@@ -13842,6 +16298,26 @@
             {
               "Hora": "05:45",
               "VelViento": "0.6"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "2.4"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "4.7"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "1.1"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.8"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "5.3"
             }
           ]
         }
@@ -13949,6 +16425,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -14054,6 +16550,26 @@
             {
               "Hora": "05:45",
               "Humedad": "85.3"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "83.0"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "81.6"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "76.9"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "73.1"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "71.9"
             }
           ]
         }
@@ -14159,6 +16675,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "2.4"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "9.8"
             }
           ]
         }
@@ -14264,6 +16800,26 @@
             {
               "Hora": "05:45",
               "VelViento": "3.3"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "2.0"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "2.2"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "3.9"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "2.0"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "3.2"
             }
           ]
         }
@@ -14367,6 +16923,30 @@
             {
               "Hora": "05:30",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -14468,6 +17048,30 @@
             {
               "Hora": "05:30",
               "Humedad": "78.9"
+            },
+            {
+              "Hora": "05:45",
+              "Humedad": "79.9"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "80.4"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "80.5"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "81.2"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "82.3"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "82.6"
             }
           ]
         }
@@ -14569,6 +17173,30 @@
             {
               "Hora": "05:30",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "05:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "2.6"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "7.7"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "20.6"
             }
           ]
         }
@@ -14670,6 +17298,30 @@
             {
               "Hora": "05:30",
               "VelViento": "4.0"
+            },
+            {
+              "Hora": "05:45",
+              "VelViento": "5.8"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "6.9"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "4.9"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "3.5"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "4.2"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "2.5"
             }
           ]
         }
@@ -14777,6 +17429,22 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -14882,6 +17550,22 @@
             {
               "Hora": "05:45",
               "Humedad": "70.7"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "71.7"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "73.5"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "74.4"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "76.5"
             }
           ]
         }
@@ -14987,6 +17671,22 @@
             {
               "Hora": "05:45",
               "Rad": "0.3"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.1"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.2"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "1.4"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "9.7"
             }
           ]
         }
@@ -15092,6 +17792,22 @@
             {
               "Hora": "05:45",
               "VelViento": "2.60"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "5.08"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "3.80"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "4.07"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "3.74"
             }
           ]
         }
@@ -15199,6 +17915,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -15304,6 +18040,26 @@
             {
               "Hora": "05:45",
               "Humedad": "86.0"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "88.4"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "90.1"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "90.9"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "92.2"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "93.3"
             }
           ]
         }
@@ -15409,6 +18165,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "4.7"
             }
           ]
         }
@@ -15514,6 +18290,26 @@
             {
               "Hora": "05:45",
               "VelViento": "0.3"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.4"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "0.0"
             }
           ]
         }
@@ -15621,6 +18417,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -15726,6 +18542,26 @@
             {
               "Hora": "05:45",
               "Humedad": "63.6"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "65.2"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "67.3"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "66.9"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "65.2"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "65.8"
             }
           ]
         }
@@ -15831,6 +18667,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "3.1"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "11.0"
             }
           ]
         }
@@ -15936,6 +18792,26 @@
             {
               "Hora": "05:45",
               "VelViento": "2.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "2.2"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.1"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "2.3"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "2.0"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "1.8"
             }
           ]
         }
@@ -16327,6 +19203,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -16432,6 +19328,26 @@
             {
               "Hora": "05:45",
               "Humedad": "91.0"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "91.5"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "92.6"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "92.9"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "93.5"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "93.9"
             }
           ]
         }
@@ -16537,6 +19453,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "0.5"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "10.3"
             }
           ]
         }
@@ -16641,6 +19577,26 @@
             },
             {
               "Hora": "05:45",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "07:00",
               "VelViento": "0.0"
             }
           ]
@@ -16749,6 +19705,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -16854,6 +19830,26 @@
             {
               "Hora": "05:45",
               "Humedad": "68.0"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "68.1"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "68.6"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "68.9"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "69.8"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "69.6"
             }
           ]
         }
@@ -16959,6 +19955,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "1.4"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "13.6"
             }
           ]
         }
@@ -17064,6 +20080,26 @@
             {
               "Hora": "05:45",
               "VelViento": "3.9"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "5.1"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "3.6"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "2.8"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "1.2"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "2.1"
             }
           ]
         }
@@ -17171,6 +20207,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -17276,6 +20332,26 @@
             {
               "Hora": "05:45",
               "Humedad": "64.8"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "67.9"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "71.0"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "72.2"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "72.9"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "73.4"
             }
           ]
         }
@@ -17381,6 +20457,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "3.4"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "12.2"
             }
           ]
         }
@@ -17486,6 +20582,26 @@
             {
               "Hora": "05:45",
               "VelViento": "4.1"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "2.2"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "1.2"
             }
           ]
         }
@@ -17593,6 +20709,26 @@
             {
               "Hora": "05:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
             }
           ]
         }
@@ -17698,6 +20834,26 @@
             {
               "Hora": "05:45",
               "Humedad": "70.5"
+            },
+            {
+              "Hora": "06:00",
+              "Humedad": "70.3"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "72.4"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "74.4"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "76.2"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "77.6"
             }
           ]
         }
@@ -17803,6 +20959,26 @@
             {
               "Hora": "05:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "2.9"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "14.5"
             }
           ]
         }
@@ -17908,6 +21084,26 @@
             {
               "Hora": "05:45",
               "VelViento": "0.2"
+            },
+            {
+              "Hora": "06:00",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "3.0"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "4.2"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "2.3"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "0.4"
             }
           ]
         }
@@ -17975,6 +21171,14 @@
             {
               "Hora": "03:15",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "03:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "03:45",
+              "Pre": "0.0"
             }
           ]
         }
@@ -18040,6 +21244,14 @@
             {
               "Hora": "03:15",
               "Humedad": "70.0"
+            },
+            {
+              "Hora": "03:30",
+              "Humedad": "69.5"
+            },
+            {
+              "Hora": "03:45",
+              "Humedad": "70.2"
             }
           ]
         }
@@ -18104,6 +21316,14 @@
             },
             {
               "Hora": "03:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "03:45",
               "Rad": "0.0"
             }
           ]
@@ -18170,6 +21390,14 @@
             {
               "Hora": "03:15",
               "VelViento": "6.3"
+            },
+            {
+              "Hora": "03:30",
+              "VelViento": "5.0"
+            },
+            {
+              "Hora": "03:45",
+              "VelViento": "5.0"
             }
           ]
         }
@@ -18261,6 +21489,14 @@
             {
               "Hora": "04:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "05:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "05:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -18350,6 +21586,14 @@
             {
               "Hora": "04:45",
               "Humedad": "70.3"
+            },
+            {
+              "Hora": "05:00",
+              "Humedad": "69.3"
+            },
+            {
+              "Hora": "05:15",
+              "Humedad": "69.9"
             }
           ]
         }
@@ -18438,6 +21682,14 @@
             },
             {
               "Hora": "04:45",
+              "Rad": "0.3"
+            },
+            {
+              "Hora": "05:00",
+              "Rad": "0.3"
+            },
+            {
+              "Hora": "05:15",
               "Rad": "0.3"
             }
           ]
@@ -18528,6 +21780,14 @@
             {
               "Hora": "04:45",
               "VelViento": "5.35"
+            },
+            {
+              "Hora": "05:00",
+              "VelViento": "2.92"
+            },
+            {
+              "Hora": "05:15",
+              "VelViento": "3.60"
             }
           ]
         }
@@ -18639,6 +21899,26 @@
             {
               "Hora": "06:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "07:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -18748,6 +22028,26 @@
             {
               "Hora": "06:00",
               "Humedad": "99.4"
+            },
+            {
+              "Hora": "06:15",
+              "Humedad": "99.7"
+            },
+            {
+              "Hora": "06:30",
+              "Humedad": "98.9"
+            },
+            {
+              "Hora": "06:45",
+              "Humedad": "98.9"
+            },
+            {
+              "Hora": "07:00",
+              "Humedad": "99.5"
+            },
+            {
+              "Hora": "07:15",
+              "Humedad": "99.6"
             }
           ]
         }
@@ -18857,6 +22157,26 @@
             {
               "Hora": "06:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "06:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "06:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "07:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "07:15",
+              "Rad": "0.4"
             }
           ]
         }
@@ -18966,6 +22286,26 @@
             {
               "Hora": "06:00",
               "VelViento": "2.9"
+            },
+            {
+              "Hora": "06:15",
+              "VelViento": "2.6"
+            },
+            {
+              "Hora": "06:30",
+              "VelViento": "3.1"
+            },
+            {
+              "Hora": "06:45",
+              "VelViento": "2.2"
+            },
+            {
+              "Hora": "07:00",
+              "VelViento": "2.4"
+            },
+            {
+              "Hora": "07:15",
+              "VelViento": "2.3"
             }
           ]
         }
@@ -25104,6 +28444,23 @@
         "VelMax": "19.5",
         "DirViento": "SE",
         "Eto": "6.3"
+      },
+      {
+        "Id": "18786",
+        "Est": "Enrique Estrada - Mesa de Fuentes",
+        "Fecha": "24-08-2026",
+        "TempMax": "25.3",
+        "TempMin": "10.6",
+        "TempMed": "17.6",
+        "Pre": "0.0",
+        "HumRMax": "91.5",
+        "HumRMin": "28.2",
+        "HumRMed": "51.4",
+        "Rad": "22,788.5",
+        "VelMed": "9.7",
+        "VelMax": "25.9",
+        "DirViento": "SSE",
+        "Eto": "4.8"
       }
     ],
     "18791": [
@@ -26727,6 +30084,23 @@
         "VelMax": "15.4",
         "DirViento": "S",
         "Eto": "5.5"
+      },
+      {
+        "Id": "18802",
+        "Est": "Fresnillo - Ábrego",
+        "Fecha": "24-08-2026",
+        "TempMax": "27.2",
+        "TempMin": "8.1",
+        "TempMed": "17.8",
+        "Pre": "0.0",
+        "HumRMax": "89.3",
+        "HumRMin": "24.5",
+        "HumRMed": "56.2",
+        "Rad": "22,830.7",
+        "VelMed": "5.1",
+        "VelMax": "22.0",
+        "DirViento": "S",
+        "Eto": "4.6"
       }
     ],
     "18806": [
@@ -29580,6 +32954,23 @@
         "VelMax": "32.2",
         "DirViento": "E",
         "Eto": "7.0"
+      },
+      {
+        "Id": "18851",
+        "Est": "Calera - CEZAC",
+        "Fecha": "24-08-2026",
+        "TempMax": "25.4",
+        "TempMin": "9.5",
+        "TempMed": "18.3",
+        "Pre": "0.0",
+        "HumRMax": "87.6",
+        "HumRMin": "31.8",
+        "HumRMed": "51.9",
+        "Rad": "19,795.6",
+        "VelMed": "14.3",
+        "VelMax": "36.6",
+        "DirViento": "ESE",
+        "Eto": "5.0"
       }
     ],
     "18879": [
@@ -31016,6 +34407,23 @@
         "VelMax": "11.4",
         "DirViento": "E",
         "Eto": "6.3"
+      },
+      {
+        "Id": "26766",
+        "Est": "Francisco Murguía - Mogotes",
+        "Fecha": "24-08-2026",
+        "TempMax": "28.2",
+        "TempMin": "11.8",
+        "TempMed": "20.5",
+        "Pre": "0.0",
+        "HumRMax": "71.4",
+        "HumRMin": "23.5",
+        "HumRMed": "44.3",
+        "Rad": "30,980.7",
+        "VelMed": "6.7",
+        "VelMax": "13.4",
+        "DirViento": "E",
+        "Eto": "6.4"
       }
     ],
     "26767": [

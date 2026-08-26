@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-26T04:50:06.247Z",
+  "fetched_at": "2026-08-26T05:39:40.333Z",
   "all": null,
   "reports": {
     "r1": [
@@ -7,13 +7,13 @@
         "Id": "18882",
         "Est": "Guadalupe - U.A. Biología",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "14.9",
+        "Hora": "23:15",
+        "Temp": "15.6",
         "Pre": "0.0",
-        "Hum": "82.4",
+        "Hum": "75.0",
         "Rad": "0.0",
-        "VelViento": "1.3",
-        "DirViento": "181.5"
+        "VelViento": "1.1",
+        "DirViento": "160.7"
       },
       {
         "Id": "26767",
@@ -31,13 +31,13 @@
         "Id": "26786",
         "Est": "Sombrerete - Col. Gonzalez Ortega",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "18.6",
+        "Hora": "23:15",
+        "Temp": "16.7",
         "Pre": "0.0",
-        "Hum": "63.8",
+        "Hum": "71.2",
         "Rad": "0.0",
-        "VelViento": "5.8",
-        "DirViento": "102.6"
+        "VelViento": "0.0",
+        "DirViento": "310.6"
       },
       {
         "Id": "18837",
@@ -67,37 +67,37 @@
         "Id": "18680",
         "Est": "Zacatecas - U.A. Agronomía",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "15.0",
+        "Hora": "23:15",
+        "Temp": "14.7",
         "Pre": "0.0",
-        "Hum": "88.9",
+        "Hum": "90.1",
         "Rad": "0.0",
-        "VelViento": "1.9",
-        "DirViento": "133.1"
+        "VelViento": "0.3",
+        "DirViento": "150.6"
       },
       {
         "Id": "18682",
         "Est": "Jerez - Santa Rita",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
+        "Hora": "23:15",
         "Temp": "15.4",
         "Pre": "0.0",
         "Hum": "97.6",
         "Rad": "0.2",
         "VelViento": "0.1",
-        "DirViento": "39.0"
+        "DirViento": "118.0"
       },
       {
         "Id": "26772",
         "Est": "Villa Glez. Ortega - Estancia de Ánimas",
         "Fecha": "25-08-2026",
-        "Hora": "22:15",
-        "Temp": "13.8",
+        "Hora": "23:15",
+        "Temp": "12.6",
         "Pre": "0.0",
-        "Hum": "86.6",
+        "Hum": "91.0",
         "Rad": "0.0",
-        "VelViento": "0.8",
-        "DirViento": "269.7"
+        "VelViento": "0.0",
+        "DirViento": "67.8"
       },
       {
         "Id": "15960",
@@ -115,13 +115,13 @@
         "Id": "18829",
         "Est": "Rio Grande - Col. Progreso",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "19.8",
+        "Hora": "23:15",
+        "Temp": "19.0",
         "Pre": "0.0",
-        "Hum": "49.2",
+        "Hum": "54.8",
         "Rad": "0.0",
-        "VelViento": "9.1",
-        "DirViento": "121.8"
+        "VelViento": "6.5",
+        "DirViento": "178.5"
       },
       {
         "Id": "86031",
@@ -139,25 +139,25 @@
         "Id": "26684",
         "Est": "Cañitas - Cañitas",
         "Fecha": "14-08-2026",
-        "Hora": "17:30",
-        "Temp": "24.8",
+        "Hora": "17:45",
+        "Temp": "24.6",
         "Pre": "0.0",
-        "Hum": "35.8",
-        "Rad": "184.6",
-        "VelViento": "13.4",
-        "DirViento": "172.7"
+        "Hum": "34.1",
+        "Rad": "86.0",
+        "VelViento": "15.0",
+        "DirViento": "179.1"
       },
       {
         "Id": "18679",
         "Est": "Pinos - La Victoria",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "14.2",
+        "Hora": "23:15",
+        "Temp": "14.3",
         "Pre": "0.0",
-        "Hum": "99.8",
+        "Hum": "99.9",
         "Rad": "0.0",
-        "VelViento": "3.9",
-        "DirViento": "91.3"
+        "VelViento": "4.8",
+        "DirViento": "82.7"
       },
       {
         "Id": "18879",
@@ -175,37 +175,37 @@
         "Id": "18842",
         "Est": "Villanueva - Villanueva",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "16.4",
+        "Hora": "23:15",
+        "Temp": "16.0",
         "Pre": "0.0",
-        "Hum": "95.1",
+        "Hum": "95.7",
         "Rad": "0.0",
-        "VelViento": "0.4",
-        "DirViento": "131.3"
+        "VelViento": "0.0",
+        "DirViento": "147.6"
       },
       {
         "Id": "18836",
         "Est": "Fresnillo - Col. Emancipación",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "16.8",
+        "Hora": "23:15",
+        "Temp": "16.2",
         "Pre": "0.0",
-        "Hum": "82.9",
+        "Hum": "86.8",
         "Rad": "0.0",
-        "VelViento": "12.3",
-        "DirViento": "191.5"
+        "VelViento": "5.1",
+        "DirViento": "221.7"
       },
       {
         "Id": "18851",
         "Est": "Calera - CEZAC",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "15.0",
+        "Hora": "23:00",
+        "Temp": "14.6",
         "Pre": "0.0",
-        "Hum": "85.5",
+        "Hum": "87.9",
         "Rad": "0.0",
-        "VelViento": "4.37",
-        "DirViento": "173.2"
+        "VelViento": "5.96",
+        "DirViento": "176.7"
       },
       {
         "Id": "26779",
@@ -247,10 +247,10 @@
         "Id": "18791",
         "Est": "Ojocaliente - El Alpino",
         "Fecha": "25-08-2026",
-        "Hora": "22:15",
-        "Temp": "15.3",
+        "Hora": "23:15",
+        "Temp": "14.6",
         "Pre": "0.0",
-        "Hum": "89.6",
+        "Hum": "90.7",
         "Rad": "0.0",
         "VelViento": "0.0",
         "DirViento": "218.7"
@@ -259,61 +259,61 @@
         "Id": "15922",
         "Est": "Jalpa - Santo Domingo",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "18.1",
-        "Pre": "0.0",
-        "Hum": "95.5",
+        "Hora": "23:15",
+        "Temp": "17.2",
+        "Pre": "0.4",
+        "Hum": "96.6",
         "Rad": "0.0",
-        "VelViento": "0.8",
-        "DirViento": "358.1"
+        "VelViento": "8.8",
+        "DirViento": "326.4"
       },
       {
         "Id": "18806",
         "Est": "Fresnillo - Rancho Grande",
         "Fecha": "25-08-2026",
-        "Hora": "22:00",
-        "Temp": "17.2",
+        "Hora": "22:45",
+        "Temp": "16.6",
         "Pre": "0.0",
-        "Hum": "82.7",
+        "Hum": "82.9",
         "Rad": "0.0",
-        "VelViento": "21.6",
-        "DirViento": "162.5"
+        "VelViento": "14.6",
+        "DirViento": "186.4"
       },
       {
         "Id": "26775",
         "Est": "Trancoso - Las Arcinas",
         "Fecha": "25-08-2026",
-        "Hora": "22:15",
-        "Temp": "15.3",
+        "Hora": "23:15",
+        "Temp": "14.7",
         "Pre": "0.0",
-        "Hum": "90.6",
+        "Hum": "91.2",
         "Rad": "0.0",
-        "VelViento": "5.4",
-        "DirViento": "162.0"
+        "VelViento": "0.0",
+        "DirViento": "262.0"
       },
       {
         "Id": "18664",
         "Est": "Fresnillo - El Pardillo 3",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "16.1",
+        "Hora": "23:00",
+        "Temp": "16.2",
         "Pre": "0.0",
-        "Hum": "84.8",
-        "Rad": "0.3",
-        "VelViento": "6.3",
-        "DirViento": "220.1"
+        "Hum": "84.7",
+        "Rad": "0.2",
+        "VelViento": "10.5",
+        "DirViento": "186.0"
       },
       {
         "Id": "18796",
         "Est": "Sombrerete - Col. Hidalgo",
         "Fecha": "25-08-2026",
-        "Hora": "22:15",
-        "Temp": "17.3",
+        "Hora": "23:15",
+        "Temp": "17.9",
         "Pre": "0.0",
-        "Hum": "54.8",
+        "Hum": "54.7",
         "Rad": "0.0",
-        "VelViento": "2.1",
-        "DirViento": "71.1"
+        "VelViento": "3.0",
+        "DirViento": "112.7"
       },
       {
         "Id": "50060",
@@ -367,49 +367,49 @@
         "Id": "18786",
         "Est": "Enrique Estrada - Mesa de Fuentes",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "14.5",
+        "Hora": "23:15",
+        "Temp": "14.3",
         "Pre": "0.0",
-        "Hum": "90.1",
+        "Hum": "90.6",
         "Rad": "0.0",
-        "VelViento": "8.1",
-        "DirViento": "229.6"
+        "VelViento": "6.3",
+        "DirViento": "247.7"
       },
       {
         "Id": "18783",
         "Est": "Villa de Cos - Chaparrosa",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "16.5",
+        "Hora": "23:15",
+        "Temp": "15.6",
         "Pre": "0.0",
-        "Hum": "80.7",
+        "Hum": "85.2",
         "Rad": "0.0",
-        "VelViento": "4.4",
-        "DirViento": "218.7"
+        "VelViento": "3.7",
+        "DirViento": "171.8"
       },
       {
         "Id": "18670",
         "Est": "Tabasco - Tierra Blanca",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "17.0",
+        "Hora": "23:15",
+        "Temp": "17.4",
         "Pre": "0.0",
-        "Hum": "94.4",
+        "Hum": "94.6",
         "Rad": "0.0",
-        "VelViento": "0.2",
-        "DirViento": "172.7"
+        "VelViento": "2.2",
+        "DirViento": "144.2"
       },
       {
         "Id": "18802",
         "Est": "Fresnillo - Ábrego",
         "Fecha": "25-08-2026",
-        "Hora": "22:15",
-        "Temp": "15.7",
-        "Pre": "0.2",
-        "Hum": "87.2",
+        "Hora": "22:45",
+        "Temp": "15.4",
+        "Pre": "0.0",
+        "Hum": "91.4",
         "Rad": "0.0",
-        "VelViento": "3.5",
-        "DirViento": "132.8"
+        "VelViento": "11.3",
+        "DirViento": "204.7"
       },
       {
         "Id": "15933",
@@ -427,13 +427,13 @@
         "Id": "18798",
         "Est": "Jerez - Santa Fe",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
+        "Hora": "23:15",
         "Temp": "15.6",
         "Pre": "0.0",
-        "Hum": "95.7",
+        "Hum": "96.3",
         "Rad": "0.0",
         "VelViento": "0.0",
-        "DirViento": "0.0"
+        "DirViento": "137.8"
       },
       {
         "Id": "15930",
@@ -451,25 +451,25 @@
         "Id": "18663",
         "Est": "Loreto - Loreto",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "15.1",
+        "Hora": "23:15",
+        "Temp": "15.3",
         "Pre": "0.0",
-        "Hum": "88.8",
-        "Rad": "0.2",
-        "VelViento": "0.1",
-        "DirViento": "49.2"
+        "Hum": "90.2",
+        "Rad": "0.3",
+        "VelViento": "3.4",
+        "DirViento": "215.5"
       },
       {
         "Id": "18782",
         "Est": "Sombrerete - Emiliano Zapata",
         "Fecha": "25-08-2026",
-        "Hora": "22:30",
-        "Temp": "17.4",
+        "Hora": "23:15",
+        "Temp": "16.0",
         "Pre": "0.0",
-        "Hum": "54.0",
+        "Hum": "62.0",
         "Rad": "0.0",
-        "VelViento": "13.6",
-        "DirViento": "130.6"
+        "VelViento": "10.6",
+        "DirViento": "124.6"
       }
     ],
     "r3": [

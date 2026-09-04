@@ -1,127 +1,127 @@
 {
-  "fetched_at": "2026-09-04T01:17:34.723Z",
+  "fetched_at": "2026-09-04T06:28:33.845Z",
   "all": null,
   "reports": {
     "r1": [
       {
         "Id": "18882",
         "Est": "Guadalupe - U.A. Biología",
-        "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "18.9",
+        "Fecha": "04-09-2026",
+        "Hora": "00:15",
+        "Temp": "17.1",
         "Pre": "0.0",
-        "Hum": "67.1",
-        "Rad": "12.8",
-        "VelViento": "5.3",
-        "DirViento": "171.6"
+        "Hum": "73.8",
+        "Rad": "0.0",
+        "VelViento": "7.6",
+        "DirViento": "284.6"
       },
       {
         "Id": "26767",
         "Est": "Momax - Momax",
         "Fecha": "26-08-2026",
-        "Hora": "09:45",
-        "Temp": "19.1",
+        "Hora": "11:00",
+        "Temp": "23.0",
         "Pre": "0.0",
-        "Hum": "91.2",
-        "Rad": "331.1",
-        "VelViento": "0.4",
-        "DirViento": "334.7"
+        "Hum": "73.2",
+        "Rad": "482.5",
+        "VelViento": "1.9",
+        "DirViento": "238.0"
       },
       {
         "Id": "26786",
         "Est": "Sombrerete - Col. Gonzalez Ortega",
         "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "20.8",
-        "Pre": "0.0",
-        "Hum": "70.5",
-        "Rad": "2.9",
-        "VelViento": "3.6",
-        "DirViento": "227.2"
+        "Hora": "23:15",
+        "Temp": "17.6",
+        "Pre": "1.8",
+        "Hum": "95.7",
+        "Rad": "0.0",
+        "VelViento": "7.1",
+        "DirViento": "29.4"
       },
       {
         "Id": "18837",
         "Est": "Villa de Cos - Sierra Vieja",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "21.4",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "18.2",
         "Pre": "0.0",
-        "Hum": "63.9",
-        "Rad": "9.2",
-        "VelViento": "3.5",
-        "DirViento": "197.3"
+        "Hum": "80.4",
+        "Rad": "0.0",
+        "VelViento": "1.7",
+        "DirViento": "167.7"
       },
       {
         "Id": "35254",
         "Est": "Estación Desconocida",
         "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "18.6",
+        "Hora": "23:30",
+        "Temp": "16.9",
         "Pre": "0.0",
-        "Hum": "64.8",
-        "Rad": "5.7",
-        "VelViento": "6.4",
-        "DirViento": "225.8"
+        "Hum": "88.9",
+        "Rad": "0.0",
+        "VelViento": "4.4",
+        "DirViento": "174.6"
       },
       {
         "Id": "18680",
         "Est": "Zacatecas - U.A. Agronomía",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "18.7",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "15.0",
         "Pre": "0.0",
-        "Hum": "76.8",
-        "Rad": "12.7",
-        "VelViento": "2.1",
-        "DirViento": "175.5"
+        "Hum": "91.3",
+        "Rad": "0.0",
+        "VelViento": "0.2",
+        "DirViento": "170.9"
       },
       {
         "Id": "18682",
         "Est": "Jerez - Santa Rita",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "19.0",
+        "Fecha": "04-09-2026",
+        "Hora": "00:15",
+        "Temp": "16.0",
         "Pre": "0.0",
-        "Hum": "77.7",
-        "Rad": "19.1",
-        "VelViento": "7.8",
-        "DirViento": "157.9"
+        "Hum": "92.5",
+        "Rad": "0.3",
+        "VelViento": "6.3",
+        "DirViento": "156.9"
       },
       {
         "Id": "26772",
         "Est": "Villa Glez. Ortega - Estancia de Ánimas",
-        "Fecha": "03-09-2026",
-        "Hora": "18:30",
-        "Temp": "18.1",
+        "Fecha": "04-09-2026",
+        "Hora": "00:15",
+        "Temp": "14.2",
         "Pre": "0.0",
-        "Hum": "75.8",
-        "Rad": "31.2",
-        "VelViento": "4.6",
-        "DirViento": "176.9"
+        "Hum": "92.8",
+        "Rad": "0.0",
+        "VelViento": "0.0",
+        "DirViento": "12.0"
       },
       {
         "Id": "15960",
         "Est": "Villa de Cos - COBAEZ Villa de Cos",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "14.4",
-        "Pre": "2.8",
-        "Hum": "93.8",
-        "Rad": "6.8",
-        "VelViento": "12.07",
-        "DirViento": "204.9"
+        "Fecha": "04-09-2026",
+        "Hora": "00:15",
+        "Temp": "17.0",
+        "Pre": "0.0",
+        "Hum": "84.3",
+        "Rad": "0.0",
+        "VelViento": "6.20",
+        "DirViento": "184.7"
       },
       {
         "Id": "18829",
         "Est": "Rio Grande - Col. Progreso",
         "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "21.2",
+        "Hora": "23:30",
+        "Temp": "18.9",
         "Pre": "0.0",
-        "Hum": "75.6",
-        "Rad": "5.1",
-        "VelViento": "2.0",
-        "DirViento": "231.3"
+        "Hum": "74.0",
+        "Rad": "0.0",
+        "VelViento": "8.5",
+        "DirViento": "220.5"
       },
       {
         "Id": "86031",
@@ -139,25 +139,25 @@
         "Id": "26684",
         "Est": "Cañitas - Cañitas",
         "Fecha": "27-08-2026",
-        "Hora": "17:30",
-        "Temp": "19.6",
-        "Pre": "2.4",
+        "Hora": "22:15",
+        "Temp": "17.2",
+        "Pre": "0.0",
         "Hum": "72.7",
-        "Rad": "61.5",
-        "VelViento": "11.8",
-        "DirViento": "191.7"
+        "Rad": "0.0",
+        "VelViento": "18.3",
+        "DirViento": "69.4"
       },
       {
         "Id": "18679",
         "Est": "Pinos - La Victoria",
         "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "18.4",
+        "Hora": "23:45",
+        "Temp": "15.5",
         "Pre": "0.0",
-        "Hum": "84.2",
-        "Rad": "8.3",
-        "VelViento": "2.1",
-        "DirViento": "128.8"
+        "Hum": "93.1",
+        "Rad": "0.0",
+        "VelViento": "1.9",
+        "DirViento": "45.4"
       },
       {
         "Id": "18879",
@@ -174,38 +174,38 @@
       {
         "Id": "18842",
         "Est": "Villanueva - Villanueva",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "19.2",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "16.1",
         "Pre": "0.0",
-        "Hum": "86.6",
-        "Rad": "15.9",
-        "VelViento": "2.1",
-        "DirViento": "135.9"
+        "Hum": "88.8",
+        "Rad": "0.0",
+        "VelViento": "2.6",
+        "DirViento": "117.7"
       },
       {
         "Id": "18836",
         "Est": "Fresnillo - Col. Emancipación",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "18.7",
-        "Pre": "0.3",
-        "Hum": "75.2",
-        "Rad": "16.9",
-        "VelViento": "20.3",
-        "DirViento": "160.4"
+        "Fecha": "04-09-2026",
+        "Hora": "00:15",
+        "Temp": "17.6",
+        "Pre": "0.0",
+        "Hum": "81.6",
+        "Rad": "0.0",
+        "VelViento": "8.3",
+        "DirViento": "181.2"
       },
       {
         "Id": "18851",
         "Est": "Calera - CEZAC",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "17.6",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "16.0",
         "Pre": "0.0",
-        "Hum": "79.8",
-        "Rad": "6.3",
-        "VelViento": "13.65",
-        "DirViento": "188.6"
+        "Hum": "91.9",
+        "Rad": "0.0",
+        "VelViento": "13.78",
+        "DirViento": "165.3"
       },
       {
         "Id": "26779",
@@ -222,26 +222,26 @@
       {
         "Id": "15951",
         "Est": "Mazapil - Tanque de Hacheros",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "24.7",
+        "Fecha": "04-09-2026",
+        "Hora": "00:15",
+        "Temp": "19.9",
         "Pre": "0.0",
-        "Hum": "52.0",
-        "Rad": "17.7",
-        "VelViento": "0.0",
-        "DirViento": "226.7"
+        "Hum": "68.4",
+        "Rad": "0.0",
+        "VelViento": "0.5",
+        "DirViento": "228.0"
       },
       {
         "Id": "18849",
         "Est": "Mazapil - Marianita",
-        "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "27.6",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "21.3",
         "Pre": "0.0",
-        "Hum": "39.2",
-        "Rad": "12.2",
-        "VelViento": "0.0",
-        "DirViento": "145.2"
+        "Hum": "64.2",
+        "Rad": "0.0",
+        "VelViento": "2.8",
+        "DirViento": "123.6"
       },
       {
         "Id": "18791",
@@ -258,26 +258,26 @@
       {
         "Id": "15922",
         "Est": "Jalpa - Santo Domingo",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "25.0",
-        "Pre": "0.0",
-        "Hum": "62.0",
-        "Rad": "9.2",
-        "VelViento": "0.2",
-        "DirViento": "308.0"
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "16.5",
+        "Pre": "0.2",
+        "Hum": "98.9",
+        "Rad": "0.0",
+        "VelViento": "5.5",
+        "DirViento": "175.0"
       },
       {
         "Id": "18806",
         "Est": "Fresnillo - Rancho Grande",
         "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "24.2",
+        "Hora": "23:45",
+        "Temp": "17.2",
         "Pre": "0.0",
-        "Hum": "50.2",
-        "Rad": "13.6",
-        "VelViento": "14.0",
-        "DirViento": "208.1"
+        "Hum": "81.8",
+        "Rad": "0.0",
+        "VelViento": "8.0",
+        "DirViento": "132.4"
       },
       {
         "Id": "26775",
@@ -294,146 +294,146 @@
       {
         "Id": "18664",
         "Est": "Fresnillo - El Pardillo 3",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "20.7",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "17.1",
         "Pre": "0.0",
-        "Hum": "63.4",
-        "Rad": "11.4",
-        "VelViento": "19.4",
-        "DirViento": "210.8"
+        "Hum": "78.4",
+        "Rad": "0.3",
+        "VelViento": "11.6",
+        "DirViento": "179.9"
       },
       {
         "Id": "18796",
         "Est": "Sombrerete - Col. Hidalgo",
         "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "21.9",
+        "Hora": "23:45",
+        "Temp": "16.1",
         "Pre": "0.0",
-        "Hum": "52.1",
-        "Rad": "3.2",
-        "VelViento": "3.2",
-        "DirViento": "115.4"
+        "Hum": "88.4",
+        "Rad": "0.0",
+        "VelViento": "7.2",
+        "DirViento": "332.4"
       },
       {
         "Id": "50060",
         "Est": "Jerez - Palmas Altas",
         "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "19.1",
+        "Hora": "23:15",
+        "Temp": "15.2",
         "Pre": "0.0",
-        "Hum": "73.3",
-        "Rad": "91.3",
-        "VelViento": "9.29",
-        "DirViento": "229.5"
+        "Hum": "89.1",
+        "Rad": "0.3",
+        "VelViento": "6.04",
+        "DirViento": "203.3"
       },
       {
         "Id": "18777",
         "Est": "Sombrerete - Providencia",
         "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "20.5",
+        "Hora": "23:30",
+        "Temp": "15.0",
         "Pre": "0.0",
-        "Hum": "48.0",
-        "Rad": "26.6",
-        "VelViento": "18.9",
-        "DirViento": "145.1"
+        "Hum": "83.0",
+        "Rad": "0.0",
+        "VelViento": "5.4",
+        "DirViento": "226.5"
       },
       {
         "Id": "26766",
         "Est": "Francisco Murguía - Mogotes",
         "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "21.0",
-        "Pre": "0.0",
-        "Hum": "62.7",
-        "Rad": "6.8",
-        "VelViento": "3.8",
-        "DirViento": "257.5"
+        "Hora": "22:00",
+        "Temp": "18.6",
+        "Pre": "0.2",
+        "Hum": "81.2",
+        "Rad": "1.0",
+        "VelViento": "4.3",
+        "DirViento": "97.5"
       },
       {
         "Id": "18779",
         "Est": "Villa de Cos - Agua Nueva",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "22.1",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "18.6",
         "Pre": "0.0",
-        "Hum": "87.6",
-        "Rad": "5.4",
-        "VelViento": "0.0",
-        "DirViento": "202.5"
+        "Hum": "94.6",
+        "Rad": "0.0",
+        "VelViento": "3.4",
+        "DirViento": "143.1"
       },
       {
         "Id": "18786",
         "Est": "Enrique Estrada - Mesa de Fuentes",
         "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "17.1",
+        "Hora": "23:45",
+        "Temp": "15.2",
         "Pre": "0.0",
-        "Hum": "76.1",
-        "Rad": "12.7",
-        "VelViento": "14.2",
-        "DirViento": "214.6"
+        "Hum": "89.0",
+        "Rad": "0.0",
+        "VelViento": "16.5",
+        "DirViento": "211.4"
       },
       {
         "Id": "18783",
         "Est": "Villa de Cos - Chaparrosa",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "21.5",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "16.8",
         "Pre": "0.0",
-        "Hum": "61.1",
-        "Rad": "14.5",
-        "VelViento": "14.7",
-        "DirViento": "187.0"
+        "Hum": "84.4",
+        "Rad": "0.0",
+        "VelViento": "2.9",
+        "DirViento": "76.5"
       },
       {
         "Id": "18670",
         "Est": "Tabasco - Tierra Blanca",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "22.4",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "16.9",
         "Pre": "0.0",
-        "Hum": "73.4",
-        "Rad": "9.3",
-        "VelViento": "2.3",
-        "DirViento": "51.5"
+        "Hum": "96.0",
+        "Rad": "0.0",
+        "VelViento": "0.3",
+        "DirViento": "264.7"
       },
       {
         "Id": "18802",
         "Est": "Fresnillo - Ábrego",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "18.8",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "15.6",
         "Pre": "0.0",
-        "Hum": "72.0",
-        "Rad": "18.8",
-        "VelViento": "6.7",
-        "DirViento": "241.7"
+        "Hum": "91.0",
+        "Rad": "0.0",
+        "VelViento": "8.4",
+        "DirViento": "210.5"
       },
       {
         "Id": "15933",
         "Est": "Miguel Auza - Campo Uno",
         "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "20.8",
+        "Hora": "23:45",
+        "Temp": "16.3",
         "Pre": "0.0",
-        "Hum": "69.6",
-        "Rad": "10.5",
-        "VelViento": "3.0",
-        "DirViento": "194.6"
+        "Hum": "92.3",
+        "Rad": "0.0",
+        "VelViento": "4.4",
+        "DirViento": "199.8"
       },
       {
         "Id": "18798",
         "Est": "Jerez - Santa Fe",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "16.8",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "15.2",
         "Pre": "0.0",
-        "Hum": "93.8",
-        "Rad": "12.0",
-        "VelViento": "0.6",
-        "DirViento": "159.6"
+        "Hum": "96.5",
+        "Rad": "0.0",
+        "VelViento": "0.0",
+        "DirViento": "180.0"
       },
       {
         "Id": "15930",
@@ -450,26 +450,26 @@
       {
         "Id": "18663",
         "Est": "Loreto - Loreto",
-        "Fecha": "03-09-2026",
-        "Hora": "19:00",
-        "Temp": "16.2",
+        "Fecha": "04-09-2026",
+        "Hora": "00:00",
+        "Temp": "15.8",
         "Pre": "0.0",
-        "Hum": "84.4",
-        "Rad": "3.1",
-        "VelViento": "1.9",
-        "DirViento": "135.2"
+        "Hum": "88.7",
+        "Rad": "0.2",
+        "VelViento": "1.3",
+        "DirViento": "120.9"
       },
       {
         "Id": "18782",
         "Est": "Sombrerete - Emiliano Zapata",
         "Fecha": "03-09-2026",
-        "Hora": "18:45",
-        "Temp": "19.0",
+        "Hora": "23:00",
+        "Temp": "14.6",
         "Pre": "0.0",
-        "Hum": "66.2",
-        "Rad": "13.5",
-        "VelViento": "1.0",
-        "DirViento": "169.5"
+        "Hum": "89.7",
+        "Rad": "0.0",
+        "VelViento": "3.4",
+        "DirViento": "111.4"
       }
     ],
     "r3": [
@@ -1490,38 +1490,278 @@
     ]
   },
   "realtime": {
-    "15922": null,
+    "15922": [
+      {
+        "Id": 15922,
+        "Est": "Jalpa - Santo Domingo",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "16.5"
+          }
+        ]
+      }
+    ],
     "15930": null,
     "15933": null,
-    "15951": null,
-    "15960": null,
-    "18663": null,
-    "18664": null,
-    "18670": null,
+    "15951": [
+      {
+        "Id": 15951,
+        "Est": "Mazapil - Tanque de Hacheros",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "20.3"
+          },
+          {
+            "Hora": "00:15",
+            "Temp": "19.9"
+          }
+        ]
+      }
+    ],
+    "15960": [
+      {
+        "Id": 15960,
+        "Est": "Villa de Cos - COBAEZ Villa de Cos",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "17.3"
+          },
+          {
+            "Hora": "00:15",
+            "Temp": "17.0"
+          }
+        ]
+      }
+    ],
+    "18663": [
+      {
+        "Id": 18663,
+        "Est": "Loreto - Loreto",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "15.8"
+          }
+        ]
+      }
+    ],
+    "18664": [
+      {
+        "Id": 18664,
+        "Est": "Fresnillo - El Pardillo 3",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "17.1"
+          }
+        ]
+      }
+    ],
+    "18670": [
+      {
+        "Id": 18670,
+        "Est": "Tabasco - Tierra Blanca",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "16.9"
+          }
+        ]
+      }
+    ],
     "18679": null,
-    "18680": null,
-    "18682": null,
+    "18680": [
+      {
+        "Id": 18680,
+        "Est": "Zacatecas - U.A. Agronomía",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "15.0"
+          }
+        ]
+      }
+    ],
+    "18682": [
+      {
+        "Id": 18682,
+        "Est": "Jerez - Santa Rita",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "16.1"
+          },
+          {
+            "Hora": "00:15",
+            "Temp": "16.0"
+          }
+        ]
+      }
+    ],
     "18777": null,
-    "18779": null,
+    "18779": [
+      {
+        "Id": 18779,
+        "Est": "Villa de Cos - Agua Nueva",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "18.6"
+          }
+        ]
+      }
+    ],
     "18782": null,
     "18786": null,
     "18791": null,
     "18796": null,
-    "18798": null,
-    "18802": null,
+    "18798": [
+      {
+        "Id": 18798,
+        "Est": "Jerez - Santa Fe",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "15.2"
+          }
+        ]
+      }
+    ],
+    "18802": [
+      {
+        "Id": 18802,
+        "Est": "Fresnillo - Ábrego",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "15.6"
+          }
+        ]
+      }
+    ],
     "18806": null,
     "18829": null,
-    "18836": null,
-    "18837": null,
-    "18842": null,
-    "18849": null,
-    "18851": null,
+    "18836": [
+      {
+        "Id": 18836,
+        "Est": "Fresnillo - Col. Emancipación",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "17.0"
+          },
+          {
+            "Hora": "00:15",
+            "Temp": "17.6"
+          }
+        ]
+      }
+    ],
+    "18837": [
+      {
+        "Id": 18837,
+        "Est": "Villa de Cos - Sierra Vieja",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "18.2"
+          }
+        ]
+      }
+    ],
+    "18842": [
+      {
+        "Id": 18842,
+        "Est": "Villanueva - Villanueva",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "16.1"
+          }
+        ]
+      }
+    ],
+    "18849": [
+      {
+        "Id": 18849,
+        "Est": "Mazapil - Marianita",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "21.3"
+          }
+        ]
+      }
+    ],
+    "18851": [
+      {
+        "Id": 18851,
+        "Est": "Calera - CEZAC",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "16.0"
+          }
+        ]
+      }
+    ],
     "18879": null,
-    "18882": null,
+    "18882": [
+      {
+        "Id": 18882,
+        "Est": "Guadalupe - U.A. Biología",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "17.2"
+          },
+          {
+            "Hora": "00:15",
+            "Temp": "17.1"
+          }
+        ]
+      }
+    ],
     "26684": null,
     "26766": null,
     "26767": null,
-    "26772": null,
+    "26772": [
+      {
+        "Id": 26772,
+        "Est": "Villa Glez. Ortega - Estancia de Ánimas",
+        "Fecha": "04-09-2026",
+        "Datos": [
+          {
+            "Hora": "00:00",
+            "Temp": "14.3"
+          },
+          {
+            "Hora": "00:15",
+            "Temp": "14.2"
+          }
+        ]
+      }
+    ],
     "26775": null,
     "26779": null,
     "26786": null,
@@ -1530,10 +1770,58 @@
   },
   "daily": {
     "15922": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 15922,
+          "Est": "Jalpa - Santo Domingo",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.2"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 15922,
+          "Est": "Jalpa - Santo Domingo",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "98.9"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 15922,
+          "Est": "Jalpa - Santo Domingo",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 15922,
+          "Est": "Jalpa - Santo Domingo",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "5.5"
+            }
+          ]
+        }
+      ]
     },
     "15930": {
       "r6": null,
@@ -1548,34 +1836,306 @@
       "r9": null
     },
     "15951": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 15951,
+          "Est": "Mazapil - Tanque de Hacheros",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 15951,
+          "Est": "Mazapil - Tanque de Hacheros",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "67.1"
+            },
+            {
+              "Hora": "00:15",
+              "Humedad": "68.4"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 15951,
+          "Est": "Mazapil - Tanque de Hacheros",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 15951,
+          "Est": "Mazapil - Tanque de Hacheros",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "3.1"
+            },
+            {
+              "Hora": "00:15",
+              "VelViento": "0.5"
+            }
+          ]
+        }
+      ]
     },
     "15960": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 15960,
+          "Est": "Villa de Cos - COBAEZ Villa de Cos",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 15960,
+          "Est": "Villa de Cos - COBAEZ Villa de Cos",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "83.7"
+            },
+            {
+              "Hora": "00:15",
+              "Humedad": "84.3"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 15960,
+          "Est": "Villa de Cos - COBAEZ Villa de Cos",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 15960,
+          "Est": "Villa de Cos - COBAEZ Villa de Cos",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "6.73"
+            },
+            {
+              "Hora": "00:15",
+              "VelViento": "6.20"
+            }
+          ]
+        }
+      ]
     },
     "18663": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18663,
+          "Est": "Loreto - Loreto",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18663,
+          "Est": "Loreto - Loreto",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "88.7"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18663,
+          "Est": "Loreto - Loreto",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.2"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18663,
+          "Est": "Loreto - Loreto",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "1.3"
+            }
+          ]
+        }
+      ]
     },
     "18664": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18664,
+          "Est": "Fresnillo - El Pardillo 3",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18664,
+          "Est": "Fresnillo - El Pardillo 3",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "78.4"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18664,
+          "Est": "Fresnillo - El Pardillo 3",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.3"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18664,
+          "Est": "Fresnillo - El Pardillo 3",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "11.6"
+            }
+          ]
+        }
+      ]
     },
     "18670": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18670,
+          "Est": "Tabasco - Tierra Blanca",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18670,
+          "Est": "Tabasco - Tierra Blanca",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "96.0"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18670,
+          "Est": "Tabasco - Tierra Blanca",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18670,
+          "Est": "Tabasco - Tierra Blanca",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "0.3"
+            }
+          ]
+        }
+      ]
     },
     "18679": {
       "r6": null,
@@ -1584,16 +2144,128 @@
       "r9": null
     },
     "18680": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18680,
+          "Est": "Zacatecas - U.A. Agronomía",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18680,
+          "Est": "Zacatecas - U.A. Agronomía",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "91.3"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18680,
+          "Est": "Zacatecas - U.A. Agronomía",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18680,
+          "Est": "Zacatecas - U.A. Agronomía",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "0.2"
+            }
+          ]
+        }
+      ]
     },
     "18682": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18682,
+          "Est": "Jerez - Santa Rita",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18682,
+          "Est": "Jerez - Santa Rita",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "94.1"
+            },
+            {
+              "Hora": "00:15",
+              "Humedad": "92.5"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18682,
+          "Est": "Jerez - Santa Rita",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.2"
+            },
+            {
+              "Hora": "00:15",
+              "Rad": "0.3"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18682,
+          "Est": "Jerez - Santa Rita",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "3.7"
+            },
+            {
+              "Hora": "00:15",
+              "VelViento": "6.3"
+            }
+          ]
+        }
+      ]
     },
     "18777": {
       "r6": null,
@@ -1602,10 +2274,58 @@
       "r9": null
     },
     "18779": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18779,
+          "Est": "Villa de Cos - Agua Nueva",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18779,
+          "Est": "Villa de Cos - Agua Nueva",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "94.6"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18779,
+          "Est": "Villa de Cos - Agua Nueva",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18779,
+          "Est": "Villa de Cos - Agua Nueva",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "3.4"
+            }
+          ]
+        }
+      ]
     },
     "18782": {
       "r6": null,
@@ -1632,16 +2352,112 @@
       "r9": null
     },
     "18798": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18798,
+          "Est": "Jerez - Santa Fe",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18798,
+          "Est": "Jerez - Santa Fe",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "96.5"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18798,
+          "Est": "Jerez - Santa Fe",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18798,
+          "Est": "Jerez - Santa Fe",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "0.0"
+            }
+          ]
+        }
+      ]
     },
     "18802": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18802,
+          "Est": "Fresnillo - Ábrego",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18802,
+          "Est": "Fresnillo - Ábrego",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "91.0"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18802,
+          "Est": "Fresnillo - Ábrego",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18802,
+          "Est": "Fresnillo - Ábrego",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "8.4"
+            }
+          ]
+        }
+      ]
     },
     "18806": {
       "r6": null,
@@ -1656,34 +2472,290 @@
       "r9": null
     },
     "18836": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18836,
+          "Est": "Fresnillo - Col. Emancipación",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18836,
+          "Est": "Fresnillo - Col. Emancipación",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "82.8"
+            },
+            {
+              "Hora": "00:15",
+              "Humedad": "81.6"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18836,
+          "Est": "Fresnillo - Col. Emancipación",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18836,
+          "Est": "Fresnillo - Col. Emancipación",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "7.9"
+            },
+            {
+              "Hora": "00:15",
+              "VelViento": "8.3"
+            }
+          ]
+        }
+      ]
     },
     "18837": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18837,
+          "Est": "Villa de Cos - Sierra Vieja",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18837,
+          "Est": "Villa de Cos - Sierra Vieja",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "80.4"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18837,
+          "Est": "Villa de Cos - Sierra Vieja",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18837,
+          "Est": "Villa de Cos - Sierra Vieja",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "1.7"
+            }
+          ]
+        }
+      ]
     },
     "18842": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18842,
+          "Est": "Villanueva - Villanueva",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18842,
+          "Est": "Villanueva - Villanueva",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "88.8"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18842,
+          "Est": "Villanueva - Villanueva",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18842,
+          "Est": "Villanueva - Villanueva",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "2.6"
+            }
+          ]
+        }
+      ]
     },
     "18849": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18849,
+          "Est": "Mazapil - Marianita",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18849,
+          "Est": "Mazapil - Marianita",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "64.2"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18849,
+          "Est": "Mazapil - Marianita",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18849,
+          "Est": "Mazapil - Marianita",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "2.8"
+            }
+          ]
+        }
+      ]
     },
     "18851": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18851,
+          "Est": "Calera - CEZAC",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18851,
+          "Est": "Calera - CEZAC",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "91.9"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18851,
+          "Est": "Calera - CEZAC",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18851,
+          "Est": "Calera - CEZAC",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "13.78"
+            }
+          ]
+        }
+      ]
     },
     "18879": {
       "r6": null,
@@ -1692,10 +2764,74 @@
       "r9": null
     },
     "18882": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 18882,
+          "Est": "Guadalupe - U.A. Biología",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 18882,
+          "Est": "Guadalupe - U.A. Biología",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "73.3"
+            },
+            {
+              "Hora": "00:15",
+              "Humedad": "73.8"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 18882,
+          "Est": "Guadalupe - U.A. Biología",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 18882,
+          "Est": "Guadalupe - U.A. Biología",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "7.4"
+            },
+            {
+              "Hora": "00:15",
+              "VelViento": "7.6"
+            }
+          ]
+        }
+      ]
     },
     "26684": {
       "r6": null,
@@ -1716,10 +2852,74 @@
       "r9": null
     },
     "26772": {
-      "r6": null,
-      "r7": null,
-      "r8": null,
-      "r9": null
+      "r6": [
+        {
+          "Id": 26772,
+          "Est": "Villa Glez. Ortega - Estancia de Ánimas",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Pre": "0.0"
+            }
+          ]
+        }
+      ],
+      "r7": [
+        {
+          "Id": 26772,
+          "Est": "Villa Glez. Ortega - Estancia de Ánimas",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Humedad": "92.8"
+            },
+            {
+              "Hora": "00:15",
+              "Humedad": "92.8"
+            }
+          ]
+        }
+      ],
+      "r8": [
+        {
+          "Id": 26772,
+          "Est": "Villa Glez. Ortega - Estancia de Ánimas",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "00:15",
+              "Rad": "0.0"
+            }
+          ]
+        }
+      ],
+      "r9": [
+        {
+          "Id": 26772,
+          "Est": "Villa Glez. Ortega - Estancia de Ánimas",
+          "Fecha": "04-09-2026",
+          "Datos": [
+            {
+              "Hora": "00:00",
+              "VelViento": "1.2"
+            },
+            {
+              "Hora": "00:15",
+              "VelViento": "0.0"
+            }
+          ]
+        }
+      ]
     },
     "26775": {
       "r6": null,

@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Manual técnico y operativo — Clima INIFAP Zacatecas</title>
+  <style>
+    :root { --wine:#611232; --wine-dark:#3d0a20; --gold:#e6a700; --ink:#1a1416; --muted:#61575b; --soft:#f7f2f4; --line:#ded3d7; --blue:#04a7df; --green:#147a46; --red:#a31c35; }
+    * { box-sizing:border-box; }
+    @page { size:A4; margin:16mm 16mm 17mm; }
+    html { font-family:Arial, Helvetica, sans-serif; color:var(--ink); font-size:10.2pt; line-height:1.42; }
+    body { margin:0; background:white; }
+    .page { break-after:page; min-height:257mm; position:relative; }
+    .page:last-child { break-after:auto; }
+    .top-rule { height:8px; background:var(--wine); margin:0 0 18px; }
+    .brand { display:flex; align-items:center; gap:18px; margin:0 0 18px; }
+    .brand img { width:175px; height:auto; }
+    .brand-copy { color:#556075; font-size:11pt; line-height:1.45; border-left:1px solid var(--line); padding-left:18px; }
+    h1,h2,h3,h4 { color:var(--wine); margin:0 0 8px; line-height:1.18; break-after:avoid; }
+    h1 { font-size:27pt; letter-spacing:-.5px; }
+    h2 { font-size:18pt; margin-top:18px; border-bottom:2px solid var(--line); padding-bottom:6px; }
+    h3 { font-size:13.5pt; margin-top:16px; }
+    h4 { font-size:11pt; margin-top:12px; }
+    p { margin:6px 0 9px; }
+    ul,ol { margin:6px 0 10px 20px; padding:0; }
+    li { margin:3px 0; }
+    code { font-family:Consolas,"Courier New",monospace; color:var(--wine-dark); font-size:9pt; }
+    pre { background:#211b1e; color:#fbf7f8; border-left:5px solid var(--gold); border-radius:4px; padding:10px 12px; overflow-wrap:anywhere; white-space:pre-wrap; font:8.3pt/1.4 Consolas,"Courier New",monospace; margin:8px 0 12px; break-inside:avoid; }
+    pre code { color:inherit; font-size:inherit; }
+    table { border-collapse:collapse; width:100%; margin:9px 0 14px; font-size:8.9pt; break-inside:auto; }
+    thead { display:table-header-group; }
+    tr { break-inside:avoid; }
+    th { background:var(--wine); color:white; text-align:left; padding:7px 8px; }
+    td { border:1px solid var(--line); padding:6px 8px; vertical-align:top; }
+    tbody tr:nth-child(even) td { background:#faf7f8; }
+    .meta { display:grid; grid-template-columns:1fr 1fr; background:var(--soft); border:1px solid var(--line); border-left:6px solid var(--wine); padding:13px 15px; gap:8px 25px; margin:14px 0 20px; }
+    .meta b { color:var(--wine); }
+    .lead { font-size:11.2pt; color:#322a2d; }
+    .kicker { color:var(--gold); font-weight:bold; text-transform:uppercase; letter-spacing:1.2px; font-size:8.7pt; margin-bottom:8px; }
+    .callout { border-left:5px solid var(--wine); background:var(--soft); padding:10px 13px; margin:10px 0 13px; break-inside:avoid; }
+    .callout.warn { border-left-color:var(--gold); background:#fff8df; }
+    .callout.danger { border-left-color:var(--red); background:#fff0f2; }
+    .callout.ok { border-left-color:var(--green); background:#eef8f2; }
+    .tag { display:inline-block; border-radius:20px; padding:2px 8px; font-size:8pt; font-weight:bold; color:white; background:var(--wine); }
+    .tag.gold { background:#9a7000; }
+    .tag.green { background:var(--green); }
+    .toc { columns:2; column-gap:30px; margin-top:12px; }
+    .toc div { break-inside:avoid; border-bottom:1px dotted #aaa; padding:5px 0; color:var(--wine-dark); }
+    .flow { display:grid; grid-template-columns:1fr 24px 1fr 24px 1fr; align-items:center; margin:14px 0; break-inside:avoid; }
+    .node { border:1.5px solid var(--wine); border-radius:8px; padding:12px 8px; text-align:center; background:white; min-height:58px; }
+    .node strong { display:block; color:var(--wine); }
+    .arrow { text-align:center; color:var(--gold); font-size:18pt; font-weight:bold; }
+    .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .card { border:1px solid var(--line); border-top:5px solid var(--wine); border-radius:5px; padding:10px 12px; break-inside:avoid; }
+    .card h3 { margin-top:0; font-size:12pt; }
+    .checklist { list-style:none; margin-left:0; }
+    .checklist li::before { content:"☐"; color:var(--wine); font-weight:bold; margin-right:8px; }
+    .step { display:grid; grid-template-columns:32px 1fr; gap:10px; margin:11px 0; break-inside:avoid; }
+    .step .n { width:29px; height:29px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--wine); color:white; font-weight:bold; }
+    .step h3 { margin:3px 0 4px; }
+    .mini { font-size:8.4pt; color:var(--muted); }
+    .compact { font-size:9.3pt; line-height:1.34; }
+    .compact h2 { margin-top:13px; }
+    .compact pre { margin:6px 0 9px; padding:8px 11px; }
+    .dense { font-size:8.7pt; line-height:1.26; }
+    .dense h1 { font-size:24pt; }
+    .dense h2 { font-size:15.5pt; margin-top:11px; padding-bottom:4px; }
+    .dense h3 { font-size:12pt; margin-top:10px; }
+    .dense p, .dense ul, .dense ol { margin-top:4px; margin-bottom:7px; }
+    .dense table { font-size:8pt; margin:6px 0 9px; }
+    .dense th, .dense td { padding:5px 6px; }
+    .dense pre { margin:5px 0 8px; padding:7px 10px; font-size:7.7pt; }
+    .dense .step { margin:7px 0; }
+    .footer-note { position:absolute; bottom:0; left:0; right:0; border-top:1px solid var(--line); padding-top:5px; font-size:8pt; color:var(--muted); display:flex; justify-content:space-between; }
+    .cover { display:flex; flex-direction:column; }
+    .cover .hero { margin-top:24mm; }
+    .cover h1 { font-size:31pt; max-width:160mm; }
+    .cover .subtitle { color:#303a4f; font-size:16pt; margin-top:12px; max-width:165mm; }
+    .cover .version { margin-top:auto; margin-bottom:18mm; color:var(--muted); }
+    .small-table { font-size:8pt; }
+    .no-break { break-inside:avoid; }
+    a { color:var(--wine); text-decoration:none; }
+    .mono-line { background:#f5f2f3; border:1px solid var(--line); padding:7px 9px; font-family:Consolas,monospace; overflow-wrap:anywhere; }
+    @media screen { body { max-width:210mm; margin:auto; box-shadow:0 0 20px #bbb; padding:16mm; } .page { min-height:auto; padding-bottom:18px; } .footer-note { position:static; margin-top:20px; } }
+  </style>
+</head>
+<body>
+
+<section class="page cover">
+  <div class="top-rule"></div>
+  <div class="brand">
+    <img src="../lib/images/logo.jpeg" alt="Tecnológico de Software">
+    <div class="brand-copy">Instituto Tecnológico de Software<br>Modelo de Formación Dual</div>
+  </div>
+  <div class="hero">
+    <div class="kicker">Guía de uso y mantenimiento</div>
+    <h1>Manual técnico y operativo</h1>
+    <div class="subtitle">Aplicación móvil para el monitoreo agroclimático del INIFAP Zacatecas</div>
+    <div class="meta">
+      <div><b>Estudiante:</b> Joel Del Jesus Sanchez Quintal</div>
+      <div><b>Asesor interno:</b> Adrián Martín Aguilar Vargas</div>
+      <div><b>Organizaciones:</b> Fundación DEDICA e INIFAP</div>
+      <div><b>Periodo:</b> Modelo de Formación Dual, 2026</div>
+    </div>
+    <p class="lead">Guía completa para entender cómo funciona el proyecto, saber dónde está cada cosa, agregar estaciones correctamente, conservar información cuando no hay internet y resolver los problemas más comunes.</p>
+  </div>
+  <div class="version"><b>Versión documental:</b> 1.0 · 29 de septiembre de 2026<br><b>Rama inspeccionada:</b> <code>notifications</code></div>
+  <div class="footer-note"><span>Clima INIFAP Zacatecas</span><span>Manual técnico y operativo</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>Cómo usar este manual</h1>
+  <p>Este documento está pensado para cualquier persona que tenga que continuar el proyecto, incluso si nunca ha trabajado con esta aplicación. Cada nombre técnico se acompaña de una explicación sencilla y de la ruta exacta del archivo que se debe abrir.</p>
+  <div class="callout ok"><b>Si sólo necesitas agregar una estación:</b> ve al capítulo 5. Ahí se explica, paso por paso, qué datos necesitas, qué archivos debes cambiar, cómo actualizar la copia de respaldo de GitHub y cómo comprobar que todo quedó bien.</div>
+  <h2>Contenido</h2>
+  <div class="toc">
+    <div>1. Qué hace el proyecto</div><div>2. Cómo funciona por dentro</div><div>3. Dónde está cada parte</div><div>4. Qué información pide al servidor</div><div>5. Cómo agregar una estación</div><div>6. Cómo funciona sin internet</div><div>7. Copia de respaldo en GitHub</div><div>8. Qué hace cada pantalla</div><div>9. Cómo funcionan las alertas</div><div>10. Cómo instalar y crear la aplicación</div><div>11. Cómo comprobar los cambios</div><div>12. Qué revisar cuando algo falla</div><div>13. Problemas conocidos y mejoras</div>
+  </div>
+  <h2>Convenciones</h2>
+  <table>
+    <thead><tr><th>Marca</th><th>Significado</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag">OBLIGATORIO</span></td><td>Paso que no se puede omitir si queremos que la estación funcione en toda la aplicación.</td></tr>
+      <tr><td><span class="tag gold">CUIDADO</span></td><td>Algo que puede mezclar información, ocultar una estación o dejarla sin datos.</td></tr>
+      <tr><td><span class="tag green">COMPROBACIÓN</span></td><td>Prueba sencilla para confirmar que el cambio realmente funciona.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn"><b>La regla más importante:</b> cada estación tiene un número que la identifica, llamado ID. Ese mismo número debe aparecer en la lista de estaciones, el mapa y la copia de respaldo. Si se escribe un número diferente o se repite, la aplicación puede mostrar el nombre de una estación con los datos de otra.</div>
+  <div class="footer-note"><span>Guía de lectura</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>1. Qué hace el proyecto</h1>
+  <p>Clima INIFAP es una aplicación para consultar información del clima registrada por estaciones ubicadas en Zacatecas. La persona puede escoger una estación, ver sus datos actuales, revisar información de días anteriores, consultar reportes, verla en un mapa y guardar hasta tres estaciones favoritas. La aplicación también conserva la información más reciente para seguir mostrando algo útil cuando no hay internet.</p>
+  <div class="two">
+    <div class="card"><h3>La aplicación</h3><p>Está hecha con Flutter y Dart. La pantalla principal está en <code>WeatherProxyPage.dart</code>. Las demás funciones se reparten en archivos para el mapa, favoritos, reportes, datos anteriores y alertas.</p></div>
+    <div class="card"><h3>De dónde salen los datos</h3><p>La aplicación pregunta al servidor de INIFAP por medio de <code>apiApp2.php</code>. En cada petición envía un número que indica qué información necesita y, cuando corresponde, el ID de la estación.</p></div>
+    <div class="card"><h3>Qué pasa si el servidor bloquea la app</h3><p>Existe una copia de respaldo en GitHub. Si el servidor responde con el error 403, la aplicación intenta leer esa copia. También conserva datos dentro del teléfono.</p></div>
+    <div class="card"><h3>Cómo se actualiza el respaldo</h3><p>GitHub ejecuta un navegador automático cada 15 minutos. Ese navegador consulta la información y vuelve a crear el archivo <code>data/latest.json</code>.</p></div>
+  </div>
+  <h2>Datos comprobados del repositorio</h2>
+  <table>
+    <thead><tr><th>Elemento</th><th>Estado observado</th></tr></thead>
+    <tbody>
+      <tr><td>Catálogo local</td><td>38 filas, 37 IDs únicos.</td></tr>
+      <tr><td>Coordenadas</td><td>38 IDs en <code>kStationCoords</code>.</td></tr>
+      <tr><td>Programa que crea el respaldo</td><td>37 IDs en <code>STATION_IDS</code>.</td></tr>
+      <tr><td>Duplicidad conocida</td><td><code>18837</code> se usa para Chaparrosa y Sierra Vieja en el catálogo local.</td></tr>
+      <tr><td>Coordenada sin fila equivalente</td><td><code>18783</code> aparece en coordenadas como Chaparrosa.</td></tr>
+      <tr><td>Rama del espejo codificada</td><td><code>notifications</code>.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout danger"><b>No corregir IDs por intuición.</b> La aparente corrección de Chaparrosa es usar <code>18783</code>, pero debe validarse contra INIFAP antes de modificar producción.</div>
+  <div class="footer-note"><span>1 · Qué hace el proyecto</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>2. Cómo funciona por dentro</h1>
+  <p>La idea general es sencilla: la pantalla pide información, un servicio intenta obtenerla del servidor y después la guarda para usarla más tarde. Si el servidor no permite la consulta, el servicio busca la misma información en la copia de GitHub.</p>
+  <div class="flow">
+    <div class="node"><strong>Servidor INIFAP</strong>Entrega los datos</div><div class="arrow">→</div><div class="node"><strong>Servicio de la app</strong>Decide de dónde leer</div><div class="arrow">→</div><div class="node"><strong>Pantalla</strong>Muestra la información</div>
+  </div>
+  <div class="flow">
+    <div class="node"><strong>Navegador automático</strong><code>scripts/scrape.js</code></div><div class="arrow">→</div><div class="node"><strong>Copia de respaldo</strong><code>data/latest.json</code></div><div class="arrow">→</div><div class="node"><strong>Plan alternativo</strong>Se usa cuando aparece 403</div>
+  </div>
+  <h2>Secuencia de arranque</h2>
+  <ol>
+    <li><code>main()</code> abre la aplicación y muestra la pantalla principal lo antes posible.</li>
+    <li>Después prepara las notificaciones y la tarea que revisa el clima aun cuando la aplicación está cerrada.</li>
+    <li><code>WeatherProxyPage._boot()</code> carga la lista de estaciones. Primero usa la lista guardada y después busca una más reciente.</li>
+    <li>Recupera la última estación que usó la persona y muestra los últimos datos guardados.</li>
+    <li><code>OfflineDataService.syncFromNetwork()</code> intenta descargar información nueva y actualizar la copia que está dentro del teléfono.</li>
+  </ol>
+  <h2>Decisión de red</h2>
+  <pre><code>Petición de pantalla
+  └─ OfflineDataService.sharedClient
+       ├─ API responde distinto de 403 → usar respuesta directa
+       ├─ API responde 403 → buscar sección equivalente en el espejo
+       ├─ API falla → intentar espejo
+       └─ espejo no cubre la consulta → devolver el error original
+
+Pantalla
+  ├─ si recibió datos → leerlos, mostrarlos y guardarlos
+  └─ si falló → conservar los últimos datos y mostrar un aviso</code></pre>
+  <div class="callout warn"><b>Importante:</b> todas las consultas nuevas deben usar <code>OfflineDataService.sharedClient</code>. Ese es el servicio que sabe cambiar automáticamente a la copia de GitHub. Si se usa una conexión diferente, la nueva pantalla puede dejar de funcionar cuando aparezca el error 403.</div>
+  <h2>Por qué existen dos listas de estaciones</h2>
+  <p><code>StationService</code> empieza con la lista incluida en la aplicación, llamada <code>kStations</code>. También revisa si el teléfono ya tiene una lista guardada y finalmente pregunta al servidor por una lista nueva usando <code>r=all</code>. Si el servidor responde correctamente, esa lista más reciente se usa durante la sesión. Aun así, la lista incluida en el código sigue siendo necesaria: permite abrir la aplicación por primera vez aunque el servidor esté caído o no haya internet.</p>
+  <div class="footer-note"><span>2 · Cómo funciona por dentro</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>3. Dónde está cada parte</h1>
+  <p>La siguiente tabla sirve como directorio. Busca lo que quieres cambiar en la columna del centro y abre el archivo indicado a la izquierda. No es necesario entender todos los archivos para agregar una estación.</p>
+  <table class="small-table">
+    <thead><tr><th>Ruta</th><th>Qué contiene</th><th>Cuándo tocarla</th></tr></thead>
+    <tbody>
+      <tr><td><code>lib/main.dart</code></td><td>Abre la aplicación, prepara las notificaciones y comienza la actualización de datos.</td><td>Arranque o notificaciones.</td></tr>
+      <tr><td><code>lib/WeatherProxyPage.dart</code></td><td>Inicio, selector, consulta <code>r=5</code>, caché diaria y navegación.</td><td>Cambios en pantalla principal.</td></tr>
+      <tr><td><code>lib/services/station_service.dart</code></td><td>Obtiene la lista de estaciones y guarda la última lista que funcionó.</td><td>Cambiar la forma de cargar estaciones.</td></tr>
+      <tr><td><code>lib/data/Stations.dart</code></td><td>Lista de estaciones incluida dentro de la aplicación.</td><td><b>Agregar, quitar o cambiar un nombre.</b></td></tr>
+      <tr><td><code>lib/data/lat_and_long_cords.dart</code></td><td>ID → <code>LatLng</code>.</td><td><b>Alta o reubicación.</b></td></tr>
+      <tr><td><code>lib/bin/generate_offline.dart</code></td><td>Decide entre servidor y respaldo; también guarda datos para usarlos sin internet.</td><td>Conexión, respaldo o archivos guardados.</td></tr>
+      <tr><td><code>lib/cards_under_daily_extras.dart</code></td><td>Consultas <code>r=6..9</code> y tarjetas diarias.</td><td>Nuevas métricas diarias.</td></tr>
+      <tr><td><code>lib/station_history.dart</code></td><td>Consulta <code>r=10</code>, gráfica y detalle mensual.</td><td>Históricos.</td></tr>
+      <tr><td><code>lib/report.dart</code></td><td>Reportes <code>r=1,3,4</code>.</td><td>Tablas generales.</td></tr>
+      <tr><td><code>lib/widgets/maps.dart</code></td><td>OpenStreetMap/CartoDB, marcadores y favoritos.</td><td>Mapa o popup.</td></tr>
+      <tr><td><code>lib/widgets/favorite_stations.dart</code></td><td>Máximo 3 favoritos y preferencias.</td><td>Favoritos/alertas.</td></tr>
+      <tr><td><code>lib/notifications/rain_check_worker.dart</code></td><td>Revisa el clima cada cierto tiempo y evita repetir alertas demasiado pronto.</td><td>Reglas de alerta.</td></tr>
+      <tr><td><code>lib/notifications/background_worker.dart</code></td><td>Conecta Android con la revisión automática del clima.</td><td>Nuevas tareas periódicas.</td></tr>
+      <tr><td><code>lib/notifications/notification_service.dart</code></td><td>Canal y presentación local.</td><td>Formato/canal.</td></tr>
+      <tr><td><code>scripts/scrape.js</code></td><td>Puppeteer y <code>STATION_IDS</code>.</td><td><b>Alta/baja y espejo.</b></td></tr>
+      <tr><td><code>.github/workflows/scrape-inifap.yml</code></td><td>Cron, ejecución y commit.</td><td>Frecuencia o permisos.</td></tr>
+      <tr><td><code>data/latest.json</code></td><td>Salida automatizada del espejo.</td><td>Nunca manualmente.</td></tr>
+      <tr><td><code>android/.../AndroidManifest.xml</code></td><td>Internet, alertas, reinicio y servicios.</td><td>Permisos Android.</td></tr>
+    </tbody>
+  </table>
+  <h2>Paquetes externos más importantes</h2>
+  <p><code>http</code> permite hacer consultas por internet. <code>shared_preferences</code> guarda datos pequeños, como la estación elegida. <code>path_provider</code> ayuda a encontrar una carpeta segura dentro del teléfono. <code>flutter_map</code> y <code>latlong2</code> dibujan el mapa. <code>connectivity_plus</code> avisa cuando se pierde o regresa la conexión. <code>workmanager</code> permite revisar el clima cada cierto tiempo y <code>flutter_local_notifications</code> muestra los avisos.</p>
+  <div class="footer-note"><span>3 · Dónde está cada parte</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page dense">
+  <div class="top-rule"></div>
+  <h1>4. Qué información pide al servidor</h1>
+  <p>Todas las consultas se envían a <code>https://zacatecas.inifap.gob.mx/apiApp2.php</code>. En la dirección se agrega el valor <code>r</code>. Ese valor funciona como una opción de menú: le dice al servidor si queremos la lista de estaciones, la información actual, la lluvia, el viento o los datos de todo un mes.</p>
+  <table>
+    <thead><tr><th><code>r</code></th><th>Función en la app</th><th>Parámetros</th><th>Espejo</th></tr></thead>
+    <tbody>
+      <tr><td><code>all</code></td><td>Catálogo/listado global.</td><td>Ninguno.</td><td><code>all</code></td></tr>
+      <tr><td><code>1</code></td><td>Reporte: tiempo real.</td><td>Ninguno.</td><td><code>reports.r1</code></td></tr>
+      <tr><td><code>3</code></td><td>Reporte: resumen TR.</td><td>Ninguno.</td><td><code>reports.r3</code></td></tr>
+      <tr><td><code>4</code></td><td>Reporte: avance mensual.</td><td>Ninguno.</td><td><code>reports.r4</code></td></tr>
+      <tr><td><code>5</code></td><td>Tiempo real por estación.</td><td>día, mes, año, ID.</td><td><code>realtime.&lt;id&gt;</code></td></tr>
+      <tr><td><code>6</code></td><td>Precipitación diaria.</td><td>día, mes, año, ID.</td><td><code>daily.&lt;id&gt;.r6</code></td></tr>
+      <tr><td><code>7</code></td><td>Humedad diaria.</td><td>día, mes, año, ID.</td><td><code>daily.&lt;id&gt;.r7</code></td></tr>
+      <tr><td><code>8</code></td><td>Radiación diaria.</td><td>día, mes, año, ID.</td><td><code>daily.&lt;id&gt;.r8</code></td></tr>
+      <tr><td><code>9</code></td><td>Viento diario.</td><td>día, mes, año, ID.</td><td><code>daily.&lt;id&gt;.r9</code></td></tr>
+      <tr><td><code>10</code></td><td>Histórico mensual.</td><td>mes, año, ID.</td><td><code>history.&lt;id&gt;</code></td></tr>
+    </tbody>
+  </table>
+  <h3>Ejemplos exactos</h3>
+  <pre><code>// Tiempo real de Calera, CEZAC
+...?r=5&amp;day=29&amp;month=09&amp;year=2026&amp;id_est_given=18851
+
+// Histórico del mes
+...?r=10&amp;month=09&amp;year=2026&amp;id_est_given=18851
+
+// Reporte general
+...?r=4</code></pre>
+  <h3>Campos de catálogo esperados</h3>
+  <pre><code>Station(
+  int.tryParse(json['IdEstacion']?.toString() ?? '0') ?? 0,
+  json['NombreEstacion']?.toString() ?? 'Desconocida',
+);</code></pre>
+  <div class="callout warn"><b>El servidor no siempre entrega los datos con la misma forma.</b> Por eso el código reconoce varios nombres posibles para un mismo dato. Antes de agregar una consulta nueva o cambiar un nombre, guarda una respuesta real y revisa si contiene una lista o un solo elemento, si los datos vienen dentro de otra sección, si los decimales usan coma y si hay valores vacíos.</div>
+  <h3>Limitación temporal del espejo</h3>
+  <p>La copia de GitHub sólo contiene el día y el mes de su actualización más reciente. Si alguien pide información de otro día o de otro mes, esa copia puede devolver la información más nueva en lugar de la fecha solicitada. Los datos guardados dentro del teléfono ayudan únicamente si esa fecha ya se consultó antes.</p>
+  <div class="footer-note"><span>4 · Información del servidor</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>5. Agregar una estación</h1>
+  <div class="callout danger"><b>Antes de editar:</b> consigue el ID oficial, nombre oficial y coordenadas. Prueba el ID contra la API. No reutilices el ID de una estación “parecida”.</div>
+  <div class="step"><div class="n">1</div><div><h3>Validar el origen</h3><p>Consulta <code>r=5</code> con la fecha actual y <code>r=10</code> con el mes actual. Después comprueba <code>r=6..9</code>. Una respuesta HTTP 200 no basta: debe contener registros de esa estación.</p></div></div>
+  <pre><code>https://zacatecas.inifap.gob.mx/apiApp2.php
+  ?r=5
+  &amp;day=29
+  &amp;month=09
+  &amp;year=2026
+  &amp;id_est_given=12345</code></pre>
+  <div class="step"><div class="n">2</div><div><h3>Agregarla a la lista incluida en la aplicación</h3><p>Edita <code>lib/data/Stations.dart</code>. Esta lista permite que la estación siga apareciendo aunque no haya internet. Mantén el orden existente y guarda el archivo con codificación UTF-8 para que los acentos se vean correctamente.</p></div></div>
+  <pre><code>const List&lt;Station&gt; kStations = [
+  // ...
+  Station(12345, 'Municipio, Nombre de la estación'),
+];</code></pre>
+  <div class="step"><div class="n">3</div><div><h3>Registrar coordenadas</h3><p>Edita <code>lib/data/lat_and_long_cords.dart</code>. Usa grados decimales: Zacatecas normalmente tiene longitud negativa.</p></div></div>
+  <pre><code>const Map&lt;int, LatLng&gt; kStationCoords = {
+  // ...
+  12345: LatLng(22.770000, -102.570000),
+};</code></pre>
+  <div class="callout"><b>Por qué son dos archivos:</b> el catálogo define qué se puede seleccionar; las coordenadas definen qué puede dibujarse. En <code>maps.dart</code>, un ID sin coordenadas se descarta al construir marcadores.</div>
+  <div class="footer-note"><span>5 · Alta de estación (1/3)</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page dense">
+  <div class="top-rule"></div>
+  <h1>5. Agregar una estación — copia de respaldo</h1>
+  <div class="step"><div class="n">4</div><div><h3>Agregar el ID al programa que crea el respaldo</h3><p>Edita <code>scripts/scrape.js</code>. Este programa abre el servidor como si fuera un navegador y guarda una copia de los datos. No lee automáticamente la lista de Dart, por lo que el ID debe agregarse aquí también.</p></div></div>
+  <pre><code>const STATION_IDS = [
+  18851, 26684, /* ... */,
+  12345,
+];</code></pre>
+  <p>Al incluirlo, la siguiente corrida intentará:</p>
+  <ul><li><code>realtime["12345"]</code> mediante <code>r=5</code>.</li><li><code>daily["12345"].r6..r9</code>.</li><li><code>history["12345"]</code> mediante <code>r=10</code>.</li></ul>
+  <div class="step"><div class="n">5</div><div><h3>Volver a crear la copia de respaldo</h3><p>Hay dos maneras. La primera es abrir la sección Actions de GitHub y ejecutar manualmente “Scrape INIFAP”. La segunda es hacerlo desde la computadora con estos comandos:</p></div></div>
+  <pre><code>cd scripts
+npm install
+node scrape.js</code></pre>
+  <p>La salida correcta termina con un mensaje parecido a:</p>
+  <pre><code>✅ Guardado .../data/latest.json (38/38 estaciones completas).</code></pre>
+  <div class="callout warn"><b>No edites <code>data/latest.json</code> a mano.</b> Es un artefacto generado. El cron lo reemplazará y tu estación volverá a faltar si no está en <code>STATION_IDS</code>.</div>
+  <div class="step"><div class="n">6</div><div><h3>Verificar claves generadas</h3></div></div>
+  <pre><code>realtime.12345
+daily.12345.r6
+daily.12345.r7
+daily.12345.r8
+daily.12345.r9
+history.12345</code></pre>
+  <p>El archivo puede crearse aunque falte una parte de la estación. Esto ocurre porque el programa muestra una advertencia y continúa cuando una consulta individual falla. Por eso hay que comprobar todas las claves anteriores y no limitarse a revisar que el archivo exista.</p>
+  <div class="step"><div class="n">7</div><div><h3>Publicar en la rama correcta</h3><p>La aplicación busca el archivo en <code>JoelSANQ/inifap/notifications/data/latest.json</code>. La palabra <code>notifications</code> es la rama de Git. Si el archivo se publica en otra rama o el repositorio cambia de dueño, modifica también <code>_kMirrorUrl</code> dentro de <code>generate_offline.dart</code>.</p></div></div>
+  <div class="footer-note"><span>5 · Alta de estación (2/3)</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>5. Agregar una estación — pruebas</h1>
+  <div class="step"><div class="n">8</div><div><h3>Borrar la lista vieja guardada</h3><p>El teléfono puede seguir usando una lista anterior almacenada bajo el nombre <code>stations_cache_r_all</code>. La forma más sencilla de evitarlo durante la prueba es borrar los datos de la aplicación o desinstalarla y volverla a instalar.</p></div></div>
+  <div class="step"><div class="n">9</div><div><h3>Prueba funcional completa</h3></div></div>
+  <table>
+    <thead><tr><th>Prueba</th><th>Resultado esperado</th></tr></thead>
+    <tbody>
+      <tr><td>Selector principal</td><td>Nombre correcto, una sola vez.</td></tr>
+      <tr><td>Tiempo real</td><td>Estación y registros horarios corresponden al ID.</td></tr>
+      <tr><td>Extras</td><td>Lluvia, humedad, radiación y viento cargan o informan ausencia real.</td></tr>
+      <tr><td>Histórico</td><td>Mes actual con nombre y fechas correctas.</td></tr>
+      <tr><td>Mapa</td><td>Marcador en la ubicación esperada.</td></tr>
+      <tr><td>Favoritos</td><td>Agregar, seleccionar y eliminar; máximo tres.</td></tr>
+      <tr><td>Sin internet</td><td>Después de cargar con internet, el modo avión conserva los datos.</td></tr>
+      <tr><td>Servidor bloqueado</td><td>Cuando el servidor responde 403, la copia de GitHub entrega los datos de la estación.</td></tr>
+      <tr><td>Alertas</td><td>Si la estación es favorita y supera un límite, aparece un aviso sin repetirse cada minuto.</td></tr>
+    </tbody>
+  </table>
+  <div class="step"><div class="n">10</div><div><h3>Verificación de calidad</h3></div></div>
+  <pre><code>dart format --output=none --set-exit-if-changed lib test
+flutter analyze
+flutter test
+flutter build apk --release</code></pre>
+  <h2>Lista final antes de guardar o subir el cambio</h2>
+  <ul class="checklist"><li>ID oficial confirmado y sin repetir.</li><li>Nombre y acentos correctos.</li><li>Fila agregada en <code>Stations.dart</code>.</li><li>Coordenada agregada con el mismo ID.</li><li>ID agregado en <code>STATION_IDS</code>.</li><li>Copia de GitHub creada con todas sus secciones.</li><li>Pruebas con internet, con error 403 y sin internet.</li><li>Captura del mapa y del selector.</li><li>Formato, análisis, pruebas y creación del APK registrados.</li></ul>
+  <div class="footer-note"><span>5 · Alta de estación (3/3)</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>6. Cómo funciona sin internet</h1>
+  <p>La aplicación guarda una copia de la información que logró descargar. Así puede abrirse y mostrar los datos más recientes aunque la conexión se pierda. Hay dos formas de guardado: datos pequeños, como el ID de la última estación, y un archivo más grande con clima, históricos y reportes.</p>
+  <h2>Datos pequeños guardados en el teléfono</h2>
+  <table>
+    <thead><tr><th>Clave</th><th>Productor/consumidor</th><th>Propósito</th></tr></thead>
+    <tbody>
+      <tr><td><code>stations_cache_r_all</code></td><td><code>StationService</code></td><td>Último catálogo recibido.</td></tr>
+      <tr><td><code>last_station_id</code></td><td>Pantalla principal</td><td>Restaurar selección.</td></tr>
+      <tr><td><code>cache_&lt;id&gt;_&lt;fecha&gt;</code></td><td>Pantalla principal</td><td>Respuesta rápida <code>r=5</code> del día.</td></tr>
+      <tr><td><code>favorite_station_ids</code></td><td>Favoritos/mapa/worker</td><td>IDs seleccionados; máximo tres en UI.</td></tr>
+      <tr><td><code>notif_enabled</code></td><td>Favoritos</td><td>Bandera relacionada con tres favoritos.</td></tr>
+      <tr><td><code>offline_data_json</code></td><td><code>OfflineDataService</code> web</td><td>Raíz offline completa.</td></tr>
+      <tr><td><code>*_notif_&lt;id&gt;</code></td><td>Revisión de alertas</td><td>Hora de la última alerta para no repetirla demasiado pronto.</td></tr>
+    </tbody>
+  </table>
+  <h2>Archivo grande guardado en el teléfono o computadora</h2>
+  <p>Se guarda como <code>offline_data.json</code> en el directorio de documentos de la aplicación, obtenido con <code>getApplicationDocumentsDirectory()</code>.</p>
+  <pre><code>{
+  "generated_at": "2026-09-29T...",
+  "reports": { "r1": [], "r3": [], "r4": [] },
+  "history": { "18851": { "2026-09": [] } },
+  "daily_extras": {
+    "18851": { "2026-09-29": { "r6": [], "r7": [], "r8": [], "r9": [] } }
+  },
+  "realtime": { "18851": [] }
+}</code></pre>
+  <h2>Por qué los dos archivos no se ven iguales</h2>
+  <p>El archivo del teléfono organiza los históricos por año y mes, y la información diaria por año, mes y día. La copia de GitHub tiene una organización más corta. El código llamado <code>_WafFallbackClient</code> toma la parte necesaria de la copia de GitHub y la entrega a la pantalla como si hubiera venido directamente del servidor.</p>
+  <div class="callout warn"><b>No cambies la forma de estos archivos sin revisar todo el recorrido.</b> Si cambia la copia de GitHub, también debe cambiar <code>_lookupInMirror</code>. Si cambia el archivo del teléfono, deben actualizarse las funciones que guardan datos, cuyos nombres comienzan con <code>save</code>, y las funciones que los leen.</div>
+  <div class="footer-note"><span>6 · Funcionamiento sin internet</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page dense">
+  <div class="top-rule"></div>
+  <h1>7. Copia de respaldo en GitHub</h1>
+  <p>GitHub puede ejecutar tareas automáticas aunque ninguna persona tenga abierta la aplicación. En este proyecto, la tarea se llama “Scrape INIFAP” y su definición está en <code>.github/workflows/scrape-inifap.yml</code>.</p>
+  <h2>Qué hace la tarea automática</h2>
+  <ol><li>Se ejecuta aproximadamente cada 15 minutos o cuando una persona la inicia manualmente.</li><li>Descarga una copia del repositorio.</li><li>Prepara Node 24, que es el programa necesario para ejecutar el archivo JavaScript.</li><li>Instala Puppeteer, que controla un navegador de manera automática.</li><li>Ejecuta <code>node scrape.js</code> para consultar las estaciones.</li><li>Si <code>data/latest.json</code> cambió, guarda la nueva versión en GitHub.</li></ol>
+  <pre><code>permissions:
+  contents: write
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}</code></pre>
+  <h2>Qué debe estar configurado para que funcione</h2>
+  <table>
+    <thead><tr><th>Revisión</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td>Actions → General → Workflow permissions</td><td>Debe permitir escritura del bot.</td></tr>
+      <tr><td>Protección de rama</td><td>Puede bloquear el push automático.</td></tr>
+      <tr><td>Rama de ejecución</td><td>Debe coincidir con la rama codificada en <code>_kMirrorUrl</code>.</td></tr>
+      <tr><td>Mensajes de ejecución</td><td>El proceso continúa aunque falle una consulta individual; hay que leer las advertencias.</td></tr>
+      <tr><td><code>fetched_at</code></td><td>Indica frescura de la instantánea.</td></tr>
+      <tr><td>Tamaño del JSON</td><td>Un cambio brusco puede revelar una respuesta vacía o formato nuevo.</td></tr>
+    </tbody>
+  </table>
+  <h2>Qué hacer si falla</h2>
+  <ol><li>Abre la ejecución fallida en GitHub y busca la primera respuesta que no sea 200.</li><li>Prueba si la página de INIFAP abre normalmente en un navegador.</li><li>Vuelve a ejecutar la tarea para descartar un corte momentáneo.</li><li>Si sólo falla una estación, prueba por separado cada tipo de información de esa estación.</li><li>No escribas datos inventados dentro de <code>latest.json</code>. Es mejor conservar la última copia correcta mientras se investiga.</li></ol>
+  <div class="callout"><b>La lista general <code>r=all</code> puede fallar sin detener todo.</b> En ese caso la tarea continúa porque la aplicación tiene su propia lista llamada <code>kStations</code>. En cambio, una falla en los reportes generales puede detener la ejecución completa.</div>
+  <h2>Cuándo se podría quitar esta copia de respaldo</h2>
+  <p>Sólo debe retirarse cuando INIFAP confirme que el servidor ya permite consultas desde teléfonos de manera estable. Primero hay que probar todos los tipos de información durante varios días. Después se puede quitar la copia de manera gradual, conservando los datos guardados en el teléfono. Una sola prueba correcta no es suficiente.</p>
+  <div class="footer-note"><span>7 · Copia de respaldo</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page dense">
+  <div class="top-rule"></div>
+  <h1>8. Qué hace cada pantalla</h1>
+  <p>Esta sección explica qué información usa cada pantalla y qué resultado debe mostrar. Sirve para saber dónde buscar cuando una sola parte de la aplicación falla.</p>
+  <table>
+    <thead><tr><th>Módulo</th><th>Entrada</th><th>Salida/estado</th></tr></thead>
+    <tbody>
+      <tr><td>Pantalla principal</td><td>Estación y <code>r=5</code>.</td><td>Lectura actual, horas, estación, caché y navegación.</td></tr>
+      <tr><td>Extras diarios</td><td>Estación, fecha y <code>r=6..9</code>.</td><td>Precipitación, humedad, radiación y viento.</td></tr>
+      <tr><td>Histórico</td><td>Estación, mes/año y <code>r=10</code>.</td><td>Gráfica mensual, tarjetas y detalle diario.</td></tr>
+      <tr><td>Reportes</td><td><code>r=1</code>, <code>r=3</code> o <code>r=4</code>.</td><td>Tablas generales según formato.</td></tr>
+      <tr><td>Mapa</td><td>Catálogo + <code>kStationCoords</code>.</td><td>Marcadores, coordenadas y toggle favorito.</td></tr>
+      <tr><td>Favoritos</td><td>Catálogo + preferencias.</td><td>Barra de acceso rápido, máximo tres.</td></tr>
+    </tbody>
+  </table>
+  <h2>Selección de estación</h2>
+  <pre><code>itemCount: StationService.instance.stations.length
+...
+final st = StationService.instance.stations[i];
+...
+await _fetch();</code></pre>
+  <p>El selector usa la lista que <code>StationService</code> tiene preparada en ese momento. Normalmente será la lista más reciente obtenida del servidor. Si el servidor no entregó ninguna, se usa <code>kStations</code>, que es la lista incluida dentro de la aplicación.</p>
+  <h2>Mapa</h2>
+  <pre><code>final LatLng? ll = kStationCoords[st.id];
+if (ll == null) continue;</code></pre>
+  <p>La ausencia de coordenadas no impide otras consultas, pero sí elimina el marcador. Un ID duplicado apunta a una única coordenada y puede presentar un nombre incorrecto en el mapa.</p>
+  <h2>Favoritos</h2>
+  <p>Los IDs favoritos se guardan como texto bajo el nombre <code>favorite_station_ids</code>. Cuando alguien agrega o elimina una estación, <code>favoritesVersion</code> avisa al mapa y a la barra de favoritos para que ambos se actualicen. La pantalla permite guardar como máximo tres estaciones.</p>
+  <h2>Conectividad</h2>
+  <p>Las pantallas esperan tres segundos antes de mostrar el aviso de “sin conexión”. Esto evita que el mensaje aparezca por un cambio muy breve de señal. Cuando regresa internet, la pantalla intenta descargar nuevamente la información que estaba mostrando.</p>
+  <div class="callout warn"><b>Versión web:</b> el código intenta pasar las consultas por <code>http://localhost:8080</code>, es decir, por un programa auxiliar que debería estar ejecutándose en la misma computadora. Ese programa no está incluido en el repositorio. Por eso la versión web necesita que se agregue ese servicio o que se cambie la forma de conectarse.</div>
+  <div class="footer-note"><span>8 · Pantallas</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>9. Cómo funcionan las alertas</h1>
+  <p>Android puede despertar la aplicación de vez en cuando para revisar el clima de las estaciones favoritas, incluso si la pantalla está cerrada. La herramienta que organiza esa revisión se llama <code>WorkManager</code>. Cuando encuentra una condición importante, la aplicación muestra una notificación local en el teléfono.</p>
+  <h2>Límites que producen una alerta</h2>
+  <table>
+    <thead><tr><th>Alerta</th><th>Cuándo aparece</th><th>Nombre usado para recordar el último aviso</th></tr></thead>
+    <tbody>
+      <tr><td>Helada</td><td><code>temp &lt; 0</code></td><td><code>extreme_temp_notif_&lt;id&gt;</code></td></tr>
+      <tr><td>Calor</td><td><code>temp &gt; 38</code></td><td>misma clave de temperatura</td></tr>
+      <tr><td>Viento</td><td><code>wind &gt; 23</code> km/h</td><td><code>high_wind_notif_&lt;id&gt;</code></td></tr>
+      <tr><td>Lluvia</td><td><code>rain &gt;= 1.0</code> mm</td><td><code>rain_notif_&lt;id&gt;</code></td></tr>
+    </tbody>
+  </table>
+  <pre><code>const cooldown = 15 * 60 * 1000;
+
+if (temp != 999.0 &amp;&amp; (temp &lt; 0 || temp &gt; 38)) { ... }
+if (wind &gt; 23) { ... }
+if (rain &gt;= 1.0) { ... }</code></pre>
+  <p>La revisión se solicita cada 15 minutos, pero Android puede retrasarla para ahorrar batería. La aplicación recuerda la hora del último aviso y espera otros 15 minutos antes de repetir el mismo tipo de alerta para la misma estación. Cuando no hay internet se usa la información guardada. Esa información no incluye viento, por lo que la alerta de viento no puede calcularse sin conexión.</p>
+  <div class="callout warn"><b>Los comentarios del código no coinciden:</b> algunos dicen que la espera es de cinco minutos, pero la operación matemática real usa 15 minutos. El comportamiento verdadero es el del código.</div>
+  <h2>Permisos que necesita Android</h2>
+  <p>El archivo <code>AndroidManifest.xml</code> solicita permiso para usar internet, mostrar notificaciones, mantener una tarea activa durante unos momentos y volver a programarla después de reiniciar el teléfono. Si en el futuro se actualiza la versión objetivo de Android, estos permisos deben revisarse porque las reglas de Android cambian con el tiempo.</p>
+  <div class="footer-note"><span>9 · Alertas</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page compact">
+  <div class="top-rule"></div>
+  <h1>10. Cómo instalar y crear la aplicación</h1>
+  <h2>Preparar la computadora</h2>
+  <pre><code>flutter doctor
+flutter pub get
+flutter devices
+flutter run</code></pre>
+  <p>El archivo <code>pubspec.yaml</code> indica que el proyecto necesita Dart <code>^3.6.1</code>. Dart viene incluido con Flutter, por lo que hay que instalar una versión de Flutter compatible. El primer comando revisa si faltan herramientas; el segundo descarga los paquetes del proyecto; el tercero muestra teléfonos y emuladores disponibles; el cuarto abre la aplicación.</p>
+  <h2>Android</h2>
+  <pre><code># Debug en dispositivo/emulador
+flutter run -d &lt;device-id&gt;
+
+# APK universal de entrega
+flutter build apk --release
+
+# Opcional: APK por arquitectura
+flutter build apk --split-per-abi</code></pre>
+  <p>El archivo instalable queda normalmente en <code>build/app/outputs/flutter-apk/</code>. Antes de publicarlo, hay que revisar el nombre visible de la aplicación, su identificador único, la firma digital y el número de versión. Actualmente aparecen <code>com.example.clima</code> y <code>clima</code>, que todavía parecen nombres de desarrollo.</p>
+  <h2>Programa que actualiza la copia de GitHub</h2>
+  <pre><code>cd scripts
+npm install
+node scrape.js</code></pre>
+  <p>Este proceso necesita internet y un navegador Chromium. Consulta una estación después de otra, por lo que puede tardar varios minutos. Hay que dejarlo terminar y leer el resumen final para saber cuántas estaciones se copiaron correctamente.</p>
+  <h2>Web</h2>
+  <p>Ejecutar <code>flutter run -d chrome</code> no es suficiente, porque el proyecto espera el programa auxiliar del puerto 8080. Si la versión web se va a entregar, primero debe resolverse esa pieza faltante.</p>
+  <div class="callout ok"><b>Para saber exactamente qué versión se entregó:</b> anota la versión de Flutter, el identificador del cambio en Git, la fecha y el nombre del APK. Si es posible, guarda también la huella SHA-256 del archivo.</div>
+  <div class="footer-note"><span>10 · Instalación</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page dense">
+  <div class="top-rule"></div>
+  <h1>11. Cómo comprobar los cambios</h1>
+  <h2>Comandos que deben ejecutarse</h2>
+  <pre><code>dart format --output=none --set-exit-if-changed lib test
+flutter analyze
+flutter test</code></pre>
+  <div class="callout danger"><b>Estado actual de pruebas:</b> <code>test/widget_test.dart</code> conserva la prueba de contador de la plantilla Flutter. Busca textos “0/1” y un icono “+” que no representan la app. Debe sustituirse; un fallo ahí no demuestra una regresión climática, pero tampoco debe ignorarse indefinidamente.</div>
+  <h2>Qué debería probarse automáticamente</h2>
+  <table>
+    <thead><tr><th>Nivel</th><th>Caso</th></tr></thead>
+    <tbody>
+      <tr><td>Unitario</td><td>Parser de catálogo, parser <code>r=5</code>, parser histórico y variantes de decimales.</td></tr>
+      <tr><td>Una sola función</td><td>Confirmar que no haya IDs repetidos y que las tres listas contengan los mismos números.</td></tr>
+      <tr><td>Pantalla</td><td>El selector usa la lista correcta, sólo permite tres favoritos y muestra claramente si está cargando, falló o no hay internet.</td></tr>
+      <tr><td>Flujo completo</td><td>Servidor funcionando, servidor bloqueado con copia de GitHub y teléfono sin internet con datos guardados.</td></tr>
+      <tr><td>Android</td><td>Permiso de notificación, tarea periódica, reinicio y ahorro de batería.</td></tr>
+      <tr><td>GitHub</td><td>Forma y fecha de actualización de <code>latest.json</code>.</td></tr>
+    </tbody>
+  </table>
+  <h2>Cuándo se puede decir que una estación quedó bien</h2>
+  <ol><li>Su ID aparece una sola vez en la lista y en las coordenadas.</li><li>El mismo ID aparece una sola vez en <code>scripts/scrape.js</code>.</li><li>El nombre y los acentos se leen correctamente.</li><li>El marcador aparece en el lugar correcto del mapa.</li><li>Los datos actuales y los históricos realmente pertenecen a esa estación.</li><li>Después de cargarla con internet, sigue mostrando datos en modo avión.</li><li>La copia de GitHub funciona cuando el servidor responde 403.</li><li>Las estaciones que ya existían siguen funcionando.</li></ol>
+  <h2>Validación automática sugerida</h2>
+  <pre><code>// Idea de prueba: construir tres sets de IDs
+catalogIds == coordinateIds == scraperIds
+catalogIds.length == catalogIds.toSet().length</code></pre>
+  <p>Conviene convertir esta comparación en una prueba automática de GitHub. Actualmente una persona debe recordar actualizar los tres lugares y ya existe una diferencia real entre ellos.</p>
+  <div class="footer-note"><span>11 · Pruebas</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>12. Qué revisar cuando algo falla</h1>
+  <table>
+    <thead><tr><th>Síntoma</th><th>Causa probable</th><th>Acción</th></tr></thead>
+    <tbody>
+      <tr><td>No aparece la estación</td><td>El teléfono conserva una lista vieja o falta la estación en la lista incluida.</td><td>Borrar datos; revisar <code>r=all</code> y <code>Stations.dart</code>.</td></tr>
+      <tr><td>Aparece sin marcador</td><td>Falta ID en coordenadas.</td><td>Agregar <code>LatLng</code> con mismo ID.</td></tr>
+      <tr><td>Nombre A muestra datos de B</td><td>ID duplicado o incorrecto.</td><td>Comparar lista, coordenadas, programa de respaldo y servidor.</td></tr>
+      <tr><td>Error 403 sólo en móvil</td><td>El sistema de seguridad del servidor bloquea la consulta.</td><td>Verificar la copia de GitHub, la rama y la fecha <code>fetched_at</code>.</td></tr>
+      <tr><td>Funciona con internet, pero no sin internet</td><td>El ID no está en el programa de respaldo o los datos no se guardaron.</td><td>Revisar las claves de la copia de GitHub y el archivo del teléfono.</td></tr>
+      <tr><td>Aparece un mes equivocado</td><td>La copia de GitHub sólo tiene el último mes.</td><td>Usar la respuesta directa o guardar históricos separados por mes.</td></tr>
+      <tr><td>Web apunta a localhost</td><td>Proxy web no levantado.</td><td>Iniciar proxy compatible o reconfigurar URL.</td></tr>
+      <tr><td>No hay alertas</td><td>Sin favoritos/permisos, umbral no cruzado o Android difirió tarea.</td><td>Revisar preferencias, permisos, logs y batería.</td></tr>
+      <tr><td>GitHub no guarda el archivo nuevo</td><td>Falta permiso o la rama está protegida.</td><td>Revisar <code>contents: write</code> y las reglas de la rama.</td></tr>
+      <tr><td>El archivo nuevo está incompleto</td><td>Falló una de las consultas individuales.</td><td>Leer las advertencias de la tarea y volver a intentar.</td></tr>
+    </tbody>
+  </table>
+  <h2>Orden recomendado para buscar el problema</h2>
+  <ol><li>Confirmar que el ID es el oficial y que el servidor entrega datos para él.</li><li>Confirmar qué lista de estaciones está usando el teléfono.</li><li>Confirmar que existe una coordenada con el mismo ID.</li><li>Buscar el ID dentro de <code>latest.json</code>.</li><li>Comprobar que la dirección de GitHub apunta al repositorio y rama correctos.</li><li>Probar primero con internet y después en modo avión.</li><li>Leer los mensajes de Flutter, Android y GitHub Actions.</li></ol>
+  <h2>Cómo recuperar el sistema sin perder información útil</h2>
+  <p>Antes de borrar los datos del teléfono, toma capturas y anota los pasos que producen el problema. No borres <code>data/latest.json</code> si el servidor de INIFAP está caído, porque una copia vieja sigue siendo mejor que no tener información. Si GitHub publicó un archivo incorrecto, recupera la última versión buena con Git y después corrige <code>scripts/scrape.js</code>, que es el archivo que lo genera.</p>
+  <div class="footer-note"><span>12 · Qué revisar cuando falla</span><span>Clima INIFAP</span></div>
+</section>
+
+<section class="page">
+  <div class="top-rule"></div>
+  <h1>13. Problemas conocidos y mejoras pendientes</h1>
+  <p>Estos puntos no impiden explicar o usar el proyecto, pero sí pueden causar fallas futuras. Se muestran en orden de importancia para que la siguiente persona sepa qué conviene resolver primero.</p>
+  <table>
+    <thead><tr><th>Prioridad</th><th>Hallazgo</th><th>Recomendación</th></tr></thead>
+    <tbody>
+      <tr><td>Alta</td><td>ID <code>18837</code> duplicado; <code>18783</code> sólo en coordenadas.</td><td>Validar con INIFAP y alinear tres fuentes.</td></tr>
+      <tr><td>Alta</td><td>Los IDs se escriben a mano en tres lugares.</td><td>Crear una sola lista central o una prueba automática.</td></tr>
+      <tr><td>Alta</td><td>Prueba widget de plantilla no representa la app.</td><td>Reemplazar con pruebas reales.</td></tr>
+      <tr><td>Media</td><td>Espejo fija repo/rama <code>notifications</code>.</td><td>Configurar por entorno o constante central.</td></tr>
+      <tr><td>Media</td><td>Espejo no indexa por fecha/mes.</td><td>Versionar <code>daily</code> por día e <code>history</code> por mes.</td></tr>
+      <tr><td>Media</td><td>Falta el programa auxiliar que necesita la versión web.</td><td>Agregarlo al proyecto o usar una dirección desplegada.</td></tr>
+      <tr><td>Media</td><td>Package Android <code>com.example.clima</code>.</td><td>Definir identificador institucional antes de tienda.</td></tr>
+      <tr><td>Baja</td><td>Algunos comentarios dicen cinco minutos y el código usa 15.</td><td>Corregir los comentarios.</td></tr>
+      <tr><td>Baja</td><td>Nombres de archivos como <code>Stations.dart</code>.</td><td>Migrar gradualmente a snake_case.</td></tr>
+    </tbody>
+  </table>
+  <h2>Mejora recomendada: fuente única de estaciones</h2>
+  <p>Lo más seguro sería guardar ID, nombre y coordenadas juntos en una sola lista. A partir de esa lista se podría crear automáticamente la lista que usa <code>scripts/scrape.js</code>. Mientras eso no exista, una prueba automática debería impedir que se suban cambios cuando falte un ID o haya uno repetido.</p>
+  <pre><code>class Station {
+  final int id;
+  final String name;
+  final double latitude;
+  final double longitude;
+}</code></pre>
+  <h2>Seguridad y datos</h2>
+  <ul><li>No guardes contraseñas, cuentas administrativas ni archivos privados dentro del repositorio.</li><li><code>android:usesCleartextTraffic="true"</code> permite conexiones sin cifrado. Debe revisarse antes de publicar una versión definitiva.</li><li>No publiques información privada obtenida de un teléfono durante las pruebas.</li><li>Si se cambia el proveedor del mapa, revisa sus condiciones de uso y la forma correcta de darle crédito.</li></ul>
+  <div class="footer-note"><span>13 · Problemas y mejoras</span><span>Clima INIFAP</span></div>
+</section>
+
+</body>
+</html>

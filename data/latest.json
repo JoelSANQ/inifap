@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-14T10:32:51.505Z",
+  "fetched_at": "2026-10-14T15:32:54.203Z",
   "all": null,
   "reports": {
     "r1": [
@@ -7,13 +7,13 @@
         "Id": "18882",
         "Est": "Guadalupe - U.A. Biología",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "14.0",
+        "Hora": "04:15",
+        "Temp": "13.7",
         "Pre": "0.0",
         "Hum": "85.9",
         "Rad": "0.0",
-        "VelViento": "1.5",
-        "DirViento": "152.8"
+        "VelViento": "0.8",
+        "DirViento": "130.0"
       },
       {
         "Id": "26767",
@@ -67,13 +67,13 @@
         "Id": "18680",
         "Est": "Zacatecas - U.A. Agronomía",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "13.4",
+        "Hora": "04:15",
+        "Temp": "13.2",
         "Pre": "0.0",
-        "Hum": "92.8",
+        "Hum": "93.1",
         "Rad": "0.0",
-        "VelViento": "2.1",
-        "DirViento": "154.8"
+        "VelViento": "1.6",
+        "DirViento": "142.8"
       },
       {
         "Id": "18682",
@@ -91,25 +91,25 @@
         "Id": "26772",
         "Est": "Villa Glez. Ortega - Estancia de Ánimas",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "11.5",
+        "Hora": "04:15",
+        "Temp": "11.2",
         "Pre": "0.0",
-        "Hum": "98.6",
+        "Hum": "98.9",
         "Rad": "0.0",
-        "VelViento": "1.5",
-        "DirViento": "77.4"
+        "VelViento": "1.7",
+        "DirViento": "72.8"
       },
       {
         "Id": "15960",
         "Est": "Villa de Cos - COBAEZ Villa de Cos",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "13.7",
+        "Hora": "04:15",
+        "Temp": "13.3",
         "Pre": "0.0",
-        "Hum": "91.1",
+        "Hum": "91.5",
         "Rad": "0.0",
-        "VelViento": "1.19",
-        "DirViento": "110.3"
+        "VelViento": "3.43",
+        "DirViento": "98.7"
       },
       {
         "Id": "18829",
@@ -151,13 +151,13 @@
         "Id": "18679",
         "Est": "Pinos - La Victoria",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "12.1",
+        "Hora": "04:15",
+        "Temp": "12.0",
         "Pre": "0.0",
         "Hum": "99.9",
         "Rad": "0.0",
-        "VelViento": "4.9",
-        "DirViento": "112.3"
+        "VelViento": "3.1",
+        "DirViento": "78.1"
       },
       {
         "Id": "18879",
@@ -175,13 +175,13 @@
         "Id": "18842",
         "Est": "Villanueva - Villanueva",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "13.4",
+        "Hora": "04:15",
+        "Temp": "12.7",
         "Pre": "0.0",
-        "Hum": "97.0",
+        "Hum": "96.9",
         "Rad": "0.0",
         "VelViento": "0.0",
-        "DirViento": "158.4"
+        "DirViento": "79.3"
       },
       {
         "Id": "18836",
@@ -199,13 +199,13 @@
         "Id": "18851",
         "Est": "Calera - CEZAC",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "11.8",
+        "Hora": "04:15",
+        "Temp": "11.5",
         "Pre": "0.0",
         "Hum": "100.0",
-        "Rad": "0.1",
-        "VelViento": "2.08",
-        "DirViento": "124.7"
+        "Rad": "0.0",
+        "VelViento": "0.77",
+        "DirViento": "136.2"
       },
       {
         "Id": "26779",
@@ -223,48 +223,48 @@
         "Id": "15951",
         "Est": "Mazapil - Tanque de Hacheros",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
+        "Hora": "04:15",
         "Temp": "11.8",
         "Pre": "0.0",
         "Hum": "99.9",
         "Rad": "0.0",
-        "VelViento": "1.0",
-        "DirViento": "96.4"
+        "VelViento": "0.2",
+        "DirViento": "109.6"
       },
       {
         "Id": "18849",
         "Est": "Mazapil - Marianita",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
+        "Hora": "04:15",
         "Temp": "14.0",
         "Pre": "0.0",
         "Hum": "99.9",
         "Rad": "0.0",
-        "VelViento": "0.2",
+        "VelViento": "0.0",
         "DirViento": "111.8"
       },
       {
         "Id": "18791",
         "Est": "Ojocaliente - El Alpino",
         "Fecha": "14-10-2026",
-        "Hora": "03:45",
-        "Temp": "11.1",
+        "Hora": "04:15",
+        "Temp": "10.9",
         "Pre": "0.0",
-        "Hum": "92.1",
+        "Hum": "92.3",
         "Rad": "0.0",
         "VelViento": "0.4",
-        "DirViento": "355.1"
+        "DirViento": "347.4"
       },
       {
         "Id": "15922",
         "Est": "Jalpa - Santo Domingo",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "17.7",
+        "Hora": "04:15",
+        "Temp": "17.6",
         "Pre": "0.0",
-        "Hum": "88.7",
+        "Hum": "90.2",
         "Rad": "0.0",
-        "VelViento": "0.3",
+        "VelViento": "0.0",
         "DirViento": "280.6"
       },
       {
@@ -283,25 +283,25 @@
         "Id": "26775",
         "Est": "Trancoso - Las Arcinas",
         "Fecha": "13-10-2026",
-        "Hora": "12:00",
-        "Temp": "23.2",
+        "Hora": "12:15",
+        "Temp": "23.6",
         "Pre": "0.0",
-        "Hum": "51.3",
-        "Rad": "893.3",
-        "VelViento": "6.9",
-        "DirViento": "123.8"
+        "Hum": "50.3",
+        "Rad": "956.3",
+        "VelViento": "7.9",
+        "DirViento": "78.9"
       },
       {
         "Id": "18664",
         "Est": "Fresnillo - El Pardillo 3",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "12.1",
+        "Hora": "04:15",
+        "Temp": "11.8",
         "Pre": "0.0",
-        "Hum": "91.4",
+        "Hum": "91.7",
         "Rad": "0.2",
-        "VelViento": "0.8",
-        "DirViento": "101.8"
+        "VelViento": "0.1",
+        "DirViento": "63.4"
       },
       {
         "Id": "18796",
@@ -343,25 +343,25 @@
         "Id": "26766",
         "Est": "Francisco Murguía - Mogotes",
         "Fecha": "14-10-2026",
-        "Hora": "01:30",
-        "Temp": "14.8",
+        "Hora": "02:30",
+        "Temp": "14.0",
         "Pre": "0.0",
-        "Hum": "89.5",
+        "Hum": "91.5",
         "Rad": "0.0",
-        "VelViento": "8.6",
-        "DirViento": "74.9"
+        "VelViento": "5.1",
+        "DirViento": "88.2"
       },
       {
         "Id": "18779",
         "Est": "Villa de Cos - Agua Nueva",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "13.9",
+        "Hora": "04:15",
+        "Temp": "14.0",
         "Pre": "0.0",
         "Hum": "99.9",
         "Rad": "0.0",
-        "VelViento": "13.6",
-        "DirViento": "113.9"
+        "VelViento": "15.7",
+        "DirViento": "150.8"
       },
       {
         "Id": "18786",
@@ -379,25 +379,25 @@
         "Id": "18783",
         "Est": "Villa de Cos - Chaparrosa",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "13.1",
+        "Hora": "04:15",
+        "Temp": "12.8",
         "Pre": "0.0",
-        "Hum": "92.5",
+        "Hum": "92.9",
         "Rad": "0.0",
-        "VelViento": "0.4",
-        "DirViento": "166.5"
+        "VelViento": "0.0",
+        "DirViento": "118.3"
       },
       {
         "Id": "18670",
         "Est": "Tabasco - Tierra Blanca",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "15.4",
+        "Hora": "04:15",
+        "Temp": "15.1",
         "Pre": "0.0",
-        "Hum": "94.7",
+        "Hum": "94.8",
         "Rad": "0.0",
-        "VelViento": "0.0",
-        "DirViento": "103.9"
+        "VelViento": "0.3",
+        "DirViento": "16.4"
       },
       {
         "Id": "18802",
@@ -427,12 +427,12 @@
         "Id": "18798",
         "Est": "Jerez - Santa Fe",
         "Fecha": "14-10-2026",
-        "Hora": "04:00",
-        "Temp": "13.4",
+        "Hora": "04:15",
+        "Temp": "13.3",
         "Pre": "0.0",
         "Hum": "97.9",
         "Rad": "0.0",
-        "VelViento": "0.0",
+        "VelViento": "0.2",
         "DirViento": "334.8"
       },
       {
@@ -476,349 +476,349 @@
       {
         "Id": "15922",
         "Est": "Jalpa - Santo Domingo",
-        "Fecha": "12-10-2026",
-        "TempMax": "32.3",
-        "TempMin": "14.7",
-        "TempMed": "21.8",
-        "Pre": "0.0",
-        "VelMed": "1.1",
-        "VelMax": "4.5",
+        "Fecha": "13-10-2026",
+        "TempMax": "31.1",
+        "TempMin": "17.3",
+        "TempMed": "22.6",
+        "Pre": "2.6",
+        "VelMed": "1.5",
+        "VelMax": "7.9",
         "DirViento": "S"
       },
       {
         "Id": "15930",
         "Est": "Valparaíso - CBTA Valparaíso",
-        "Fecha": "29-09-2026",
-        "TempMax": "29.1",
-        "TempMin": "14.9",
-        "TempMed": "22.4",
+        "Fecha": "30-09-2026",
+        "TempMax": "26.1",
+        "TempMin": "14.7",
+        "TempMed": "21.1",
         "Pre": "0.0",
-        "VelMed": "1.9",
-        "VelMax": "9.3",
+        "VelMed": "3.4",
+        "VelMax": "8.3",
         "DirViento": "SSO"
       },
       {
         "Id": "15933",
         "Est": "Miguel Auza - Campo Uno",
-        "Fecha": "12-10-2026",
-        "TempMax": "26.4",
-        "TempMin": "11.7",
-        "TempMed": "17.3",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.4",
+        "TempMin": "9.0",
+        "TempMed": "17.8",
         "Pre": "0.1",
-        "VelMed": "4.3",
-        "VelMax": "12.7",
-        "DirViento": "SE"
+        "VelMed": "2.5",
+        "VelMax": "7.4",
+        "DirViento": "ESE"
       },
       {
         "Id": "15951",
         "Est": "Mazapil - Tanque de Hacheros",
-        "Fecha": "12-10-2026",
-        "TempMax": "29.4",
-        "TempMin": "12.7",
-        "TempMed": "19.2",
+        "Fecha": "13-10-2026",
+        "TempMax": "29.5",
+        "TempMin": "11.6",
+        "TempMed": "20.0",
         "Pre": "0.0",
-        "VelMed": "3.7",
-        "VelMax": "13.9",
+        "VelMed": "4.0",
+        "VelMax": "12.4",
         "DirViento": "ESE"
       },
       {
         "Id": "15960",
         "Est": "Villa de Cos - COBAEZ Villa de Cos",
-        "Fecha": "12-10-2026",
-        "TempMax": "27.1",
-        "TempMin": "13.0",
-        "TempMed": "18.2",
-        "Pre": "5.8",
-        "VelMed": "4.3",
-        "VelMax": "11.3",
-        "DirViento": "ESE"
+        "Fecha": "13-10-2026",
+        "TempMax": "27.4",
+        "TempMin": "11.9",
+        "TempMed": "19.0",
+        "Pre": "0.0",
+        "VelMed": "6.0",
+        "VelMax": "12.3",
+        "DirViento": "SE"
       },
       {
         "Id": "18663",
         "Est": "Loreto - Loreto",
-        "Fecha": "12-10-2026",
-        "TempMax": "26.1",
-        "TempMin": "14.0",
-        "TempMed": "18.6",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.3",
+        "TempMin": "10.8",
+        "TempMed": "18.8",
         "Pre": "0.0",
-        "VelMed": "5.3",
-        "VelMax": "13.2",
-        "DirViento": "ENE"
+        "VelMed": "5.0",
+        "VelMax": "15.6",
+        "DirViento": "SE"
       },
       {
         "Id": "18664",
         "Est": "Fresnillo - El Pardillo 3",
-        "Fecha": "12-10-2026",
-        "TempMax": "24.6",
-        "TempMin": "12.2",
-        "TempMed": "16.9",
-        "Pre": "0.8",
-        "VelMed": "5.5",
-        "VelMax": "13.1",
+        "Fecha": "13-10-2026",
+        "TempMax": "26.6",
+        "TempMin": "9.8",
+        "TempMed": "18.0",
+        "Pre": "0.1",
+        "VelMed": "4.7",
+        "VelMax": "18.8",
         "DirViento": "SE"
       },
       {
         "Id": "18670",
         "Est": "Tabasco - Tierra Blanca",
-        "Fecha": "12-10-2026",
-        "TempMax": "29.3",
-        "TempMin": "13.4",
-        "TempMed": "20.2",
+        "Fecha": "13-10-2026",
+        "TempMax": "30.7",
+        "TempMin": "15.8",
+        "TempMed": "22.0",
         "Pre": "0.0",
-        "VelMed": "1.5",
-        "VelMax": "6.5",
+        "VelMed": "2.6",
+        "VelMax": "12.1",
         "DirViento": "SSE"
       },
       {
         "Id": "18679",
         "Est": "Pinos - La Victoria",
-        "Fecha": "12-10-2026",
-        "TempMax": "25.0",
+        "Fecha": "13-10-2026",
+        "TempMax": "24.7",
         "TempMin": "11.9",
-        "TempMed": "16.2",
+        "TempMed": "17.2",
         "Pre": "0.0",
-        "VelMed": "7.5",
-        "VelMax": "19.9",
-        "DirViento": "E"
+        "VelMed": "8.7",
+        "VelMax": "18.9",
+        "DirViento": "ESE"
       },
       {
         "Id": "18680",
         "Est": "Zacatecas - U.A. Agronomía",
-        "Fecha": "12-10-2026",
-        "TempMax": "24.2",
-        "TempMin": "12.3",
-        "TempMed": "16.9",
-        "Pre": "2.4",
-        "VelMed": "2.5",
-        "VelMax": "8.8",
-        "DirViento": "SE"
+        "Fecha": "13-10-2026",
+        "TempMax": "26.8",
+        "TempMin": "12.1",
+        "TempMed": "18.3",
+        "Pre": "0.2",
+        "VelMed": "3.3",
+        "VelMax": "8.5",
+        "DirViento": "SSE"
       },
       {
         "Id": "18682",
         "Est": "Jerez - Santa Rita",
-        "Fecha": "12-10-2026",
-        "TempMax": "26.2",
-        "TempMin": "12.6",
-        "TempMed": "18.3",
-        "Pre": "0.0",
-        "VelMed": "4.4",
-        "VelMax": "14.8",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.3",
+        "TempMin": "11.6",
+        "TempMed": "18.1",
+        "Pre": "1.0",
+        "VelMed": "3.8",
+        "VelMax": "13.7",
         "DirViento": "SSE"
       },
       {
         "Id": "18777",
         "Est": "Sombrerete - Providencia",
-        "Fecha": "12-10-2026",
-        "TempMax": "23.9",
-        "TempMin": "10.8",
-        "TempMed": "16.5",
-        "Pre": "2.9",
-        "VelMed": "6.5",
-        "VelMax": "13.3",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.0",
+        "TempMin": "10.5",
+        "TempMed": "17.2",
+        "Pre": "0.1",
+        "VelMed": "6.8",
+        "VelMax": "17.6",
         "DirViento": "SSE"
       },
       {
         "Id": "18779",
         "Est": "Villa de Cos - Agua Nueva",
-        "Fecha": "12-10-2026",
-        "TempMax": "27.7",
-        "TempMin": "14.2",
-        "TempMed": "18.9",
-        "Pre": "83.4",
-        "VelMed": "6.9",
-        "VelMax": "11.9",
+        "Fecha": "13-10-2026",
+        "TempMax": "28.4",
+        "TempMin": "13.4",
+        "TempMed": "19.5",
+        "Pre": "0.0",
+        "VelMed": "8.3",
+        "VelMax": "15.8",
         "DirViento": "SE"
       },
       {
         "Id": "18782",
         "Est": "Sombrerete - Emiliano Zapata",
-        "Fecha": "12-10-2026",
-        "TempMax": "22.5",
-        "TempMin": "10.8",
-        "TempMed": "16.2",
-        "Pre": "0.1",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.5",
+        "TempMin": "10.7",
+        "TempMed": "17.6",
+        "Pre": "0.0",
         "VelMed": "5.9",
-        "VelMax": "15.5",
+        "VelMax": "14.6",
         "DirViento": "SE"
       },
       {
         "Id": "18783",
         "Est": "Villa de Cos - Chaparrosa",
-        "Fecha": "12-10-2026",
-        "TempMax": "26.9",
-        "TempMin": "13.1",
-        "TempMed": "17.9",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.7",
+        "TempMin": "11.1",
+        "TempMed": "18.8",
         "Pre": "0.0",
-        "VelMed": "7.3",
-        "VelMax": "16.4",
+        "VelMed": "7.9",
+        "VelMax": "18.1",
         "DirViento": "ESE"
       },
       {
         "Id": "18786",
         "Est": "Enrique Estrada - Mesa de Fuentes",
-        "Fecha": "12-10-2026",
-        "TempMax": "23.4",
-        "TempMin": "11.1",
-        "TempMed": "16.2",
+        "Fecha": "13-10-2026",
+        "TempMax": "24.6",
+        "TempMin": "10.7",
+        "TempMed": "17.3",
         "Pre": "0.0",
-        "VelMed": "4.8",
-        "VelMax": "12.7",
+        "VelMed": "6.0",
+        "VelMax": "13.7",
         "DirViento": "S"
       },
       {
         "Id": "18791",
         "Est": "Ojocaliente - El Alpino",
-        "Fecha": "12-10-2026",
-        "TempMax": "27.6",
-        "TempMin": "14.0",
+        "Fecha": "13-10-2026",
+        "TempMax": "28.3",
+        "TempMin": "10.0",
         "TempMed": "18.9",
         "Pre": "0.0",
-        "VelMed": "2.2",
-        "VelMax": "7.3",
-        "DirViento": "ENE"
+        "VelMed": "3.0",
+        "VelMax": "8.5",
+        "DirViento": "SSE"
       },
       {
         "Id": "18796",
         "Est": "Sombrerete - Col. Hidalgo",
-        "Fecha": "12-10-2026",
-        "TempMax": "25.2",
-        "TempMin": "10.0",
-        "TempMed": "16.8",
-        "Pre": "0.1",
-        "VelMed": "3.4",
-        "VelMax": "12.3",
-        "DirViento": "S"
+        "Fecha": "13-10-2026",
+        "TempMax": "27.5",
+        "TempMin": "9.6",
+        "TempMed": "18.3",
+        "Pre": "0.0",
+        "VelMed": "2.5",
+        "VelMax": "8.7",
+        "DirViento": "SE"
       },
       {
         "Id": "18798",
         "Est": "Jerez - Santa Fe",
-        "Fecha": "12-10-2026",
-        "TempMax": "26.3",
-        "TempMin": "12.5",
-        "TempMed": "18.7",
-        "Pre": "0.2",
-        "VelMed": "1.7",
-        "VelMax": "7.9",
-        "DirViento": "S"
+        "Fecha": "13-10-2026",
+        "TempMax": "30.0",
+        "TempMin": "11.4",
+        "TempMed": "18.4",
+        "Pre": "8.4",
+        "VelMed": "1.3",
+        "VelMax": "14.6",
+        "DirViento": "SO"
       },
       {
         "Id": "18802",
         "Est": "Fresnillo - Ábrego",
-        "Fecha": "12-10-2026",
-        "TempMax": "25.3",
-        "TempMin": "10.5",
-        "TempMed": "16.7",
-        "Pre": "0.0",
-        "VelMed": "1.7",
-        "VelMax": "10.9",
-        "DirViento": "SSO"
+        "Fecha": "13-10-2026",
+        "TempMax": "26.7",
+        "TempMin": "10.0",
+        "TempMed": "17.4",
+        "Pre": "0.2",
+        "VelMed": "2.8",
+        "VelMax": "11.8",
+        "DirViento": "S"
       },
       {
         "Id": "18806",
         "Est": "Fresnillo - Rancho Grande",
-        "Fecha": "12-10-2026",
-        "TempMax": "25.1",
-        "TempMin": "13.9",
-        "TempMed": "17.7",
+        "Fecha": "13-10-2026",
+        "TempMax": "26.7",
+        "TempMin": "11.6",
+        "TempMed": "18.5",
         "Pre": "0.0",
-        "VelMed": "7.9",
-        "VelMax": "14.4",
-        "DirViento": "SE"
+        "VelMed": "7.2",
+        "VelMax": "15.6",
+        "DirViento": "ESE"
       },
       {
         "Id": "18829",
         "Est": "Rio Grande - Col. Progreso",
-        "Fecha": "12-10-2026",
-        "TempMax": "25.8",
-        "TempMin": "12.3",
-        "TempMed": "17.3",
-        "Pre": "0.2",
-        "VelMed": "4.6",
-        "VelMax": "17.5",
+        "Fecha": "13-10-2026",
+        "TempMax": "28.3",
+        "TempMin": "9.4",
+        "TempMed": "17.9",
+        "Pre": "0.1",
+        "VelMed": "3.2",
+        "VelMax": "9.7",
         "DirViento": "SE"
       },
       {
         "Id": "18836",
         "Est": "Fresnillo - Col. Emancipación",
-        "Fecha": "12-10-2026",
-        "TempMax": "25.3",
-        "TempMin": "11.5",
-        "TempMed": "17.4",
+        "Fecha": "13-10-2026",
+        "TempMax": "26.8",
+        "TempMin": "9.3",
+        "TempMed": "18.0",
         "Pre": "0.0",
-        "VelMed": "3.0",
-        "VelMax": "9.7",
-        "DirViento": "SE"
+        "VelMed": "3.6",
+        "VelMax": "11.0",
+        "DirViento": "SSE"
       },
       {
         "Id": "18837",
         "Est": "Villa de Cos - Sierra Vieja",
-        "Fecha": "12-10-2026",
-        "TempMax": "27.2",
-        "TempMin": "14.0",
-        "TempMed": "19.3",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.8",
+        "TempMin": "11.6",
+        "TempMed": "19.5",
         "Pre": "0.0",
-        "VelMed": "6.0",
-        "VelMax": "13.2",
-        "DirViento": "ESE"
+        "VelMed": "8.3",
+        "VelMax": "23.7",
+        "DirViento": "E"
       },
       {
         "Id": "18842",
         "Est": "Villanueva - Villanueva",
-        "Fecha": "12-10-2026",
-        "TempMax": "27.7",
-        "TempMin": "12.0",
-        "TempMed": "19.0",
+        "Fecha": "13-10-2026",
+        "TempMax": "29.2",
+        "TempMin": "12.2",
+        "TempMed": "19.7",
         "Pre": "0.0",
         "VelMed": "2.8",
-        "VelMax": "7.5",
-        "DirViento": "SSE"
+        "VelMax": "15.2",
+        "DirViento": "S"
       },
       {
         "Id": "18849",
         "Est": "Mazapil - Marianita",
-        "Fecha": "12-10-2026",
+        "Fecha": "13-10-2026",
         "TempMax": "29.9",
-        "TempMin": "14.0",
-        "TempMed": "20.7",
+        "TempMin": "13.3",
+        "TempMed": "21.1",
         "Pre": "0.0",
-        "VelMed": "4.6",
-        "VelMax": "12.0",
+        "VelMed": "5.6",
+        "VelMax": "13.0",
         "DirViento": "SE"
       },
       {
         "Id": "18851",
         "Est": "Calera - CEZAC",
-        "Fecha": "12-10-2026",
-        "TempMax": "22.3",
-        "TempMin": "12.2",
-        "TempMed": "16.1",
-        "Pre": "2.6",
-        "VelMed": "5.7",
-        "VelMax": "22.7",
-        "DirViento": "SSE"
+        "Fecha": "13-10-2026",
+        "TempMax": "25.1",
+        "TempMin": "10.8",
+        "TempMed": "17.5",
+        "Pre": "0.2",
+        "VelMed": "8.2",
+        "VelMax": "22.1",
+        "DirViento": "ESE"
       },
       {
         "Id": "18879",
         "Est": "Tepechitlan - CBTA Tepechitlan",
-        "Fecha": "12-10-2026",
-        "TempMax": "29.3",
-        "TempMin": "11.7",
-        "TempMed": "19.4",
+        "Fecha": "13-10-2026",
+        "TempMax": "29.8",
+        "TempMin": "15.2",
+        "TempMed": "20.8",
         "Pre": "0.0",
-        "VelMed": "1.1",
-        "VelMax": "5.6",
+        "VelMed": "1.4",
+        "VelMax": "5.8",
         "DirViento": "SSO"
       },
       {
         "Id": "18882",
         "Est": "Guadalupe - U.A. Biología",
-        "Fecha": "12-10-2026",
-        "TempMax": "24.8",
-        "TempMin": "13.4",
-        "TempMed": "17.3",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.4",
+        "TempMin": "12.8",
+        "TempMed": "18.4",
         "Pre": "0.0",
-        "VelMed": "2.5",
-        "VelMax": "6.3",
+        "VelMed": "3.4",
+        "VelMax": "8.1",
         "DirViento": "SE"
       },
       {
@@ -836,97 +836,97 @@
       {
         "Id": "26766",
         "Est": "Francisco Murguía - Mogotes",
-        "Fecha": "12-10-2026",
-        "TempMax": "25.6",
-        "TempMin": "12.6",
-        "TempMed": "17.6",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.6",
+        "TempMin": "12.1",
+        "TempMed": "19.0",
         "Pre": "0.0",
-        "VelMed": "4.4",
-        "VelMax": "11.3",
+        "VelMed": "4.5",
+        "VelMax": "8.3",
         "DirViento": "E"
       },
       {
         "Id": "26767",
         "Est": "Momax - Momax",
-        "Fecha": "12-10-2026",
-        "TempMax": "32.8",
-        "TempMin": "11.8",
-        "TempMed": "20.1",
-        "Pre": "2.8",
-        "VelMed": "0.8",
-        "VelMax": "4.6",
+        "Fecha": "13-10-2026",
+        "TempMax": "33.3",
+        "TempMin": "13.4",
+        "TempMed": "21.0",
+        "Pre": "0.8",
+        "VelMed": "0.9",
+        "VelMax": "5.0",
         "DirViento": "SE"
       },
       {
         "Id": "26772",
         "Est": "Villa Glez. Ortega - Estancia de Ánimas",
-        "Fecha": "12-10-2026",
-        "TempMax": "26.0",
-        "TempMin": "12.9",
-        "TempMed": "17.3",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.2",
+        "TempMin": "9.7",
+        "TempMed": "17.6",
         "Pre": "0.0",
-        "VelMed": "4.0",
-        "VelMax": "11.1",
-        "DirViento": "E"
+        "VelMed": "3.8",
+        "VelMax": "13.9",
+        "DirViento": "ESE"
       },
       {
         "Id": "26775",
         "Est": "Trancoso - Las Arcinas",
-        "Fecha": "11-10-2026",
-        "TempMax": "22.5",
-        "TempMin": "11.7",
-        "TempMed": "16.0",
+        "Fecha": "12-10-2026",
+        "TempMax": "25.6",
+        "TempMin": "13.2",
+        "TempMed": "17.6",
         "Pre": "0.0",
-        "VelMed": "5.8",
-        "VelMax": "14.9",
-        "DirViento": "SSE"
+        "VelMed": "4.6",
+        "VelMax": "13.2",
+        "DirViento": "SE"
       },
       {
         "Id": "26779",
         "Est": "Pánfilo Natera - El Saladillo",
-        "Fecha": "12-10-2026",
-        "TempMax": "25.8",
-        "TempMin": "13.6",
-        "TempMed": "18.2",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.1",
+        "TempMin": "9.7",
+        "TempMed": "18.1",
         "Pre": "0.0",
-        "VelMed": "3.7",
-        "VelMax": "12.3",
-        "DirViento": "ESE"
+        "VelMed": "4.3",
+        "VelMax": "13.6",
+        "DirViento": "SSE"
       },
       {
         "Id": "26786",
         "Est": "Sombrerete - Col. Gonzalez Ortega",
-        "Fecha": "12-10-2026",
-        "TempMax": "26.1",
-        "TempMin": "12.5",
-        "TempMed": "17.7",
-        "Pre": "1.2",
-        "VelMed": "6.3",
-        "VelMax": "14.2",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.1",
+        "TempMin": "11.8",
+        "TempMed": "18.7",
+        "Pre": "0.0",
+        "VelMed": "4.2",
+        "VelMax": "8.5",
         "DirViento": "SSE"
       },
       {
         "Id": "35254",
         "Est": "Estación Desconocida",
-        "Fecha": "12-10-2026",
-        "TempMax": "23.9",
-        "TempMin": "11.9",
-        "TempMed": "16.4",
-        "Pre": "0.4",
-        "VelMed": "2.7",
-        "VelMax": "8.2",
-        "DirViento": "SSE"
+        "Fecha": "13-10-2026",
+        "TempMax": "26.1",
+        "TempMin": "10.9",
+        "TempMed": "18.3",
+        "Pre": "0.0",
+        "VelMed": "3.0",
+        "VelMax": "8.4",
+        "DirViento": "S"
       },
       {
         "Id": "50060",
         "Est": "Jerez - Palmas Altas",
-        "Fecha": "12-10-2026",
-        "TempMax": "24.5",
-        "TempMin": "11.4",
-        "TempMed": "16.7",
-        "Pre": "0.0",
-        "VelMed": "3.9",
-        "VelMax": "12.4",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.0",
+        "TempMin": "10.7",
+        "TempMed": "16.6",
+        "Pre": "4.4",
+        "VelMed": "4.5",
+        "VelMax": "11.0",
         "DirViento": "S"
       },
       {
@@ -948,47 +948,47 @@
         "Est": "Jalpa - Santo Domingo",
         "TempMax": "32.3",
         "TempMin": "14.7",
-        "TempMed": "21.7",
-        "Pre": "22.0",
+        "TempMed": "21.8",
+        "Pre": "24.6",
         "HumRMax": "98.6",
         "HumRMin": "32.0",
         "HumRMed": "73.9",
-        "Rad": "194,929.5",
-        "VelMed": "2.1",
+        "Rad": "216,631.1",
+        "VelMed": "2.0",
         "VelMax": "12.0",
-        "Eto": "36.5",
+        "Eto": "40.5",
         "Mes": "10"
       },
       {
         "Id": "15933",
         "Est": "Miguel Auza - Campo Uno",
-        "TempMax": "26.4",
+        "TempMax": "27.4",
         "TempMin": "5.9",
-        "TempMed": "16.1",
-        "Pre": "61.0",
+        "TempMed": "16.2",
+        "Pre": "61.1",
         "HumRMax": "99.9",
-        "HumRMin": "44.7",
-        "HumRMed": "86.6",
-        "Rad": "165,680.3",
-        "VelMed": "5.2",
+        "HumRMin": "36.9",
+        "HumRMed": "86.0",
+        "Rad": "188,858.6",
+        "VelMed": "5.0",
         "VelMax": "16.0",
-        "Eto": "27.2",
+        "Eto": "31.2",
         "Mes": "10"
       },
       {
         "Id": "15951",
         "Est": "Mazapil - Tanque de Hacheros",
-        "TempMax": "29.4",
-        "TempMin": "11.8",
-        "TempMed": "18.4",
+        "TempMax": "29.5",
+        "TempMin": "11.6",
+        "TempMed": "18.5",
         "Pre": "141.6",
         "HumRMax": "99.9",
-        "HumRMin": "51.3",
-        "HumRMed": "90.7",
-        "Rad": "158,153.6",
-        "VelMed": "3.6",
+        "HumRMin": "51.1",
+        "HumRMed": "90.0",
+        "Rad": "179,748.1",
+        "VelMed": "3.7",
         "VelMax": "16.2",
-        "Eto": "26.7",
+        "Eto": "30.8",
         "Mes": "10"
       },
       {
@@ -996,63 +996,63 @@
         "Est": "Villa de Cos - COBAEZ Villa de Cos",
         "TempMax": "27.5",
         "TempMin": "11.9",
-        "TempMed": "17.9",
+        "TempMed": "18.0",
         "Pre": "35.0",
-        "HumRMax": "93.5",
-        "HumRMin": "39.2",
-        "HumRMed": "75.9",
-        "Rad": "181,075.3",
+        "HumRMax": "93.9",
+        "HumRMin": "38.7",
+        "HumRMed": "75.5",
+        "Rad": "204,991.7",
         "VelMed": "6.5",
         "VelMax": "19.7",
-        "Eto": "33.1",
+        "Eto": "37.4",
         "Mes": "10"
       },
       {
         "Id": "18663",
         "Est": "Loreto - Loreto",
-        "TempMax": "27.0",
-        "TempMin": "11.4",
+        "TempMax": "27.3",
+        "TempMin": "10.8",
         "TempMed": "17.6",
         "Pre": "16.2",
         "HumRMax": "92.3",
-        "HumRMin": "39.2",
-        "HumRMed": "75.4",
-        "Rad": "173,836.3",
-        "VelMed": "6.4",
+        "HumRMin": "34.7",
+        "HumRMed": "74.8",
+        "Rad": "193,685.2",
+        "VelMed": "6.3",
         "VelMax": "21.9",
-        "Eto": "31.5",
+        "Eto": "35.2",
         "Mes": "10"
       },
       {
         "Id": "18664",
         "Est": "Fresnillo - El Pardillo 3",
         "TempMax": "27.4",
-        "TempMin": "11.2",
-        "TempMed": "17.0",
-        "Pre": "160.5",
+        "TempMin": "9.8",
+        "TempMed": "17.1",
+        "Pre": "160.6",
         "HumRMax": "93.9",
         "HumRMin": "39.8",
-        "HumRMed": "79.7",
-        "Rad": "173,603.2",
-        "VelMed": "7.7",
+        "HumRMed": "79.2",
+        "Rad": "195,851.2",
+        "VelMed": "7.5",
         "VelMax": "25.3",
-        "Eto": "30.4",
+        "Eto": "34.5",
         "Mes": "10"
       },
       {
         "Id": "18670",
         "Est": "Tabasco - Tierra Blanca",
-        "TempMax": "29.8",
+        "TempMax": "30.7",
         "TempMin": "13.4",
-        "TempMed": "20.8",
+        "TempMed": "20.9",
         "Pre": "71.2",
         "HumRMax": "96.8",
-        "HumRMin": "38.6",
-        "HumRMed": "76.1",
-        "Rad": "198,271.9",
+        "HumRMin": "38.2",
+        "HumRMed": "75.9",
+        "Rad": "224,269.4",
         "VelMed": "2.6",
         "VelMax": "15.6",
-        "Eto": "36.5",
+        "Eto": "41.3",
         "Mes": "10"
       },
       {
@@ -1060,15 +1060,15 @@
         "Est": "Pinos - La Victoria",
         "TempMax": "27.1",
         "TempMin": "10.7",
-        "TempMed": "15.4",
+        "TempMed": "15.6",
         "Pre": "27.2",
         "HumRMax": "99.9",
         "HumRMin": "43.9",
-        "HumRMed": "92.4",
-        "Rad": "158,751.6",
+        "HumRMed": "92.0",
+        "Rad": "180,553.1",
         "VelMed": "9.0",
         "VelMax": "19.9",
-        "Eto": "24.1",
+        "Eto": "27.9",
         "Mes": "10"
       },
       {
@@ -1076,175 +1076,175 @@
         "Est": "Zacatecas - U.A. Agronomía",
         "TempMax": "27.2",
         "TempMin": "11.3",
-        "TempMed": "16.6",
-        "Pre": "33.2",
+        "TempMed": "16.7",
+        "Pre": "33.4",
         "HumRMax": "98.9",
-        "HumRMin": "38.3",
-        "HumRMed": "82.5",
-        "Rad": "158,849.7",
-        "VelMed": "4.6",
+        "HumRMin": "37.5",
+        "HumRMed": "81.9",
+        "Rad": "182,403.0",
+        "VelMed": "4.5",
         "VelMax": "16.7",
-        "Eto": "27.1",
+        "Eto": "31.2",
         "Mes": "10"
       },
       {
         "Id": "18682",
         "Est": "Jerez - Santa Rita",
-        "TempMax": "26.5",
-        "TempMin": "12.1",
+        "TempMax": "27.3",
+        "TempMin": "11.6",
         "TempMed": "17.8",
-        "Pre": "28.4",
+        "Pre": "29.4",
         "HumRMax": "100.0",
-        "HumRMin": "45.8",
+        "HumRMin": "41.9",
         "HumRMed": "80.9",
-        "Rad": "192,113.6",
-        "VelMed": "7.0",
+        "Rad": "212,814.1",
+        "VelMed": "6.7",
         "VelMax": "24.0",
-        "Eto": "33.5",
+        "Eto": "37.2",
         "Mes": "10"
       },
       {
         "Id": "18777",
         "Est": "Sombrerete - Providencia",
-        "TempMax": "23.9",
+        "TempMax": "25.0",
         "TempMin": "7.8",
-        "TempMed": "14.6",
-        "Pre": "114.2",
+        "TempMed": "14.8",
+        "Pre": "114.3",
         "HumRMax": "98.0",
-        "HumRMin": "51.9",
-        "HumRMed": "86.9",
-        "Rad": "139,391.7",
-        "VelMed": "7.7",
-        "VelMax": "16.7",
-        "Eto": "22.2",
+        "HumRMin": "39.3",
+        "HumRMed": "85.9",
+        "Rad": "159,166.5",
+        "VelMed": "7.6",
+        "VelMax": "17.6",
+        "Eto": "25.8",
         "Mes": "10"
       },
       {
         "Id": "18779",
         "Est": "Villa de Cos - Agua Nueva",
-        "TempMax": "27.7",
+        "TempMax": "28.4",
         "TempMin": "10.6",
-        "TempMed": "17.5",
+        "TempMed": "17.7",
         "Pre": "262.2",
         "HumRMax": "99.9",
-        "HumRMin": "56.9",
-        "HumRMed": "94.0",
-        "Rad": "162,299.9",
-        "VelMed": "4.7",
+        "HumRMin": "55.8",
+        "HumRMed": "93.4",
+        "Rad": "186,372.3",
+        "VelMed": "4.9",
         "VelMax": "29.0",
-        "Eto": "26.0",
+        "Eto": "30.2",
         "Mes": "10"
       },
       {
         "Id": "18782",
         "Est": "Sombrerete - Emiliano Zapata",
-        "TempMax": "22.5",
+        "TempMax": "25.5",
         "TempMin": "7.9",
-        "TempMed": "14.8",
+        "TempMed": "15.0",
         "Pre": "131.2",
         "HumRMax": "99.9",
-        "HumRMin": "42.9",
-        "HumRMed": "85.3",
-        "Rad": "178,907.0",
-        "VelMed": "11.4",
+        "HumRMin": "39.1",
+        "HumRMed": "84.3",
+        "Rad": "202,527.3",
+        "VelMed": "11.0",
         "VelMax": "25.4",
-        "Eto": "27.4",
+        "Eto": "31.7",
         "Mes": "10"
       },
       {
         "Id": "18783",
         "Est": "Villa de Cos - Chaparrosa",
-        "TempMax": "26.9",
-        "TempMin": "12.1",
-        "TempMed": "17.5",
+        "TempMax": "27.7",
+        "TempMin": "11.1",
+        "TempMed": "17.6",
         "Pre": "29.2",
         "HumRMax": "95.8",
         "HumRMin": "36.9",
-        "HumRMed": "80.5",
-        "Rad": "221,457.0",
+        "HumRMed": "79.8",
+        "Rad": "253,332.1",
         "VelMed": "7.2",
         "VelMax": "23.9",
-        "Eto": "37.2",
+        "Eto": "42.9",
         "Mes": "10"
       },
       {
         "Id": "18786",
         "Est": "Enrique Estrada - Mesa de Fuentes",
         "TempMax": "24.6",
-        "TempMin": "10.8",
-        "TempMed": "15.4",
+        "TempMin": "10.7",
+        "TempMed": "15.5",
         "Pre": "107.2",
         "HumRMax": "97.3",
-        "HumRMin": "47.2",
-        "HumRMed": "85.0",
-        "Rad": "160,434.3",
-        "VelMed": "8.9",
+        "HumRMin": "46.0",
+        "HumRMed": "84.2",
+        "Rad": "184,351.3",
+        "VelMed": "8.7",
         "VelMax": "19.9",
-        "Eto": "25.9",
+        "Eto": "30.1",
         "Mes": "10"
       },
       {
         "Id": "18791",
         "Est": "Ojocaliente - El Alpino",
         "TempMax": "28.8",
-        "TempMin": "10.4",
-        "TempMed": "17.7",
+        "TempMin": "10.0",
+        "TempMed": "17.8",
         "Pre": "28.5",
         "HumRMax": "95.2",
-        "HumRMin": "35.5",
-        "HumRMed": "79.1",
-        "Rad": "144,553.5",
+        "HumRMin": "34.8",
+        "HumRMed": "78.4",
+        "Rad": "165,508.9",
         "VelMed": "3.2",
         "VelMax": "20.1",
-        "Eto": "26.3",
+        "Eto": "30.1",
         "Mes": "10"
       },
       {
         "Id": "18796",
         "Est": "Sombrerete - Col. Hidalgo",
-        "TempMax": "25.2",
+        "TempMax": "27.5",
         "TempMin": "6.3",
-        "TempMed": "15.6",
+        "TempMed": "15.8",
         "Pre": "41.8",
         "HumRMax": "98.9",
-        "HumRMin": "44.3",
-        "HumRMed": "84.6",
-        "Rad": "173,813.9",
-        "VelMed": "7.6",
+        "HumRMin": "34.1",
+        "HumRMed": "83.6",
+        "Rad": "196,480.5",
+        "VelMed": "7.2",
         "VelMax": "20.3",
-        "Eto": "28.4",
+        "Eto": "32.4",
         "Mes": "10"
       },
       {
         "Id": "18798",
         "Est": "Jerez - Santa Fe",
-        "TempMax": "26.8",
-        "TempMin": "12.1",
+        "TempMax": "30.0",
+        "TempMin": "11.4",
         "TempMed": "18.3",
-        "Pre": "33.6",
+        "Pre": "42.0",
         "HumRMax": "98.3",
-        "HumRMin": "41.0",
-        "HumRMed": "78.7",
-        "Rad": "182,848.9",
-        "VelMed": "4.2",
+        "HumRMin": "33.4",
+        "HumRMed": "78.8",
+        "Rad": "206,167.0",
+        "VelMed": "4.0",
         "VelMax": "21.1",
-        "Eto": "32.4",
+        "Eto": "36.5",
         "Mes": "10"
       },
       {
         "Id": "18802",
         "Est": "Fresnillo - Ábrego",
-        "TempMax": "25.7",
+        "TempMax": "26.7",
         "TempMin": "7.9",
         "TempMed": "16.2",
-        "Pre": "88.2",
+        "Pre": "88.4",
         "HumRMax": "99.3",
-        "HumRMin": "45.6",
-        "HumRMed": "84.9",
-        "Rad": "168,155.3",
-        "VelMed": "4.1",
+        "HumRMin": "42.7",
+        "HumRMed": "84.5",
+        "Rad": "190,528.5",
+        "VelMed": "4.0",
         "VelMax": "15.1",
-        "Eto": "28.0",
+        "Eto": "32.0",
         "Mes": "10"
       },
       {
@@ -1252,79 +1252,79 @@
         "Est": "Fresnillo - Rancho Grande",
         "TempMax": "26.7",
         "TempMin": "10.2",
-        "TempMed": "16.8",
+        "TempMed": "17.0",
         "Pre": "76.5",
         "HumRMax": "98.8",
-        "HumRMin": "41.3",
-        "HumRMed": "85.3",
-        "Rad": "197,851.1",
-        "VelMed": "10.0",
+        "HumRMin": "40.8",
+        "HumRMed": "84.6",
+        "Rad": "223,743.5",
+        "VelMed": "9.8",
         "VelMax": "29.2",
-        "Eto": "32.1",
+        "Eto": "36.8",
         "Mes": "10"
       },
       {
         "Id": "18829",
         "Est": "Rio Grande - Col. Progreso",
-        "TempMax": "25.8",
+        "TempMax": "28.3",
         "TempMin": "7.4",
-        "TempMed": "16.6",
-        "Pre": "28.0",
+        "TempMed": "16.7",
+        "Pre": "28.1",
         "HumRMax": "97.6",
-        "HumRMin": "38.5",
-        "HumRMed": "83.7",
-        "Rad": "176,424.3",
-        "VelMed": "5.3",
+        "HumRMin": "31.3",
+        "HumRMed": "83.1",
+        "Rad": "200,048.2",
+        "VelMed": "5.2",
         "VelMax": "22.6",
-        "Eto": "29.3",
+        "Eto": "33.7",
         "Mes": "10"
       },
       {
         "Id": "18836",
         "Est": "Fresnillo - Col. Emancipación",
         "TempMax": "26.9",
-        "TempMin": "10.4",
-        "TempMed": "17.0",
+        "TempMin": "9.3",
+        "TempMed": "17.1",
         "Pre": "69.6",
         "HumRMax": "96.5",
-        "HumRMin": "44.2",
-        "HumRMed": "83.2",
-        "Rad": "175,653.2",
-        "VelMed": "6.2",
+        "HumRMin": "43.7",
+        "HumRMed": "82.7",
+        "Rad": "199,488.4",
+        "VelMed": "6.0",
         "VelMax": "23.7",
-        "Eto": "29.5",
+        "Eto": "33.9",
         "Mes": "10"
       },
       {
         "Id": "18837",
         "Est": "Villa de Cos - Sierra Vieja",
-        "TempMax": "27.2",
+        "TempMax": "27.8",
         "TempMin": "11.2",
-        "TempMed": "18.0",
+        "TempMed": "18.1",
         "Pre": "17.8",
         "HumRMax": "96.4",
-        "HumRMin": "38.7",
-        "HumRMed": "78.7",
-        "Rad": "184,434.5",
-        "VelMed": "6.1",
-        "VelMax": "19.5",
-        "Eto": "33.1",
+        "HumRMin": "36.7",
+        "HumRMed": "78.0",
+        "Rad": "208,396.9",
+        "VelMed": "6.2",
+        "VelMax": "23.7",
+        "Eto": "37.9",
         "Mes": "10"
       },
       {
         "Id": "18842",
         "Est": "Villanueva - Villanueva",
-        "TempMax": "28.0",
+        "TempMax": "29.2",
         "TempMin": "11.1",
-        "TempMed": "18.8",
+        "TempMed": "18.9",
         "Pre": "32.8",
         "HumRMax": "98.1",
         "HumRMin": "40.6",
-        "HumRMed": "77.9",
-        "Rad": "176,346.2",
+        "HumRMed": "77.6",
+        "Rad": "199,585.6",
         "VelMed": "3.3",
         "VelMax": "53.3",
-        "Eto": "31.9",
+        "Eto": "36.2",
         "Mes": "10"
       },
       {
@@ -1332,31 +1332,31 @@
         "Est": "Mazapil - Marianita",
         "TempMax": "29.9",
         "TempMin": "12.6",
-        "TempMed": "18.9",
+        "TempMed": "19.1",
         "Pre": "86.4",
         "HumRMax": "99.9",
-        "HumRMin": "47.0",
-        "HumRMed": "87.9",
-        "Rad": "154,392.8",
+        "HumRMin": "46.0",
+        "HumRMed": "87.0",
+        "Rad": "174,888.1",
         "VelMed": "4.9",
         "VelMax": "18.8",
-        "Eto": "26.8",
+        "Eto": "30.7",
         "Mes": "10"
       },
       {
         "Id": "18851",
         "Est": "Calera - CEZAC",
-        "TempMax": "24.1",
+        "TempMax": "25.1",
         "TempMin": "10.7",
-        "TempMed": "16.2",
-        "Pre": "133.6",
+        "TempMed": "16.3",
+        "Pre": "133.8",
         "HumRMax": "100.0",
-        "HumRMin": "53.4",
-        "HumRMed": "89.2",
-        "Rad": "176,385.3",
-        "VelMed": "9.6",
+        "HumRMin": "50.5",
+        "HumRMed": "88.6",
+        "Rad": "201,714.8",
+        "VelMed": "9.5",
         "VelMax": "57.0",
-        "Eto": "27.6",
+        "Eto": "32.0",
         "Mes": "10"
       },
       {
@@ -1364,31 +1364,31 @@
         "Est": "Tepechitlan - CBTA Tepechitlan",
         "TempMax": "29.9",
         "TempMin": "11.7",
-        "TempMed": "19.7",
+        "TempMed": "19.8",
         "Pre": "27.4",
         "HumRMax": "98.4",
         "HumRMin": "38.0",
-        "HumRMed": "79.0",
-        "Rad": "186,292.5",
-        "VelMed": "2.4",
+        "HumRMed": "78.7",
+        "Rad": "203,602.3",
+        "VelMed": "2.3",
         "VelMax": "16.0",
-        "Eto": "33.7",
+        "Eto": "36.9",
         "Mes": "10"
       },
       {
         "Id": "18882",
         "Est": "Guadalupe - U.A. Biología",
-        "TempMax": "24.9",
+        "TempMax": "25.4",
         "TempMin": "11.2",
-        "TempMed": "16.0",
+        "TempMed": "16.2",
         "Pre": "57.2",
         "HumRMax": "93.5",
-        "HumRMin": "42.8",
-        "HumRMed": "79.4",
-        "Rad": "142,002.1",
-        "VelMed": "4.0",
+        "HumRMin": "39.3",
+        "HumRMed": "78.5",
+        "Rad": "163,537.7",
+        "VelMed": "3.9",
         "VelMax": "14.1",
-        "Eto": "23.9",
+        "Eto": "27.7",
         "Mes": "10"
       },
       {
@@ -1410,49 +1410,49 @@
       {
         "Id": "26766",
         "Est": "Francisco Murguía - Mogotes",
-        "TempMax": "25.6",
+        "TempMax": "27.6",
         "TempMin": "7.2",
-        "TempMed": "16.4",
+        "TempMed": "16.6",
         "Pre": "47.9",
         "HumRMax": "99.3",
-        "HumRMin": "41.3",
-        "HumRMed": "83.9",
-        "Rad": "193,061.0",
-        "VelMed": "5.5",
+        "HumRMin": "35.8",
+        "HumRMed": "83.1",
+        "Rad": "218,741.2",
+        "VelMed": "5.4",
         "VelMax": "16.6",
-        "Eto": "31.5",
+        "Eto": "36.1",
         "Mes": "10"
       },
       {
         "Id": "26767",
         "Est": "Momax - Momax",
-        "TempMax": "33.0",
+        "TempMax": "33.3",
         "TempMin": "11.8",
         "TempMed": "20.5",
-        "Pre": "46.2",
+        "Pre": "47.0",
         "HumRMax": "98.7",
         "HumRMin": "35.2",
-        "HumRMed": "78.9",
-        "Rad": "174,054.4",
+        "HumRMed": "79.0",
+        "Rad": "193,213.2",
         "VelMed": "1.0",
         "VelMax": "14.5",
-        "Eto": "31.5",
+        "Eto": "35.0",
         "Mes": "10"
       },
       {
         "Id": "26772",
         "Est": "Villa Glez. Ortega - Estancia de Ánimas",
         "TempMax": "28.0",
-        "TempMin": "10.5",
+        "TempMin": "9.7",
         "TempMed": "16.7",
         "Pre": "41.8",
         "HumRMax": "99.9",
         "HumRMin": "34.8",
-        "HumRMed": "82.0",
-        "Rad": "175,735.8",
-        "VelMed": "4.6",
+        "HumRMed": "81.6",
+        "Rad": "198,099.7",
+        "VelMed": "4.5",
         "VelMax": "20.5",
-        "Eto": "30.2",
+        "Eto": "34.2",
         "Mes": "10"
       },
       {
@@ -1464,75 +1464,75 @@
         "Pre": "59.0",
         "HumRMax": "94.6",
         "HumRMin": "41.8",
-        "HumRMed": "81.4",
-        "Rad": "149,604.1",
-        "VelMed": "5.5",
+        "HumRMed": "81.2",
+        "Rad": "169,529.3",
+        "VelMed": "5.4",
         "VelMax": "18.5",
-        "Eto": "25.4",
+        "Eto": "28.8",
         "Mes": "10"
       },
       {
         "Id": "26779",
         "Est": "Pánfilo Natera - El Saladillo",
         "TempMax": "28.7",
-        "TempMin": "11.5",
-        "TempMed": "17.3",
+        "TempMin": "9.7",
+        "TempMed": "17.4",
         "Pre": "33.8",
-        "HumRMax": "97.5",
+        "HumRMax": "98.1",
         "HumRMin": "32.6",
-        "HumRMed": "79.8",
-        "Rad": "175,578.7",
-        "VelMed": "5.8",
+        "HumRMed": "79.4",
+        "Rad": "199,618.7",
+        "VelMed": "5.7",
         "VelMax": "25.0",
-        "Eto": "30.8",
+        "Eto": "35.2",
         "Mes": "10"
       },
       {
         "Id": "26786",
         "Est": "Sombrerete - Col. Gonzalez Ortega",
-        "TempMax": "26.1",
+        "TempMax": "27.1",
         "TempMin": "10.0",
-        "TempMed": "16.2",
+        "TempMed": "16.4",
         "Pre": "29.0",
         "HumRMax": "99.9",
-        "HumRMin": "56.4",
-        "HumRMed": "93.3",
-        "Rad": "175,222.8",
-        "VelMed": "7.8",
+        "HumRMin": "49.2",
+        "HumRMed": "92.4",
+        "Rad": "199,664.8",
+        "VelMed": "7.5",
         "VelMax": "22.0",
-        "Eto": "26.4",
+        "Eto": "30.7",
         "Mes": "10"
       },
       {
         "Id": "35254",
         "Est": "Estación Desconocida",
-        "TempMax": "25.3",
-        "TempMin": "11.2",
-        "TempMed": "16.4",
+        "TempMax": "26.1",
+        "TempMin": "10.9",
+        "TempMed": "16.5",
         "Pre": "70.6",
         "HumRMax": "99.9",
-        "HumRMin": "51.2",
-        "HumRMed": "89.8",
-        "Rad": "159,573.9",
-        "VelMed": "4.2",
+        "HumRMin": "47.8",
+        "HumRMed": "88.9",
+        "Rad": "181,316.5",
+        "VelMed": "4.1",
         "VelMax": "12.9",
-        "Eto": "26.1",
+        "Eto": "29.9",
         "Mes": "10"
       },
       {
         "Id": "50060",
         "Est": "Jerez - Palmas Altas",
-        "TempMax": "24.5",
+        "TempMax": "25.0",
         "TempMin": "10.1",
-        "TempMed": "15.6",
-        "Pre": "85.7",
+        "TempMed": "15.7",
+        "Pre": "90.1",
         "HumRMax": "100.0",
         "HumRMin": "47.1",
-        "HumRMed": "88.7",
-        "Rad": "173,186.3",
-        "VelMed": "6.7",
+        "HumRMed": "88.3",
+        "Rad": "194,537.9",
+        "VelMed": "6.5",
         "VelMax": "21.0",
-        "Eto": "27.0",
+        "Eto": "30.6",
         "Mes": "10"
       },
       {
@@ -1627,6 +1627,10 @@
           {
             "Hora": "04:00",
             "Temp": "17.7"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "17.6"
           }
         ]
       }
@@ -1770,6 +1774,10 @@
           {
             "Hora": "04:00",
             "Temp": "11.8"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "11.8"
           }
         ]
       }
@@ -1847,6 +1855,10 @@
           {
             "Hora": "04:00",
             "Temp": "13.7"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "13.3"
           }
         ]
       }
@@ -2005,6 +2017,10 @@
           {
             "Hora": "04:00",
             "Temp": "12.1"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "11.8"
           }
         ]
       }
@@ -2082,6 +2098,10 @@
           {
             "Hora": "04:00",
             "Temp": "15.4"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "15.1"
           }
         ]
       }
@@ -2159,6 +2179,10 @@
           {
             "Hora": "04:00",
             "Temp": "12.1"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "12.0"
           }
         ]
       }
@@ -2236,6 +2260,10 @@
           {
             "Hora": "04:00",
             "Temp": "13.4"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "13.2"
           }
         ]
       }
@@ -2451,6 +2479,10 @@
           {
             "Hora": "04:00",
             "Temp": "13.9"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "14.0"
           }
         ]
       }
@@ -2614,6 +2646,14 @@
           {
             "Hora": "03:45",
             "Temp": "11.1"
+          },
+          {
+            "Hora": "04:00",
+            "Temp": "11.2"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "10.9"
           }
         ]
       }
@@ -2752,6 +2792,10 @@
           {
             "Hora": "04:00",
             "Temp": "13.4"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "13.3"
           }
         ]
       }
@@ -3150,6 +3194,10 @@
           {
             "Hora": "04:00",
             "Temp": "13.4"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "12.7"
           }
         ]
       }
@@ -3226,6 +3274,10 @@
           },
           {
             "Hora": "04:00",
+            "Temp": "14.0"
+          },
+          {
+            "Hora": "04:15",
             "Temp": "14.0"
           }
         ]
@@ -3304,6 +3356,10 @@
           {
             "Hora": "04:00",
             "Temp": "11.8"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "11.5"
           }
         ]
       }
@@ -3414,6 +3470,10 @@
           {
             "Hora": "04:00",
             "Temp": "14.0"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "13.7"
           }
         ]
       }
@@ -3452,6 +3512,22 @@
           {
             "Hora": "01:30",
             "Temp": "14.8"
+          },
+          {
+            "Hora": "01:45",
+            "Temp": "14.9"
+          },
+          {
+            "Hora": "02:00",
+            "Temp": "14.6"
+          },
+          {
+            "Hora": "02:15",
+            "Temp": "14.2"
+          },
+          {
+            "Hora": "02:30",
+            "Temp": "14.0"
           }
         ]
       }
@@ -3562,6 +3638,10 @@
           {
             "Hora": "04:00",
             "Temp": "11.5"
+          },
+          {
+            "Hora": "04:15",
+            "Temp": "11.2"
           }
         ]
       }
@@ -3755,6 +3835,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -3832,6 +3916,10 @@
             {
               "Hora": "04:00",
               "Humedad": "88.7"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "90.2"
             }
           ]
         }
@@ -3908,6 +3996,10 @@
             },
             {
               "Hora": "04:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
               "Rad": "0.0"
             }
           ]
@@ -3986,6 +4078,10 @@
             {
               "Hora": "04:00",
               "VelViento": "0.3"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "0.0"
             }
           ]
         }
@@ -4333,6 +4429,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -4409,6 +4509,10 @@
             },
             {
               "Hora": "04:00",
+              "Humedad": "99.9"
+            },
+            {
+              "Hora": "04:15",
               "Humedad": "99.9"
             }
           ]
@@ -4487,6 +4591,10 @@
             {
               "Hora": "04:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -4564,6 +4672,10 @@
             {
               "Hora": "04:00",
               "VelViento": "1.0"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "0.2"
             }
           ]
         }
@@ -4643,6 +4755,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -4720,6 +4836,10 @@
             {
               "Hora": "04:00",
               "Humedad": "91.1"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "91.5"
             }
           ]
         }
@@ -4796,6 +4916,10 @@
             },
             {
               "Hora": "04:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
               "Rad": "0.0"
             }
           ]
@@ -4874,6 +4998,10 @@
             {
               "Hora": "04:00",
               "VelViento": "1.19"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "3.43"
             }
           ]
         }
@@ -5279,6 +5407,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -5356,6 +5488,10 @@
             {
               "Hora": "04:00",
               "Humedad": "91.4"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "91.7"
             }
           ]
         }
@@ -5432,6 +5568,10 @@
             },
             {
               "Hora": "04:00",
+              "Rad": "0.2"
+            },
+            {
+              "Hora": "04:15",
               "Rad": "0.2"
             }
           ]
@@ -5510,6 +5650,10 @@
             {
               "Hora": "04:00",
               "VelViento": "0.8"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "0.1"
             }
           ]
         }
@@ -5589,6 +5733,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -5666,6 +5814,10 @@
             {
               "Hora": "04:00",
               "Humedad": "94.7"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "94.8"
             }
           ]
         }
@@ -5742,6 +5894,10 @@
             },
             {
               "Hora": "04:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
               "Rad": "0.0"
             }
           ]
@@ -5820,6 +5976,10 @@
             {
               "Hora": "04:00",
               "VelViento": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "0.3"
             }
           ]
         }
@@ -5899,6 +6059,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -5975,6 +6139,10 @@
             },
             {
               "Hora": "04:00",
+              "Humedad": "99.9"
+            },
+            {
+              "Hora": "04:15",
               "Humedad": "99.9"
             }
           ]
@@ -6053,6 +6221,10 @@
             {
               "Hora": "04:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -6130,6 +6302,10 @@
             {
               "Hora": "04:00",
               "VelViento": "4.9"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "3.1"
             }
           ]
         }
@@ -6209,6 +6385,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -6286,6 +6466,10 @@
             {
               "Hora": "04:00",
               "Humedad": "92.8"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "93.1"
             }
           ]
         }
@@ -6362,6 +6546,10 @@
             },
             {
               "Hora": "04:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
               "Rad": "0.0"
             }
           ]
@@ -6440,6 +6628,10 @@
             {
               "Hora": "04:00",
               "VelViento": "2.1"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "1.6"
             }
           ]
         }
@@ -7075,6 +7267,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -7151,6 +7347,10 @@
             },
             {
               "Hora": "04:00",
+              "Humedad": "99.9"
+            },
+            {
+              "Hora": "04:15",
               "Humedad": "99.9"
             }
           ]
@@ -7229,6 +7429,10 @@
             {
               "Hora": "04:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -7306,6 +7510,10 @@
             {
               "Hora": "04:00",
               "VelViento": "13.6"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "15.7"
             }
           ]
         }
@@ -7745,6 +7953,14 @@
             {
               "Hora": "03:45",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -7818,6 +8034,14 @@
             {
               "Hora": "03:45",
               "Humedad": "92.1"
+            },
+            {
+              "Hora": "04:00",
+              "Humedad": "92.4"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "92.3"
             }
           ]
         }
@@ -7891,6 +8115,14 @@
             {
               "Hora": "03:45",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -7963,6 +8195,14 @@
             },
             {
               "Hora": "03:45",
+              "VelViento": "0.4"
+            },
+            {
+              "Hora": "04:00",
+              "VelViento": "0.1"
+            },
+            {
+              "Hora": "04:15",
               "VelViento": "0.4"
             }
           ]
@@ -8289,6 +8529,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -8365,6 +8609,10 @@
             },
             {
               "Hora": "04:00",
+              "Humedad": "97.9"
+            },
+            {
+              "Hora": "04:15",
               "Humedad": "97.9"
             }
           ]
@@ -8443,6 +8691,10 @@
             {
               "Hora": "04:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -8520,6 +8772,10 @@
             {
               "Hora": "04:00",
               "VelViento": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "0.2"
             }
           ]
         }
@@ -9893,6 +10149,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -9970,6 +10230,10 @@
             {
               "Hora": "04:00",
               "Humedad": "97.0"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "96.9"
             }
           ]
         }
@@ -10047,6 +10311,10 @@
             {
               "Hora": "04:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -10123,6 +10391,10 @@
             },
             {
               "Hora": "04:00",
+              "VelViento": "0.0"
+            },
+            {
+              "Hora": "04:15",
               "VelViento": "0.0"
             }
           ]
@@ -10203,6 +10475,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -10279,6 +10555,10 @@
             },
             {
               "Hora": "04:00",
+              "Humedad": "99.9"
+            },
+            {
+              "Hora": "04:15",
               "Humedad": "99.9"
             }
           ]
@@ -10357,6 +10637,10 @@
             {
               "Hora": "04:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -10434,6 +10718,10 @@
             {
               "Hora": "04:00",
               "VelViento": "0.2"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "0.0"
             }
           ]
         }
@@ -10513,6 +10801,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -10589,6 +10881,10 @@
             },
             {
               "Hora": "04:00",
+              "Humedad": "100.0"
+            },
+            {
+              "Hora": "04:15",
               "Humedad": "100.0"
             }
           ]
@@ -10667,6 +10963,10 @@
             {
               "Hora": "04:00",
               "Rad": "0.1"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -10744,6 +11044,10 @@
             {
               "Hora": "04:00",
               "VelViento": "2.08"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "0.77"
             }
           ]
         }
@@ -10957,6 +11261,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -11033,6 +11341,10 @@
             },
             {
               "Hora": "04:00",
+              "Humedad": "85.9"
+            },
+            {
+              "Hora": "04:15",
               "Humedad": "85.9"
             }
           ]
@@ -11111,6 +11423,10 @@
             {
               "Hora": "04:00",
               "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Rad": "0.0"
             }
           ]
         }
@@ -11188,6 +11504,10 @@
             {
               "Hora": "04:00",
               "VelViento": "1.5"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "0.8"
             }
           ]
         }
@@ -11233,6 +11553,22 @@
             {
               "Hora": "01:30",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "01:45",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "02:00",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "02:15",
+              "Pre": "0.0"
+            },
+            {
+              "Hora": "02:30",
+              "Pre": "0.0"
             }
           ]
         }
@@ -11270,6 +11606,22 @@
             {
               "Hora": "01:30",
               "Humedad": "89.5"
+            },
+            {
+              "Hora": "01:45",
+              "Humedad": "89.1"
+            },
+            {
+              "Hora": "02:00",
+              "Humedad": "89.8"
+            },
+            {
+              "Hora": "02:15",
+              "Humedad": "90.9"
+            },
+            {
+              "Hora": "02:30",
+              "Humedad": "91.5"
             }
           ]
         }
@@ -11306,6 +11658,22 @@
             },
             {
               "Hora": "01:30",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "01:45",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "02:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "02:15",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "02:30",
               "Rad": "0.0"
             }
           ]
@@ -11344,6 +11712,22 @@
             {
               "Hora": "01:30",
               "VelViento": "8.6"
+            },
+            {
+              "Hora": "01:45",
+              "VelViento": "8.2"
+            },
+            {
+              "Hora": "02:00",
+              "VelViento": "6.3"
+            },
+            {
+              "Hora": "02:15",
+              "VelViento": "4.0"
+            },
+            {
+              "Hora": "02:30",
+              "VelViento": "5.1"
             }
           ]
         }
@@ -11557,6 +11941,10 @@
             {
               "Hora": "04:00",
               "Pre": "0.0"
+            },
+            {
+              "Hora": "04:15",
+              "Pre": "0.0"
             }
           ]
         }
@@ -11634,6 +12022,10 @@
             {
               "Hora": "04:00",
               "Humedad": "98.6"
+            },
+            {
+              "Hora": "04:15",
+              "Humedad": "98.9"
             }
           ]
         }
@@ -11710,6 +12102,10 @@
             },
             {
               "Hora": "04:00",
+              "Rad": "0.0"
+            },
+            {
+              "Hora": "04:15",
               "Rad": "0.0"
             }
           ]
@@ -11788,6 +12184,10 @@
             {
               "Hora": "04:00",
               "VelViento": "1.5"
+            },
+            {
+              "Hora": "04:15",
+              "VelViento": "1.7"
             }
           ]
         }
@@ -12461,6 +12861,23 @@
         "VelMax": "4.5",
         "DirViento": "S",
         "Eto": "3.9"
+      },
+      {
+        "Id": "15922",
+        "Est": "Jalpa - Santo Domingo",
+        "Fecha": "13-10-2026",
+        "TempMax": "31.1",
+        "TempMin": "17.3",
+        "TempMed": "22.6",
+        "Pre": "2.6",
+        "HumRMax": "98.3",
+        "HumRMin": "38.9",
+        "HumRMed": "74.4",
+        "Rad": "21,701.6",
+        "VelMed": "1.5",
+        "VelMax": "7.9",
+        "DirViento": "S",
+        "Eto": "4.0"
       }
     ],
     "15930": null,
@@ -12668,6 +13085,23 @@
         "VelMax": "12.7",
         "DirViento": "SE",
         "Eto": "3.2"
+      },
+      {
+        "Id": "15933",
+        "Est": "Miguel Auza - Campo Uno",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.4",
+        "TempMin": "9.0",
+        "TempMed": "17.8",
+        "Pre": "0.1",
+        "HumRMax": "99.7",
+        "HumRMin": "36.9",
+        "HumRMed": "78.3",
+        "Rad": "23,178.3",
+        "VelMed": "2.5",
+        "VelMax": "7.4",
+        "DirViento": "ESE",
+        "Eto": "4.0"
       }
     ],
     "15951": [
@@ -12874,6 +13308,23 @@
         "VelMax": "13.9",
         "DirViento": "ESE",
         "Eto": "3.1"
+      },
+      {
+        "Id": "15951",
+        "Est": "Mazapil - Tanque de Hacheros",
+        "Fecha": "13-10-2026",
+        "TempMax": "29.5",
+        "TempMin": "11.6",
+        "TempMed": "20.0",
+        "Pre": "0.0",
+        "HumRMax": "99.9",
+        "HumRMin": "51.1",
+        "HumRMed": "81.6",
+        "Rad": "21,594.5",
+        "VelMed": "4.0",
+        "VelMax": "12.4",
+        "DirViento": "ESE",
+        "Eto": "4.1"
       }
     ],
     "15960": [
@@ -13080,6 +13531,23 @@
         "VelMax": "11.3",
         "DirViento": "ESE",
         "Eto": "3.5"
+      },
+      {
+        "Id": "15960",
+        "Est": "Villa de Cos - COBAEZ Villa de Cos",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.4",
+        "TempMin": "11.9",
+        "TempMed": "19.0",
+        "Pre": "0.0",
+        "HumRMax": "93.9",
+        "HumRMin": "38.7",
+        "HumRMed": "70.5",
+        "Rad": "23,916.4",
+        "VelMed": "6.0",
+        "VelMax": "12.3",
+        "DirViento": "SE",
+        "Eto": "4.4"
       }
     ],
     "18663": [
@@ -13286,6 +13754,23 @@
         "VelMax": "13.2",
         "DirViento": "ENE",
         "Eto": "3.3"
+      },
+      {
+        "Id": "18663",
+        "Est": "Loreto - Loreto",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.3",
+        "TempMin": "10.8",
+        "TempMed": "18.8",
+        "Pre": "0.0",
+        "HumRMax": "91.7",
+        "HumRMin": "34.7",
+        "HumRMed": "68.1",
+        "Rad": "19,848.9",
+        "VelMed": "5.0",
+        "VelMax": "15.6",
+        "DirViento": "SE",
+        "Eto": "3.8"
       }
     ],
     "18664": [
@@ -13492,6 +13977,23 @@
         "VelMax": "13.1",
         "DirViento": "SE",
         "Eto": "2.5"
+      },
+      {
+        "Id": "18664",
+        "Est": "Fresnillo - El Pardillo 3",
+        "Fecha": "13-10-2026",
+        "TempMax": "26.6",
+        "TempMin": "9.8",
+        "TempMed": "18.0",
+        "Pre": "0.1",
+        "HumRMax": "93.7",
+        "HumRMin": "41.1",
+        "HumRMed": "73.0",
+        "Rad": "22,248.0",
+        "VelMed": "4.7",
+        "VelMax": "18.8",
+        "DirViento": "SE",
+        "Eto": "4.1"
       }
     ],
     "18670": [
@@ -13698,6 +14200,23 @@
         "VelMax": "6.5",
         "DirViento": "SSE",
         "Eto": "3.7"
+      },
+      {
+        "Id": "18670",
+        "Est": "Tabasco - Tierra Blanca",
+        "Fecha": "13-10-2026",
+        "TempMax": "30.7",
+        "TempMin": "15.8",
+        "TempMed": "22.0",
+        "Pre": "0.0",
+        "HumRMax": "95.5",
+        "HumRMin": "38.2",
+        "HumRMed": "73.3",
+        "Rad": "25,997.5",
+        "VelMed": "2.6",
+        "VelMax": "12.1",
+        "DirViento": "SSE",
+        "Eto": "4.9"
       }
     ],
     "18679": [
@@ -13904,6 +14423,23 @@
         "VelMax": "19.9",
         "DirViento": "E",
         "Eto": "2.4"
+      },
+      {
+        "Id": "18679",
+        "Est": "Pinos - La Victoria",
+        "Fecha": "13-10-2026",
+        "TempMax": "24.7",
+        "TempMin": "11.9",
+        "TempMed": "17.2",
+        "Pre": "0.0",
+        "HumRMax": "99.9",
+        "HumRMin": "55.4",
+        "HumRMed": "86.5",
+        "Rad": "21,801.5",
+        "VelMed": "8.7",
+        "VelMax": "18.9",
+        "DirViento": "ESE",
+        "Eto": "3.7"
       }
     ],
     "18680": [
@@ -14110,6 +14646,23 @@
         "VelMax": "8.8",
         "DirViento": "SE",
         "Eto": "2.2"
+      },
+      {
+        "Id": "18680",
+        "Est": "Zacatecas - U.A. Agronomía",
+        "Fecha": "13-10-2026",
+        "TempMax": "26.8",
+        "TempMin": "12.1",
+        "TempMed": "18.3",
+        "Pre": "0.2",
+        "HumRMax": "95.7",
+        "HumRMin": "37.5",
+        "HumRMed": "75.2",
+        "Rad": "23,553.3",
+        "VelMed": "3.3",
+        "VelMax": "8.5",
+        "DirViento": "SSE",
+        "Eto": "4.1"
       }
     ],
     "18682": [
@@ -14316,6 +14869,23 @@
         "VelMax": "14.8",
         "DirViento": "SSE",
         "Eto": "3.8"
+      },
+      {
+        "Id": "18682",
+        "Est": "Jerez - Santa Rita",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.3",
+        "TempMin": "11.6",
+        "TempMed": "18.1",
+        "Pre": "1.0",
+        "HumRMax": "100.0",
+        "HumRMin": "41.9",
+        "HumRMed": "81.1",
+        "Rad": "20,700.5",
+        "VelMed": "3.8",
+        "VelMax": "13.7",
+        "DirViento": "SSE",
+        "Eto": "3.7"
       }
     ],
     "18777": [
@@ -14522,6 +15092,23 @@
         "VelMax": "13.3",
         "DirViento": "SSE",
         "Eto": "2.6"
+      },
+      {
+        "Id": "18777",
+        "Est": "Sombrerete - Providencia",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.0",
+        "TempMin": "10.5",
+        "TempMed": "17.2",
+        "Pre": "0.1",
+        "HumRMax": "95.6",
+        "HumRMin": "39.3",
+        "HumRMed": "74.2",
+        "Rad": "19,774.8",
+        "VelMed": "6.8",
+        "VelMax": "17.6",
+        "DirViento": "SSE",
+        "Eto": "3.7"
       }
     ],
     "18779": [
@@ -14728,6 +15315,23 @@
         "VelMax": "11.9",
         "DirViento": "SE",
         "Eto": "3.2"
+      },
+      {
+        "Id": "18779",
+        "Est": "Villa de Cos - Agua Nueva",
+        "Fecha": "13-10-2026",
+        "TempMax": "28.4",
+        "TempMin": "13.4",
+        "TempMed": "19.5",
+        "Pre": "0.0",
+        "HumRMax": "99.9",
+        "HumRMin": "55.8",
+        "HumRMed": "85.8",
+        "Rad": "24,072.4",
+        "VelMed": "8.3",
+        "VelMax": "15.8",
+        "DirViento": "SE",
+        "Eto": "4.2"
       }
     ],
     "18782": [
@@ -14934,6 +15538,23 @@
         "VelMax": "15.5",
         "DirViento": "SE",
         "Eto": "2.8"
+      },
+      {
+        "Id": "18782",
+        "Est": "Sombrerete - Emiliano Zapata",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.5",
+        "TempMin": "10.7",
+        "TempMed": "17.6",
+        "Pre": "0.0",
+        "HumRMax": "93.0",
+        "HumRMin": "39.1",
+        "HumRMed": "72.1",
+        "Rad": "23,620.3",
+        "VelMed": "5.9",
+        "VelMax": "14.6",
+        "DirViento": "SE",
+        "Eto": "4.3"
       }
     ],
     "18786": [
@@ -15140,6 +15761,23 @@
         "VelMax": "12.7",
         "DirViento": "S",
         "Eto": "3.0"
+      },
+      {
+        "Id": "18786",
+        "Est": "Enrique Estrada - Mesa de Fuentes",
+        "Fecha": "13-10-2026",
+        "TempMax": "24.6",
+        "TempMin": "10.7",
+        "TempMed": "17.3",
+        "Pre": "0.0",
+        "HumRMax": "95.7",
+        "HumRMin": "46.0",
+        "HumRMed": "75.6",
+        "Rad": "23,917.0",
+        "VelMed": "6.0",
+        "VelMax": "13.7",
+        "DirViento": "S",
+        "Eto": "4.1"
       }
     ],
     "18791": [
@@ -15346,6 +15984,23 @@
         "VelMax": "7.3",
         "DirViento": "ENE",
         "Eto": "3.1"
+      },
+      {
+        "Id": "18791",
+        "Est": "Ojocaliente - El Alpino",
+        "Fecha": "13-10-2026",
+        "TempMax": "28.3",
+        "TempMin": "10.0",
+        "TempMed": "18.9",
+        "Pre": "0.0",
+        "HumRMax": "94.4",
+        "HumRMin": "34.8",
+        "HumRMed": "70.2",
+        "Rad": "20,955.4",
+        "VelMed": "3.0",
+        "VelMax": "8.5",
+        "DirViento": "SSE",
+        "Eto": "3.8"
       }
     ],
     "18796": [
@@ -15552,6 +16207,23 @@
         "VelMax": "12.3",
         "DirViento": "S",
         "Eto": "3.1"
+      },
+      {
+        "Id": "18796",
+        "Est": "Sombrerete - Col. Hidalgo",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.5",
+        "TempMin": "9.6",
+        "TempMed": "18.3",
+        "Pre": "0.0",
+        "HumRMax": "97.4",
+        "HumRMin": "34.1",
+        "HumRMed": "71.9",
+        "Rad": "22,666.6",
+        "VelMed": "2.5",
+        "VelMax": "8.7",
+        "DirViento": "SE",
+        "Eto": "4.0"
       }
     ],
     "18798": [
@@ -15758,6 +16430,23 @@
         "VelMax": "7.9",
         "DirViento": "S",
         "Eto": "3.0"
+      },
+      {
+        "Id": "18798",
+        "Est": "Jerez - Santa Fe",
+        "Fecha": "13-10-2026",
+        "TempMax": "30.0",
+        "TempMin": "11.4",
+        "TempMed": "18.4",
+        "Pre": "8.4",
+        "HumRMax": "97.4",
+        "HumRMin": "33.4",
+        "HumRMed": "79.8",
+        "Rad": "23,318.1",
+        "VelMed": "1.3",
+        "VelMax": "14.6",
+        "DirViento": "SO",
+        "Eto": "4.1"
       }
     ],
     "18802": [
@@ -15964,6 +16653,23 @@
         "VelMax": "10.9",
         "DirViento": "SSO",
         "Eto": "2.9"
+      },
+      {
+        "Id": "18802",
+        "Est": "Fresnillo - Ábrego",
+        "Fecha": "13-10-2026",
+        "TempMax": "26.7",
+        "TempMin": "10.0",
+        "TempMed": "17.4",
+        "Pre": "0.2",
+        "HumRMax": "98.7",
+        "HumRMin": "42.7",
+        "HumRMed": "78.7",
+        "Rad": "22,373.2",
+        "VelMed": "2.8",
+        "VelMax": "11.8",
+        "DirViento": "S",
+        "Eto": "4.0"
       }
     ],
     "18806": [
@@ -16170,6 +16876,23 @@
         "VelMax": "14.4",
         "DirViento": "SE",
         "Eto": "2.8"
+      },
+      {
+        "Id": "18806",
+        "Est": "Fresnillo - Rancho Grande",
+        "Fecha": "13-10-2026",
+        "TempMax": "26.7",
+        "TempMin": "11.6",
+        "TempMed": "18.5",
+        "Pre": "0.0",
+        "HumRMax": "97.7",
+        "HumRMin": "40.8",
+        "HumRMed": "76.1",
+        "Rad": "25,892.4",
+        "VelMed": "7.2",
+        "VelMax": "15.6",
+        "DirViento": "ESE",
+        "Eto": "4.7"
       }
     ],
     "18829": [
@@ -16376,6 +17099,23 @@
         "VelMax": "17.5",
         "DirViento": "SE",
         "Eto": "3.0"
+      },
+      {
+        "Id": "18829",
+        "Est": "Rio Grande - Col. Progreso",
+        "Fecha": "13-10-2026",
+        "TempMax": "28.3",
+        "TempMin": "9.4",
+        "TempMed": "17.9",
+        "Pre": "0.1",
+        "HumRMax": "97.4",
+        "HumRMin": "31.3",
+        "HumRMed": "75.1",
+        "Rad": "23,623.9",
+        "VelMed": "3.2",
+        "VelMax": "9.7",
+        "DirViento": "SE",
+        "Eto": "4.3"
       }
     ],
     "18836": [
@@ -16582,6 +17322,23 @@
         "VelMax": "9.7",
         "DirViento": "SE",
         "Eto": "3.1"
+      },
+      {
+        "Id": "18836",
+        "Est": "Fresnillo - Col. Emancipación",
+        "Fecha": "13-10-2026",
+        "TempMax": "26.8",
+        "TempMin": "9.3",
+        "TempMed": "18.0",
+        "Pre": "0.0",
+        "HumRMax": "96.1",
+        "HumRMin": "43.7",
+        "HumRMed": "76.1",
+        "Rad": "23,835.2",
+        "VelMed": "3.6",
+        "VelMax": "11.0",
+        "DirViento": "SSE",
+        "Eto": "4.4"
       }
     ],
     "18837": [
@@ -16788,6 +17545,23 @@
         "VelMax": "13.2",
         "DirViento": "ESE",
         "Eto": "4.0"
+      },
+      {
+        "Id": "18837",
+        "Est": "Villa de Cos - Sierra Vieja",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.8",
+        "TempMin": "11.6",
+        "TempMed": "19.5",
+        "Pre": "0.0",
+        "HumRMax": "95.6",
+        "HumRMin": "36.7",
+        "HumRMed": "69.5",
+        "Rad": "23,962.4",
+        "VelMed": "8.3",
+        "VelMax": "23.7",
+        "DirViento": "E",
+        "Eto": "4.8"
       }
     ],
     "18842": [
@@ -16994,6 +17768,23 @@
         "VelMax": "7.5",
         "DirViento": "SSE",
         "Eto": "3.6"
+      },
+      {
+        "Id": "18842",
+        "Est": "Villanueva - Villanueva",
+        "Fecha": "13-10-2026",
+        "TempMax": "29.2",
+        "TempMin": "12.2",
+        "TempMed": "19.7",
+        "Pre": "0.0",
+        "HumRMax": "97.8",
+        "HumRMin": "41.1",
+        "HumRMed": "74.5",
+        "Rad": "23,239.4",
+        "VelMed": "2.8",
+        "VelMax": "15.2",
+        "DirViento": "S",
+        "Eto": "4.2"
       }
     ],
     "18849": [
@@ -17200,6 +17991,23 @@
         "VelMax": "12.0",
         "DirViento": "SE",
         "Eto": "3.3"
+      },
+      {
+        "Id": "18849",
+        "Est": "Mazapil - Marianita",
+        "Fecha": "13-10-2026",
+        "TempMax": "29.9",
+        "TempMin": "13.3",
+        "TempMed": "21.1",
+        "Pre": "0.0",
+        "HumRMax": "99.9",
+        "HumRMin": "46.0",
+        "HumRMed": "76.1",
+        "Rad": "20,495.3",
+        "VelMed": "5.6",
+        "VelMax": "13.0",
+        "DirViento": "SE",
+        "Eto": "4.0"
       }
     ],
     "18851": [
@@ -17406,6 +18214,23 @@
         "VelMax": "22.7",
         "DirViento": "SSE",
         "Eto": "2.3"
+      },
+      {
+        "Id": "18851",
+        "Est": "Calera - CEZAC",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.1",
+        "TempMin": "10.8",
+        "TempMed": "17.5",
+        "Pre": "0.2",
+        "HumRMax": "100.0",
+        "HumRMin": "50.5",
+        "HumRMed": "81.6",
+        "Rad": "25,329.5",
+        "VelMed": "8.2",
+        "VelMax": "22.1",
+        "DirViento": "ESE",
+        "Eto": "4.4"
       }
     ],
     "18879": [
@@ -17612,6 +18437,23 @@
         "VelMax": "5.6",
         "DirViento": "SSO",
         "Eto": "3.0"
+      },
+      {
+        "Id": "18879",
+        "Est": "Tepechitlan - CBTA Tepechitlan",
+        "Fecha": "13-10-2026",
+        "TempMax": "29.8",
+        "TempMin": "15.2",
+        "TempMed": "20.8",
+        "Pre": "0.0",
+        "HumRMax": "95.2",
+        "HumRMin": "43.9",
+        "HumRMed": "75.1",
+        "Rad": "17,309.8",
+        "VelMed": "1.4",
+        "VelMax": "5.8",
+        "DirViento": "SSO",
+        "Eto": "3.2"
       }
     ],
     "18882": [
@@ -17818,6 +18660,23 @@
         "VelMax": "6.3",
         "DirViento": "SE",
         "Eto": "2.7"
+      },
+      {
+        "Id": "18882",
+        "Est": "Guadalupe - U.A. Biología",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.4",
+        "TempMin": "12.8",
+        "TempMed": "18.4",
+        "Pre": "0.0",
+        "HumRMax": "90.5",
+        "HumRMin": "39.3",
+        "HumRMed": "68.8",
+        "Rad": "21,535.6",
+        "VelMed": "3.4",
+        "VelMax": "8.1",
+        "DirViento": "SE",
+        "Eto": "3.8"
       }
     ],
     "26684": [
@@ -18230,6 +19089,23 @@
         "VelMax": "11.3",
         "DirViento": "E",
         "Eto": "3.5"
+      },
+      {
+        "Id": "26766",
+        "Est": "Francisco Murguía - Mogotes",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.6",
+        "TempMin": "12.1",
+        "TempMed": "19.0",
+        "Pre": "0.0",
+        "HumRMax": "97.3",
+        "HumRMin": "35.8",
+        "HumRMed": "72.8",
+        "Rad": "25,680.2",
+        "VelMed": "4.5",
+        "VelMax": "8.3",
+        "DirViento": "E",
+        "Eto": "4.6"
       }
     ],
     "26767": [
@@ -18436,6 +19312,23 @@
         "VelMax": "4.6",
         "DirViento": "SE",
         "Eto": "4.0"
+      },
+      {
+        "Id": "26767",
+        "Est": "Momax - Momax",
+        "Fecha": "13-10-2026",
+        "TempMax": "33.3",
+        "TempMin": "13.4",
+        "TempMed": "21.0",
+        "Pre": "0.8",
+        "HumRMax": "98.7",
+        "HumRMin": "38.5",
+        "HumRMed": "80.7",
+        "Rad": "19,158.8",
+        "VelMed": "0.9",
+        "VelMax": "5.0",
+        "DirViento": "SE",
+        "Eto": "3.5"
       }
     ],
     "26772": [
@@ -18642,6 +19535,23 @@
         "VelMax": "11.1",
         "DirViento": "E",
         "Eto": "3.4"
+      },
+      {
+        "Id": "26772",
+        "Est": "Villa Glez. Ortega - Estancia de Ánimas",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.2",
+        "TempMin": "9.7",
+        "TempMed": "17.6",
+        "Pre": "0.0",
+        "HumRMax": "99.9",
+        "HumRMin": "41.3",
+        "HumRMed": "76.0",
+        "Rad": "22,363.9",
+        "VelMed": "3.8",
+        "VelMax": "13.9",
+        "DirViento": "ESE",
+        "Eto": "4.0"
       }
     ],
     "26775": [
@@ -18831,6 +19741,23 @@
         "VelMax": "14.9",
         "DirViento": "SSE",
         "Eto": "2.6"
+      },
+      {
+        "Id": "26775",
+        "Est": "Trancoso - Las Arcinas",
+        "Fecha": "12-10-2026",
+        "TempMax": "25.6",
+        "TempMin": "13.2",
+        "TempMed": "17.6",
+        "Pre": "0.0",
+        "HumRMax": "93.6",
+        "HumRMin": "48.0",
+        "HumRMed": "78.9",
+        "Rad": "19,925.2",
+        "VelMed": "4.6",
+        "VelMax": "13.2",
+        "DirViento": "SE",
+        "Eto": "3.4"
       }
     ],
     "26779": [
@@ -19037,6 +19964,23 @@
         "VelMax": "12.3",
         "DirViento": "ESE",
         "Eto": "3.5"
+      },
+      {
+        "Id": "26779",
+        "Est": "Pánfilo Natera - El Saladillo",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.1",
+        "TempMin": "9.7",
+        "TempMed": "18.1",
+        "Pre": "0.0",
+        "HumRMax": "98.1",
+        "HumRMin": "39.5",
+        "HumRMed": "74.0",
+        "Rad": "24,040.0",
+        "VelMed": "4.3",
+        "VelMax": "13.6",
+        "DirViento": "SSE",
+        "Eto": "4.4"
       }
     ],
     "26786": [
@@ -19243,6 +20187,23 @@
         "VelMax": "14.2",
         "DirViento": "SSE",
         "Eto": "3.4"
+      },
+      {
+        "Id": "26786",
+        "Est": "Sombrerete - Col. Gonzalez Ortega",
+        "Fecha": "13-10-2026",
+        "TempMax": "27.1",
+        "TempMin": "11.8",
+        "TempMed": "18.7",
+        "Pre": "0.0",
+        "HumRMax": "99.9",
+        "HumRMin": "49.2",
+        "HumRMed": "82.6",
+        "Rad": "24,442.0",
+        "VelMed": "4.2",
+        "VelMax": "8.5",
+        "DirViento": "SSE",
+        "Eto": "4.3"
       }
     ],
     "50060": [
@@ -19449,6 +20410,23 @@
         "VelMax": "12.4",
         "DirViento": "S",
         "Eto": "3.4"
+      },
+      {
+        "Id": "50060",
+        "Est": "Jerez - Palmas Altas",
+        "Fecha": "13-10-2026",
+        "TempMax": "25.0",
+        "TempMin": "10.7",
+        "TempMed": "16.6",
+        "Pre": "4.4",
+        "HumRMax": "100.0",
+        "HumRMin": "47.8",
+        "HumRMed": "84.0",
+        "Rad": "21,351.6",
+        "VelMed": "4.5",
+        "VelMax": "11.0",
+        "DirViento": "S",
+        "Eto": "3.7"
       }
     ],
     "86031": [

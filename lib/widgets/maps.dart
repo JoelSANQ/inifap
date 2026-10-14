@@ -173,11 +173,9 @@ class _OSMMapState extends State<OSMMap> {
     );
   }
 
-  // ====== CAPA BASE (Carto Light — único estilo usado en la app) ======
+  // ====== CAPA BASE (OpenStreetMap, sin API key) ======
   TileLayer get _baseTileLayer => TileLayer(
-        urlTemplate:
-            'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-        subdomains: const ['a', 'b', 'c', 'd'],
+        urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
         userAgentPackageName: 'com.example.app',
         tileProvider: _tileProvider,
         keepBuffer: 4,

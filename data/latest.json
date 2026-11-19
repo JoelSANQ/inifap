@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-18T03:28:10.296Z",
+  "fetched_at": "2026-11-19T02:02:28.850Z",
   "all": null,
   "reports": {
     "r1": [
@@ -426,14 +426,14 @@
       {
         "Id": "86031",
         "Est": "Juchipila - UPSZ El Remolino",
-        "Fecha": "15-11-2026",
-        "Hora": "20:45",
-        "Temp": "14.5",
+        "Fecha": "16-11-2026",
+        "Hora": "21:45",
+        "Temp": "13.6",
         "Pre": "0.0",
-        "Hum": "64.2",
+        "Hum": "72.4",
         "Rad": "0.0",
-        "VelViento": "2.4",
-        "DirViento": "32.9"
+        "VelViento": "2.0",
+        "DirViento": "27.8"
       },
       {
         "Id": "18779",
